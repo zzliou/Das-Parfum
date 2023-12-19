@@ -31,38 +31,44 @@
            </div>
           </div>
           <div class="product">
-            <div class="wrapper">
+            <div class="picwrapper">
               <div class="picture">
-            <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
-            </div>
-            <div class="info">
-            <div class="title">覆香水</div>
-              <div class="directions">
-                煙燻、木質、森林
+               <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
               </div>
-           </div>
-           <div class="price"> NT$3958 </div>
-           <div class="cart"> 加入購物車 </div>
-           <div class="picture">
-            <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
-            </div>
-            <div class="info">
-            <div class="title">藤香水</div>
-              <div class="directions">
-                木質、辛香料、花香
+              <div class="picture">
+               <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
               </div>
-           </div>
-           <div class="picture">
-            <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
-            </div>
-            <div class="info">
-            <div class="title">呵護全身每一寸肌膚</div>
-              <div class="directions">
-                無論是沐浴時刻或是洗手台旁，我們提供一系列能為身體注入活力的潔膚露、保濕乳霜，讓您以迷人香氣配方，為送禮對象創造恆久的美好印象。
+              <div class="picture">
+               <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
               </div>
-           </div>
             </div>
           </div>
+            <div class="info">
+                <div class="textwrapper">
+                  <div class="title">覆香水</div>
+                  <div class="directions">
+                  煙燻、木質、森林
+                  </div>
+                  <div class="price"> NT$3958 </div>
+                  <div class="cart"> 加入購物車 </div>
+                </div>
+                <div class="textwrapper">
+                  <div class="title">覆香水</div>
+                  <div class="directions">
+                  煙燻、木質、森林
+                  </div>
+                  <div class="price"> NT$3958 </div>
+                  <div class="cart"> 加入購物車 </div>
+                </div>
+                <div class="textwrapper">
+                  <div class="title">覆香水</div>
+                  <div class="directions">
+                  煙燻、木質、森林
+                  </div>
+                  <div class="price"> NT$3958 </div>
+                  <div class="cart"> 加入購物車 </div>
+                </div>
+            </div>
         </div>
       </div>
       </div>
@@ -128,15 +134,72 @@
 .product {
     margin-top: 100px;
     display: flex;
-    width: 1000px;
-    height: 300px;
+    justify-content: center;
+    .picwrapper {
+      display: flex;
+    }
     .picture {
       width: 300px;
       height: 300px;
       padding: 50px 50px;
       background-color: #F5F4E9;
+      margin: 0 5px;
     }
   }
+.info {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 300px;
+  .textwrapper {
+    padding-top: 50px;
+    width: 400px;
+    height: 400px;
+    margin: 0 5px;
+    transition: all .4s linear;
+  }
+  .textwrapper:hover {
+    background-color: #F5F4E9;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .directions {
+    font-size: 16px;
+    padding-bottom: 10px;
+    color: #777575;
+  }
+  .price {
+    color: #777575;
+    font-style: unset;
+  }
+  .cart {
+    border: solid 1px black;
+    width: 400px;
+    height: 50px;
+    margin: 120px 5px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all .2s linear;
+  }
+  .cart:hover {
+    border: solid 1px black;
+    background-color: #777575;
+    width: 400px;
+    height: 50px;
+    margin: 120px 5px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; 
+    color: white;
+    opacity: 1;
+  }
+
+}
    
   }
 </style>
