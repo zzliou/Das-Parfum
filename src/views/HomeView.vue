@@ -69,7 +69,49 @@
                   <div class="cart"> 加入購物車 </div>
                 </div>
             </div>
+          <div class="shop">
+            <div class="loctioninfo">
+              <h1>尋找店鋪</h1>
+              <p>每間門店皆有專業美容顧問,並針對您的送禮需求提供量身定制的建議,期待與您相見。</p>
+            </div>
+              <div class="shopimage">
+                <img src="https://www.aesop.com/u1nb1km7t5q7/2uA7D8evvW2FSEW1k4NHGR/acd87fe6e61d4d0a9697558018c5f815/Aesop_Diamond_Tower_Mid_Desktop_2560x1440px.jpg" alt="">
+              </div>
+          </div>
+          <div class="famous">
+            <div class="previouspage"> ❮ </div>
+            <div class="image">
+              <img src="https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png" alt="">
+            </div>
+            <div class="image">
+              <img src="https://www.aesop.com/u1nb1km7t5q7/47vTlo7LEvs0jKwRjhgCxW/0af092fee3c9670b7bdfcf38a2339583/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Back_X-Large_3000x3054px.png" alt="">
+            </div>
+            <div class="image">
+              <img src="https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png" alt="">
+            </div>
+            <div class="image">
+              <img src="https://www.aesop.com/u1nb1km7t5q7/2IHPWR79G0XhnFcc1bmhSd/e4c871edf6ce31a10d22bd98b49cf9b4/Aesop_Home_Olous_Aromatique_Room_Spray_100mL_Web_Back_X-Large_3000x3456px.png" alt="">
+            </div>
+            <div class="image">
+              <img src="https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png" alt="">
+            </div>
+            <div class="lastpage"> ❯ </div>
+            </div>
+            <div class="title">
+              <P>護手霜</P>
+              <p>沐浴露</p>
+              <p>香薰油</p>
+              <p>室內噴霧</p>
+              <p>髮香水</p>
+          </div>
+          <div class="accreditaion">
+            <P>環保宣言</P>
+            <p>無動物實驗</p>
+            <p>採用環保包裝</p>
+            <p>原料友善栽種</p>
+          </div>
         </div>
+
       </div>
       </div>
 </template>
@@ -155,7 +197,7 @@
   .textwrapper {
     padding-top: 50px;
     width: 400px;
-    height: 400px;
+    height: 100px;
     margin: 0 5px;
     transition: all .4s linear;
   }
@@ -180,7 +222,7 @@
     border: solid 1px black;
     width: 400px;
     height: 50px;
-    margin: 120px 5px 0px 5px;
+    margin: 0px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -192,16 +234,50 @@
     background-color: #777575;
     width: 400px;
     height: 50px;
-    margin: 120px 5px 0px 5px;
+    margin: 0px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer; 
     color: white;
     opacity: 1;
+  } 
+  }
+.famous {
+  display: flex;
+  align-items: flex-end;
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+  .previouspage {
+    width: 100px;
+    height: 100px;
+    margin: 50px 50px 50px 50px;
+    font-size: 40px;
+  }
+  .lastpage {
+    width: 100px;
+    height: 100px;
+    margin: 50px 50px 50px 50px;
+    font-size: 40px;
+  }
+  }
+  .title {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 16px;
+    font-weight: 600;
   }
 
-}
-   
+  .shop {
+    display: flex;
+    padding: 50px 50px;
+    .shopimage {
+      width: 800px;
+      height: 600px;
+      margin: 20px 0px 20px auto;
+    }
   }
+}
 </style>
