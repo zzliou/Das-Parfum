@@ -170,6 +170,7 @@
     padding-bottom: 10px;
     color: #777575;
   }
+
   .price {
     color: #777575;
     font-style: unset;
