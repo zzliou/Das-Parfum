@@ -5,6 +5,7 @@
       <RouterLink to="/about">實體店鋪</RouterLink>
       <RouterLink to="/contact">關於我們</RouterLink>
     </div>
+    
   </div>
   <div class="content">
     <RouterView />
