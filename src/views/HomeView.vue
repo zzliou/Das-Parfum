@@ -131,6 +131,7 @@
     height: 429px;
     }
 }
+
 .product {
     margin-top: 100px;
     display: flex;
