@@ -31,39 +31,97 @@
            </div>
           </div>
           <div class="product">
-            <div class="wrapper">
+            <div class="picwrapper">
               <div class="picture">
-            <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
-            </div>
-            <div class="info">
-            <div class="title">覆香水</div>
-              <div class="directions">
-                煙燻、木質、森林
+               <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
               </div>
-           </div>
-           <div class="price"> NT$3958 </div>
-           <div class="cart"> 加入購物車 </div>
-           <div class="picture">
-            <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
-            </div>
-            <div class="info">
-            <div class="title">藤香水</div>
-              <div class="directions">
-                木質、辛香料、花香
+              <div class="picture">
+               <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
               </div>
-           </div>
-           <div class="picture">
-            <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
-            </div>
-            <div class="info">
-            <div class="title">呵護全身每一寸肌膚</div>
-              <div class="directions">
-                無論是沐浴時刻或是洗手台旁，我們提供一系列能為身體注入活力的潔膚露、保濕乳霜，讓您以迷人香氣配方，為送禮對象創造恆久的美好印象。
+              <div class="picture">
+               <img src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png" alt="">
               </div>
-           </div>
             </div>
           </div>
+            <div class="info">
+                <div class="textwrapper">
+                  <div class="title">覆香水</div>
+                  <div class="directions">
+                  煙燻、木質、森林
+                  </div>
+                  <div class="price"> NT$3958 </div>
+                  <div class="cart"> 加入購物車 </div>
+                </div>
+                <div class="textwrapper">
+                  <div class="title">覆香水</div>
+                  <div class="directions">
+                  煙燻、木質、森林
+                  </div>
+                  <div class="price"> NT$3958 </div>
+                  <div class="cart"> 加入購物車 </div>
+                </div>
+                <div class="textwrapper">
+                  <div class="title">覆香水</div>
+                  <div class="directions">
+                  煙燻、木質、森林
+                  </div>
+                  <div class="price"> NT$3958 </div>
+                  <div class="cart"> 加入購物車 </div>
+                </div>
+            </div>
+          <div class="shop">
+            <div class="loctioninfo">
+              <h1>尋找店鋪</h1>
+              <p>每間門店皆有專業美容顧問,並針對您的送禮需求提供量身定制的建議,期待與您相見。</p>
+            </div>
+              <div class="shopimage">
+                <img src="https://www.aesop.com/u1nb1km7t5q7/2uA7D8evvW2FSEW1k4NHGR/acd87fe6e61d4d0a9697558018c5f815/Aesop_Diamond_Tower_Mid_Desktop_2560x1440px.jpg" alt="">
+              </div>
+          </div>
+          <div class="famous">
+            <div class="previouspage"> ❮ </div>
+            <div class="image">
+              <img src="https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png" alt="">
+            </div>
+            <div class="image">
+              <img src="https://www.aesop.com/u1nb1km7t5q7/47vTlo7LEvs0jKwRjhgCxW/0af092fee3c9670b7bdfcf38a2339583/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Back_X-Large_3000x3054px.png" alt="">
+            </div>
+            <div class="image">
+              <img src="https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png" alt="">
+            </div>
+            <div class="image">
+              <img src="https://www.aesop.com/u1nb1km7t5q7/2IHPWR79G0XhnFcc1bmhSd/e4c871edf6ce31a10d22bd98b49cf9b4/Aesop_Home_Olous_Aromatique_Room_Spray_100mL_Web_Back_X-Large_3000x3456px.png" alt="">
+            </div>
+            <div class="image">
+              <img src="https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png" alt="">
+            </div>
+            <div class="lastpage"> ❯ </div>
+            </div>
+            <div class="title">
+              <P>護手霜</P>
+              <p>沐浴露</p>
+              <p>香薰油</p>
+              <p>室內噴霧</p>
+              <p>髮香水</p>
+          </div>
+          <div class="accreditaion">
+            <div class="textarea">
+              <div class="leading-bunny">
+              <p>無動物實驗</p>
+              <P>以專業儀器進行全產品測試，秉持愛護及尊重動物生命，堅持不使用動物實驗。</P>
+              </div>
+              <div class="FSC">
+              <p>全產品環保包裝</p>
+              <p>選擇FSC認證環保材質，百分之百以可回收或可生物降解的天然材料作為包材使用，減少對地球的塑料污染，提供消費者空瓶回收之回購優惠價。</p>
+              </div>
+              <div class="energy">
+              <p>降低碳足跡</p>
+              <p>減少生產和運輸過程中的能源消耗，採用節能技術，降低80%碳足跡。</p>
+              </div>
+              </div>
+          </div>
         </div>
+
       </div>
       </div>
 </template>
@@ -123,20 +181,144 @@
     margin: 150px 150px 0px 0px; 
     width: 1047px;
     height: 429px;
-    }
+   }
+  }
 }
 .product {
     margin-top: 100px;
     display: flex;
-    width: 1000px;
-    height: 300px;
+    justify-content: center;
+    .picwrapper {
+      display: flex;
+    }
     .picture {
       width: 300px;
       height: 300px;
       padding: 50px 50px;
       background-color: #F5F4E9;
+      margin: 0 5px;
     }
   }
-   
+.info {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 300px;
+  .textwrapper {
+    padding-top: 50px;
+    width: 400px;
+    height: 100px;
+    margin: 0 5px;
+    transition: all .4s linear;
   }
+  .textwrapper:hover {
+    background-color: #F5F4E9;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .directions {
+    font-size: 16px;
+    padding-bottom: 10px;
+    color: #777575;
+  }
+
+  .price {
+    color: #777575;
+    font-style: unset;
+  }
+  .cart {
+    border: solid 1px black;
+    width: 400px;
+    height: 50px;
+    margin: 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all .2s linear;
+  }
+  .cart:hover {
+    border: solid 1px black;
+    background-color: #777575;
+    width: 400px;
+    height: 50px;
+    margin: 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; 
+    color: white;
+    opacity: 1;
+  } 
+  }
+.famous {
+  display: flex;
+  align-items: flex-end;
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+  .previouspage {
+    width: 100px;
+    height: 100px;
+    margin: 50px 50px 50px 50px;
+    font-size: 40px;
+  }
+  .lastpage {
+    width: 100px;
+    height: 100px;
+    margin: 50px 50px 50px 50px;
+    font-size: 40px;
+  }
+  }
+  .title {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 16px;
+    font-weight: 600;
+    .p {
+      width: 185.59px;
+      height: 20px;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+
+  .shop {
+    display: flex;
+    padding: 50px 50px;
+    .shopimage {
+      width: 800px;
+      height: 600px;
+      margin: 20px 0px 20px auto;
+    }
+  }
+.accreditation {
+  width: 1200px;
+  height: 100px;
+  .textarea {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 16px;
+    font-weight: 400;
+    .leading-bunny {
+      width: 300px;
+      height: 100px;
+      background-color: #f5f4e9;
+    }
+    .FSC {
+      width: 300px;
+      height: 100px;
+      background-color: #f5f4e9;
+     }
+    .energy {
+    width: 300px;
+    height: 100px;
+    background-color: #f5f4e9;
+    }
+    } 
+  }
+
 </style>
