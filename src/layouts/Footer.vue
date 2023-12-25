@@ -78,6 +78,7 @@ import line from "@/assets/img/line.png"
     img {
       width: 30px;
       height: 30px;
+      margin: 10px 10px;
     }
     .section {
       display: inline-block;

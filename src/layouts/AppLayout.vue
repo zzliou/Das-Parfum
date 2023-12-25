@@ -4,16 +4,19 @@
       <RouterLink to="/">首頁</RouterLink>
       <RouterLink to="/about">實體店鋪</RouterLink>
       <RouterLink to="/contact">關於我們</RouterLink>
+      <RouterLink to="/productList">商品列表</RouterLink>
     </div>
     
   </div>
   <div class="content">
     <RouterView />
   </div>
+  <Footer></Footer>
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import Footer from './Footer.vue';
 </script>
 
 

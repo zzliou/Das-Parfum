@@ -164,7 +164,7 @@
           <div class="lastpage">❯</div>
         </div>
         <div class="title">
-          <P>護手霜</P>
+          <p>護手霜</p>
           <p>沐浴露</p>
           <p>香薰油</p>
           <p>室內噴霧</p>
@@ -175,7 +175,7 @@
           <div class="textwrapper">
             <div class="section">
               <p>無動物實驗</p>
-              <P>以專業儀器進行全產品測試，秉持愛護及尊重動物生命，堅持不使用動物實驗。</P>
+              <p>以專業儀器進行全產品測試，秉持愛護及尊重動物生命，堅持不使用動物實驗。</p>
             </div>
             <div class="section">
               <p>全產品環保包裝</p>
@@ -193,6 +193,10 @@
     </div>
   </div>
 </template>
+
+<script setup>
+
+</script>
 
 <style lang="scss" scoped>
 .content {
@@ -282,9 +286,9 @@
   width: 100%;
   .textwrapper {
     padding-top: 50px;
-    width: 764.67px;
+    width: 100%;
     height: 100px;
-    transition: all 0.4s linear;
+    transition: all 0.2s linear;
   }
   .textwrapper:hover {
     background-color: #f5f4e9;
@@ -312,7 +316,7 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: all 0.1s linear;
+    transition: all 0.2s linear;
   }
   .cart:hover {
     border: solid 1px black;

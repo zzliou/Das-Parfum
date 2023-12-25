@@ -2,7 +2,7 @@
   <div class="content">
     <div class="area">
       <div class="city">
-        <P>北部</P>
+        <p>北部</p>
         <p>中部</p>
         <p>南部</p>
       </div>
