@@ -2,9 +2,9 @@
   <div class="header">
     <div class="navbar">
       <RouterLink to="/">首頁</RouterLink>
-      <RouterLink to="/about">實體店鋪</RouterLink>
       <RouterLink to="/contact">關於我們</RouterLink>
       <RouterLink to="/productList">商品列表</RouterLink>
+      <RouterLink to="/shop">實體店鋪</RouterLink>
     </div>
     
   </div>

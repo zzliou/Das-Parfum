@@ -2,14 +2,15 @@
   <div class="product-list">
     <div class="main-title">
       <h1>商品列表</h1>
-    </div>
-    <div class="title">
+      <div class="title">
       <div class="sequence">排序</div>
       <div class="drop-down">
         <div class="famous">最熱銷</div>
         <div class="down">⌵</div>
       </div>
     </div>
+    </div>
+
     <div class="divider"></div>
     <div class="productwrapper">
       <div class="section" v-for="product in productList" :key="product.id">
@@ -53,6 +54,11 @@ let productList = ref([
 </script>
 
 <style lang="scss" scoped>
+
+.main-title {
+  display: flex;
+  margin-left: 50px;
+}
 .product-list {
   background-color: #fffef2;
   width: 100%;
@@ -62,6 +68,7 @@ let productList = ref([
   align-items: center;
   font-size: 18px;
   justify-content: flex-end;
+  margin-left: auto;
   .sequence {
     padding: 10px 20px;
   }
@@ -78,7 +85,6 @@ let productList = ref([
 .divider {
   width: 100%;
   border-bottom: #d5d4c9 solid 1px;
-  padding: 50px 0px 50px 0px;
 }
 .productwrapper {
   display: flex;
@@ -92,9 +98,6 @@ let productList = ref([
   padding: 5px 0px;
   &:hover {
     background-color: $background-1;
-    // .imgdivider {
-    //   background-color: $background-1;
-    // }
     .producttitle {
       background-color: $background-1;
     }
@@ -114,10 +117,7 @@ let productList = ref([
       opacity: 1;
     }
   }
-  // .imgdivider {
-  //   border-bottom: #d5d4c9 solid 1px;
-  //   width: 100%;
-  // }
+
   img {
     width: 100%;
     height: 100%;
