@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" id="header">
     <div class="navbar">
       <RouterLink to="/">首頁</RouterLink>
       <RouterLink to="/contact">關於我們</RouterLink>
@@ -28,7 +28,8 @@ import Footer from './Footer.vue';
   .navbar {
     display: flex;
     height: 100%;
-    font-size: 14px;
+    font-size: 20px;
+    font-weight: 600;
     align-items: center;
     gap: 30px;
     margin-left: 10px;

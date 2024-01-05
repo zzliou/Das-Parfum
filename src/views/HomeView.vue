@@ -191,12 +191,15 @@
         </div>
       </div>
     </div>
+    <div class="goTop">
+      <a href="#header" target="_self">
+        <img src="https://cdn-icons-png.flaticon.com/512/11848/11848591.png" />
+      </a>
+    </div>
   </div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .content {
@@ -259,6 +262,15 @@
       margin-right: auto;
       width: 1047px;
       height: 429px;
+    }
+  }
+  .goTop {
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+    img {
+      width: 50px;
+      height: 50px;
     }
   }
 }
@@ -384,9 +396,9 @@
 }
 
 .divider {
-    width: 100%;
-    border-bottom: #777575 solid 1px;
-  } 
+  width: 100%;
+  border-bottom: #777575 solid 1px;
+}
 .eco {
   width: 100%;
   display: flex;

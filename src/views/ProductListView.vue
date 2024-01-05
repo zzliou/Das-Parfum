@@ -16,7 +16,7 @@
       <div class="productwrapper">
         <div class="section" v-for="product in productList" :key="product.id">
           <img
-            src="https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png"
+            :src="product.imageSrc"
             alt=""
           />
           <div class="producttitle">{{ product.title }}</div>
@@ -40,22 +40,27 @@ let productList = ref([
   {
     title: '檜木身體潔膚露',
     price: 450,
-    id: 1
+    id: 1,
+    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
   },
   {
     title: '玫瑰身體去角質露',
     price: 960,
-    id: 2
+    id: 2,
+    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/0b0cff5e4acb126629a2214954bdc3b0/0/3/03_akwt01_1.png'
+
   },
   {
     title: '橙香身體乳霜',
     price: 780,
-    id: 3
+    id: 3,
+    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+
   },
   {
     title: '天竺葵潤體精油',
     price: 590,
-    id: 4
+    id: 4,
   },
   {
     title: '滋潤保濕香皂',
