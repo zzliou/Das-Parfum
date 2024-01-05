@@ -5,8 +5,11 @@
       <div class="title">
         <div class="sequence">排序</div>
         <div class="drop-down">
-          <div class="famous">最熱銷</div>
-          <div class="down">⌵</div>
+          <select v-model="order" @change="handleChange">
+            <option value="default">系統推薦</option>
+            <option value="price">價格</option>
+            <option value="popularity">熱門度</option>
+          </select>
         </div>
       </div>
     </div>
@@ -35,6 +38,7 @@
 
 <script setup>
 import { ref } from 'vue'
+let order = ref('default');
 let currency = ref('NT$')
 let productList = ref([
   {
@@ -47,7 +51,7 @@ let productList = ref([
     title: '玫瑰身體去角質露',
     price: 960,
     id: 2,
-    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/0b0cff5e4acb126629a2214954bdc3b0/0/3/03_akwt01_1.png'
+    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
 
   },
   {
@@ -61,18 +65,34 @@ let productList = ref([
     title: '天竺葵潤體精油',
     price: 590,
     id: 4,
+    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+
   },
   {
     title: '滋潤保濕香皂',
     price: 690,
-    id: 5
+    id: 5,
+    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+
   },
   {
     title: '苦橙甦活身體凝膠',
     price: 680,
-    id: 6
+    id: 6,
+    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+
   }
 ])
+
+function handleChange() {
+  console.log('handleChange')
+  if(order.value === 'price'){
+    console.log('handleChange price')
+    productList.value.sort(function(a, b) {
+       return a.price - b.price;
+    })
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -96,7 +116,7 @@ let productList = ref([
     padding: 10px 20px;
   }
   .drop-down {
-    border: solid black 1px;
+    //border: solid black 1px;
     width: 100px;
     height: 20px;
     display: flex;
