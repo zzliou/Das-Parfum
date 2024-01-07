@@ -5,24 +5,23 @@
         <p>關於</p>
         <div class="divider"></div>
         <div class="contactus">
-          <a href="https://assistance.aesop.com/hc/zh-tw/p/contact_us">聯絡我們</a>
+          <a @click="goToContact">聯絡我們</a>
         </div>
         <div class="location">
-          <a href="https://www.aesop.com/tw/?visitMenu=open">門市據點</a>
-      
+          <RouterLink to="/shop">實體店鋪</RouterLink>
         </div>
       </div>
       <div class="social-media">
         <p>社群媒體</p>
         <div class="divider"></div>
         <div class="section">
-          <img :src="facebook" alt="">
+          <img :src="facebook" alt="" />
         </div>
         <div class="section">
-          <img :src="instagram" alt="">
+          <img :src="instagram" alt="" />
         </div>
         <div class="section">
-          <img :src="line" alt="">
+          <img :src="line" alt="" />
         </div>
       </div>
       <div class="designby">
@@ -34,9 +33,14 @@
 </template>
 
 <script setup>
-import facebook from "@/assets/img/facebook.png"
-import instagram from "@/assets/img/instagram.png"
-import line from "@/assets/img/line.png"
+import facebook from '@/assets/img/facebook.png'
+import instagram from '@/assets/img/instagram.png'
+import line from '@/assets/img/line.png'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+function goToContact() {
+  router.push('/contact')
+}
 </script>
 
 <style lang="scss" scoped>
@@ -68,7 +72,6 @@ import line from "@/assets/img/line.png"
     .location {
       margin: 10px 0px;
     }
-
   }
   .social-media {
     color: #f5f4e9;
@@ -82,8 +85,7 @@ import line from "@/assets/img/line.png"
     }
     .section {
       display: inline-block;
-      margin: 10
-      px 5px;
+      margin: 10 px 5px;
     }
     .divider {
       width: 100%;

@@ -16,12 +16,35 @@
 
     <div class="divider"></div>
     <div class="product">
-      <div class="productwrapper">
-        <div class="section" v-for="product in productList" :key="product.id">
-          <img
-            :src="product.imageSrc"
-            alt=""
-          />
+      <div class="faceWrapper">
+        <div class="section" v-for="product in faceList" :key="product.id">
+          <img :src="product.imageSrc" alt="" />
+          <div class="producttitle">{{ product.title }}</div>
+          <div class="price">
+            <div class="currency">{{ currency }}</div>
+            <div class="number">{{ product.price }}</div>
+          </div>
+          <div class="cartwrapper">
+            <div class="cart">加入購物車</div>
+          </div>
+        </div>
+      </div>
+      <div class="bodyWrapper">
+        <div class="section" v-for="product in bodyList" :key="product.id">
+          <img :src="product.imageSrc" alt="" />
+          <div class="producttitle">{{ product.title }}</div>
+          <div class="price">
+            <div class="currency">{{ currency }}</div>
+            <div class="number">{{ product.price }}</div>
+          </div>
+          <div class="cartwrapper">
+            <div class="cart">加入購物車</div>
+          </div>
+        </div>
+      </div>
+      <div class="hairWrapper">
+        <div class="section" v-for="product in hairList" :key="product.id">
+          <img :src="product.imageSrc" alt="" />
           <div class="producttitle">{{ product.title }}</div>
           <div class="price">
             <div class="currency">{{ currency }}</div>
@@ -38,58 +61,159 @@
 
 <script setup>
 import { ref } from 'vue'
-let order = ref('default');
+let order = ref('default')
 let currency = ref('NT$')
-let productList = ref([
+let faceList = ref([
   {
-    title: '檜木身體潔膚露',
+    title: '明亮高效精華 30ml',
     price: 450,
     id: 1,
-    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
   },
   {
-    title: '玫瑰身體去角質露',
+    title: '透亮調理露 200ml',
     price: 960,
     id: 2,
-    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
   },
   {
-    title: '橙香身體乳霜',
+    title: '花植保濕乳霜 450ml',
     price: 780,
     id: 3,
-    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
   },
   {
-    title: '天竺葵潤體精油',
+    title: '深層清潔面膜 125ml',
     price: 590,
     id: 4,
-    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
   },
   {
-    title: '滋潤保濕香皂',
+    title: '保濕平衡露 150ml',
     price: 690,
     id: 5,
-    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
   },
   {
-    title: '苦橙甦活身體凝膠',
+    title: '花植保濕前導精華 150ml',
     price: 680,
     id: 6,
-    imageSrc: 'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  }
+])
+let bodyList = ref([
+  {
+    title: '純香沐浴乳 130ml',
+    price: 450,
+    id: 1,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  },
+  {
+    title: '純香美體潤膚乳 200ml',
+    price: 960,
+    id: 2,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  },
+  {
+    title: '迷迭薄荷美體乳液 450ml',
+    price: 1780,
+    id: 3,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  },
+  {
+    title: '純香護理精華油 50ml',
+    price: 590,
+    id: 4,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  },
+  {
+    title: '雙手撫紋夜間精華 45ml',
+    price: 690,
+    id: 5,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  },
+  {
+    title: '潤手霜 (純香) 40ml',
+    price: 680,
+    id: 6,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  }
+])
+let hairList = ref([
+  {
+    title: '明亮高效精華 30ml',
+    price: 450,
+    id: 1,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  },
+  {
+    title: '透亮調理露 200ml',
+    price: 960,
+    id: 2,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  },
+  {
+    title: '花植保濕乳霜 450ml',
+    price: 780,
+    id: 3,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  },
+  {
+    title: '深層清潔面膜 125ml',
+    price: 590,
+    id: 4,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  },
+  {
+    title: '保濕平衡露 150ml',
+    price: 690,
+    id: 5,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+  },
+  {
+    title: '花植保濕前導精華 150ml',
+    price: 680,
+    id: 6,
+    imageSrc:
+      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
   }
 ])
 
 function handleChange() {
   console.log('handleChange')
-  if(order.value === 'price'){
+  if (order.value === 'price') {
     console.log('handleChange price')
-    productList.value.sort(function(a, b) {
-       return a.price - b.price;
+    faceList.value.sort(function (a, b) {
+      return a.price - b.price
+    })
+  }
+  if (order.value === 'price') {
+    console.log('handleChange price')
+    bodyList.value.sort(function (a, b) {
+      return a.price - b.price
+    })
+  }
+  if (order.value === 'price') {
+    console.log('handleChange price')
+    hairList.value.sort(function (a, b) {
+      return a.price - b.price
     })
   }
 }
@@ -115,14 +239,11 @@ function handleChange() {
   .sequence {
     padding: 10px 20px;
   }
-  .drop-down {
-    //border: solid black 1px;
-    width: 100px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px 0px;
+
+  select {
+    font-size: 14px;
+    font-family: "Noto Serif TC", serif;
+    background-color: #F5F4E9;
   }
 }
 .divider {
@@ -131,22 +252,36 @@ function handleChange() {
 }
 
 .product {
-  display: flex;
-  justify-content: center;
-  .productwrapper {
+    width: 1000px;
+    margin: 0px auto;
+}
+  .faceWrapper {
     display: flex;
     justify-content: center;
     width: 1000px;
     height: 100vh;
     flex-wrap: wrap;
 }
+  .bodyWrapper {
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+  .hairWrapper {
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    height: 100vh;
+    flex-wrap: wrap;
 }
 
 .section {
   width: 300px;
   height: 300px;
   transition: all 0.5s;
-  padding: 5px 0px;
+  padding: 5px 5px;
   &:hover {
     background-color: $background-1;
     .producttitle {
