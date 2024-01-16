@@ -4,6 +4,7 @@ import ShopView from '../views/ShopView.vue';
 import AboutView from '../views/AboutView.vue';
 import ProductListView from '../views/ProductListView.vue';
 import ContactUsView from '../views/ContactUsView.vue';
+import InsidepagesView from '../views/InsidepagesView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: ContactUsView
+    },
+    {
+      path: '/insidepagesView',
+      name: 'insidepagesView',
+      component: InsidepagesView
     },
   ]
 })
