@@ -2,14 +2,18 @@
   <div class="container">
     <div class="productWrapper">
       <div class="productPic">
-        <img src="" alt="" />
+        <img
+          src="https://www.aesop.com/u1nb1km7t5q7/4wpkIvddEPUq5lHYGigqbr/cdb111906ebb82b06080f7d7662daaad/Aesop_Hair_Shampoo_100mL_Web_Front_X-Large_3000x3456px.png"
+          alt=""
+        />
       </div>
       <div class="productInfo">
         <div class="name">苦橙香檸身體潔膚露</div>
         <div class="directions">
           這款性質溫和的低泡沫潔膚凝露含有多種淨化肌膚的植物萃取物，可清潔肌膚，散發充滿活力的柑橘芳香。
         </div>
-        <div class="capacity">容量
+        <div class="capacity">
+          容量
           <input type="radio" id="contactChoice1" name="contact" value="100ml" />
           <label for="contactChoice1">100ml</label>
           <input type="radio" id="contactChoice2" name="contact" value="500ml" />
@@ -17,7 +21,7 @@
         </div>
         <div class="carshop">添加至購物車</div>
         <div class="button">
-          <img src="http://www.w3.org/2000/svg" alt="">
+          <img src="http://www.w3.org/2000/svg" alt="" />
           <button>♡加入願望清單</button>
         </div>
         <div class="divider"></div>
@@ -79,22 +83,23 @@
       </div>
     </div>
     <div class="swiper-container">
-          <Swiper
-            :slidesPerView="2"
-            :spaceBetween="0"
-            :loop="false"
-            :centeredSlides="true"
-            :pagination="pagination"
-            :autoplay="{ delay: 2000, disableOnInteraction: false }"
-            :navigation="true"
-            :modules="modules"
-            @swiper="onSwiper"
-          >
-            <SwiperSlide v-for="(item, index) in swiperList" :key="index"
-              ><img :src="item.src"
-            /></SwiperSlide>
-          </Swiper>
-        </div>
+      <Swiper
+        :slidesPerView="4"
+        :spaceBetween="0"
+        :loop="true"
+        :centeredSlides="true"
+        :pagination="pagination"
+        :autoplay="{ delay: 2000, disableOnInteraction: false }"
+        :navigation="true"
+        :modules="modules"
+        @swiper="onSwiper"
+      >
+        <SwiperSlide v-for="(item, index) in swiperList" :key="index"
+          ><img :src="item.src"
+        /></SwiperSlide>
+        <button @click="handleClick">click</button>
+      </Swiper>
+    </div>
   </div>
 </template>
 
@@ -107,18 +112,16 @@ import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
 const handleClick = () => {
-
-  swiperEl.slideNext();
-
+  swiperEl.slideNext()
 }
-let swiperEl = null;
+let swiperEl = null
 function onSwiper(swiper) {
   swiperEl = swiper
 }
 const pagination = {
   clickable: true,
   renderBullet: function (index, className) {
-    console.log(className,'className')
+    console.log(className, 'className')
     return `<div class="nav-item" > </item>`
   }
 }
@@ -136,23 +139,49 @@ const swiperList = [
   {
     src: 'https://www.aesop.com/u1nb1km7t5q7/2IHPWR79G0XhnFcc1bmhSd/e4c871edf6ce31a10d22bd98b49cf9b4/Aesop_Home_Olous_Aromatique_Room_Spray_100mL_Web_Back_X-Large_3000x3456px.png'
   },
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png'
+  },
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/1GTKJ1EvgHnUwNZyLskxJE/fa49e741617a4ac24c5ccddbcfe4a5b4/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Front_Large_900x916px.png'
+  },
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
+  },
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/47vTlo7LEvs0jKwRjhgCxW/0af092fee3c9670b7bdfcf38a2339583/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Back_X-Large_3000x3054px.png'
+  },
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png'
+  },
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/2IHPWR79G0XhnFcc1bmhSd/e4c871edf6ce31a10d22bd98b49cf9b4/Aesop_Home_Olous_Aromatique_Room_Spray_100mL_Web_Back_X-Large_3000x3456px.png'
+  },
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png'
+  },
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/1GTKJ1EvgHnUwNZyLskxJE/fa49e741617a4ac24c5ccddbcfe4a5b4/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Front_Large_900x916px.png'
+  }
 ]
 </script>
 
 <style lang="scss" scoped>
 .container {
-  background-color: #FFFEF2;
+  background-color: #fffef2;
   width: auto;
   .productWrapper {
     display: flex;
     width: auto;
     .productPic {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
+      img {
+        width: 500px;
+        margin-left: 750px;
+        padding: 100px;
+      }
     }
     .productInfo {
-      width: 500px;
+      width: 25%;
       margin-left: auto;
       margin-right: 150px;
       .name {
@@ -170,9 +199,9 @@ const swiperList = [
         padding: 10px 0px;
         font-size: 18px;
         input {
-        margin: 10px 0px 20px 0px;
-        padding-right: 20px;
-      }
+          margin: 10px 0px 20px 0px;
+          padding-right: 20px;
+        }
       }
       .carshop {
         border-color: #333;
@@ -187,7 +216,7 @@ const swiperList = [
         font-size: 18px;
         border: none;
         margin: 20px 0px;
-        background-color: #F5F4E9;
+        background-color: #f5f4e9;
         cursor: pointer;
         transition: box-shadow 0.5s ease;
       }
@@ -202,7 +231,7 @@ const swiperList = [
           padding: 14px 0px;
         }
         .info {
-          color: #6C6C6C;
+          color: #6c6c6c;
           font-size: 18px;
           border-bottom: 1px solid #d5d4c9;
           padding-bottom: 14px;
@@ -232,7 +261,7 @@ const swiperList = [
       }
       p {
         font-size: 20px;
-        color: #6C6C6C;
+        color: #6c6c6c;
       }
     }
   }
@@ -241,7 +270,7 @@ const swiperList = [
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    background-color: #F5F4E9;
+    background-color: #f5f4e9;
     .productPic {
       width: 100%;
       height: 100%;
@@ -250,6 +279,7 @@ const swiperList = [
       margin-right: auto;
     }
     .way {
+      width: 50%;
       margin: auto;
       padding: 150px 0px;
 
@@ -270,7 +300,7 @@ const swiperList = [
       }
       .info {
         font-size: 18px;
-        color: #6C6C6C;
+        color: #6c6c6c;
       }
       .divider {
         border: 1px solid #d5d4c9;
@@ -280,18 +310,18 @@ const swiperList = [
     }
   }
   .swiper-container {
-  height: 500px;
-  padding: 50px 0;
-  img {
-    width: 450px;
     height: 500px;
+    padding: 50px 0;
+    img {
+      width: 450px;
+      height: 500px;
+    }
+    .nav-item {
+      background: red;
+    }
+    :deep(.swiper-button-next) {
+      color: black;
+    }
   }
-  .nav-item {
-    background:red;
-  }
-  :deep(.swiper-button-next) {
-    color: black;
-  }
-}
 }
 </style>
