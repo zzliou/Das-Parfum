@@ -1,58 +1,42 @@
 <template>
-  <div class="product-list">
-    <div class="main-title">
-      <h1>商品列表</h1>
-      <div class="title">
-        <div class="sequence">排序</div>
-        <div class="drop-down">
-          <select v-model="order" @change="handleChange">
-            <option value="default">系統推薦</option>
-            <option value="price">價格</option>
-            <option value="popularity">熱門度</option>
-          </select>
-        </div>
+  <div class="container">
+    <div class="icon">
+      <div class="icon">
+        <svg aria-labelledby="aesop-92" class="Icon_base__GKZ58 Icon_light__1TZsq Logo_icon__NDEf8"
+          data-testid="data-testid-Icon" focusable="false" height="40" role="img" tabindex="-1" viewBox="0 0 489.7 154.3"
+          width="120" style="height: 40px; width: 120px">
+          <title aria-label="Aesop 商標" id="aesop-92">Aesop</title>
+        </svg>
       </div>
     </div>
-
-    <div class="divider"></div>
-    <div class="product">
-      <div class="faceWrapper">
-        <div class="section" v-for="product in faceList" :key="product.id">
-          <img :src="product.imageSrc" alt="" />
-          <div class="producttitle">{{ product.title }}</div>
-          <div class="price">
-            <div class="currency">{{ currency }}</div>
-            <div class="number">{{ product.price }}</div>
-          </div>
-          <div class="cartwrapper">
-            <div class="cart">加入購物車</div>
-          </div>
+    <div class="navbar">
+      <div class="productsCategories">
+        <p>全部商品</p>
+        <p>髮品</p>
+        <p>身體乳</p>
+        <p>組合</p>
+      </div>
+      <div class="choose">
+        <p>篩選</p>
+      </div>
+    </div>
+    <div class="productWapper">
+      <div class="introduce">
+        <div class="maintitle">
+          一年四季提供肌膚潔淨及柔滑的感受
+        </div>
+        <div class="description">
+          身體潔膚露、保濕產品和調理精油皆蘊含具滋潤作用的草本植物成分，讓肌膚在任何季節皆能保持潔淨柔滑。
         </div>
       </div>
-      <div class="bodyWrapper">
-        <div class="section" v-for="product in bodyList" :key="product.id">
-          <img :src="product.imageSrc" alt="" />
-          <div class="producttitle">{{ product.title }}</div>
-          <div class="price">
-            <div class="currency">{{ currency }}</div>
-            <div class="number">{{ product.price }}</div>
-          </div>
-          <div class="cartwrapper">
-            <div class="cart">加入購物車</div>
-          </div>
-        </div>
-      </div>
-      <div class="hairWrapper">
-        <div class="section" v-for="product in hairList" :key="product.id">
-          <img :src="product.imageSrc" alt="" />
-          <div class="producttitle">{{ product.title }}</div>
-          <div class="price">
-            <div class="currency">{{ currency }}</div>
-            <div class="number">{{ product.price }}</div>
-          </div>
-          <div class="cartwrapper">
-            <div class="cart">加入購物車</div>
-          </div>
+      <div class="section" v-for="product in productList" :key="product.id">
+        
+        <div class="productPic"> <img :src="product.pic" alt=""></div>
+        <div class="productitle">{{ product.title }}</div>
+        <div class="subtitle">{{ product.subtitle }}</div>
+        <div class="info">
+          <div class="size">{{ size }}</div>
+          <div class="price">{{ product.price }}</div>
         </div>
       </div>
     </div>
@@ -61,280 +45,254 @@
 
 <script setup>
 import { ref } from 'vue'
-let order = ref('default')
-let currency = ref('NT$')
-let faceList = ref([
+let size = ref('容量')
+let price = ref('價格')
+let productList = ref([
   {
-    title: '明亮高效精華 30ml',
-    price: 450,
-    id: 1,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 1
   },
   {
-    title: '透亮調理露 200ml',
-    price: 960,
-    id: 2,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 2
   },
   {
-    title: '花植保濕乳霜 450ml',
-    price: 780,
-    id: 3,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 3
   },
   {
-    title: '深層清潔面膜 125ml',
-    price: 590,
-    id: 4,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 4
   },
   {
-    title: '保濕平衡露 150ml',
-    price: 690,
-    id: 5,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 5
   },
   {
-    title: '花植保濕前導精華 150ml',
-    price: 680,
-    id: 6,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  }
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 6
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 7
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 8
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 9
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 10
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 11
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 12
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 13
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 14
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 15
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 16
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 17
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 18
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 19
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/5C0r8KKZI06p7iw6wPCAT/7be3bbe1d1a67f75d5cbd08c57b75302/Aesop_Body_A_Rose_By_Any_Other_Name_Body_Cleanser_100mL_Web_Back_Medium_800x922px.png',
+    title: '苦橙香檸身體潔膚露',
+    subtitle: '柑橘、木質、草本芳香',
+    size: '容量',
+    price: 'NT$500起',
+    id: 20
+  },
 ])
-let bodyList = ref([
-  {
-    title: '純香沐浴乳 130ml',
-    price: 450,
-    id: 1,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  },
-  {
-    title: '純香美體潤膚乳 200ml',
-    price: 960,
-    id: 2,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  },
-  {
-    title: '迷迭薄荷美體乳液 450ml',
-    price: 1780,
-    id: 3,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  },
-  {
-    title: '純香護理精華油 50ml',
-    price: 590,
-    id: 4,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  },
-  {
-    title: '雙手撫紋夜間精華 45ml',
-    price: 690,
-    id: 5,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  },
-  {
-    title: '潤手霜 (純香) 40ml',
-    price: 680,
-    id: 6,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  }
-])
-let hairList = ref([
-  {
-    title: '明亮高效精華 30ml',
-    price: 450,
-    id: 1,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  },
-  {
-    title: '透亮調理露 200ml',
-    price: 960,
-    id: 2,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  },
-  {
-    title: '花植保濕乳霜 450ml',
-    price: 780,
-    id: 3,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  },
-  {
-    title: '深層清潔面膜 125ml',
-    price: 590,
-    id: 4,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  },
-  {
-    title: '保濕平衡露 150ml',
-    price: 690,
-    id: 5,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  },
-  {
-    title: '花植保濕前導精華 150ml',
-    price: 680,
-    id: 6,
-    imageSrc:
-      'https://www.canmeng.com.tw/media/catalog/product/cache/fd89ce58ead809c2227aedfad753583d/0/1/01_akck01_1.png'
-  }
-])
-
-function handleChange() {
-  console.log('handleChange')
-  if (order.value === 'price') {
-    console.log('handleChange price')
-    faceList.value.sort(function (a, b) {
-      return a.price - b.price
-    })
-  }
-  if (order.value === 'price') {
-    console.log('handleChange price')
-    bodyList.value.sort(function (a, b) {
-      return a.price - b.price
-    })
-  }
-  if (order.value === 'price') {
-    console.log('handleChange price')
-    hairList.value.sort(function (a, b) {
-      return a.price - b.price
-    })
-  }
-}
 </script>
 
-<style lang="scss" scoped>
-.main-title {
-  display: flex;
-  margin-left: 50px;
-}
+<style lang="scss" scoped> 
+.container {
+   background-color: #FFFEF2;
+   .icon {
+     margin: 50px auto 50px 50px;
+   }
 
+   .navbar {
+     display: flex;
+     background-color: #ebeade;
 
-.product-list {
-  background-color: #fffef2;
-  width: 100%;
-}
-.title {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  justify-content: flex-end;
-  margin-left: auto;
-  .sequence {
-    padding: 10px 20px;
-  }
+     .productsCategories {
+       display: flex;
+       color: #7f7f7d;
+       padding: 20px 0px 20px 100px;
 
-  select {
-    font-size: 14px;
-    font-family: "Noto Serif TC", serif;
-    background-color: #F5F4E9;
-  }
-}
-.divider {
-  width: 100%;
-  border-bottom: #d5d4c9 solid 1px;
-}
+       p {
+         padding: 0px 10px;
+       }
+     }
 
-.product {
-    width: 1000px;
-    margin: 0px auto;
-}
-  .faceWrapper {
+     .choose {
+       margin-left: auto;
+       margin-right: 50px;
+       border: 1px solid #bfbfb5;
+       color: #7f7f7d;
+       padding: 20px 0px 20px 100px;
+     }
+   }
+  .productWapper {
     display: flex;
-    justify-content: center;
-    width: 1000px;
-    height: 100vh;
+    justify-content: space-around;
     flex-wrap: wrap;
-}
-  .bodyWrapper {
-    display: flex;
-    justify-content: center;
-    width: 1000px;
-    height: 100vh;
-    flex-wrap: wrap;
-}
-  .hairWrapper {
-    display: flex;
-    justify-content: center;
-    width: 1000px;
-    height: 100vh;
-    flex-wrap: wrap;
-}
-
-.section {
-  width: 300px;
-  height: 300px;
-  transition: all 0.5s;
-  padding: 5px 5px;
-  &:hover {
-    background-color: $background-1;
-    .producttitle {
-      background-color: $background-1;
+    .introduce {
+      width: 400px;
+      margin-top: 100px;
+      margin-left: 100px;
+      .maintitle {
+        font-size: 24px;
+        padding: 30px 0px;
+      }
+      .description {
+        font-size: 18px;
+        line-height: 2;
+      }
     }
-    .price {
-      background-color: $background-1;
-    }
-    .cartwrapper {
-      background-color: $background-1;
-    }
-    .cart {
-      border: #252525 solid 1px;
-      width: 300px;
+    .section {
+      width: 400px;
       text-align: center;
-      padding: 10px 0px;
-      background-color: #252525;
-      color: white;
-      opacity: 1;
-    }
-  }
+      .productPic {
+        img {
+          width: 400px;
+          height: 400px;
+          object-fit: contain;
+          background-color: #f5f4e9;
+          padding: 50px;
+        }
+      }
+      .productitle {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 50px;
+      }
+      .subtitle {
+        font-size:14px;
+        color:#7f7f7d;
+        margin-bottom: 50px;
+      }
+      .info {
+        width: 400px;
+        height: 200px;
+        color:#7f7f7d;
+        font-size: 14px;
+        display: flex;
+        text-align: center;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: none;
-  }
-  .producttitle {
-    border-top: solid 1px #252525;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 10px 0px;
-    transition: all 0.5s;
-  }
-  .price {
-    display: flex;
-    color: #ae9675;
-    font-size: 16px;
-    padding: 10px 0px;
-    transition: all 0.5s;
-  }
-  .cartwrapper {
-    transition: all 0.5s;
-  }
-  .cart {
-    border: #252525 solid 1px;
-    width: 100px;
-    text-align: center;
-    padding: 10px 0px;
-    background-color: #252525;
-    color: white;
-    opacity: 0;
-    transition: all 0.5s;
-  }
+        .size {
+          margin-right: 10px;
+        }
+      }
+
+    }
+ }
 }
 </style>
