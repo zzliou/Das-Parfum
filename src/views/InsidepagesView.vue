@@ -124,7 +124,7 @@ const pagination = {
     console.log(className, 'className')
     return `<div class="nav-item" > </item>`
   }
-}
+}      
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
 const swiperList = [
   {
