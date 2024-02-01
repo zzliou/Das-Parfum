@@ -3,144 +3,128 @@
 <template>
   <div class="content">
     <div class="container">
-      <div class="section">
-        <div class="carousel">
-          <div class="icon">
-            <svg
-              aria-labelledby="aesop-92"
-              class="Icon_base__GKZ58 Icon_light__1TZsq Logo_icon__NDEf8"
-              data-testid="data-testid-Icon"
-              focusable="false"
-              height="40"
-              role="img"
-              tabindex="-1"
-              viewBox="0 0 489.7 154.3"
-              width="120"
-              style="height: 40px; width: 120px"
-            >
-              <title aria-label="Aesop 商標" id="aesop-92">Aesop</title>
-              <g>
-                <path
-                  d="M48.6,22.5L31.8,62.2h34.2L48.6,22.5z M28.6,70.3c-3.2,7.4-9.6,21.7-14.9,42c-1.9-0.3-3.5-0.9-6.6-0.9c-3.1,0-5,0.6-7.1,0.9C14.3,81.2,38,28.9,49.4,0c1.3,0.2,2.3,0.5,4,0.5c1.4,0,2.3-0.2,3.5-0.5c12.3,33.7,47.8,111.7,48.1,112.3c-2.7-0.5-5.5-0.9-9.5-0.9c-4.2,0-7.2,0.5-10.3,0.9c-5.6-19.2-12.2-33.2-16.2-42H28.6z"
-                ></path>
-                <path
-                  d="M172.4,66.6c0-5.3,0-26.6-19.2-26.6c-14,0-20.7,10.6-22.2,26.6H172.4z M130.9,73.3c0,4.5,0,13.6,4.3,21c7.4,12.1,17.8,12.5,22.5,12.5c15.7,0,23.1-9.6,25.5-13l1.9,0.4c-1,4.5-1,7.1-1.1,9.6c-7.1,6.7-16.8,10.5-29.8,10.5c-24.4,0-39.3-15.4-39.3-40.1c0-22.1,12.2-40.7,38.5-40.7c35.8,0,35.3,31.1,35.1,39.8H130.9z"
-                ></path>
-                <path
-                  d="M249.6,52.1c-0.6-2.4-1.6-6.4-6.2-9.6c-3.4-2.4-7.8-2.7-10.4-2.7c-9.8,0-14.9,5.1-14.9,12c0,9.3,9.5,12.7,15.1,14.1c14.3,3.7,25.8,6.7,25.8,22.8c0,12.2-8.5,25.8-30.8,25.8c-13,0-22-5.5-23.7-6.7c2.1-3.9,3.4-10.7,3.7-12.8l1.9-0.5c1.1,2.7,2.7,7.1,8.7,10.6c4,2.4,8.2,3,11.7,3c8.4,0,16.2-4,16.2-13.2c0-9.1-5.5-10.9-22.3-16.4c-6.9-2.3-18.3-7.2-18.3-21.3c0-9.1,5.6-23.9,27.8-23.9c11.1,0,17.5,3.4,21.2,5.3c-1.6,4.2-2.7,8-3.2,13.5H249.6z"
-                ></path>
-                <path
-                  d="M291.5,73.5c0,22.3,9.8,34.6,24.5,34.6c15.4,0,25.5-13.3,25.5-34.5c0-12.5-3.9-33.8-24.7-33.8C291.5,39.8,291.5,68.6,291.5,73.5 M357.9,73c0,25.5-17.6,41.5-42,41.5c-17,0-40.8-7.7-40.8-40.6c0-25,16.7-40.6,40.8-40.6 C346.3,33.4,357.9,53.4,357.9,73"
-                ></path>
-                <path
-                  d="M399.4,49.6c-3.2,4-6.6,9.8-6.6,25.7c0,14.1,3.2,19.4,6.6,23.4c4.1,5,9.6,7.9,17,7.9 c22.9,0,22.9-27.1,22.9-32.3c0-24.2-11.6-33-22-33C408.7,41.2,403.1,44.9,399.4,49.6 M419.3,114.7c-15.1,0-23.6-8.3-26.2-14.9 c0,25.2-0.2,39.8,0.8,54.5c-2.4-0.6-4.5-0.9-8.4-0.9c-4,0-6.1,0.3-8.6,0.9c1.3-20.8,1.8-41.9,1.8-62.7c0-14.6-0.3-34.3-0.8-57.6 c2.2,0.5,4.8,0.9,7.9,0.9c2.9,0,5.6-0.5,7.9-0.9c-0.6,8.8-0.6,11.2-0.6,14.6c2.6-4.2,9.5-15.4,27.3-15.4c16,0,35.6,11.7,35.6,40.3 C455.9,98.8,440.3,114.7,419.3,114.7"
-                ></path>
-                <rect x="131.8" y="13.5" width="44.3" height="5"></rect>
-                <path
-                  d="M477.2,98.1c0,1.6,0,3,0,4.4c1.3,0,4.3,0,4.3-2.3C481.5,98.1,479.2,98.1,477.2,98.1 M484.9,109.1 c-0.4,0-0.7-0.1-1.2-0.1c-0.4,0-0.8,0.1-1.5,0.1c-2-2.9-3.6-4.5-4.7-5.8h-0.4c0,1.8,0,3.2,0.2,5.8c-0.5,0-0.7-0.1-1.3-0.1 c-0.6,0-0.8,0.1-1.1,0.1c0.1-1.3,0.2-2.7,0.2-6.2c0-3-0.1-4.4-0.1-5.7c0.9,0,1.5,0,2.9,0c2.9,0,5.9,0,5.9,2.8c0,2.5-2.7,2.9-3.9,3 c0.8,1.1,4.4,5.1,5.1,5.9L484.9,109.1z M479.2,94.8c-4.8,0-8.5,3.8-8.5,8.6c0,4.9,3.6,8.6,8.5,8.6c4.9,0,8.5-3.7,8.5-8.6 C487.8,98.7,484.3,94.8,479.2,94.8 M479.2,92.9c5.9,0,10.5,4.7,10.5,10.5c0,5.9-4.7,10.5-10.5,10.5c-5.8,0-10.5-4.6-10.5-10.5 C468.8,97.5,473.5,92.9,479.2,92.9"
-                ></path>
-              </g>
-            </svg>
+      <div class="homeVueWapper">
+        <div class="swiper-container-first">
+          <Swiper
+            :slidesPerView="4"
+            :spaceBetween="30"
+            :loop="false"
+            :centeredSlides="true"
+            :pagination="pagination"
+            :navigation="true"
+            :modules="modules"
+            @swiper="onSwiperFirst"
+          >
+            <SwiperSlide>
+              <div class="article">
+                <h2>針對多重肌膚問題的高效滋養</h2>
+                <p>
+                  探索 Aesop
+                  專為成熟肌膚及都市居民精心研發的保養配方，在日常保濕之外，為肌膚注入有益的強效維生素及抗氧化成分所帶來的額外益處。
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide v-for="(item, index) in swiperListFirst" :key="index">
+              <div class="famousProductsWrapper">
+                <img :src="item.src" />
+                <div class="productitle">{{ item.title }}</div>
+                <div class="subtitle">{{ item.subtitle }}</div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div class="perfumeWapper">
+          <div class="perfumeImage">
+            <img
+              src="https://www.aesop.com/u1nb1km7t5q7/eyd7TwhtFoPcMMtmiYUYV/fcba6f1a9329b7cd9721e9b2c04feb71/Aesop_A_Guide_to_Fragrance_Web_Athenaeum_Thumbnail_Horizontal_Desktop_1920x1080px.jpg"
+              alt=""
+            />
           </div>
-          <div class="guide">
-            <div class="title">為重要的人精心準備禮物</div>
-            <div class="directions">
-              為慶祝年末佳節期間，禮物訂單將會以期間限定的設計紙套包裝出貨──適合直接寄送給您的送禮對象。請於結帳步驟勾選「這是一個禮品訂單」，我們將為您進行禮物包裝。
+          <div class="perfumeInformation">
+            <div class="title">熟悉香調，加倍享受</div>
+            <div class="subtitle">
+              我們突破傳統框架的三款迷人香水──悟香水、熾香水及馬拉喀什馥郁香水──除了原有的 50 mL
+              版本外，現在正式推出 100mL 大容量版本，僅在 Aesop.com
+              官網上販售，適合長期使用Aesop經典香水系列的忠實愛好者。
+            </div>
+            <AppButton :title="'立即探索'" class="perfume-button"></AppButton>
+          </div>
+        </div>
+        <div class="giftWapper">
+          <div class="giftInformation">
+            <div class="title">驚喜禮物</div>
+            <div class="subtitle">
+              如果您希望展現自己慷慨餽贈的精神、計劃慶祝重要的日子，或是想要挑選禮物但又缺乏靈感，不妨讓我們助您一臂之力。我們的禮物指南介紹了適合送給各類人士的多款產品。
             </div>
           </div>
-          <div class="main-image">
+          <div class="giftImage">
             <img
-              src="https://www.aesop.com/u1nb1km7t5q7/O9mKO0Cl8DsnKaNigAAcD/63c7064dbf08ccc66425e5ec537d300d/Aesop_Gift_Kits_2023-24_Web_Homepage_2_Primary_50-50_Desktop_1440x1500px.jpg"
+              src="https://www.aesop.com/u1nb1km7t5q7/48k8JdNdBnmThuOKurg7b6/8cae4c48f017061e3bda5e80048f8e12/Aesop_Always_On_Homepage_Secondary_Favourites_Mid_Desktop_2560x1440px.jpg"
               alt=""
             />
           </div>
         </div>
-        <div class="Information">
-          <div class="main-image">
+        <div class="videoServiceWapper">
+          <div class="videoServiceImage">
             <img
-              src="https://www.aesop.com/u1nb1km7t5q7/WnOqaGRSgehzaz9TGVsEM/0b1913338c7450133004c6bad6180ce4/Aesop_Gift_Kits_2023-24_Web_Homepage_Secondary_Gifting_Body_and_Hand_Care_Mid_Desktop_2560x1440px.jpg"
+              src="https://www.aesop.com/u1nb1km7t5q7/7DCS7sJtFqK0r4KfGJA3j5/49c30385a5de31b6158b317bfffa0b54/Aesop_Gift_Kits_2022-23_Homepage_Secondary_Assistance_Desktop_2560x1440px.jpg"
               alt=""
             />
           </div>
-          <div class="guide">
-            <div class="title">呵護全身每一寸肌膚</div>
-            <div class="directions">
-              無論是沐浴時刻或是洗手台旁，我們提供一系列能為身體注入活力的潔膚露、保濕乳霜，讓您以迷人香氣配方，為送禮對象創造恆久的美好印象。
+          <div class="videoServiceInformation">
+            <div class="title">在舒適家中享有專屬諮詢</div>
+            <div class="subtitle">
+              為了幫助您選擇合適的禮物，我們歡迎您與我們經驗豐富的專業顧問一起進行「線上視訊諮詢」。
             </div>
           </div>
         </div>
-        <div class="product">
-          <div class="picwrapper">
-            <div class="picture">
-              <img
-                src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png"
-                alt=""
-              />
-            </div>
-            <div class="picture">
-              <img
-                src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png"
-                alt=""
-              />
-            </div>
-            <div class="picture">
-              <img
-                src="https://www.aesop.com/u1nb1km7t5q7/1em7JDEQYeUdvnPwPYjs4h/1b9bfce7e8dee5bbaefb39caec7132ed/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Front_Large_900x878px.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="info">
-          <div class="textwrapper">
-            <div class="title">覆香水</div>
-            <div class="directions">煙燻、木質、森林</div>
-            <div class="price">NT$3958</div>
-            <div class="cart">加入購物車</div>
-          </div>
-          <div class="textwrapper">
-            <div class="title">覆香水</div>
-            <div class="directions">煙燻、木質、森林</div>
-            <div class="price">NT$3958</div>
-            <div class="cart">加入購物車</div>
-          </div>
-          <div class="textwrapper">
-            <div class="title">覆香水</div>
-            <div class="directions">煙燻、木質、森林</div>
-            <div class="price">NT$3958</div>
-            <div class="cart">加入購物車</div>
-          </div>
-        </div>
-        <div class="shop">
-          <div class="loctioninfo">
-            <h1>尋找店鋪</h1>
-            <p>每間門店皆有專業美容顧問,並針對您的送禮需求提供量身定制的建議,期待與您相見。</p>
-          </div>
-          <div class="shopimage">
-            <img
-              src="https://www.aesop.com/u1nb1km7t5q7/2uA7D8evvW2FSEW1k4NHGR/acd87fe6e61d4d0a9697558018c5f815/Aesop_Diamond_Tower_Mid_Desktop_2560x1440px.jpg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="swiper-container">
+        <div class="swiper-container-second">
           <Swiper
             :slidesPerView="4"
             :spaceBetween="0"
             :loop="true"
             :centeredSlides="true"
             :pagination="pagination"
-            :autoplay="{ delay: 2000, disableOnInteraction: false }"
+            :autoplay="{ delay: 4000, disableOnInteraction: false }"
             :navigation="true"
             :modules="modules"
-            @swiper="onSwiper"
+            @swiper="onSwiperSecond"
           >
-            <SwiperSlide v-for="(item, index) in swiperList" :key="index"
-              ><img :src="item.src"
-            /></SwiperSlide>
-            <button @click="handleClick">click</button>
-
+            <SwiperSlide v-for="(item, index) in swiperListSecond" :key="index">
+              <div class="giftSetWrapper">
+                <img :src="item.src" />
+                <div class="productitle">{{ item.title }}</div>
+                <div class="subtitle">{{ item.subtitle }}</div>
+              </div>
+            </SwiperSlide>
+            <button @click="handleClick(swiperSecond)">click</button>
           </Swiper>
+        </div>
+        <div class="shop">
+          <div class="loctioninfo">
+            <div class="shoptitle">尋找店鋪</div>
+            <div class="subtitle">
+              每間門店皆有專業美容顧問,並針對您的送禮需求提供量身定制的建議,期待與您相見。
+            </div>
+          </div>
+          <div class="swiper-container-third">
+              <Swiper
+                :slidesPerView="1"
+                :loop="true"
+                :centeredSlides="true"
+                :pagination="pagination"
+                :autoplay="{ delay: 4000, disableOnInteraction: true }"
+                :navigation="true"
+                :modules="modules"
+                @swiper="onSwiperThird"
+              >
+                <SwiperSlide v-for="(item, index) in swiperListThird" :key="index">
+                  <div class="shopimage">
+                    <img :src="item.src" />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+          </div>
         </div>
         <div class="divider"></div>
         <div class="eco">
@@ -172,6 +156,8 @@
 </template>
 
 <script setup>
+import AppButton from '@/components/AppButton.vue'
+import { ref } from 'vue'
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue' // swiper 所需组件
 import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
 // import 'swiper/swiper-bundle.css'
@@ -179,274 +165,283 @@ import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
-const handleClick = () => {
-
-  swiperEl.slideNext();
-
+let swiperFirst = null
+let swiperSecond = null
+let swiperThird = null
+function handleClick(swiper) {
+  swiper.slideNext()
 }
-let swiperEl = null;
-function onSwiper(swiper) {
-  swiperEl = swiper
+function onSwiperFirst(swiper) {
+  swiperFirst = swiper
 }
+function onSwiperSecond(swiper) {
+  swiperSecond = swiper
+}
+function onSwiperThird(swiper) {
+  swiperThird = swiper
+}
+
 const pagination = {
   clickable: true,
   renderBullet: function (index, className) {
-    console.log(className,'className')
+    console.log(className, 'className')
     return `<div class="nav-item" > </item>`
   }
 }
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
-const swiperList = [
+const swiperListFirst = ref([
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
+    title: '芫荽籽身體潔膚露',
+    subtitle: '溫暖木質辛香',
+    src: 'https://www.aesop.com/u1nb1km7t5q7/nWdJmaoekK7lzZDGZs6Ap/b47f80e978322c2faf73a5ebb46ad8aa/Aesop_Skin_B_Triple_C_Facial_Balancing_Gel_60mL_Web_Front_X-Large_3000x1592px.png'
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/47vTlo7LEvs0jKwRjhgCxW/0af092fee3c9670b7bdfcf38a2339583/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Back_X-Large_3000x3054px.png'
+    title: '橙香面部精華素',
+    subtitle: '維他命Ｃ打底精華',
+    src: 'https://images.ctfassets.net/u1nb1km7t5q7/3QfGNj3NpYM5h3zLpQHWK0/6ac142e435309dc51f2dc2e477b54a95/Aesop_Skin_Lucent_Facial_Concentrate_60mL_Web_Large_684x668px.png'
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png'
+    title: '日夜滋養組合',
+    subtitle: '極致保濕配方',
+    src: 'https://www.aesop.com/u1nb1km7t5q7/1zYCq18LTHPQXRvgPxa5Dk/e87362a73e523f6c3640e82c5c50781b/Aesop_Bundle_Replenishing_Hydration_for_Day_and_Night_Hybris_Large_960x1090px.png'
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2IHPWR79G0XhnFcc1bmhSd/e4c871edf6ce31a10d22bd98b49cf9b4/Aesop_Home_Olous_Aromatique_Room_Spray_100mL_Web_Back_X-Large_3000x3456px.png'
+    title: '大馬仕玫瑰保養精華',
+    subtitle: '植物萃取天然成分',
+    src: 'https://www.aesop.com/u1nb1km7t5q7/53Q5a81QFoAlk9fqyzPRWi/ff703aa4abdc6d0fa3479da1347a19a7/Aesop_Skin_Damascan_Rose_Facial_Treatment_25mL_Web_Large_684x668px.png'
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/1GTKJ1EvgHnUwNZyLskxJE/fa49e741617a4ac24c5ccddbcfe4a5b4/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Front_Large_900x916px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/47vTlo7LEvs0jKwRjhgCxW/0af092fee3c9670b7bdfcf38a2339583/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Back_X-Large_3000x3054px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2IHPWR79G0XhnFcc1bmhSd/e4c871edf6ce31a10d22bd98b49cf9b4/Aesop_Home_Olous_Aromatique_Room_Spray_100mL_Web_Back_X-Large_3000x3456px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/1GTKJ1EvgHnUwNZyLskxJE/fa49e741617a4ac24c5ccddbcfe4a5b4/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Front_Large_900x916px.png'
+    title: '健康滋養面霜',
+    subtitle: '超導保濕成分',
+    src: 'https://www.aesop.com/u1nb1km7t5q7/33fUTrlYirQGFxV0GhVtqB/2d7727056645bf037eb133a030fd1d27/Aesop_Skin_Perfect_Facial_Hydrating_Cream_60mL_Web_Large_901x478px.png'
   }
-]
+])
+const swiperListSecond = ref([
+  {
+    title: '諧美聲部',
+    subtitle: '護手霜、清潔露、乾洗手',
+    src: 'https://www.aesop.com/u1nb1km7t5q7/6y2ZMOukY9ToPR0CFnGWjU/e48c2d8f08bb4208f2eadf736f6ba123/Aesop_Kits_Gift_Kits_2023-24_Tuneful_Textures_GL_Web_Front_Large_1500x911px.png'
+  },
+  {
+    title: '寓言曲調',
+    subtitle: '護手霜、潔膚露、護唇膏',
+    src: 'https://www.aesop.com/u1nb1km7t5q7/XkDJAABVq29aLgqi0Wpxn/73d05853da1a2a1fdeef4b1433086e51/Aesop_Kits_Gift_Kits_2023-24_Fabulous_Forms_GL_Web_Front_Large_1500x911px.png'
+  },
+  {
+    title: '慷慨節奏',
+    subtitle: '天竺葵身體潔膚露、去角質露、身體乳霜',
+    src: 'https://www.aesop.com/u1nb1km7t5q7/2TDHu0T0jvbsUoQcH8prqN/a3a5d66800a71d743167b4db6a247525/Aesop_Kits_Gift_Kits_2023-24_Rousing_Rythyms_GL_Web_Front_X-Large_3000x1822px.png'
+  },
+  {
+    title: '心旋和聲',
+    subtitle: '手部清潔露、廁後點滴、室內噴霧',
+    src: 'https://www.aesop.com/u1nb1km7t5q7/60WGIxgcYmP8YImmL3HnvM/963d1c080c3f2e5460f50a15335fbd9d/Aesop_Kits_Gift_Kits_2023-24_Heartful_Harmonies_GL_Web_Front_X-Large_3000x1822px.png'
+  },
+  {
+    title: '詩意旋律',
+    subtitle: '賦活芳香手部清潔露、護手霜、身體潔膚露、乳霜',
+    src: 'https://www.aesop.com/u1nb1km7t5q7/4Ei5FykNQjLJ5OGb04i0rv/f335ea791c71086cc5962322a1e98ed3/Aesop_Kits_Gift_Kits_2023-24_Majestic_Melodies_GL_Web_Front_X-Large_3000x1822px.png'
+  }
+])
+const swiperListThird = ref([
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/1vsHBR6MRMiDp80UrQiQ50/40eaec1662fcc972d04f4a2984a787ac/Aesop_Mitsukoshi_Tainan_Carousel_1_Desktop_2560x1440px.jpg'
+  },
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/1HjbSmWST0aPmE43FxsFaz/cd395c0bdda5a2055cb6ca43e753e11b/Aesop_Lalaport_Taichung_Mid_Desktop_2560x1440px.jpg'
+  },
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/2tkDDfRb4xG0xALvcKj0Vk/19ed567970d93a5e8ebabc4807990a9e/Aesop_Hsin_Chu_Carousel_1_Desktop_2560x1440px.jpg'
+  }
+])
 </script>
 
 <style lang="scss" scoped>
 .content {
   background-color: #fffef2;
   width: 100%;
-  img {
+  .homeVueWapper {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
   }
-  .icon {
-    margin-top: 120px;
-    margin-left: 50px;
-    width: 400px;
-  }
-  .carousel {
-    display: flex;
+  .swiper-container-first {
     width: 100%;
-    background-color: #f5f4e9;
-    .guide {
-      width: 300px;
-      height: 100px;
-    }
-    .title {
-      font-weight: 600;
-      font-size: 20px;
-      margin-bottom: 30px;
+    height: auto;
+    .article {
       margin-top: 100px;
     }
-    .directions {
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-    .main-image {
-      margin-left: auto;
-      width: 1047px;
-      height: 429px;
-    }
-  }
-  .Information {
-    display: flex;
-    width: auto;
-    margin-top: 100px;
-    .guide {
-      margin-right: auto;
-      width: 300px;
-      height: 100px;
-    }
-    .title {
-      font-weight: 600;
-      font-size: 20px;
-      margin-bottom: 30px;
-      margin-top: 150px;
-    }
-    .directions {
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-    .main-image {
-      margin-right: auto;
-      width: 1047px;
-      height: 429px;
-    }
-  }
-  .goTop {
-    position: fixed;
-    right: 60px;
-    bottom: 60px;
-    img {
-      width: 50px;
-      height: 50px;
+    .famousProductsWrapper {
+      width: auto;
+      text-align: center;
+      img {
+        width: 400px;
+        height: 400px;
+        object-fit: contain;
+      }
+      .productitle {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .subtitle {
+        font-size: 14px;
+      }
     }
   }
 }
-.product {
-  display: flex;
-  justify-content: center;
+.perfumeWapper {
   width: 100%;
-  margin: 50px 5px 0px 5px;
-  .picwrapper {
-    display: flex;
-    .picture {
-      width: 100%;
-      padding: 100px 200px;
-      background-color: #f5f4e9;
-    }
-  }
-}
-
-.info {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 0px 5px;
-  height: 200px;
-  width: 100%;
-  .textwrapper {
-    padding-top: 50px;
-    width: 100%;
-    height: 100px;
-    transition: all 0.2s linear;
-  }
-  .textwrapper:hover {
-    background-color: #f5f4e9;
-  }
-  .title {
-    font-weight: 600;
-    font-size: 18px;
-  }
-  .directions {
-    font-size: 16px;
-    padding-bottom: 10px;
-    color: #777575;
-  }
-
-  .price {
-    color: #777575;
-    padding-bottom: 5px;
-  }
-  .cart {
-    border: solid 1px black;
-    width: 764.67px;
-    height: 50px;
-    margin: 0px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.2s linear;
-  }
-  .cart:hover {
-    border: solid 1px black;
-    background-color: #777575;
-    width: 764.67px;
-    height: 50px;
-    margin: 0px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: white;
-    opacity: 1;
-  }
-}
-
-.shop {
-  margin-top: 100px;
-  display: flex;
-  width: 100%;
-  .loctioninfo {
-    font-size: 24px;
-    padding: 0px 30px;
-    font-style: italic;
-  }
-  .shopimage {
-    width: 800px;
-    height: 600px;
-    margin-left: auto;
-  }
-}
-.swiper-container {
-  height: 500px;
-  padding: 50px 0;
-  img {
-    width: 450px;
-    height: 500px;
-  }
-  .nav-item {
-    background:red;
-  }
-  :deep(.swiper-button-next) {
-    color: black;
-  }
-}
-.famous {
-  display: flex;
-  align-items: flex-end;
+  height: auto;
   margin-top: 200px;
-  .image {
-    width: 100%;
-    height: 100%;
+  display: flex;
+  align-items: flex-start;
+  .perfumeImage {
+    img {
+      margin-right: auto;
+      width: 1500px;
+      height: 800px;
+    }
+    padding: 0px 150px 0px 0px;
   }
-  .previouspage {
-    width: 100px;
-    height: 100px;
-    margin: 50px 50px 50px 50px;
-    font-size: 40px;
+  .perfumeInformation {
+    padding: 0px 150px 0px 0px;
+    width: 700px;
+    height: auto;
+    text-align: left;
+    .title {
+      font-weight: lighter;
+      font-size: 40px;
+      padding: 20px 0px;
+    }
+    .subtitle {
+      font-size: 20px;
+      line-height: 1.7;
+      padding: 20px 0px;
+    }
   }
-  .lastpage {
-    width: 100px;
-    height: 100px;
-    margin: 50px 50px 50px 50px;
-    font-size: 40px;
+    .perfume-button {
+        margin-top: 50px;
+      }
+}
+
+.giftWapper {
+  width: 100%;
+  height: auto;
+  margin-top: 200px;
+  display: flex;
+  .giftInformation {
+    padding: 0px 0px 0px 150px;
+    width: 700px;
+    height: auto;
+    text-align: left;
+    .title {
+      font-size: 40px;
+      padding: 20px 0px;
+    }
+    .subtitle {
+      font-size: 20px;
+      line-height: 1.7;
+      padding: 20px 0px;
+    }
+  }
+  .giftImage {
+    img {
+      margin-left: auto;
+      width: 1500px;
+      height: 800px;
+    }
+    padding: 0px 0px 0px 150px;
+  }
+}
+.videoServiceWapper {
+  width: 100%;
+  height: auto;
+  margin-top: 200px;
+  display: flex;
+  align-items: flex-start;
+  .videoServiceImage {
+    img {
+      margin-right: auto;
+      width: 1500px;
+      height: 800px;
+    }
+    padding: 0px 150px 0px 0px;
+  }
+  .videoServiceInformation {
+    padding: 0px 150px 0px 0px;
+    width: 700px;
+    height: auto;
+    text-align: left;
+    .title {
+      font-weight: lighter;
+      font-size: 40px;
+      padding: 20px 0px;
+    }
+    .subtitle {
+      font-size: 20px;
+      line-height: 1.7;
+      padding: 20px 0px;
+    }
   }
 }
 
-.title {
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 16px;
-  font-weight: 600;
-  .p {
-    width: 185.59px;
-    height: 20px;
-    display: inline-block;
+.swiper-container-second {
+  width: 100%;
+  height: auto;
+  margin-top: 200px;
+  img {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+  }
+  .giftSetWrapper {
     text-align: center;
+    .productitle {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .subtitle {
+      font-size: 18px;
+    }
+  }
+}
+.shop {
+  width: 100%;
+  height: auto;
+  margin-top: 200px;
+  display: flex;
+  .loctioninfo {
+    width: 50%;
+    height: auto;
+    padding: 0px 0px 0px 80px;  
+    .shoptitle {
+      font-size: 30px;
+      font-weight: 300;
+      padding: 20px 0px;
+    }
+    .subtitle {
+      font-size: 24px;
+    }
+  }
+  .swiper-container-third {
+    width: 50%;
+    height: auto;
+    padding: 0px 0px 0px 80px;
+    margin-left: auto;
+    .shopimage {
+      margin-left: auto;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 }
 
 .divider {
   width: 100%;
   border-bottom: #777575 solid 1px;
+  margin-top: 200px;
 }
 .eco {
   width: 100%;
@@ -467,6 +462,15 @@ const swiperList = [
       font-size: 20px;
       flex-wrap: wrap;
     }
+  }
+}
+.goTop {
+  position: fixed;
+  right: 60px;
+  bottom: 60px;
+  img {
+    width: 50px;
+    height: 50px;
   }
 }
 </style>
