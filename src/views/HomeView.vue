@@ -4,12 +4,41 @@
   <div class="content">
     <div class="container">
       <div class="homeVueWapper">
+        <div class="swiper-container-zero">
+          <Swiper
+            :slidesPerView="1"
+            :spaceBetween="30"
+            :loop="true"
+            :centeredSlides="true"
+            :pagination=" pagination "
+            :navigation="false"
+            :autoplay="{ delay: 2000, disableOnInteraction: true }"
+            :modules="modules"
+            :effect="fade"
+            @swiper="onSwiperZero"
+          >
+            <SwiperSlide v-for="(item, index) in swiperListZero" :key="index">
+              <div class="newsWrapper">
+                <div class="news">
+                  <div class="smalltitle">{{ item.smalltitle }}</div>
+                  <div class="maintitle">{{ item.maintitle }}</div>
+                  <div class="subtitle">{{ item.subtitle }}</div>
+                  <AppButton :title="'探索更多'" class="news-button"></AppButton>
+                </div>
+                <img :src="item.src" />
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
         <div class="swiper-container-first">
           <Swiper
+            :scrollbar="{
+              hide: false, draggable: true,
+            }"
             :slidesPerView="4"
-            :spaceBetween="30"
+            :spaceBetween="0"
             :loop="false"
-            :centeredSlides="true"
+            :centeredSlides="false"
             :pagination="pagination"
             :navigation="true"
             :modules="modules"
@@ -17,9 +46,9 @@
           >
             <SwiperSlide>
               <div class="article">
+                <p>臉部調理系列</p>
                 <h2>針對多重肌膚問題的高效滋養</h2>
                 <p>
-                  探索 Aesop
                   專為成熟肌膚及都市居民精心研發的保養配方，在日常保濕之外，為肌膚注入有益的強效維生素及抗氧化成分所帶來的額外益處。
                 </p>
               </div>
@@ -80,10 +109,13 @@
         </div>
         <div class="swiper-container-second">
           <Swiper
+            :scrollbar="{
+              hide: false, draggable: true,
+              }"
             :slidesPerView="4"
-            :spaceBetween="0"
+            :spaceBetween="30"
             :loop="true"
-            :centeredSlides="true"
+            :centeredSlides="false"
             :pagination="pagination"
             :autoplay="{ delay: 4000, disableOnInteraction: false }"
             :navigation="true"
@@ -97,7 +129,6 @@
                 <div class="subtitle">{{ item.subtitle }}</div>
               </div>
             </SwiperSlide>
-            <button @click="handleClick(swiperSecond)">click</button>
           </Swiper>
         </div>
         <div class="shop">
@@ -165,11 +196,16 @@ import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
+import 'swiper/scss/scrollbar';
+let swiperZero = null
 let swiperFirst = null
 let swiperSecond = null
 let swiperThird = null
 function handleClick(swiper) {
   swiper.slideNext()
+}
+function onSwiperZero(swiper) {
+  swiperZero = swiper
 }
 function onSwiperFirst(swiper) {
   swiperFirst = swiper
@@ -189,6 +225,28 @@ const pagination = {
   }
 }
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
+
+const swiperListZero = ref([
+  {
+    smalltitle: '家居香氛',
+    maintitle: '為您介紹 Aesop 線香系列',
+    subtitle: '探索三款使人踏上心靈漫遊之旅的香氛──紫記線香、蜻蛉線香、更級線香──以及呈現謙遜美學的青銅線香座。',
+    src: 'https://www.aesop.com/u1nb1km7t5q7/3dsDfVszHMDanrUsE4pGQx/6111b560b1a50415b1843b235e3ec870/Aesop_Incense_2023_Web_Homepage_Primary_Full_Bleed_Desktop_XL_5120x1856px.jpg'
+  },
+  {
+    smalltitle: '高效配方',
+    maintitle: '肌膚調理凝露',
+    subtitle: '這款具有蜂蜜般獨特質地、蘊含維他命 B 和 C 的輕度保濕配方，能有效呵護、柔軟、平衡肌膚。',
+    src: 'https://www.aesop.com/u1nb1km7t5q7/3UoIV5V5v1vrhK7ktNGasV/43f1aa217d717e19f6084220884bf15f/Aesop_B_Triple_C_2024_Web_Homepage_Secondary_3_50-50_Desktop_1440x1500px.jpg'
+  },
+  {
+    smalltitle: '陶冶心情',
+    maintitle: '2024年全新力作',
+    subtitle: '香水系列分為以下幾種香調：花香、清新、木質、馥郁──也可能同時擁有兩種香調特色。',
+    src: 'https://images.ctfassets.net/u1nb1km7t5q7/erW1TyHQWoA7WbSfLCKFQ/12c2db462dd2290505da65a7d62791ae/Aesop_Category_Fragrance_Care_Primary_Full_Bleed_Desktop_2880x1044px.jpg'
+  }
+])
+
 const swiperListFirst = ref([
   {
     title: '芫荽籽身體潔膚露',
@@ -198,22 +256,22 @@ const swiperListFirst = ref([
   {
     title: '橙香面部精華素',
     subtitle: '維他命Ｃ打底精華',
-    src: 'https://images.ctfassets.net/u1nb1km7t5q7/3QfGNj3NpYM5h3zLpQHWK0/6ac142e435309dc51f2dc2e477b54a95/Aesop_Skin_Lucent_Facial_Concentrate_60mL_Web_Large_684x668px.png'
+    src: 'https://www.aesop.com/u1nb1km7t5q7/nWdJmaoekK7lzZDGZs6Ap/b47f80e978322c2faf73a5ebb46ad8aa/Aesop_Skin_B_Triple_C_Facial_Balancing_Gel_60mL_Web_Front_X-Large_3000x1592px.png'
   },
   {
     title: '日夜滋養組合',
     subtitle: '極致保濕配方',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/1zYCq18LTHPQXRvgPxa5Dk/e87362a73e523f6c3640e82c5c50781b/Aesop_Bundle_Replenishing_Hydration_for_Day_and_Night_Hybris_Large_960x1090px.png'
+    src: 'https://www.aesop.com/u1nb1km7t5q7/nWdJmaoekK7lzZDGZs6Ap/b47f80e978322c2faf73a5ebb46ad8aa/Aesop_Skin_B_Triple_C_Facial_Balancing_Gel_60mL_Web_Front_X-Large_3000x1592px.png'
   },
   {
     title: '大馬仕玫瑰保養精華',
     subtitle: '植物萃取天然成分',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/53Q5a81QFoAlk9fqyzPRWi/ff703aa4abdc6d0fa3479da1347a19a7/Aesop_Skin_Damascan_Rose_Facial_Treatment_25mL_Web_Large_684x668px.png'
+    src: 'https://images.ctfassets.net/u1nb1km7t5q7/3QfGNj3NpYM5h3zLpQHWK0/6ac142e435309dc51f2dc2e477b54a95/Aesop_Skin_Lucent_Facial_Concentrate_60mL_Web_Large_684x668px.png'
   },
   {
     title: '健康滋養面霜',
     subtitle: '超導保濕成分',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/33fUTrlYirQGFxV0GhVtqB/2d7727056645bf037eb133a030fd1d27/Aesop_Skin_Perfect_Facial_Hydrating_Cream_60mL_Web_Large_901x478px.png'
+    src: 'https://www.aesop.com/u1nb1km7t5q7/53Q5a81QFoAlk9fqyzPRWi/ff703aa4abdc6d0fa3479da1347a19a7/Aesop_Skin_Damascan_Rose_Facial_Treatment_25mL_Web_Large_684x668px.png'
   }
 ])
 const swiperListSecond = ref([
@@ -239,7 +297,7 @@ const swiperListSecond = ref([
   },
   {
     title: '詩意旋律',
-    subtitle: '賦活芳香手部清潔露、護手霜、身體潔膚露、乳霜',
+    subtitle: '清潔露、護手霜、身體潔膚露、乳霜',
     src: 'https://www.aesop.com/u1nb1km7t5q7/4Ei5FykNQjLJ5OGb04i0rv/f335ea791c71086cc5962322a1e98ed3/Aesop_Kits_Gift_Kits_2023-24_Majestic_Melodies_GL_Web_Front_X-Large_3000x1822px.png'
   }
 ])
@@ -264,26 +322,69 @@ const swiperListThird = ref([
     width: 100%;
     height: auto;
   }
+  .swiper-container-zero {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    .newsWrapper {
+      display: flex;
+      position: relative;
+      color:#fffef2;
+      .news {
+        position: absolute;
+        top: 200px;
+        left: 400px;
+        .smalltitle {
+          font-size: 12px;
+        }
+        .maintitle {
+          font-size: 24px;
+          padding: 20px 0px;
+        }
+        .subtitle {
+          font-size: 20px;
+          padding-bottom: 20px;
+        }
+        .app-button.news-button {
+          border: 1px solid #fffef2;
+        }
+      }
+      img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+      }
+    }
+  }
   .swiper-container-first {
     width: 100%;
     height: auto;
+    margin-top: 200px;
     .article {
-      margin-top: 100px;
+      padding-left: 100px;
+      margin: 100px 0px;
+      .p {
+        font-size: 12px;
+      }
+      .h2 {
+        font-size: 24px;
+      }
     }
     .famousProductsWrapper {
-      width: auto;
       text-align: center;
+      box-sizing: border-box;
+      height: 600px;
       img {
-        width: 400px;
+        width: 600px;
         height: 400px;
         object-fit: contain;
       }
       .productitle {
-        font-size: 16px;
-        font-weight: 600;
+        font-size: 24px;
+        padding: 10px 0px;
       }
       .subtitle {
-        font-size: 14px;
+        font-size: 18px;
       }
     }
   }
@@ -388,13 +489,16 @@ const swiperListThird = ref([
   width: 100%;
   height: auto;
   margin-top: 200px;
-  img {
-    width: 400px;
+  .giftSetWrapper {
+    width: 600px;
+    height: 600px;
+    box-sizing: border-box;
+    text-align: center;
+    img {
+    width: 600px;
     height: 400px;
     object-fit: contain;
-  }
-  .giftSetWrapper {
-    text-align: center;
+    }
     .productitle {
       font-size: 24px;
       font-weight: 600;
