@@ -23,7 +23,7 @@
         <p @click="changeType('all')">全部商品</p>
         <p @click="changeType('shampooList')">髮品</p>
         <p @click="changeType('bodyList')">身體乳</p>
-        <p @click="changeType('combineList')">組合</p>
+        <p @click="changeType('combineList')">送禮組合</p>
       </div>
       <div class="choose">
         <p>篩選</p>
@@ -41,6 +41,7 @@
           <img :src="product.sizeList[product.selectedSizeIndex].imageSrc" alt="" />
         </div>
         <div class="productInfo">
+          
           <div class="productitle">{{ product.title }}</div>
           <div class="subtitle">{{ product.subtitle }}</div>
           <div class="sizenprice">
@@ -552,61 +553,150 @@ let shampooList = ref([
     price: 'NT$600起',
     id: 3
   },
-
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/1eb6mjTWLHrYP4nDH3KQLv/9ea5d4ecfa1aa7942c02dce3e1b558ff/Aesop_Hair_Conditioner_100mL_Web_Front_X-Large_3000x3456px.png',
+    title: '清新潤髮露',
+    subtitle: '有效撫平、柔軟及滋潤髮絲',
+    size: '容量',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    price: 'NT$600起',
+    id: 4
+  },
+  {
+    title: '苦橙香檸洗髮露',
+    subtitle: '柑橘、木質、草本芳香',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    id: 5
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png',
+    title: '芫荽籽潤髮乳',
+    subtitle: '溫暖木質辛香',
+    size: '容量',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    price: 'NT$600起',
+    id: 6
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/1eb6mjTWLHrYP4nDH3KQLv/9ea5d4ecfa1aa7942c02dce3e1b558ff/Aesop_Hair_Conditioner_100mL_Web_Front_X-Large_3000x3456px.png',
+    title: '清新潤髮露',
+    subtitle: '有效撫平、柔軟及滋潤髮絲',
+    size: '容量',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    price: 'NT$600起',
+    id: 7
+  },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/1eb6mjTWLHrYP4nDH3KQLv/9ea5d4ecfa1aa7942c02dce3e1b558ff/Aesop_Hair_Conditioner_100mL_Web_Front_X-Large_3000x3456px.png',
+    title: '清新潤髮露',
+    subtitle: '有效撫平、柔軟及滋潤髮絲',
+    size: '容量',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    price: 'NT$600起',
+    id: 8
+  },
 ])
 let bodyList = ref([
   {
-    title: '苦橙香檸身體潔膚露',
-    subtitle: '柑橘、木質、草本芳香',
+    title: '滋潤保濕霜',
+    subtitle: '乾性肌膚適用',
     selectedSizeIndex: 0,
     sizeList: [
       {
         capacity: 100,
         price: 500,
         imageSrc:
-          'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
+          'https://www.aesop.com/u1nb1km7t5q7/7GOcMuzhepgAOwZicR9myA/389f68dc37e95c7ca421a1796e06dd1f/Aesop_Body_Nurture_Bar_Soap_150g_Web_Front_X-Large_3000x1822px.png'
       },
       {
         capacity: 500,
         price: 1400,
         imageSrc:
-          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+          'https://www.aesop.com/u1nb1km7t5q7/28tdvggu9YEZNyr2XUrWao/783019e5f17eabe30706bfe4b73fa92e/Aesop_Body_Refresh_Bar_Soap_150g_Web_Front_X-Large_3000x1822px.png'
       }
     ],
     id: 1
   },
-])
-let combineList = ref([
   {
-    title: '苦橙香檸身體潔膚露',
-    subtitle: '柑橘、木質、草本芳香',
+    title: '身體去角質露',
+    subtitle: '清爽、松針冷冽、樟腦幽香',
     selectedSizeIndex: 0,
     sizeList: [
       {
         capacity: 100,
         price: 500,
         imageSrc:
-          'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
-      },
-      {
-        capacity: 500,
-        price: 1400,
-        imageSrc:
-          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
-      }
-    ],
-    id: 1
-  },
-  {
-    title: '苦橙香檸身體潔膚露',
-    subtitle: '柑橘、木質、草本芳香',
-    selectedSizeIndex: 0,
-    sizeList: [
-      {
-        capacity: 100,
-        price: 500,
-        imageSrc:
-          'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
+          'https://www.aesop.com/u1nb1km7t5q7/7aRY4cLhNoKdLyEIBLlnHu/82174fb813437c62ce67d4462c00db53/Aesop_Body_Redemption_Body_Scrub_180mL_Web_Front_X-Large_3000x3559px.png'
       },
       {
         capacity: 500,
@@ -618,8 +708,48 @@ let combineList = ref([
     id: 2
   },
   {
+    title: '天竺葵身體去角質露',
+    subtitle: '綠色、柑橘、清爽幽香',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/7l9Fjb2Mu7AOh7HIYe6JQQ/409822ba52159afbd4b06b8931a49eef/Aesop_Body_Geranium_Leaf_Body_Scrub_180mL_Web_Front_Large_900x1068px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    id: 3
+  },
+  {
     title: '苦橙香檸身體潔膚露',
     subtitle: '柑橘、木質、草本芳香',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
+      }
+    ],
+    id: 4
+  },
+  {
+    title: '芫荽籽身體潔膚露',
+    subtitle: '溫暖木質辛香',
     selectedSizeIndex: 0,
     sizeList: [
       {
@@ -635,7 +765,169 @@ let combineList = ref([
           'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
       }
     ],
+    id: 5
+  },
+  {
+    title: '玫瑰身體潔膚露',
+    subtitle: '玫瑰花瓣、豆蔻、黑胡椒',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/3w8MaHOTW5BzLhLkneCDbU/47b04142ee7c1ab93b300821dc17194c/Aesop_Body_Geranium_Leaf_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    id: 6
+  },
+  {
+    title: '橙香身體乳霜',
+    subtitle: '快速吸收，輕盈保濕',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/9QaSVpupCdHhYMDnGQLRd/ee4e2a903c76677c5967dd17fa4b6119/Aesop_Body_Resolute_Hydrating_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    id: 7
+  },
+  {
+    title: '滋潤芳香身體乳霜',
+    subtitle: '滋養緩和乾燥肌膚',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1JG6lc3V5w2DXbg89MXgnn/4236dacc0d08912fd4789e8186354714/Aesop_Body_Citrus_Melange_Body_Cleanser_100mL_Web_Front_Large_900x916px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    id: 8
+  },
+])
+let combineList = ref([
+  {
+    title: '詩意旋律',
+    subtitle: '清潔露、護手霜、身體潔膚露、乳霜',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/4Ei5FykNQjLJ5OGb04i0rv/f335ea791c71086cc5962322a1e98ed3/Aesop_Kits_Gift_Kits_2023-24_Majestic_Melodies_GL_Web_Front_X-Large_3000x1822px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    id: 1
+  },
+  {
+    title: '心旋和聲',
+    subtitle: '手部清潔露、廁後點滴、室內噴霧',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/60WGIxgcYmP8YImmL3HnvM/963d1c080c3f2e5460f50a15335fbd9d/Aesop_Kits_Gift_Kits_2023-24_Heartful_Harmonies_GL_Web_Front_X-Large_3000x1822px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    id: 2
+  },
+  {
+    title: '慷慨節奏',
+    subtitle: '天竺葵身體潔膚露、去角質露、身體乳霜',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/2TDHu0T0jvbsUoQcH8prqN/a3a5d66800a71d743167b4db6a247525/Aesop_Kits_Gift_Kits_2023-24_Rousing_Rythyms_GL_Web_Front_X-Large_3000x1822px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
     id: 3
+  },
+  {
+    title: '寓言曲調',
+    subtitle: '護手霜、潔膚露、護唇膏',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/XkDJAABVq29aLgqi0Wpxn/73d05853da1a2a1fdeef4b1433086e51/Aesop_Kits_Gift_Kits_2023-24_Fabulous_Forms_GL_Web_Front_Large_1500x911px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    id: 4
+  },
+  {
+    title: '諧美聲部',
+    subtitle: '護手霜、清潔露、乾洗手',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/6y2ZMOukY9ToPR0CFnGWjU/e48c2d8f08bb4208f2eadf736f6ba123/Aesop_Kits_Gift_Kits_2023-24_Tuneful_Textures_GL_Web_Front_Large_1500x911px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/6y2ZMOukY9ToPR0CFnGWjU/e48c2d8f08bb4208f2eadf736f6ba123/Aesop_Kits_Gift_Kits_2023-24_Tuneful_Textures_GL_Web_Front_Large_1500x911px.png'
+      }
+    ],
+    id: 5
   },
 ])
 let selectedTypeList = ref(productList.value)
@@ -666,11 +958,6 @@ function changeType(type) {
 <style lang="scss" scoped>
 .container {
   background-color: #fffef2;
-
-  // .icon {
-  //   margin: 50px auto 50px 50px;
-  // }
-
   .navbar {
     display: flex;
     align-items: center;
