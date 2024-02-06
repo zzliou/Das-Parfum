@@ -25,8 +25,7 @@ import Footer from './Footer.vue';
 import Login from '../components/Login.vue';
 
 const loginRef = ref(null)
-function test(){console.log(loginRef.value.show,'loginRef')}
-function showLoginModal() {console.log(showLoginModal,'showLoginModal');
+function showLoginModal() {
   loginRef.value.show();
 }
 nextTick(()=>{
