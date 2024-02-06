@@ -5,18 +5,9 @@
     <div class="container">
       <div class="homeVueWapper">
         <div class="swiper-container-zero">
-          <Swiper
-            :slidesPerView="1"
-            :spaceBetween="30"
-            :loop="true"
-            :centeredSlides="true"
-            :pagination=" pagination "
-            :navigation="false"
-            :autoplay="{ delay: 2000, disableOnInteraction: true }"
-            :modules="modules"
-            :effect="fade"
-            @swiper="onSwiperZero"
-          >
+          <Swiper :slidesPerView="1" :spaceBetween="30" :loop="true" :centeredSlides="true" :pagination="pagination"
+            :navigation="false" :autoplay="{ delay: 2000, disableOnInteraction: true }" :modules="modules" :effect="fade"
+            @swiper="onSwiperZero">
             <SwiperSlide v-for="(item, index) in swiperListZero" :key="index">
               <div class="newsWrapper">
                 <div class="news">
@@ -31,21 +22,12 @@
           </Swiper>
         </div>
         <div class="swiper-container-first">
-          <Swiper
-            :scrollbar="{
-              hide: false, draggable: true,
-            }"
-            :slidesPerView="4"
-            :spaceBetween="0"
-            :loop="false"
-            :centeredSlides="false"
-            :pagination="pagination"
-            :navigation="true"
-            :modules="modules"
-            @swiper="onSwiperFirst"
-          >
+          <Swiper :scrollbar="{
+            hide: false, draggable: true,
+          }" :slidesPerView="4" :spaceBetween="0" :loop="false" :centeredSlides="false" :pagination="pagination"
+            :navigation="true" :modules="modules" @swiper="onSwiperFirst">
             <SwiperSlide>
-              <div class="article">
+              <div class="famousArticle">
                 <p>臉部調理系列</p>
                 <h2>針對多重肌膚問題的高效滋養</h2>
                 <p>
@@ -66,8 +48,7 @@
           <div class="perfumeImage">
             <img
               src="https://www.aesop.com/u1nb1km7t5q7/eyd7TwhtFoPcMMtmiYUYV/fcba6f1a9329b7cd9721e9b2c04feb71/Aesop_A_Guide_to_Fragrance_Web_Athenaeum_Thumbnail_Horizontal_Desktop_1920x1080px.jpg"
-              alt=""
-            />
+              alt="" />
           </div>
           <div class="perfumeInformation">
             <div class="title">熟悉香調，加倍享受</div>
@@ -79,7 +60,7 @@
             <AppButton :title="'立即探索'" class="perfume-button"></AppButton>
           </div>
         </div>
-        <div class="giftWapper">
+        <div class="surpriseGiftWapper">
           <div class="giftInformation">
             <div class="title">驚喜禮物</div>
             <div class="subtitle">
@@ -89,16 +70,14 @@
           <div class="giftImage">
             <img
               src="https://www.aesop.com/u1nb1km7t5q7/48k8JdNdBnmThuOKurg7b6/8cae4c48f017061e3bda5e80048f8e12/Aesop_Always_On_Homepage_Secondary_Favourites_Mid_Desktop_2560x1440px.jpg"
-              alt=""
-            />
+              alt="" />
           </div>
         </div>
         <div class="videoServiceWapper">
           <div class="videoServiceImage">
             <img
               src="https://www.aesop.com/u1nb1km7t5q7/7DCS7sJtFqK0r4KfGJA3j5/49c30385a5de31b6158b317bfffa0b54/Aesop_Gift_Kits_2022-23_Homepage_Secondary_Assistance_Desktop_2560x1440px.jpg"
-              alt=""
-            />
+              alt="" />
           </div>
           <div class="videoServiceInformation">
             <div class="title">在舒適家中享有專屬諮詢</div>
@@ -108,25 +87,16 @@
           </div>
         </div>
         <div class="swiper-container-second">
-          <Swiper
-            :scrollbar="{
-              hide: false, draggable: true,
-              }"
-            :slidesPerView="4"
-            :spaceBetween="30"
-            :loop="true"
-            :centeredSlides="false"
-            :pagination="pagination"
-            :autoplay="{ delay: 4000, disableOnInteraction: false }"
-            :navigation="true"
-            :modules="modules"
-            @swiper="onSwiperSecond"
-          >
+          <Swiper :scrollbar="{
+            hide: false, draggable: true,
+          }" :slidesPerView="3" :spaceBetween="10" :loop="true" :centeredSlides="false" :pagination="pagination"
+            :autoplay="{ delay: 3000, disableOnInteraction: false }" :navigation="true" :modules="modules"
+            @swiper="onSwiperSecond">
             <SwiperSlide v-for="(item, index) in swiperListSecond" :key="index">
-              <div class="giftSetWrapper">
+              <div class="SetWrapper">
                 <img :src="item.src" />
-                <div class="productitle">{{ item.title }}</div>
-                <div class="subtitle">{{ item.subtitle }}</div>
+                <div class="settitle">{{ item.title }}</div>
+                <div class="setsubtitle">{{ item.subtitle }}</div>
               </div>
             </SwiperSlide>
           </Swiper>
@@ -139,40 +109,46 @@
             </div>
           </div>
           <div class="swiper-container-third">
-              <Swiper
-                :slidesPerView="1"
-                :loop="true"
-                :centeredSlides="true"
-                :pagination="pagination"
-                :autoplay="{ delay: 4000, disableOnInteraction: true }"
-                :navigation="true"
-                :modules="modules"
-                @swiper="onSwiperThird"
-              >
-                <SwiperSlide v-for="(item, index) in swiperListThird" :key="index">
-                  <div class="shopimage">
-                    <img :src="item.src" />
-                  </div>
-                </SwiperSlide>
-              </Swiper>
+            <Swiper :slidesPerView="1" :loop="true" :centeredSlides="true" :pagination="pagination"
+              :autoplay="{ delay: 4000, disableOnInteraction: true }" :navigation="false" :modules="modules"
+              @swiper="onSwiperThird">
+              <SwiperSlide v-for="(item, index) in swiperListThird" :key="index">
+                <div class="shopimage">
+                  <img :src="item.src" />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
-        <div class="divider"></div>
-        <div class="eco">
+        <div class="wisdom-wrapper">
+          <h2>
+            'You are very much ON TIME, and in your TIME ZONE which God set up for you.'
+          </h2>
+          <p>''在上帝為你安排的時區裡，一切都是準時的。''</p>
+        </div>
+        <div class="eco-wrapper">
           <div class="textwrapper">
             <div class="section">
-              <p>無動物實驗</p>
-              <p>以專業儀器進行全產品測試，秉持愛護及尊重動物生命，堅持不使用動物實驗。</p>
+              <div class="ecoTitle">
+                無動物實驗
+              </div>
+              <div class="ecoSubtitle">
+                以專業儀器進行全產品測試，秉持愛護及尊重動物生命，堅持不使用動物實驗。
+              </div>
             </div>
             <div class="section">
-              <p>全產品環保包裝</p>
-              <p>
+              <div class="ecoTitle">全產品環保包裝</div>
+              <div class="ecoSubtitle">
                 選擇FSC認證環保材質，百分之百以可回收或可生物降解的天然材料作為包材使用，減少對地球的塑料污染，提供消費者空瓶回收之回購優惠價。
-              </p>
+              </div>
             </div>
             <div class="section">
-              <p>降低碳足跡</p>
-              <p>減少生產和運輸過程中的能源消耗，採用節能技術，降低80%碳足跡。</p>
+              <div class="ecoTitle">
+                降低碳足跡
+              </div>
+              <div class="ecoSubtitle">
+                減少生產和運輸過程中的能源消耗，採用節能技術，降低80%碳足跡。
+              </div>
             </div>
           </div>
         </div>
@@ -318,37 +294,46 @@ const swiperListThird = ref([
 .content {
   background-color: #fffef2;
   width: 100%;
+
   .homeVueWapper {
     width: 100%;
     height: auto;
   }
+
   .swiper-container-zero {
     width: 100%;
     height: auto;
-    margin-top: 50px;
+    padding-top: 50px;
+
     .newsWrapper {
       display: flex;
       position: relative;
-      color:#fffef2;
+      color: #fffef2;
+
       .news {
         position: absolute;
         top: 200px;
-        left: 400px;
+        left: 200px;
+
         .smalltitle {
-          font-size: 12px;
+          font-size: 18px;
         }
+
         .maintitle {
-          font-size: 24px;
+          font-size: 28px;
           padding: 20px 0px;
         }
+
         .subtitle {
-          font-size: 20px;
-          padding-bottom: 20px;
+          font-size: 24px;
+          padding-bottom: 30px;
         }
+
         .app-button.news-button {
           border: 1px solid #fffef2;
         }
       }
+
       img {
         width: 100%;
         height: 600px;
@@ -356,225 +341,602 @@ const swiperListThird = ref([
       }
     }
   }
+
   .swiper-container-first {
     width: 100%;
     height: auto;
     margin-top: 200px;
-    .article {
+
+    .famousArticle {
       padding-left: 100px;
       margin: 100px 0px;
-      .p {
-        font-size: 12px;
+
+      p {
+        font-size: 16px;
       }
-      .h2 {
-        font-size: 24px;
+
+      h2 {
+        font-size: 22px;
       }
     }
+
     .famousProductsWrapper {
       text-align: center;
       box-sizing: border-box;
-      height: 600px;
+      height: 400px;
+
       img {
-        width: 600px;
-        height: 400px;
+        width: 400px;
+        height: 200px;
         object-fit: contain;
       }
+
       .productitle {
-        font-size: 24px;
+        font-size: 22px;
         padding: 10px 0px;
       }
+
       .subtitle {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }
-}
-.perfumeWapper {
-  width: 100%;
-  height: auto;
-  margin-top: 200px;
-  display: flex;
-  align-items: flex-start;
-  .perfumeImage {
-    img {
-      margin-right: auto;
-      width: 1500px;
-      height: 800px;
-    }
-    padding: 0px 150px 0px 0px;
-  }
-  .perfumeInformation {
-    padding: 0px 150px 0px 0px;
-    width: 700px;
-    height: auto;
-    text-align: left;
-    .title {
-      font-weight: lighter;
-      font-size: 40px;
-      padding: 20px 0px;
-    }
-    .subtitle {
-      font-size: 20px;
-      line-height: 1.7;
-      padding: 20px 0px;
-    }
-  }
-    .perfume-button {
-        margin-top: 50px;
-      }
-}
 
-.giftWapper {
-  width: 100%;
-  height: auto;
-  margin-top: 200px;
-  display: flex;
-  .giftInformation {
-    padding: 0px 0px 0px 150px;
-    width: 700px;
+  .perfumeWapper {
+    width: 100%;
     height: auto;
-    text-align: left;
-    .title {
-      font-size: 40px;
-      padding: 20px 0px;
-    }
-    .subtitle {
-      font-size: 20px;
-      line-height: 1.7;
-      padding: 20px 0px;
-    }
-  }
-  .giftImage {
-    img {
-      margin-left: auto;
-      width: 1500px;
-      height: 800px;
-    }
-    padding: 0px 0px 0px 150px;
-  }
-}
-.videoServiceWapper {
-  width: 100%;
-  height: auto;
-  margin-top: 200px;
-  display: flex;
-  align-items: flex-start;
-  .videoServiceImage {
-    img {
-      margin-right: auto;
-      width: 1500px;
-      height: 800px;
-    }
-    padding: 0px 150px 0px 0px;
-  }
-  .videoServiceInformation {
-    padding: 0px 150px 0px 0px;
-    width: 700px;
-    height: auto;
-    text-align: left;
-    .title {
-      font-weight: lighter;
-      font-size: 40px;
-      padding: 20px 0px;
-    }
-    .subtitle {
-      font-size: 20px;
-      line-height: 1.7;
-      padding: 20px 0px;
-    }
-  }
-}
+    margin-top: 200px;
+    display: flex;
+    align-items: flex-start;
 
-.swiper-container-second {
-  width: 100%;
-  height: auto;
-  margin-top: 200px;
-  .giftSetWrapper {
-    width: 600px;
-    height: 600px;
-    box-sizing: border-box;
-    text-align: center;
-    img {
-    width: 600px;
-    height: 400px;
-    object-fit: contain;
-    }
-    .productitle {
-      font-size: 24px;
-      font-weight: 600;
-    }
-    .subtitle {
-      font-size: 18px;
-    }
-  }
-}
-.shop {
-  width: 100%;
-  height: auto;
-  margin-top: 200px;
-  display: flex;
-  .loctioninfo {
-    width: 50%;
-    height: auto;
-    padding: 0px 0px 0px 80px;  
-    .shoptitle {
-      font-size: 30px;
-      font-weight: 300;
-      padding: 20px 0px;
-    }
-    .subtitle {
-      font-size: 24px;
-    }
-  }
-  .swiper-container-third {
-    width: 50%;
-    height: auto;
-    padding: 0px 0px 0px 80px;
-    margin-left: auto;
-    .shopimage {
-      margin-left: auto;
+    .perfumeImage {
       img {
+        margin-right: auto;
         width: 100%;
-        height: 100%;
+        height: 500px;
         object-fit: cover;
       }
+
+      padding: 0px 100px 0px 0px;
+    }
+
+    .perfumeInformation {
+      padding: 0px 150px 0px 0px;
+      width: 450px;
+      height: auto;
+      text-align: left;
+
+      .title {
+        font-size: 22px;
+        padding: 20px 0px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        line-height: 1.7;
+        padding: 20px 0px;
+      }
+    }
+
+    .perfume-button {
+      margin-top: 50px;
+    }
+  }
+
+  .surpriseGiftWapper {
+    width: 100%;
+    height: auto;
+    margin-top: 200px;
+    display: flex;
+
+    .giftInformation {
+      padding: 0px 0px 0px 150px;
+      width: 450px;
+      height: auto;
+      text-align: left;
+
+      .title {
+        font-size: 22px;
+        padding: 20px 0px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        line-height: 1.7;
+        padding: 20px 0px;
+      }
+    }
+
+    .giftImage {
+      img {
+        margin-left: auto;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+
+      padding: 0px 0px 0px 150px;
+      object-fit: contain;
+    }
+  }
+  .videoServiceWapper {
+    width: 100%;
+    height: auto;
+    margin-top: 200px;
+    display: flex;
+    align-items: flex-start;
+
+    .videoServiceImage {
+      img {
+        margin-right: auto;
+        width: 100%;
+        height: 500px;
+      }
+
+      padding: 0px 150px 0px 0px;
+    }
+
+    .videoServiceInformation {
+      padding: 0px 150px 0px 0px;
+      width: 450px;
+      height: auto;
+      text-align: left;
+
+      .title {
+        font-weight: lighter;
+        font-size: 22px;
+        padding: 20px 0px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        line-height: 1.7;
+        padding: 20px 0px;
+      }
+    }
+  }
+
+  .swiper-container-second {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+
+    .SetWrapper {
+      width: 500px;
+      height: 450px;
+      box-sizing: border-box;
+      object-fit: contain;
+      text-align: center;
+
+      img {
+        width: 500px;
+        height: auto;
+      }
+      .settitle {
+        font-size: 22px;
+        padding: 10px 0px;
+      }
+      .setsubtitle {
+        font-size: 16px;
+      }
+    }
+  }
+
+
+
+  .shop {
+    width: 100%;
+    height: auto;
+    margin-top: 200px;
+    display: flex;
+
+    .loctioninfo {
+      width: 50%;
+      height: auto;
+      padding: 0px 0px 0px 80px;
+
+      .shoptitle {
+        font-size: 22px;
+        padding: 50px 0px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        padding-bottom: 50px;
+      }
+    }
+
+    .swiper-container-third {
+      width: 50%;
+      height: auto;
+      margin-left: auto;
+
+      .shopimage {
+        margin-left: auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .wisdom-wrapper {
+    margin-top: 100px;
+    padding: 100px;
+    text-align: center;
+
+    h2 {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .eco-wrapper {
+    width: 100%;
+
+    .textwrapper {
+      display: flex;
+      width: 100%;
+      height: auto;
+      align-content: center;
+      justify-content: center;
+
+      .section {
+        background-color: #f5f4e9;
+        width: 500px;
+        height: auto;
+        text-align: center;
+        padding: 100px 50px;
+
+        .ecoTitle {
+          font-size: 22px;
+          padding: 20px 0px;
+        }
+
+        .ecoSubtitle {
+          font-size: 14px;
+          color: #7f7f7d;
+        }
+      }
+    }
+  }
+
+  .goTop {
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+
+    img {
+      width: 50px;
+      height: 50px;
     }
   }
 }
 
-.divider {
-  width: 100%;
-  border-bottom: #777575 solid 1px;
-  margin-top: 200px;
-}
-.eco {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin: 80px 0px;
-  .textwrapper {
-    display: flex;
-    justify-content: flex-start;
-    font-size: 16px;
-    font-weight: 400;
-    .section {
+@media (max-width: 1024px) {
+  .content {
+    background-color: #fffef2;
+    width: 100%;
+
+    .homeVueWapper {
       width: 100%;
-      height: 300px;
-      background-color: #f5f4e9;
-      margin: 10px 5px;
+      height: auto;
+    }
+
+    .swiper-container-zero {
+      width: 100%;
+      height: auto;
+      padding-top: 50px;
+
+      .newsWrapper {
+        display: flex;
+        position: relative;
+        color: #fffef2;
+
+        .news {
+          width: 300px;
+          position: absolute;
+          top: 200px;
+          left: 200px;
+
+          .smalltitle {
+            font-size: 16px;
+          }
+
+          .maintitle {
+            font-size: 26px;
+            padding: 20px 0px;
+          }
+
+          .subtitle {
+            font-size: 22px;
+            padding-bottom: 30px;
+          }
+
+          .app-button.news-button {
+            border: 1px solid #fffef2;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .swiper-container-first {
+      width: 100%;
+      height: auto;
+      margin-top: 100px;
+
+      .article {
+        padding-left: 100px;
+        margin: 80px 0px;
+
+        p {
+          font-size: 14px;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+      }
+
+      .famousProductsWrapper {
+        text-align: center;
+
+        img {
+          width: 300px;
+          height: 200px;
+          object-fit: contain;
+          margin-top: 80px;
+        }
+
+        .productitle {
+          font-size: 20px;
+          padding: 10px 0px;
+        }
+
+        .subtitle {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .perfumeWapper {
+      width: 100%;
+      height: auto;
+      margin-top: 150px;
+      display: flex;
+      align-items: flex-start;
+
+      .perfumeImage {
+        img {
+          margin-right: auto;
+          width: 100%;
+          height: 500px;
+          object-fit: cover;
+        }
+
+        padding: 0px 100px 0px 0px;
+      }
+
+      .perfumeInformation {
+        padding: 0px 150px 0px 0px;
+        width: 600px;
+        height: auto;
+        text-align: left;
+
+        .title {
+          font-weight: lighter;
+          font-size: 22px;
+          padding: 20px 0px;
+        }
+
+        .subtitle {
+          font-size: 16px;
+          line-height: 1.7;
+          padding: 20px 0px;
+        }
+      }
+
+      .perfume-button {
+        margin-top: 50px;
+      }
+    }
+
+    .giftWapper {
+      width: 100%;
+      height: auto;
+      margin-top: 200px;
+      display: flex;
+
+      .giftInformation {
+        padding: 0px 0px 0px 150px;
+        width: 600px;
+        height: auto;
+        text-align: left;
+
+        .title {
+          font-size: 22px;
+          padding: 20px 0px;
+        }
+
+        .subtitle {
+          font-size: 16px;
+          line-height: 1.7;
+          padding: 20px 0px;
+        }
+      }
+
+      .giftImage {
+        img {
+          margin-left: auto;
+          width: 100%;
+          height: 500px;
+          object-fit: cover;
+        }
+
+        padding: 0px 0px 0px 150px;
+        object-fit: contain;
+      }
+    }
+
+    .swiper-container-second {
+      width: 100%;
+      height: auto;
+      margin-top: 100px;
+
+      .giftSetWrapper {
+        width: 400px;
+        height: 450px;
+        box-sizing: border-box;
+        text-align: center;
+        object-fit: contain;
+
+        img {
+          width: 400px;
+          height: auto;
+        }
+      }
+    }
+
+    .videoServiceWapper {
+      width: 100%;
+      height: auto;
+      margin-top: 200px;
+      display: flex;
+      align-items: flex-start;
+
+      .videoServiceImage {
+        img {
+          margin-right: auto;
+          width: 100%;
+          height: 500px;
+        }
+
+        padding: 0px 150px 0px 0px;
+      }
+
+      .videoServiceInformation {
+        padding: 0px 150px 0px 0px;
+        width: 600px;
+        height: auto;
+        text-align: left;
+
+        .title {
+          font-weight: lighter;
+          font-size: 22px;
+          padding: 20px 0px;
+        }
+
+        .subtitle {
+          font-size: 16px;
+          line-height: 1.7;
+          padding: 20px 0px;
+        }
+      }
+    }
+
+    .shop {
+      width: 100%;
+      height: auto;
+      margin-top: 200px;
+      display: flex;
+
+      .loctioninfo {
+        width: 50%;
+        height: auto;
+        padding: 0px 0px 0px 80px;
+
+        .shoptitle {
+          font-size: 22px;
+          padding: 50px 0px;
+        }
+
+        .subtitle {
+          font-size: 16px;
+          padding-bottom: 50px;
+        }
+      }
+
+      .swiper-container-third {
+        width: 50%;
+        height: auto;
+        margin-left: auto;
+
+        .shopimage {
+          margin-left: auto;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    .wisdom-wrapper {
+      margin-top: 100px;
+      padding: 100px;
       text-align: center;
-      font-size: 20px;
-      flex-wrap: wrap;
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .eco-wrapper {
+      width: 100%;
+
+      .textwrapper {
+        display: flex;
+        width: 100%;
+        height: auto;
+        align-content: center;
+        justify-content: center;
+
+        .section {
+          background-color: #f5f4e9;
+          width: 500px;
+          height: auto;
+          text-align: center;
+          padding: 100px 50px;
+
+          .ecoTitle {
+            font-size: 22px;
+            padding: 20px 0px;
+          }
+
+          .ecoSubtitle {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .goTop {
+      position: fixed;
+      right: 60px;
+      bottom: 60px;
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
     }
   }
-}
-.goTop {
-  position: fixed;
-  right: 60px;
-  bottom: 60px;
-  img {
-    width: 50px;
-    height: 50px;
-  }
-}
-</style>
+}</style>

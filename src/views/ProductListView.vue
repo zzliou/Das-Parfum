@@ -487,7 +487,7 @@ let productList = ref([
 
 let shampooList = ref([
   {
-    title: '苦橙香檸身體潔膚露',
+    title: '苦橙香檸洗髮露',
     subtitle: '柑橘、木質、草本芳香',
     selectedSizeIndex: 0,
     sizeList: [
@@ -508,7 +508,7 @@ let shampooList = ref([
   },
   {
     pic: 'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png',
-    title: '芫荽籽身體潔膚露',
+    title: '芫荽籽潤髮乳',
     subtitle: '溫暖木質辛香',
     size: '容量',
     selectedSizeIndex: 0,
@@ -529,6 +529,30 @@ let shampooList = ref([
     price: 'NT$600起',
     id: 2
   },
+  {
+    pic: 'https://www.aesop.com/u1nb1km7t5q7/1eb6mjTWLHrYP4nDH3KQLv/9ea5d4ecfa1aa7942c02dce3e1b558ff/Aesop_Hair_Conditioner_100mL_Web_Front_X-Large_3000x3456px.png',
+    title: '清新潤髮露',
+    subtitle: '有效撫平、柔軟及滋潤髮絲',
+    size: '容量',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc:
+          'https://www.aesop.com/u1nb1km7t5q7/1o89OmjZq9MjTymbKLr7JR/0b6c2f8540ca5f375c38e40832141cb4/Aesop_Body_Coriander_Seed_Body_Cleanser_100mL_Web_Front_X-Large_3000x3054px.png'
+      }
+    ],
+    price: 'NT$600起',
+    id: 3
+  },
+
 ])
 let bodyList = ref([
   {
@@ -643,12 +667,13 @@ function changeType(type) {
 .container {
   background-color: #fffef2;
 
-  .icon {
-    margin: 50px auto 50px 50px;
-  }
+  // .icon {
+  //   margin: 50px auto 50px 50px;
+  // }
 
   .navbar {
     display: flex;
+    align-items: center;
     background-color: #ebeade;
 
     .productsCategories {
@@ -662,11 +687,10 @@ function changeType(type) {
     }
 
     .choose {
-      margin-left: auto;
-      margin-right: 50px;
+      margin: 10px 50px 10px auto;
       border: 1px solid #bfbfb5;
       color: #7f7f7d;
-      padding: 20px 0px 20px 100px;
+      padding: 20px 60px 20px 60px;
     }
   }
 
@@ -727,7 +751,7 @@ function changeType(type) {
             color: #f5f4e9;
             opacity: 1;
             position: relative;
-            top: 46px;
+            top: 8px;
           }
         }
         .productitle {
@@ -770,4 +794,5 @@ function changeType(type) {
     }
   }
 }
+
 </style>

@@ -1,41 +1,72 @@
 <template>
   <div class="header" id="header">
-    <div class="navbar">
+    <div class="navbarLeft">
       <RouterLink to="/">首頁</RouterLink>
       <RouterLink to="/about">關於我們</RouterLink>
       <RouterLink to="/productList">商品列表</RouterLink>
       <RouterLink to="/shop">實體店鋪</RouterLink>
     </div>
-    
+    <div class="navbarRight">
+      <div class="login" @click="showLoginModal">登入會員</div>
+      <RouterLink to="/">購物車</RouterLink>
+    </div>
   </div>
   <div class="content">
     <RouterView />
+    <Login ref="loginRef"/>
   </div>
   <Footer></Footer>
 </template>
 
 <script setup>
+import { nextTick, ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import Footer from './Footer.vue';
+import Login from '../components/Login.vue';
+
+const loginRef = ref(null)
+function test(){console.log(loginRef.value.show,'loginRef')}
+function showLoginModal() {console.log(showLoginModal,'showLoginModal');
+  loginRef.value.show();
+}
+nextTick(()=>{
+  test()
+})
+
+
 </script>
 
 
 <style lang="scss" scoped>
 .header{
   width: 100%;
-  height: 80px;
+  height: auto;
   background-color: #fffef2;
-  .navbar {
+  display: flex;
+  padding-top: 50px;
+  .navbarLeft {
     display: flex;
-    height: 100%;
-    font-size: 20px;
-    font-weight: 600;
+    height: auto;
+    font-size: 18px;
     align-items: center;
     gap: 30px;
-    margin-left: 10px;
+    padding: 10px 20px;
     a {
       text-decoration: none;
-      color: #333333;
+      color: #71716c;
+    }
+  }
+  .navbarRight {
+    display: flex;
+    height: auto;
+    font-size: 18px;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 20px;
+    margin-left: auto;
+    a {
+      text-decoration: none;
+      color: #71716c;
     }
   }
 }
