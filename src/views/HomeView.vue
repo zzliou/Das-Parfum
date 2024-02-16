@@ -14,7 +14,7 @@
                   <div class="smalltitle">{{ item.smalltitle }}</div>
                   <div class="maintitle">{{ item.maintitle }}</div>
                   <div class="subtitle">{{ item.subtitle }}</div>
-                  <AppButton :title="'探索更多'" class="news-button"></AppButton>
+                  <AppButton :title="'立即探索'" :path="'productList'" class="perfume-button"></AppButton>
                 </div>
                 <img :src="item.src" />
               </div>
@@ -57,7 +57,7 @@
               版本外，現在正式推出 100mL 大容量版本，僅在 Aesop.com
               官網上販售，適合長期使用Aesop經典香水系列的忠實愛好者。
             </div>
-            <AppButton :title="'立即探索'" class="perfume-button"></AppButton>
+            <AppButton :title="'立即探索'" :path="'productList'" class="perfume-button"></AppButton>
           </div>
         </div>
         <div class="surpriseGiftWapper">
@@ -66,6 +66,7 @@
             <div class="subtitle">
               如果您希望展現自己慷慨餽贈的精神、計劃慶祝重要的日子，或是想要挑選禮物但又缺乏靈感，不妨讓我們助您一臂之力。我們的禮物指南介紹了適合送給各類人士的多款產品。
             </div>
+            <AppButton :title="'立即挑選'" :path="'productList'" class="perfume-button"></AppButton>
           </div>
           <div class="giftImage">
             <img
@@ -84,6 +85,7 @@
             <div class="subtitle">
               為了幫助您選擇合適的禮物，我們歡迎您與我們經驗豐富的專業顧問一起進行「線上視訊諮詢」。
             </div>
+            <AppButton :title="'立即挑選'" :path="'contact'" class="perfume-button"></AppButton>
           </div>
         </div>
         <div class="swiper-container-second">
@@ -107,6 +109,7 @@
             <div class="subtitle">
               每間門店皆有專業美容顧問,並針對您的送禮需求提供量身定制的建議,期待與您相見。
             </div>
+            <AppButton :title="'立即出發'" :path="'shop'" class="perfume-button"></AppButton>
           </div>
           <div class="swiper-container-third">
             <Swiper :slidesPerView="1" :loop="true" :centeredSlides="true" :pagination="pagination"
@@ -177,6 +180,7 @@ let swiperZero = null
 let swiperFirst = null
 let swiperSecond = null
 let swiperThird = null
+function test(){console.log('123')}
 function handleClick(swiper) {
   swiper.slideNext()
 }

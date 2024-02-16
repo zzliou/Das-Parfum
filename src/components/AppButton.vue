@@ -1,6 +1,6 @@
 <template>
   <div class="app-button">
-    <div class="wrapper">
+    <div class="wrapper" @click="handleClick">
       <div class="text">{{ title }}</div>
       <div class="action">→</div>
     </div>
@@ -9,8 +9,13 @@
 
 
 <script setup>
-import { defineProps } from 'vue'
-  defineProps(['title']);
+import { defineProps } from 'vue';
+import { useRouter } from 'vue-router'
+  const router = useRouter()
+  const props = defineProps(['title', 'path']);
+  function handleClick() { 
+    router.push(props.path)
+  }
 </script>
 
 <style lang="scss" scoped>
