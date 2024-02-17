@@ -1038,7 +1038,7 @@ function changeType(type) {
             color: #f5f4e9;
             opacity: 1;
             position: relative;
-            top: 8px;
+            top: 10px;
           }
         }
         .productitle {
@@ -1075,7 +1075,7 @@ function changeType(type) {
           opacity: 0;
           transition: all 0.2s linear;
           position: relative;
-          top: 1px
+          top: 1px;
         }
       }
     }

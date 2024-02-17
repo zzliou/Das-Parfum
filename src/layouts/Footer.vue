@@ -131,7 +131,7 @@ function goToContact() {
       }
     }
     .eco_wrapper {
-      padding: 25px 50px 25px 25px;
+      padding-top: 50px;
       margin-right: 25px;
       width: 40%;
       height: 250px;

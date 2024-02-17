@@ -5,16 +5,29 @@
     <div class="container">
       <div class="homeVueWapper">
         <div class="swiper-container-zero">
-          <Swiper :slidesPerView="1" :spaceBetween="30" :loop="true" :centeredSlides="true" :pagination="pagination"
-            :navigation="false" :autoplay="{ delay: 2000, disableOnInteraction: true }" :modules="modules" :effect="fade"
-            @swiper="onSwiperZero">
+          <Swiper
+            :slidesPerView="1"
+            :spaceBetween="30"
+            :loop="true"
+            :centeredSlides="true"
+            :pagination="pagination"
+            :navigation="false"
+            :autoplay="{ delay: 2000, disableOnInteraction: true }"
+            :modules="modules"
+            :effect="fade"
+            @swiper="onSwiperZero"
+          >
             <SwiperSlide v-for="(item, index) in swiperListZero" :key="index">
               <div class="newsWrapper">
                 <div class="news">
                   <div class="smalltitle">{{ item.smalltitle }}</div>
                   <div class="maintitle">{{ item.maintitle }}</div>
                   <div class="subtitle">{{ item.subtitle }}</div>
-                  <AppButton :title="'立即探索'" :path="'productList'" class="perfume-button"></AppButton>
+                  <AppButton
+                    :title="'立即探索'"
+                    :path="'productList'"
+                    class="perfume-button"
+                  ></AppButton>
                 </div>
                 <img :src="item.src" />
               </div>
@@ -22,10 +35,20 @@
           </Swiper>
         </div>
         <div class="swiper-container-first">
-          <Swiper :scrollbar="{
-            hide: false, draggable: true,
-          }" :slidesPerView="4" :spaceBetween="0" :loop="false" :centeredSlides="false" :pagination="pagination"
-            :navigation="true" :modules="modules" @swiper="onSwiperFirst">
+          <Swiper
+            :scrollbar="{
+              hide: false,
+              draggable: true
+            }"
+            :slidesPerView="4"
+            :spaceBetween="0"
+            :loop="false"
+            :centeredSlides="false"
+            :pagination="pagination"
+            :navigation="true"
+            :modules="modules"
+            @swiper="onSwiperFirst"
+          >
             <SwiperSlide>
               <div class="famousArticle">
                 <p>臉部調理系列</p>
@@ -48,7 +71,8 @@
           <div class="perfumeImage">
             <img
               src="https://www.aesop.com/u1nb1km7t5q7/eyd7TwhtFoPcMMtmiYUYV/fcba6f1a9329b7cd9721e9b2c04feb71/Aesop_A_Guide_to_Fragrance_Web_Athenaeum_Thumbnail_Horizontal_Desktop_1920x1080px.jpg"
-              alt="" />
+              alt=""
+            />
           </div>
           <div class="perfumeInformation">
             <div class="title">熟悉香調，加倍享受</div>
@@ -66,34 +90,46 @@
             <div class="subtitle">
               如果您希望展現自己慷慨餽贈的精神、計劃慶祝重要的日子，或是想要挑選禮物但又缺乏靈感，不妨讓我們助您一臂之力。我們的禮物指南介紹了適合送給各類人士的多款產品。
             </div>
-            <AppButton :title="'立即挑選'" :path="'productList'" class="perfume-button"></AppButton>
+            <AppButton :title="'立即挑選'" :path="'productList'" class="surpriseGift-button"></AppButton>
           </div>
           <div class="giftImage">
             <img
               src="https://www.aesop.com/u1nb1km7t5q7/48k8JdNdBnmThuOKurg7b6/8cae4c48f017061e3bda5e80048f8e12/Aesop_Always_On_Homepage_Secondary_Favourites_Mid_Desktop_2560x1440px.jpg"
-              alt="" />
+              alt=""
+            />
           </div>
         </div>
         <div class="videoServiceWapper">
           <div class="videoServiceImage">
             <img
               src="https://www.aesop.com/u1nb1km7t5q7/7DCS7sJtFqK0r4KfGJA3j5/49c30385a5de31b6158b317bfffa0b54/Aesop_Gift_Kits_2022-23_Homepage_Secondary_Assistance_Desktop_2560x1440px.jpg"
-              alt="" />
+              alt=""
+            />
           </div>
           <div class="videoServiceInformation">
             <div class="title">在舒適家中享有專屬諮詢</div>
             <div class="subtitle">
               為了幫助您選擇合適的禮物，我們歡迎您與我們經驗豐富的專業顧問一起進行「線上視訊諮詢」。
             </div>
-            <AppButton :title="'立即挑選'" :path="'contact'" class="perfume-button"></AppButton>
+            <AppButton :title="'立即挑選'" :path="'contact'" class="video-button"></AppButton>
           </div>
         </div>
         <div class="swiper-container-second">
-          <Swiper :scrollbar="{
-            hide: false, draggable: true,
-          }" :slidesPerView="3" :spaceBetween="10" :loop="true" :centeredSlides="false" :pagination="pagination"
-            :autoplay="{ delay: 3000, disableOnInteraction: false }" :navigation="true" :modules="modules"
-            @swiper="onSwiperSecond">
+          <Swiper
+            :scrollbar="{
+              hide: false,
+              draggable: true
+            }"
+            :slidesPerView="3"
+            :spaceBetween="10"
+            :loop="true"
+            :centeredSlides="false"
+            :pagination="pagination"
+            :autoplay="{ delay: 3000, disableOnInteraction: false }"
+            :navigation="true"
+            :modules="modules"
+            @swiper="onSwiperSecond"
+          >
             <SwiperSlide v-for="(item, index) in swiperListSecond" :key="index">
               <div class="SetWrapper">
                 <img :src="item.src" />
@@ -109,12 +145,19 @@
             <div class="subtitle">
               每間門店皆有專業美容顧問,並針對您的送禮需求提供量身定制的建議,期待與您相見。
             </div>
-            <AppButton :title="'立即出發'" :path="'shop'" class="perfume-button"></AppButton>
+            <AppButton :title="'立即出發'" :path="'shop'" class="shop-button"></AppButton>
           </div>
           <div class="swiper-container-third">
-            <Swiper :slidesPerView="1" :loop="true" :centeredSlides="true" :pagination="pagination"
-              :autoplay="{ delay: 4000, disableOnInteraction: true }" :navigation="false" :modules="modules"
-              @swiper="onSwiperThird">
+            <Swiper
+              :slidesPerView="1"
+              :loop="true"
+              :centeredSlides="true"
+              :pagination="pagination"
+              :autoplay="{ delay: 4000, disableOnInteraction: true }"
+              :navigation="false"
+              :modules="modules"
+              @swiper="onSwiperThird"
+            >
               <SwiperSlide v-for="(item, index) in swiperListThird" :key="index">
                 <div class="shopimage">
                   <img :src="item.src" />
@@ -124,17 +167,13 @@
           </div>
         </div>
         <div class="wisdom-wrapper">
-          <h2>
-            'You are very much ON TIME, and in your TIME ZONE which God set up for you.'
-          </h2>
+          <h2>'You are very much ON TIME, and in your TIME ZONE which God set up for you.'</h2>
           <p>''在上帝為你安排的時區裡，一切都是準時的。''</p>
         </div>
         <div class="eco-wrapper">
           <div class="textwrapper">
             <div class="section">
-              <div class="ecoTitle">
-                無動物實驗
-              </div>
+              <div class="ecoTitle">無動物實驗</div>
               <div class="ecoSubtitle">
                 以專業儀器進行全產品測試，秉持愛護及尊重動物生命，堅持不使用動物實驗。
               </div>
@@ -146,9 +185,7 @@
               </div>
             </div>
             <div class="section">
-              <div class="ecoTitle">
-                降低碳足跡
-              </div>
+              <div class="ecoTitle">降低碳足跡</div>
               <div class="ecoSubtitle">
                 減少生產和運輸過程中的能源消耗，採用節能技術，降低80%碳足跡。
               </div>
@@ -175,12 +212,14 @@ import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
-import 'swiper/scss/scrollbar';
+import 'swiper/scss/scrollbar'
 let swiperZero = null
 let swiperFirst = null
 let swiperSecond = null
 let swiperThird = null
-function test(){console.log('123')}
+function test() {
+  console.log('123')
+}
 function handleClick(swiper) {
   swiper.slideNext()
 }
@@ -210,13 +249,15 @@ const swiperListZero = ref([
   {
     smalltitle: '家居香氛',
     maintitle: '為您介紹 Aesop 線香系列',
-    subtitle: '探索三款使人踏上心靈漫遊之旅的香氛──紫記線香、蜻蛉線香、更級線香──以及呈現謙遜美學的青銅線香座。',
+    subtitle:
+      '探索三款使人踏上心靈漫遊之旅的香氛──紫記線香、蜻蛉線香、更級線香──以及呈現謙遜美學的青銅線香座。',
     src: 'https://www.aesop.com/u1nb1km7t5q7/3dsDfVszHMDanrUsE4pGQx/6111b560b1a50415b1843b235e3ec870/Aesop_Incense_2023_Web_Homepage_Primary_Full_Bleed_Desktop_XL_5120x1856px.jpg'
   },
   {
     smalltitle: '高效配方',
     maintitle: '肌膚調理凝露',
-    subtitle: '這款具有蜂蜜般獨特質地、蘊含維他命 B 和 C 的輕度保濕配方，能有效呵護、柔軟、平衡肌膚。',
+    subtitle:
+      '這款具有蜂蜜般獨特質地、蘊含維他命 B 和 C 的輕度保濕配方，能有效呵護、柔軟、平衡肌膚。',
     src: 'https://www.aesop.com/u1nb1km7t5q7/3UoIV5V5v1vrhK7ktNGasV/43f1aa217d717e19f6084220884bf15f/Aesop_B_Triple_C_2024_Web_Homepage_Secondary_3_50-50_Desktop_1440x1500px.jpg'
   },
   {
@@ -394,39 +435,36 @@ const swiperListThird = ref([
     align-items: flex-start;
 
     .perfumeImage {
+      flex-grow: 1;
       img {
         margin-right: auto;
         width: 100%;
         height: 500px;
         object-fit: cover;
       }
-
-      padding: 0px 100px 0px 0px;
+      padding-right: 100px;
     }
 
     .perfumeInformation {
-      padding: 0px 150px 0px 0px;
+      padding-right: 150px;
       width: 450px;
       height: auto;
       text-align: left;
 
       .title {
-        font-size: 22px;
-        padding: 20px 0px;
+        font-size: 30px;
       }
-
       .subtitle {
         font-size: 16px;
         line-height: 1.7;
-        padding: 20px 0px;
+        padding-top: 20px;
       }
     }
-
     .perfume-button {
-      margin-top: 50px;
+      margin-top: 40px;
+      border: solid 1px #3333;
     }
   }
-
   .surpriseGiftWapper {
     width: 100%;
     height: auto;
@@ -434,14 +472,12 @@ const swiperListThird = ref([
     display: flex;
 
     .giftInformation {
-      padding: 0px 0px 0px 150px;
+      padding-left: 150px;
       width: 450px;
       height: auto;
       text-align: left;
-
       .title {
-        font-size: 22px;
-        padding: 20px 0px;
+        font-size: 30px;
       }
 
       .subtitle {
@@ -449,18 +485,21 @@ const swiperListThird = ref([
         line-height: 1.7;
         padding: 20px 0px;
       }
+      .surpriseGift-button {
+        margin-top: 40px;
+        border: solid 1px #3333;
+      }
     }
 
     .giftImage {
+      flex-grow: 1;
       img {
         margin-left: auto;
         width: 100%;
         height: 500px;
         object-fit: cover;
       }
-
-      padding: 0px 0px 0px 150px;
-      object-fit: contain;
+      padding-left: 150px;
     }
   }
   .videoServiceWapper {
@@ -471,25 +510,24 @@ const swiperListThird = ref([
     align-items: flex-start;
 
     .videoServiceImage {
+      flex-grow: 1;
+      padding-right: 150px;
       img {
         margin-right: auto;
         width: 100%;
         height: 500px;
+        object-fit: cover;
       }
-
-      padding: 0px 150px 0px 0px;
     }
 
     .videoServiceInformation {
-      padding: 0px 150px 0px 0px;
+      padding-right: 150px;
       width: 450px;
       height: auto;
       text-align: left;
 
       .title {
-        font-weight: lighter;
-        font-size: 22px;
-        padding: 20px 0px;
+        font-size: 30px;
       }
 
       .subtitle {
@@ -497,36 +535,38 @@ const swiperListThird = ref([
         line-height: 1.7;
         padding: 20px 0px;
       }
+      .video-button {
+        margin-top: 40px;
+        border: solid 1px #3333;
+      }
     }
   }
 
   .swiper-container-second {
     width: 100%;
     height: auto;
-    margin-top: 100px;
+    margin-top: 200px;
 
     .SetWrapper {
       width: 500px;
-      height: 450px;
+      height: 550px;
       box-sizing: border-box;
       object-fit: contain;
       text-align: center;
 
       img {
-        width: 500px;
-        height: auto;
+        width: 600px;
+        height: auto; 
       }
       .settitle {
-        font-size: 22px;
+        font-size: 26px;
         padding: 10px 0px;
       }
       .setsubtitle {
-        font-size: 16px;
+        font-size: 20px;
       }
     }
   }
-
-
 
   .shop {
     width: 100%;
@@ -537,16 +577,19 @@ const swiperListThird = ref([
     .loctioninfo {
       width: 50%;
       height: auto;
-      padding: 0px 0px 0px 80px;
+      padding-left: 80px;
 
       .shoptitle {
-        font-size: 22px;
-        padding: 50px 0px;
+        font-size: 30px;
       }
 
       .subtitle {
         font-size: 16px;
-        padding-bottom: 50px;
+        padding: 10px 0px;
+      }
+      .shop-button {
+        margin-top: 40px;
+        border: solid 1px #3333;
       }
     }
 
@@ -573,11 +616,11 @@ const swiperListThird = ref([
     text-align: center;
 
     h2 {
-      font-size: 22px;
+      font-size: 28px;
     }
 
     p {
-      font-size: 16px;
+      font-size: 22px;
     }
   }
 
@@ -593,18 +636,18 @@ const swiperListThird = ref([
 
       .section {
         background-color: #f5f4e9;
-        width: 500px;
+        width: 100%;
         height: auto;
         text-align: center;
         padding: 100px 50px;
 
         .ecoTitle {
-          font-size: 22px;
+          font-size: 26px;
           padding: 20px 0px;
         }
 
         .ecoSubtitle {
-          font-size: 14px;
+          font-size: 18px;
           color: #7f7f7d;
         }
       }
@@ -623,324 +666,4 @@ const swiperListThird = ref([
   }
 }
 
-@media (max-width: 1024px) {
-  .content {
-    background-color: #fffef2;
-    width: 100%;
-
-    .homeVueWapper {
-      width: 100%;
-      height: auto;
-    }
-
-    .swiper-container-zero {
-      width: 100%;
-      height: auto;
-      padding-top: 50px;
-
-      .newsWrapper {
-        display: flex;
-        position: relative;
-        color: #fffef2;
-
-        .news {
-          width: 300px;
-          position: absolute;
-          top: 200px;
-          left: 200px;
-
-          .smalltitle {
-            font-size: 16px;
-          }
-
-          .maintitle {
-            font-size: 26px;
-            padding: 20px 0px;
-          }
-
-          .subtitle {
-            font-size: 22px;
-            padding-bottom: 30px;
-          }
-
-          .app-button.news-button {
-            border: 1px solid #fffef2;
-          }
-        }
-
-        img {
-          width: 100%;
-          height: 400px;
-          object-fit: cover;
-        }
-      }
-    }
-
-    .swiper-container-first {
-      width: 100%;
-      height: auto;
-      margin-top: 100px;
-
-      .article {
-        padding-left: 100px;
-        margin: 80px 0px;
-
-        p {
-          font-size: 14px;
-        }
-
-        h2 {
-          font-size: 20px;
-        }
-      }
-
-      .famousProductsWrapper {
-        text-align: center;
-
-        img {
-          width: 300px;
-          height: 200px;
-          object-fit: contain;
-          margin-top: 80px;
-        }
-
-        .productitle {
-          font-size: 20px;
-          padding: 10px 0px;
-        }
-
-        .subtitle {
-          font-size: 14px;
-        }
-      }
-    }
-
-    .perfumeWapper {
-      width: 100%;
-      height: auto;
-      margin-top: 150px;
-      display: flex;
-      align-items: flex-start;
-
-      .perfumeImage {
-        img {
-          margin-right: auto;
-          width: 100%;
-          height: 500px;
-          object-fit: cover;
-        }
-
-        padding: 0px 100px 0px 0px;
-      }
-
-      .perfumeInformation {
-        padding: 0px 150px 0px 0px;
-        width: 600px;
-        height: auto;
-        text-align: left;
-
-        .title {
-          font-weight: lighter;
-          font-size: 22px;
-          padding: 20px 0px;
-        }
-
-        .subtitle {
-          font-size: 16px;
-          line-height: 1.7;
-          padding: 20px 0px;
-        }
-      }
-
-      .perfume-button {
-        margin-top: 50px;
-      }
-    }
-
-    .giftWapper {
-      width: 100%;
-      height: auto;
-      margin-top: 200px;
-      display: flex;
-
-      .giftInformation {
-        padding: 0px 0px 0px 150px;
-        width: 600px;
-        height: auto;
-        text-align: left;
-
-        .title {
-          font-size: 22px;
-          padding: 20px 0px;
-        }
-
-        .subtitle {
-          font-size: 16px;
-          line-height: 1.7;
-          padding: 20px 0px;
-        }
-      }
-
-      .giftImage {
-        img {
-          margin-left: auto;
-          width: 100%;
-          height: 500px;
-          object-fit: cover;
-        }
-
-        padding: 0px 0px 0px 150px;
-        object-fit: contain;
-      }
-    }
-
-    .swiper-container-second {
-      width: 100%;
-      height: auto;
-      margin-top: 100px;
-
-      .giftSetWrapper {
-        width: 400px;
-        height: 450px;
-        box-sizing: border-box;
-        text-align: center;
-        object-fit: contain;
-
-        img {
-          width: 400px;
-          height: auto;
-        }
-      }
-    }
-
-    .videoServiceWapper {
-      width: 100%;
-      height: auto;
-      margin-top: 200px;
-      display: flex;
-      align-items: flex-start;
-
-      .videoServiceImage {
-        img {
-          margin-right: auto;
-          width: 100%;
-          height: 500px;
-        }
-
-        padding: 0px 150px 0px 0px;
-      }
-
-      .videoServiceInformation {
-        padding: 0px 150px 0px 0px;
-        width: 600px;
-        height: auto;
-        text-align: left;
-
-        .title {
-          font-weight: lighter;
-          font-size: 22px;
-          padding: 20px 0px;
-        }
-
-        .subtitle {
-          font-size: 16px;
-          line-height: 1.7;
-          padding: 20px 0px;
-        }
-      }
-    }
-
-    .shop {
-      width: 100%;
-      height: auto;
-      margin-top: 200px;
-      display: flex;
-
-      .loctioninfo {
-        width: 50%;
-        height: auto;
-        padding: 0px 0px 0px 80px;
-
-        .shoptitle {
-          font-size: 22px;
-          padding: 50px 0px;
-        }
-
-        .subtitle {
-          font-size: 16px;
-          padding-bottom: 50px;
-        }
-      }
-
-      .swiper-container-third {
-        width: 50%;
-        height: auto;
-        margin-left: auto;
-
-        .shopimage {
-          margin-left: auto;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-        }
-      }
-    }
-
-    .wisdom-wrapper {
-      margin-top: 100px;
-      padding: 100px;
-      text-align: center;
-
-      h2 {
-        font-size: 22px;
-      }
-
-      p {
-        font-size: 16px;
-      }
-    }
-
-    .eco-wrapper {
-      width: 100%;
-
-      .textwrapper {
-        display: flex;
-        width: 100%;
-        height: auto;
-        align-content: center;
-        justify-content: center;
-
-        .section {
-          background-color: #f5f4e9;
-          width: 500px;
-          height: auto;
-          text-align: center;
-          padding: 100px 50px;
-
-          .ecoTitle {
-            font-size: 22px;
-            padding: 20px 0px;
-          }
-
-          .ecoSubtitle {
-            font-size: 16px;
-          }
-        }
-      }
-    }
-
-    .goTop {
-      position: fixed;
-      right: 60px;
-      bottom: 60px;
-
-      img {
-        width: 50px;
-        height: 50px;
-      }
-    }
-  }
-}</style>
+</style>

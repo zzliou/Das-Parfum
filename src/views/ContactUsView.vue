@@ -41,6 +41,7 @@
     background-color: #f6f5e8;
     display: flex;
     justify-content: center;
+    padding-top: 50px;
     .contact {
       .contactus {
         font-size: 30px;
