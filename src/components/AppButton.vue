@@ -31,7 +31,7 @@ import { useRouter } from 'vue-router'
   .wrapper {
     display: flex;
     padding: 20px 20px;
-    border: solid 1px rgba(51,51,51,.2);
+    border: solid 1px #333;
     .action {
       margin-left: 150px;
     }
