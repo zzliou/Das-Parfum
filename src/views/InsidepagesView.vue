@@ -20,10 +20,6 @@
           <label for="contactChoice2">500ml</label>
         </div>
         <div class="carshop" @click="addCart">添加至購物車</div>
-        <div class="button">
-          <img src="http://www.w3.org/2000/svg" alt="" />
-          <button>♡加入願望清單</button>
-        </div>
         <div class="divider"></div>
         <div class="introduce">
           <div class="title">膚質感受</div>
@@ -85,11 +81,11 @@
     <div class="swiper-container">
       <Swiper
         :slidesPerView="4"
-        :spaceBetween="0"
+        :spaceBetween="30"
         :loop="true"
         :centeredSlides="true"
         :pagination="pagination"
-        :autoplay="{ delay: 2000, disableOnInteraction: false }"
+        :autoplay="{ delay: 3000, disableOnInteraction: false }"
         :navigation="true"
         :modules="modules"
         @swiper="onSwiper"
@@ -97,7 +93,6 @@
         <SwiperSlide v-for="(item, index) in swiperList" :key="index"
           ><img :src="item.src"
         /></SwiperSlide>
-        <button @click="handleClick">click</button>
       </Swiper>
     </div>
   </div>
@@ -105,7 +100,7 @@
 
 <script setup>
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue' // swiper 所需组件
-import { useRoute } from 'vue-router';
+import { useRoute } from 'vue-router'
 import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
 // import 'swiper/swiper-bundle.css'
 import 'swiper/scss'
@@ -127,62 +122,51 @@ const pagination = {
     console.log(className, 'className')
     return `<div class="nav-item" > </item>`
   }
-}      
+}
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
 const swiperList = [
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/47vTlo7LEvs0jKwRjhgCxW/0af092fee3c9670b7bdfcf38a2339583/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Back_X-Large_3000x3054px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2IHPWR79G0XhnFcc1bmhSd/e4c871edf6ce31a10d22bd98b49cf9b4/Aesop_Home_Olous_Aromatique_Room_Spray_100mL_Web_Back_X-Large_3000x3456px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/1GTKJ1EvgHnUwNZyLskxJE/fa49e741617a4ac24c5ccddbcfe4a5b4/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Front_Large_900x916px.png'
+    src: 'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
   },
   {
     src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/47vTlo7LEvs0jKwRjhgCxW/0af092fee3c9670b7bdfcf38a2339583/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Back_X-Large_3000x3054px.png'
+    src: 'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png'
+    src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2IHPWR79G0XhnFcc1bmhSd/e4c871edf6ce31a10d22bd98b49cf9b4/Aesop_Home_Olous_Aromatique_Room_Spray_100mL_Web_Back_X-Large_3000x3456px.png'
+    src: 'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2g3P3t7grTf9tS2ELzABOf/c0139036ed7ebf790bc26cd1200392ba/Aesop_Home_Beatrice_Oil_Burner_Blend_25mL_Web_Back_Large_900x878px.png'
+    src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/1GTKJ1EvgHnUwNZyLskxJE/fa49e741617a4ac24c5ccddbcfe4a5b4/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Front_Large_900x916px.png'
-  }
+    src: 'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
+  },
+  {
+    src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
+  },
 ]
-let item;
+let item
 
 function addCart() {
   window.localStorage.setItem('shopList', JSON.stringify(item))
 }
-function test(){
+function test() {
   console.log(JSON.parse(router.params.product), 'router')
   item = JSON.parse(router.params.product)
 }
-test();
+test()
 </script>
 
 <style lang="scss" scoped>
 .container {
   background-color: #fffef2;
-  width: auto;
+  width: 100%;
+  height: auto;
   .productWrapper {
     display: flex;
     width: auto;
@@ -191,50 +175,77 @@ test();
         width: 500px;
         margin-left: 750px;
         padding: 100px;
+        @include mac {
+          width: 400px;
+          margin-left: 200px;
+          padding: 50px;
+        }
       }
     }
     .productInfo {
       width: 25%;
       margin-left: auto;
-      margin-right: 150px;
+      padding-right: 50px;
       .name {
-        font-size: 26px;
+        font-size: 30px;
         font-weight: 600;
         padding: 20px 0px;
+
+        @include mac {
+          font-size: 24px;
+          font-weight: 600;
+          padding: 20px 0px;
+        }
       }
       .directions {
         padding: 10px 0px;
         font-size: 20px;
         display: flex;
         flex-wrap: wrap;
+        @include mac {
+          font-size: 16px;
+        }
       }
       .capacity {
         padding: 10px 0px;
         font-size: 18px;
+
+        @include mac {
+          font-size: 16px;
+        }
         input {
           margin: 10px 0px 20px 0px;
           padding-right: 20px;
+          font-size: 18px;
+          @include mac {
+            font-size: 16px;
+          }
         }
       }
       .carshop {
         border-color: #333;
         background-color: #333;
         color: #f6f5e8;
-        padding: 20px 15px;
         width: 100%;
-        font-size: 20px;
+        height: 70px;
         line-height: 1.6;
-      }
-      button {
-        font-size: 18px;
+        text-align: center;
+        @include mac {
+          font-size: 16px;
+        }
+
+        button {
         border: none;
         margin: 20px 0px;
+        padding: 20px 15px;
         background-color: #f5f4e9;
-        cursor: pointer;
         transition: box-shadow 0.5s ease;
+
+        }
       }
       .divider {
         border: #333 solid 1px;
+        width: 100%;
       }
       .introduce {
         padding: 20px 0px;
@@ -242,6 +253,10 @@ test();
           font-size: 22px;
           font-weight: 400;
           padding: 14px 0px;
+
+          @include mac {
+            font-size: 20px;
+          }
         }
         .info {
           color: #6c6c6c;
@@ -250,6 +265,10 @@ test();
           padding-bottom: 14px;
           display: flex;
           align-items: center;
+
+          @include mac {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -262,45 +281,69 @@ test();
     text-align: center;
     .section {
       margin: 10px 10px;
-      width: 600px;
+      width: 33.33%;
       height: auto;
       img {
         width: 30px;
         padding: 10px;
+
+        @include mac {
+          width: 25px;
+        }
       }
       .mainTitle {
         font-size: 24px;
         font-weight: 600;
+
+        @include mac {
+          font-size: 20px;
+        }
       }
       p {
         font-size: 20px;
         color: #6c6c6c;
+        
+        @include mac {
+          font-size: 16px;
+        }
       }
     }
   }
   .UsageWrapper {
-    width: auto;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    background-color: #f5f4e9;
     .productPic {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      margin-right: auto;
+      img {
+        width: 50%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        margin-right: auto;
+      }
     }
     .way {
       width: 50%;
-      margin: auto;
-      padding: 150px 0px;
+      height: auto;
+      padding: 150px 20px;
+      background-color: #f6f5e8;
+
 
       .howToUse {
         font-size: 20px;
+        
+        @include mac {
+          font-size: 16px;
+        }
       }
       p {
         font-size: 24px;
+        
+        @include mac {
+          font-size: 20px;
+        }
       }
       .useDivider {
         border: #333 solid 1px;
@@ -310,10 +353,18 @@ test();
       .title {
         font-size: 20px;
         font-weight: 500;
+
+        @include mac {
+          font-size: 18px;
+        }
       }
       .info {
         font-size: 18px;
         color: #6c6c6c;
+
+        @include mac {
+          font-size: 16px;
+        }
       }
       .divider {
         border: 1px solid #d5d4c9;
@@ -324,16 +375,20 @@ test();
   }
   .swiper-container {
     height: 500px;
-    padding: 50px 0;
+    padding: 50px 0px;
+
+    @include mac {
+      height: 330px;
+      padding: 50px 20px;
+    }
     img {
       width: 450px;
       height: 500px;
-    }
-    .nav-item {
-      background: red;
-    }
-    :deep(.swiper-button-next) {
-      color: black;
+
+      @include mac {
+        width: 250px;
+        height: 300px;
+      }
     }
   }
 }
