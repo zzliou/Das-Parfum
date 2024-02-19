@@ -5,7 +5,7 @@ import AboutView from '../views/AboutView.vue';
 import ProductListView from '../views/ProductListView.vue';
 import ContactUsView from '../views/ContactUsView.vue';
 import InsidepagesView from '../views/InsidepagesView.vue';
-
+import CartshopView from '../views/CartshopView.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -40,8 +40,9 @@ const router = createRouter({
       component: InsidepagesView
     },
     {
-
-      
+      path: '/CartshopView',
+      name: 'CartshopView',
+      component: CartshopView
     }
   ]
 })
