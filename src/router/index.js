@@ -35,10 +35,14 @@ const router = createRouter({
       component: ContactUsView
     },
     {
-      path: '/insidepagesView',
+      path: '/insidepagesView/:product',
       name: 'insidepagesView',
       component: InsidepagesView
     },
+    {
+
+      
+    }
   ]
 })
 

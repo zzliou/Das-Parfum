@@ -17,6 +17,7 @@ export default defineConfig({
         additionalData: `
           @import './src/scss/main.scss';
           @import './src/scss/color.scss';
+          @import './src/scss/mixin.scss';
         `,
       }
     }

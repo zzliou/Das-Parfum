@@ -28,9 +28,7 @@ const loginRef = ref(null)
 function showLoginModal() {
   loginRef.value.show();
 }
-nextTick(()=>{
-  test()
-})
+
 
 
 </script>

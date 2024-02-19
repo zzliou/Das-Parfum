@@ -62,7 +62,6 @@
           <div class="description">
             我們秉持堅定的信念，開發一系列專業肌膚、秀髮及身體護理產品。致力於在科學驗證功效的基礎上，選用最優質的植物萃取和抗氧化成分。所有配方有效之餘亦絕對安全。每間店舖的專業顧問都會十分樂意為你介紹Aesop的產品，為你挑選最合適的選擇。
           </div>
-          <AppButton :title="'我們的理念'" class="idea-button"></AppButton>
         </div>
       </div>
       <div class="designWrapper">
@@ -198,9 +197,12 @@ const swiperListFirst = ref([
         flex-grow: 1;
         img {
           width: 100%;
-          height: 500px;
+          height: 600px;
           object-fit: cover;
           object-position: center;
+          @include mac {
+            height: 300px;
+          }
         }
       }
     }
@@ -218,12 +220,18 @@ const swiperListFirst = ref([
           width: auto;
           height: 800px;
           margin-right: auto;
+          @include mac {
+            height: 600px;
+          }
         }
       }
 
       .productsIdea {
         width: 50%;
         margin-left: 200px;
+        @include mac {
+          margin-left: 100px;
+        }
 
         .title {
           font-size: 30px;
@@ -232,10 +240,6 @@ const swiperListFirst = ref([
 
         .description {
           font-size: 16px;
-        }
-
-        .idea-button {
-          margin: 20px 0px;
         }
       }
     }
@@ -251,10 +255,14 @@ const swiperListFirst = ref([
       width: 50%;
       height: auto;
       margin: 50px 150px;
+      
+      @include mac {
+      margin: 0px 50px;
+      }
 
       .title {
         font-size: 30px;
-        padding: 20px 0px;
+        padding-bottom: 20px;
       }
 
       .description {
@@ -265,9 +273,10 @@ const swiperListFirst = ref([
 
     .designImage {
       margin-left: auto;
+      flex-grow: 1;
       img {
         width: 100%;
-        height: auto;
+        height: 500px;
         object-fit: cover;
       }
     }
@@ -305,9 +314,12 @@ const swiperListFirst = ref([
   }
   .swiper-photo {
     width: 100%;
-    box-sizing: border-box;
     height: auto;
+    box-sizing: border-box;
     padding: 100px 400px 200px 400px;
+    @include mac {
+    padding: 0px 200px 200px 200px;
+    }
     img {
       width: 100%;
       height: auto;

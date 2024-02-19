@@ -86,6 +86,9 @@ function goToContact() {
       width: 20%;
       height: 250px;
       text-align: start;
+      @include pad {
+        padding: 10px;
+      }
       .divider {
         border: #dad9cf 1px solid;
         width: 100%;
@@ -121,6 +124,9 @@ function goToContact() {
       height: 250px;
       padding: 25px;
       text-align: start;
+      @include pad {
+        padding: 10px;
+      }
       .mainTitle {
         padding: 10px 0px;
       }

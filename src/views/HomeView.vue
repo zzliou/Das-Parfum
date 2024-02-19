@@ -360,23 +360,50 @@ const swiperListThird = ref([
         top: 200px;
         left: 200px;
 
+        @include pad {
+          top: 100px;
+          left: 100px;
+          width: 50%;
+        }
         .smalltitle {
           font-size: 18px;
+          @include mac {
+          font-size: 16px;
+          }
+          @include pad {
+          font-size: 16px;
+          }
         }
 
         .maintitle {
           font-size: 28px;
           padding: 20px 0px;
+          @include mac {
+            font-size: 22px;
+            padding: 10px 0px;
+          }
+          @include pad {
+            font-size: 20px;
+            padding: 10px 0px;
+          }
         }
 
         .subtitle {
           font-size: 24px;
           padding-bottom: 30px;
+          @include mac {
+            font-size: 20px;
+            padding-bottom: 20px;
+          }
+          @include mac {
+            font-size: 18px;
+            padding-bottom: 20px;
+          }
         }
-
-        .app-button.news-button {
+        .perfume-button {
           border: 1px solid #fffef2;
         }
+
       }
 
       img {
@@ -391,17 +418,33 @@ const swiperListThird = ref([
     width: 100%;
     height: auto;
     margin-top: 200px;
+    @include mac {
+    margin-top: 100px;
+    }
 
     .famousArticle {
       padding-left: 100px;
       margin: 100px 0px;
 
+      @include mac {
+      margin: 0px;
+      }
+      @include pad {
+      margin: 0px;
+      }
+
       p {
         font-size: 16px;
+        @include pad {
+        font-size: 14px;  
+        }
       }
 
       h2 {
         font-size: 22px;
+        @include pad {
+        font-size: 20px;  
+        }
       }
     }
 
@@ -414,11 +457,25 @@ const swiperListThird = ref([
         width: 400px;
         height: 200px;
         object-fit: contain;
+        @include mac {
+        width: 300px;
+        }
+        @include pad {
+        width: 250px;
+        }
       }
 
       .productitle {
         font-size: 22px;
         padding: 10px 0px;
+        @include mac {
+        font-size: 20px;
+        padding: 10px 0px;
+        }
+        @include pad {
+        font-size: 18px;
+        padding: 10px 0px;
+        }
       }
 
       .subtitle {
@@ -434,15 +491,27 @@ const swiperListThird = ref([
     display: flex;
     align-items: flex-start;
 
+    @include pad {
+      margin-top: 100px;
+    }
+
     .perfumeImage {
       flex-grow: 1;
+      padding-right: 150px;
+      @include pad {
+        padding-right: 80px;
+      }
+      
       img {
         margin-right: auto;
         width: 100%;
         height: 500px;
         object-fit: cover;
+        @include pad {
+          height: 300px;
+        }
       }
-      padding-right: 100px;
+      
     }
 
     .perfumeInformation {
@@ -451,8 +520,12 @@ const swiperListThird = ref([
       height: auto;
       text-align: left;
 
+
       .title {
         font-size: 30px;
+        @include pad {
+         font-size: 25px;
+        }
       }
       .subtitle {
         font-size: 16px;
@@ -470,14 +543,21 @@ const swiperListThird = ref([
     height: auto;
     margin-top: 200px;
     display: flex;
+    @include pad {
+      margin-top: 100px;
+    }
 
     .giftInformation {
       padding-left: 150px;
       width: 450px;
       height: auto;
       text-align: left;
+ 
       .title {
         font-size: 30px;
+        @include pad {
+          font-size: 25px;
+        }
       }
 
       .subtitle {
@@ -493,13 +573,19 @@ const swiperListThird = ref([
 
     .giftImage {
       flex-grow: 1;
+      padding-left: 150px;
+      @include pad {
+        padding-left: 80px;
+      }
       img {
         margin-left: auto;
         width: 100%;
         height: 500px;
         object-fit: cover;
+        @include pad {
+          height: 300px;
+        }
       }
-      padding-left: 150px;
     }
   }
   .videoServiceWapper {
@@ -508,15 +594,24 @@ const swiperListThird = ref([
     margin-top: 200px;
     display: flex;
     align-items: flex-start;
+    @include pad {
+      margin-top: 100px;
+    }
 
     .videoServiceImage {
       flex-grow: 1;
       padding-right: 150px;
+      @include pad {
+        padding-right: 80px;
+      }
       img {
         margin-right: auto;
         width: 100%;
         height: 500px;
         object-fit: cover;
+        @include pad {
+        height: 300px;
+        }
       }
     }
 
@@ -526,8 +621,13 @@ const swiperListThird = ref([
       height: auto;
       text-align: left;
 
+ 
+
       .title {
         font-size: 30px;
+        @include pad {
+          font-size: 25px;
+        }
       }
 
       .subtitle {
@@ -556,14 +656,28 @@ const swiperListThird = ref([
 
       img {
         width: 600px;
-        height: auto; 
+        height: auto;
+        @include mac {
+        width: 450px;
+        } 
+        @include pad {
+        width: 350px;
+        } 
       }
       .settitle {
         font-size: 26px;
         padding: 10px 0px;
+
+        @include pad {
+        font-size: 22px;
+        padding: 10px 0px;
+        } 
       }
       .setsubtitle {
         font-size: 20px;
+        @include pad {
+        font-size: 16px;
+        } 
       }
     }
   }
@@ -573,14 +687,24 @@ const swiperListThird = ref([
     height: auto;
     margin-top: 200px;
     display: flex;
+    @include pad {
+      margin-top: 200px;
+      } 
 
     .loctioninfo {
       width: 50%;
       height: auto;
       padding-left: 80px;
+      padding-right: 20px;
+      @include pad {
+      padding-left: 40px;
+      } 
 
       .shoptitle {
         font-size: 30px;
+      @include pad {
+        font-size: 25px;
+      } 
       }
 
       .subtitle {
@@ -617,10 +741,22 @@ const swiperListThird = ref([
 
     h2 {
       font-size: 28px;
+      @include mac {
+        font-size: 22px;
+      }
+      @include pad {
+        font-size: 20px;
+      }
     }
 
     p {
       font-size: 22px;
+      @include mac {
+        font-size: 16px;
+      }
+      @include pad {
+        font-size: 16px;
+      }
     }
   }
 
@@ -644,11 +780,24 @@ const swiperListThird = ref([
         .ecoTitle {
           font-size: 26px;
           padding: 20px 0px;
+          @include mac {
+          font-size: 22px;
+          }
+          @include pad {
+          font-size: 20px;
+          }
         }
 
         .ecoSubtitle {
           font-size: 18px;
           color: #7f7f7d;
+          @include mac {
+          font-size: 16px;
+          }
+          @include pad {
+          font-size: 16px;
+          line-height: 1.7em;
+          }
         }
       }
     }

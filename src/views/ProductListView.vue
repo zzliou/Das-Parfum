@@ -938,7 +938,12 @@ function handleChangeSize(product, sizeOptionIndex) {
 }
 
 function goToProductPage(product) {
-  router.push({ name: 'insidepagesView' })
+  console.log(product,'product')
+  router.push({ name: 'insidepagesView' ,
+  params: {
+    product: JSON.stringify(product)
+  }
+ })
 }
 
 function changeType(type) {
@@ -989,7 +994,10 @@ function changeType(type) {
     .introduce {
       width: 33%;
       box-sizing: border-box;
-      padding: 100px 100px;
+      padding: 100px;
+      @include pad {
+        padding: 50px;
+      }
       .maintitle {
         font-size: 24px;
         padding: 30px 0px;
@@ -1013,6 +1021,10 @@ function changeType(type) {
           width: 400px;
           height: 600px;
           object-fit: contain;
+          @include pad {
+            width: 200px;
+            height: 300px;
+          }
         }
       }
 

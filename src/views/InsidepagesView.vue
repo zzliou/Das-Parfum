@@ -8,7 +8,7 @@
         />
       </div>
       <div class="productInfo">
-        <div class="name">苦橙香檸身體潔膚露</div>
+        <div class="name">{{ item.title }}</div>
         <div class="directions">
           這款性質溫和的低泡沫潔膚凝露含有多種淨化肌膚的植物萃取物，可清潔肌膚，散發充滿活力的柑橘芳香。
         </div>
@@ -19,7 +19,7 @@
           <input type="radio" id="contactChoice2" name="contact" value="500ml" />
           <label for="contactChoice2">500ml</label>
         </div>
-        <div class="carshop">添加至購物車</div>
+        <div class="carshop" @click="addCart">添加至購物車</div>
         <div class="button">
           <img src="http://www.w3.org/2000/svg" alt="" />
           <button>♡加入願望清單</button>
@@ -105,12 +105,15 @@
 
 <script setup>
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue' // swiper 所需组件
+import { useRoute } from 'vue-router';
 import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
 // import 'swiper/swiper-bundle.css'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
+const router = useRoute()
+
 const handleClick = () => {
   swiperEl.slideNext()
 }
@@ -164,6 +167,16 @@ const swiperList = [
     src: 'https://www.aesop.com/u1nb1km7t5q7/1GTKJ1EvgHnUwNZyLskxJE/fa49e741617a4ac24c5ccddbcfe4a5b4/Aesop_Body_Geranium_Leaf_Hydrating_Body_Treatment_100mL_Web_Front_Large_900x916px.png'
   }
 ]
+let item;
+
+function addCart() {
+  window.localStorage.setItem('shopList', JSON.stringify(item))
+}
+function test(){
+  console.log(JSON.parse(router.params.product), 'router')
+  item = JSON.parse(router.params.product)
+}
+test();
 </script>
 
 <style lang="scss" scoped>

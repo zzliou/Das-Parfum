@@ -184,6 +184,12 @@ function changeType(type) {
     selectedTypeList.value = shopList.value;
   }
 }
+function getCartData() {
+  let rawShopList = window.localStorage.getItem('shopList');
+  let shopList = JSON.parse(rawShopList)
+  console.log(shopList,'shopList')
+}
+getCartData()
 </script>
 
 <style lang="scss" scoped>
@@ -212,10 +218,26 @@ function changeType(type) {
       width: auto;
       margin: 100px 50px 0px 50px;
       justify-content: center;
+      &::after{
+          content: "";
+          // flex-grow: 100;
+          width: 600px;
+          height: 300px;
+          @include mac {
+            width: 300px;
+          }
+        }
       .section {
         width: 600px;
         height: 300px;
         margin: 20px;
+
+        @include mac {
+          width: 300px;
+        }
+        @include pad {
+          width: 300px;
+        }
         .shoptitle {
           font-size: 20px;
           margin-bottom: 30px;
@@ -238,6 +260,9 @@ function changeType(type) {
           font-size: 18px;
           margin: 10px 5px 10px 0px;
           align-items: center;
+          @include mac {
+            font-size: 16px;
+          }
         }
         .hour {
           margin-left: auto;
