@@ -26,7 +26,7 @@
           <div class="info">清潔、清爽</div>
           <div class="useDivider"></div>
           <div class="title">香氛</div>
-          <div class="info">柑橘、清新</div>
+          <div class="info">{{ item.subtitle }}</div>
           <div class="useDivider"></div>
           <div class="title">成份</div>
           <div class="info">苦橙、檸檬皮、葡萄柚皮</div>
@@ -85,7 +85,7 @@
         :loop="true"
         :centeredSlides="true"
         :pagination="pagination"
-        :autoplay="{ delay: 3000, disableOnInteraction: false }"
+        :autoplay="{ delay: 2000, disableOnInteraction: false }"
         :navigation="true"
         :modules="modules"
         @swiper="onSwiper"
@@ -213,36 +213,56 @@ test()
         @include mac {
           font-size: 16px;
         }
-        input {
-          margin: 10px 0px 20px 0px;
-          padding-right: 20px;
-          font-size: 18px;
+          input {
+          // margin: 10px 0px 20px 0px;
+          // padding-right: 20px;
+          // font-size: 18px;
+          // padding: 0px 5px;
           @include mac {
             font-size: 16px;
           }
-        }
+          }
       }
-      .carshop {
-        border-color: #333;
-        background-color: #333;
-        color: #f6f5e8;
-        width: 100%;
-        height: 70px;
-        line-height: 1.6;
-        text-align: center;
-        @include mac {
-          font-size: 16px;
-        }
 
-        button {
+      .carshop {
+        width: 100%;
+        height: 50px;
+        background-color: #333;
         border: none;
         margin: 20px 0px;
-        padding: 20px 15px;
-        background-color: #f5f4e9;
-        transition: box-shadow 0.5s ease;
-
+        text-align: center;
+        color: #fffef2;
+        padding: 5px 0px;
+        line-height: 3em;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        &:active{
+          box-shadow: 0 0 20px #333;
         }
       }
+
+      // .carshop {
+      //   // border-color: #333;
+      //   // background-color: #333;
+      //   // color: #f6f5e8;
+      //   // width: 100%;
+      //   // height: 70px;
+      //   // line-height: 1.6;
+      //   // text-align: center;
+      //   @include mac {
+      //     font-size: 16px;
+      //   }
+
+      //   button {
+      //   border: none;
+      //   margin: 20px 0px;
+      //   padding: 20px 15px;
+      //   background-color: #f5f4e9;
+      //   justify-content: center; 
+      //   align-items: center;
+
+      //   }
+      // }
       .divider {
         border: #333 solid 1px;
         width: 100%;
@@ -317,8 +337,8 @@ test()
     justify-content: center;
     .productPic {
       img {
-        width: 50%;
-        height: auto;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         object-position: center;
         margin-right: auto;
@@ -329,7 +349,6 @@ test()
       height: auto;
       padding: 150px 20px;
       background-color: #f6f5e8;
-
 
       .howToUse {
         font-size: 20px;

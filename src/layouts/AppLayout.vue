@@ -52,6 +52,10 @@ function showLoginModal() {
       text-decoration: none;
       color: #71716c;
     }
+
+    @include mac {
+      font-size: 16px;
+    }
   }
   .navbarRight {
     display: flex;
@@ -64,6 +68,10 @@ function showLoginModal() {
     a {
       text-decoration: none;
       color: #71716c;
+    }
+
+    @include mac {
+      font-size: 16px;
     }
   }
 }

@@ -1000,7 +1000,7 @@ function changeType(type) {
       }
       .maintitle {
         font-size: 24px;
-        padding: 30px 0px;
+        padding: 20px 0px;
       }
 
       .description {
@@ -1041,7 +1041,7 @@ function changeType(type) {
             border: solid 1px #1c1c1c;
             background-color: #1c1c1c;
             width: auto;
-            height: 100px;
+            height: 60px;
             margin: 0px 0px;
             display: flex;
             align-items: center;
@@ -1050,13 +1050,17 @@ function changeType(type) {
             color: #f5f4e9;
             opacity: 1;
             position: relative;
-            top: 10px;
+            top: 20px;
+            &:active{
+              box-shadow: 0 0 10px #333;
+            }
           }
         }
         .productitle {
           font-size: 20px;
           font-weight: 600;
           padding-top: 30px;
+          padding-bottom: 20px;
         }
 
         .subtitle {
@@ -1076,18 +1080,6 @@ function changeType(type) {
           .size {
             margin-right: 20px;
           }
-        }
-        .cart {
-          width: auto;
-          height: 100px;
-          margin: 0px 0px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          opacity: 0;
-          transition: all 0.2s linear;
-          position: relative;
-          top: 1px;
         }
       }
     }
