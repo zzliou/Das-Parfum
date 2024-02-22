@@ -6,13 +6,12 @@
         <div class="title">單價</div>
         <div class="title">數量</div>
         <div class="title">小計</div>
-        <div class="title">總計</div>
       </div>
       <div class="divider"></div>
       <div class="item_detail">
         <div class="name">XXXX</div>
         <div class="price"><span>$</span>500</div>
-        <div class="count">
+        <div class="quantity">
           <button>-</button>
           1
           <button>+</button>
@@ -20,11 +19,17 @@
         <div class="delete">
           <button>刪除</button>
         </div>
-        <div class="subtotal">500</div>
+        <div class="subtotal"></div>
       </div>
       <div class="divider"></div>
-      <div class="checkout">
+      <div class="countWrapper">
+        <div class="totalnumber">
+          <div class="total">總計</div>
+          <div class="number">XXXX</div>
+        </div>
+        <div class="checkout">
         <button>結帳</button>
+      </div>
       </div>
     </div>
   </div>
@@ -53,19 +58,19 @@ getCartData();
 <style lang="scss" scoped>
 .cartshop {
   width: 100%;
-  background-color: #f6f5e8;
+  background-color: #fffef2;
   font-family: Suisse, sans-serif;
 
   .content {
     padding: 50px 200px;
-
     .item {
-      width: 800px;
+      width: 100%;
       height: 100px;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      font-size: 16px;
+      font-size: 20px;
+      text-align: start;
 
       .title {
         padding: 5px 20px;
@@ -73,35 +78,33 @@ getCartData();
     }
 
     .item_detail {
-      width: 800px;
-      height: 300px;
+      width: 100%;
+      height: 100px;
       display: flex;
-      // justify-content: space-evenly;
-      font-size: 16px;
-      padding: 5px 20px;
+      font-size: 22px;
+      justify-content: space-evenly;
+      align-items: center;
+      text-align: start;
       .name {
-        margin: 10px 75px;
+        // margin: 10px 75px;
       }
       .price {
-        margin: 10px 50px;
+        // margin: 10px 50px;
       }
       .count {
-        margin: 10px;
+        // margin: 10px;
         button {
           padding: 0px 5px;
           margin-left: 3px;
           background-color: #fffef2;
-          border-color: #fffef2;
+          border: none;
         }
-      }
-      .subtotal {
-        padding: 10px 40px;
       }
       .delete {
         button {
-          padding: 0px 10px;
           background-color: #fffef2;
-          border-color: #fffef2;
+          border: none;
+
         }
       }
     }
@@ -111,16 +114,25 @@ getCartData();
       padding: 50px 0px;
 
       button {
-        width: 150px;
+        width: 300px;
         height: 50px;
-        background-color: #fffef2;
-        border-color: #fffef2;
-        font-weight: 600;
+        background-color: #3333;
+        border: #3333;
+        font-size: 16px;
       }
     }
     .divider {
         border: solid 1px #3333;
       }
+    .countWrapper {
+      width: 100%;
+      height: 300px;
+      .totalnumber {
+        display: flex;
+        text-align: end;
+        width: 25%;
+      }
+    }
   }
 }
 </style>

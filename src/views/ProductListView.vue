@@ -25,9 +25,6 @@
         <p @click="changeType('bodyList')">身體乳</p>
         <p @click="changeType('combineList')">送禮組合</p>
       </div>
-      <div class="choose">
-        <p>篩選</p>
-      </div>
     </div>
     <div class="productWapper">
       <div class="introduce">
@@ -978,12 +975,6 @@ function changeType(type) {
       }
     }
 
-    .choose {
-      margin: 10px 50px 10px auto;
-      border: 1px solid #bfbfb5;
-      color: #7f7f7d;
-      padding: 20px 60px 20px 60px;
-    }
   }
 
   .productWapper {

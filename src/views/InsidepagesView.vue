@@ -78,6 +78,7 @@
         <div class="info">低泡沫透明凝露</div>
       </div>
     </div>
+    <p>其他人也考慮了</p>
     <div class="swiper-container">
       <Swiper
         :slidesPerView="4"
@@ -180,12 +181,24 @@ test()
           margin-left: 200px;
           padding: 50px;
         }
+        @include pad {
+          width: 300px;
+          margin-left: 100px;
+          padding: 40px;
+        }
       }
     }
     .productInfo {
       width: 25%;
       margin-left: auto;
-      padding-right: 50px;
+      padding-right: 250px;
+
+      @include mac {
+        width: 30%;
+      }
+      @include pad {
+        width: 40%;
+      }
       .name {
         font-size: 30px;
         font-weight: 600;
@@ -193,6 +206,11 @@ test()
 
         @include mac {
           font-size: 24px;
+          font-weight: 600;
+          padding: 20px 0px;
+        }
+        @include pad {
+          font-size: 22px;
           font-weight: 600;
           padding: 20px 0px;
         }
@@ -205,6 +223,9 @@ test()
         @include mac {
           font-size: 16px;
         }
+        @include pad {
+          font-size: 16px;
+        }
       }
       .capacity {
         padding: 10px 0px;
@@ -213,15 +234,9 @@ test()
         @include mac {
           font-size: 16px;
         }
-          input {
-          // margin: 10px 0px 20px 0px;
-          // padding-right: 20px;
-          // font-size: 18px;
-          // padding: 0px 5px;
-          @include mac {
-            font-size: 16px;
-          }
-          }
+        @include pad {
+          font-size: 16px;
+        }
       }
 
       .carshop {
@@ -239,30 +254,15 @@ test()
         &:active{
           box-shadow: 0 0 20px #333;
         }
+        @include mac {
+          padding: 0px;
+          margin: 5px 0px;
+        }
+        @include pad {
+          padding: 0px;
+          margin: 5px 0px;
+        }
       }
-
-      // .carshop {
-      //   // border-color: #333;
-      //   // background-color: #333;
-      //   // color: #f6f5e8;
-      //   // width: 100%;
-      //   // height: 70px;
-      //   // line-height: 1.6;
-      //   // text-align: center;
-      //   @include mac {
-      //     font-size: 16px;
-      //   }
-
-      //   button {
-      //   border: none;
-      //   margin: 20px 0px;
-      //   padding: 20px 15px;
-      //   background-color: #f5f4e9;
-      //   justify-content: center; 
-      //   align-items: center;
-
-      //   }
-      // }
       .divider {
         border: #333 solid 1px;
         width: 100%;
@@ -276,6 +276,11 @@ test()
 
           @include mac {
             font-size: 20px;
+            padding: 10px 0px;
+          }
+          @include pad {
+          font-size: 18px;
+          padding: 10px 0px;
           }
         }
         .info {
@@ -289,6 +294,9 @@ test()
           @include mac {
             font-size: 16px;
           }
+          @include pad {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -299,6 +307,7 @@ test()
     align-items: center;
     flex-wrap: nowrap;
     text-align: center;
+    padding: 20px 0px;
     .section {
       margin: 10px 10px;
       width: 33.33%;
@@ -309,6 +318,11 @@ test()
 
         @include mac {
           width: 25px;
+          padding: 8px;
+        }
+        @include pad {
+          width: 20px;
+          padding: 5px;
         }
       }
       .mainTitle {
@@ -318,6 +332,9 @@ test()
         @include mac {
           font-size: 20px;
         }
+        @include pad {
+          font-size: 18px;
+        }
       }
       p {
         font-size: 20px;
@@ -325,6 +342,11 @@ test()
         
         @include mac {
           font-size: 16px;
+          padding: 15px 25px;
+        }
+        @include pad {
+          font-size: 16px;
+          padding: 15px 25px;
         }
       }
     }
@@ -347,21 +369,36 @@ test()
     .way {
       width: 50%;
       height: auto;
-      padding: 150px 20px;
+      padding: 150px 100px;
       background-color: #f6f5e8;
 
+      @include mac {
+        padding: 100px 50px;
+      }
+      @include pad {
+        padding: 80px 30px;
+      }
+
       .howToUse {
-        font-size: 20px;
+        font-size: 22px;
         
         @include mac {
           font-size: 16px;
         }
+        @include pad {
+          font-size: 16px;
+        }
       }
       p {
-        font-size: 24px;
+        font-size: 26px;
         
         @include mac {
           font-size: 20px;
+          padding: 0px;
+        }
+        @include pad {
+          font-size: 20px;
+          padding: 0px;
         }
       }
       .useDivider {
@@ -370,19 +407,28 @@ test()
         margin: 10px 0px 20px 0px;
       }
       .title {
-        font-size: 20px;
+        font-size: 26px;
         font-weight: 500;
 
         @include mac {
           font-size: 18px;
         }
+        @include pad {
+          font-size: 18px;
+        }
       }
       .info {
-        font-size: 18px;
+        font-size: 22px;
         color: #6c6c6c;
+        padding: 10px 0px;
 
         @include mac {
-          font-size: 16px;
+          font-size: 18px;
+          padding: 5px 0px;
+        }
+        @include pad {
+          font-size: 18px;
+          padding: 5px 0px;
         }
       }
       .divider {
@@ -392,13 +438,31 @@ test()
       }
     }
   }
+
+  p {
+    font-size: 26px;
+    padding: 30px 50px;
+
+    @include mac {
+          font-size: 22px;
+          padding: 15px 25px;
+        }
+        @include pad {
+          font-size: 22px;
+          padding: 15px 25px;
+        }
+  }
   .swiper-container {
     height: 500px;
     padding: 50px 0px;
 
     @include mac {
       height: 330px;
-      padding: 50px 20px;
+      padding: 50px 25px;
+    }
+    @include pad {
+      height: 300px;
+      padding: 50px 25px;
     }
     img {
       width: 450px;
@@ -407,6 +471,10 @@ test()
       @include mac {
         width: 250px;
         height: 300px;
+      }
+      @include pad {
+        width: 200px;
+        height: 250px;
       }
     }
   }
