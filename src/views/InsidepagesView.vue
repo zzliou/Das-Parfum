@@ -3,22 +3,41 @@
     <div class="productWrapper">
       <div class="productPic">
         <img
-          src="https://www.aesop.com/u1nb1km7t5q7/4wpkIvddEPUq5lHYGigqbr/cdb111906ebb82b06080f7d7662daaad/Aesop_Hair_Shampoo_100mL_Web_Front_X-Large_3000x3456px.png"
+          src="https://www.aesop.com/u1nb1km7t5q7/7qXqWN3EwPQ9EpSd9W646j/8b0519155e0e83ed8c4ed20557bb0a83/Aesop_Hand_Resurrection_Aromatique_Hand_Wash_500mL_Web_Front_Large_900x1115px.png"
           alt=""
         />
       </div>
-      <div class="productInfo">
+      <div class="productInfo" v-for="product in selectedTypeList" :key="product.id">
         <div class="name">{{ item.title }}</div>
         <div class="directions">
           這款性質溫和的低泡沫潔膚凝露含有多種淨化肌膚的植物萃取物，可清潔肌膚，散發充滿活力的柑橘芳香。
         </div>
-        <div class="capacity">
-          容量
-          <input type="radio" id="contactChoice1" name="contact" value="100ml" />
-          <label for="contactChoice1">100ml</label>
-          <input type="radio" id="contactChoice2" name="contact" value="500ml" />
-          <label for="contactChoice2">500ml</label>
-        </div>
+        <div class="sizenprice">
+            <div class="size-wrapper">
+              <div class="size-list-wrapper">
+                <div
+                  class="size-option"
+                  v-for="(sizeOption, sizeOptionIndex) in product.sizeList"
+                  :key="sizeOptionIndex">
+                  <input
+                    type="radio"
+                    :id="sizeOption.id"
+                    :checked="product.selectedSizeIndex === sizeOptionIndex"
+                    @change="handleChangeSize(product, sizeOptionIndex)"
+                  />
+                  <label :for="sizeOption.id">{{ sizeOption.capacity }} ml</label>
+                </div>
+              </div>
+            </div>
+            <div class="price">NT$ {{ product.sizeList[product.selectedSizeIndex].price }}</div>
+          </div>
+          <!-- <div class="capacity">
+            容量
+            <input type="radio" id="contactChoice1" name="contact" value="100ml" />
+            <label for="contactChoice1">100ml</label>
+            <input type="radio" id="contactChoice2" name="contact" value="500ml" />
+            <label for="contactChoice2">500ml</label>
+          </div> -->
         <div class="carshop" @click="addCart">添加至購物車</div>
         <div class="divider"></div>
         <div class="introduce">
@@ -100,6 +119,7 @@
 </template>
 
 <script setup>
+import { ref, getCurrentInstance } from 'vue';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue' // swiper 所需组件
 import { useRoute } from 'vue-router'
 import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
@@ -152,52 +172,86 @@ const swiperList = [
   },
 ]
 let item
+let globalObject = getCurrentInstance().appContext.config;
+let cartList = globalObject.cartList;
 
 function addCart() {
-  window.localStorage.setItem('shopList', JSON.stringify(item))
+  cartList.push(item)
 }
-function test() {
-  console.log(JSON.parse(router.params.product), 'router')
+function getProductData() {
   item = JSON.parse(router.params.product)
 }
-test()
+getProductData()
+
+let productList = ref([
+  {
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+      },
+      {
+        capacity: 500,
+        price: 1400,
+      }
+    ]
+  }
+]);
+
+let selectedTypeList = ref(productList.value)
+
+function handleChangeSize(product, sizeOptionIndex) {
+  product.selectedSizeIndex = sizeOptionIndex
+}
+
+function initPage() { console.log('initPage')
+  window.scrollTo({ top: 0, behavior: "smooth"});
+}
+
+initPage()
+
 </script>
 
 <style lang="scss" scoped>
 .container {
-  background-color: #fffef2;
+  background-color: $color-1;
   width: 100%;
   height: auto;
   .productWrapper {
     display: flex;
-    width: auto;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
     .productPic {
+      width: 500px;
+      padding: 50px;
       img {
-        width: 500px;
-        margin-left: 750px;
-        padding: 100px;
-        @include mac {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      @include mac {
           width: 400px;
-          margin-left: 200px;
-          padding: 50px;
+          // margin-left: 200px;
+          // padding: 50px;
         }
         @include pad {
-          width: 300px;
-          margin-left: 100px;
-          padding: 40px;
+          width: 350px;
+          // margin-left: 100px;
+          // padding: 40px;
         }
-      }
     }
     .productInfo {
-      width: 25%;
-      margin-left: auto;
-      padding-right: 250px;
+      width: 500px;
+      padding: 50px;
 
       @include mac {
-        width: 30%;
+        width: 400px;
       }
       @include pad {
-        width: 40%;
+        width: 350px;
       }
       .name {
         font-size: 30px;
@@ -227,9 +281,11 @@ test()
           font-size: 16px;
         }
       }
-      .capacity {
+      .sizenprice {
         padding: 10px 0px;
         font-size: 18px;
+        display: flex;
+        align-items: center;
 
         @include mac {
           font-size: 16px;
@@ -237,22 +293,29 @@ test()
         @include pad {
           font-size: 16px;
         }
+        .size-list-wrapper {
+          display: flex;
+        }
+        .price {
+          font-weight: 800;
+          padding-left: 20px;
+        }
       }
 
       .carshop {
         width: 100%;
         height: 50px;
-        background-color: #333;
+        background-color: $color-3;
         border: none;
         margin: 20px 0px;
         text-align: center;
-        color: #fffef2;
+        color: $color-1;
         padding: 5px 0px;
         line-height: 3em;
         cursor: pointer;
         transition: background-color 0.3s, box-shadow 0.3s;
         &:active{
-          box-shadow: 0 0 20px #333;
+          box-shadow: 0 0 20px $color-3;
         }
         @include mac {
           padding: 0px;
@@ -284,7 +347,7 @@ test()
           }
         }
         .info {
-          color: #6c6c6c;
+          color: $color-6;
           font-size: 18px;
           border-bottom: 1px solid #d5d4c9;
           padding-bottom: 14px;
@@ -338,7 +401,7 @@ test()
       }
       p {
         font-size: 20px;
-        color: #6c6c6c;
+        color: $color-6;
         
         @include mac {
           font-size: 16px;
@@ -370,7 +433,7 @@ test()
       width: 50%;
       height: auto;
       padding: 150px 100px;
-      background-color: #f6f5e8;
+      background-color: $color-4;
 
       @include mac {
         padding: 100px 50px;
@@ -419,7 +482,7 @@ test()
       }
       .info {
         font-size: 22px;
-        color: #6c6c6c;
+        color: $color-6;
         padding: 10px 0px;
 
         @include mac {
