@@ -194,14 +194,15 @@ getCartData()
 
 <style lang="scss" scoped>
 .content {
-  background-color: #fffef2;
+  background-color: $color-1;
   .navbar {
+    
     width: auto;
     align-items: center;
     justify-content: center;
     .city {
       display: flex;
-      background-color: #ebeade;
+      background-color: $color-7;
       p {
         font-size: 16px;
         padding: 0px 20px;
@@ -212,7 +213,7 @@ getCartData()
       }
     }
     .shopwapper {
-      color: #4d4d4d;
+      color: $color-9;
       display: flex;
       flex-wrap: wrap;
       width: auto;
@@ -277,7 +278,7 @@ getCartData()
     }
   }
   .divider {
-    border-bottom: #4d4d4d solid 1.5px;
+    border-bottom: $color-9 solid 1.5px;
     width: 100%;
     margin-bottom: 30px;
   }

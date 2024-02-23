@@ -61,7 +61,7 @@
 
             <div class="price">NT$ {{ product.sizeList[product.selectedSizeIndex].price }}</div>
           </div>
-          <div class="cart">加入購物車</div>
+          <div class="cart" @click="addCart(product)">加入購物車</div>
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, getCurrentInstance } from 'vue';
 import { useRouter } from 'vue-router';
 // let size = ref('容量')
 // let price = ref('價格')
@@ -953,19 +953,26 @@ function changeType(type) {
     selectedTypeList.value = productList.value;
   }
 }
+
+let globalObject = getCurrentInstance().appContext.config;
+let cartList = globalObject.cartList;
+
+function addCart(product) {
+  cartList.push(product)
+}
 </script>
 
 <style lang="scss" scoped>
 .container {
-  background-color: #fffef2;
+  background-color: $color-1;
   .navbar {
     display: flex;
     align-items: center;
-    background-color: #ebeade;
+    background-color: $color-7;
 
     .productsCategories {
       display: flex;
-      color: #7f7f7d;
+      color: $color-8;
       padding: 20px 0px 20px 100px;
 
       p {
@@ -1003,7 +1010,7 @@ function changeType(type) {
       box-sizing: border-box;
 
       .productPic {
-        background-color: #f5f4e9;
+        background-color: $color-5;
         text-align: center;
         margin: 0 2px;
         img {
@@ -1021,11 +1028,11 @@ function changeType(type) {
         width: auto;
         text-align: center;
         height: 300px;
-        color: #7f7f7d;
+        color: $color-8;
         transition: all 0.2s linear;
         margin: 0 2px;
         &:hover {
-          background-color: #f5f4e9;
+          background-color: $color-5;
           .cart {
             border: solid 1px #1c1c1c;
             background-color: #1c1c1c;
@@ -1036,7 +1043,7 @@ function changeType(type) {
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            color: #f5f4e9;
+            color: $color-5;
             opacity: 1;
             position: relative;
             top: 20px;
@@ -1054,7 +1061,7 @@ function changeType(type) {
 
         .subtitle {
           font-size: 14px;
-          color: #7f7f7d;
+          color: $color-8;
           margin-bottom: 50px;
         }
 

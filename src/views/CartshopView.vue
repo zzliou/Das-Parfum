@@ -8,18 +8,18 @@
         <div class="title">小計</div>
       </div>
       <div class="divider"></div>
-      <div class="item_detail">
-        <div class="name"></div>
-        <div class="capacity"></div>
+      <div class="item_detail" v-for="(product, index) in cartListToShow" :key="index">
+        <div class="name">{{ product.title }}</div>
+        <div class="capacity">{{ product.sizeList[0].capacity }} ml</div>
         <div class="quantity">
           <button>-</button>
           1
-          <button>+</button>
+          <button>+</button>  
         </div>
         <div class="delete">
           <button>刪除</button>
         </div>
-        <div class="subtotal"></div>
+        <div class="subtotal">{{ product.sizeList[0].price }}</div>
       </div>
       <div class="divider"></div>
       <div class="countWrapper">
@@ -36,29 +36,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, getCurrentInstance } from 'vue';
 import { useRouter } from 'vue-router'
 
-function getCartData() {
-  // 獲取購物車資料
-  let rawShopList = window.localStorage.getItem('shopList');
-  let shopList = JSON.parse(rawShopList)
-  console.log(shopList,'shopList');
-
-  // 使用購物車資料初始化 selectedTypeList
-  let selectedTypeList = ref(shopList);
-}
-
-const router = useRouter();
-getCartData();
-
+let globalObject = getCurrentInstance().appContext.config;
+let cartList = globalObject.cartList;
+let cartListToShow = ref(cartList)
+console.log(cartListToShow,'cartListToShow')
 </script>
 
 <style lang="scss" scoped>
 .cartshop {
   width: 100%;
   height: 1000px;
-  background-color: #fffef2;
+  background-color: $color-1;
   font-family: Suisse, sans-serif;
 
   .content {
@@ -69,11 +60,12 @@ getCartData();
       width: 100%;
       height: 100px;
       display: flex;
-      justify-content: space-evenly;
       align-items: center;
-      text-align: start;
+      justify-content: center;
       .title {
         padding: 5px 20px;
+        width: 300px;
+        text-align: center;
       }
     }
 
@@ -81,42 +73,61 @@ getCartData();
       width: 100%;
       height: 100px;
       display: flex;
-      justify-content: space-evenly;
       align-items: center;
-      text-align: start;
+      justify-content: center;
       .name {
         font-weight: 600;
+        padding: 5px 20px;
+        width: 300px;
+        text-align: center;
       }
-
+      .capacity {
+        padding: 5px 20px;
+        width: 300px;
+        text-align: center;
+      }
       .quantity {
+        padding: 5px 20px;
+        text-align: center;
         button {
           padding: 0px 5px;
           margin-left: 3px;
-          background-color: #fffef2;
+          background-color: $color-1;
           border: none;
           cursor: pointer;
         }
       }
       .delete {
         font-size: 16px;
+        text-align: start;
         button {
-          background-color: #fffef2;
+          background-color: $color-1;
           border: none;
-          cursor: pointer;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          &:hover {
+            cursor: pointer;
+            opacity: 1;
+          }
         }
+      }
+      .subtotal {
+        padding: 5px 20px;
+        width: 300px;
+        text-align: center;
       }
     }
     .countWrapper {
-      width: 100%;
       position: absolute;
       top: 300px;
       right: 200px;
-      padding: 50px 200px;
       .totalnumber {
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         .total {
-          font-size: 20px;
+          font-size: 16px;
+          margin-right: auto;
         }
         .number {
           font-size: 20px;
@@ -127,18 +138,21 @@ getCartData();
       padding: 50px 0px;
 
       button {
-        width: 300px;
+        width: 500px;
         height: 50px;
-        background-color: #3333;
-        border: #3333;
+        background-color: $color-3;
+        border: $color-3;
         font-size: 16px;
+        &:hover {
+        cursor: pointer;
+        }
       }
     }
     }
 
 
     .divider {
-        border: solid 1px #3333;
+        border: solid 1px $color-3;
       }
 
   }
