@@ -47,8 +47,7 @@
                 <div
                   class="size-option"
                   v-for="(sizeOption, sizeOptionIndex) in product.sizeList"
-                  :key="sizeOptionIndex"
-                >
+                  :key="sizeOptionIndex">
                   <input
                     type="radio"
                     :id="sizeOption.id"
@@ -935,7 +934,6 @@ function handleChangeSize(product, sizeOptionIndex) {
 }
 
 function goToProductPage(product) {
-  console.log(product,'product')
   router.push({ name: 'insidepagesView' ,
   params: {
     product: JSON.stringify(product)

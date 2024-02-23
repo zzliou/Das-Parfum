@@ -3,14 +3,14 @@
     <div class="content">
       <div class="item">
         <div class="title">商品名稱</div>
-        <div class="title">單價</div>
+        <div class="title">容量</div>
         <div class="title">數量</div>
         <div class="title">小計</div>
       </div>
       <div class="divider"></div>
       <div class="item_detail">
-        <div class="name">XXXX</div>
-        <div class="price"><span>$</span>500</div>
+        <div class="name"></div>
+        <div class="capacity"></div>
         <div class="quantity">
           <button>-</button>
           1
@@ -50,7 +50,6 @@ function getCartData() {
 }
 
 const router = useRouter();
-
 getCartData();
 
 </script>
@@ -58,20 +57,21 @@ getCartData();
 <style lang="scss" scoped>
 .cartshop {
   width: 100%;
+  height: 1000px;
   background-color: #fffef2;
   font-family: Suisse, sans-serif;
 
   .content {
     padding: 50px 200px;
+    position: relative;
+    font-size: 16px;
     .item {
       width: 100%;
       height: 100px;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      font-size: 20px;
       text-align: start;
-
       .title {
         padding: 5px 20px;
       }
@@ -81,35 +81,48 @@ getCartData();
       width: 100%;
       height: 100px;
       display: flex;
-      font-size: 22px;
       justify-content: space-evenly;
       align-items: center;
       text-align: start;
       .name {
-        // margin: 10px 75px;
+        font-weight: 600;
       }
-      .price {
-        // margin: 10px 50px;
-      }
-      .count {
-        // margin: 10px;
+
+      .quantity {
         button {
           padding: 0px 5px;
           margin-left: 3px;
           background-color: #fffef2;
           border: none;
+          cursor: pointer;
         }
       }
       .delete {
+        font-size: 16px;
         button {
           background-color: #fffef2;
           border: none;
-
+          cursor: pointer;
         }
       }
     }
-
-    .checkout {
+    .countWrapper {
+      width: 100%;
+      position: absolute;
+      top: 300px;
+      right: 200px;
+      padding: 50px 200px;
+      .totalnumber {
+        display: flex;
+        justify-content: flex-end;
+        .total {
+          font-size: 20px;
+        }
+        .number {
+          font-size: 20px;
+        }
+      }
+      .checkout {
       text-align: end;
       padding: 50px 0px;
 
@@ -121,18 +134,13 @@ getCartData();
         font-size: 16px;
       }
     }
+    }
+
+
     .divider {
         border: solid 1px #3333;
       }
-    .countWrapper {
-      width: 100%;
-      height: 300px;
-      .totalnumber {
-        display: flex;
-        text-align: end;
-        width: 25%;
-      }
-    }
+
   }
 }
 </style>

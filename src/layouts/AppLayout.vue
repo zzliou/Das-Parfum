@@ -8,7 +8,7 @@
     </div>
     <div class="navbarRight">
       <div class="login" @click="showLoginModal">登入會員</div>
-      <RouterLink to="/">購物車</RouterLink>
+      <RouterLink to="/cartshopView">購物車</RouterLink>
     </div>
   </div>
   <div class="content">

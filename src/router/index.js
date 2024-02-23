@@ -40,8 +40,8 @@ const router = createRouter({
       component: InsidepagesView
     },
     {
-      path: '/CartshopView',
-      name: 'CartshopView',
+      path: '/cartshopView',
+      name: 'cartshopView',
       component: CartshopView
     }
   ]

@@ -59,7 +59,7 @@
               </div>
             </SwiperSlide>
             <SwiperSlide v-for="(item, index) in swiperListFirst" :key="index">
-              <div class="famousProductsWrapper">
+              <div class="famousProductsWrapper" @click="goToProductPage(item)">
                 <img :src="item.src" />
                 <div class="productitle">{{ item.title }}</div>
                 <div class="subtitle">{{ item.subtitle }}</div>
@@ -204,6 +204,7 @@
 
 <script setup>
 import AppButton from '@/components/AppButton.vue'
+import { useRouter } from 'vue-router';
 import { ref } from 'vue'
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue' // swiper 所需组件
 import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
@@ -333,6 +334,18 @@ const swiperListThird = ref([
     src: 'https://www.aesop.com/u1nb1km7t5q7/2tkDDfRb4xG0xALvcKj0Vk/19ed567970d93a5e8ebabc4807990a9e/Aesop_Hsin_Chu_Carousel_1_Desktop_2560x1440px.jpg'
   }
 ])
+const router = useRouter()
+// let selectedTypeList = ref(index.value)
+
+function goToProductPage(product) {
+  console.log(product,'product')
+  router.push({ name: 'insidepagesView' ,
+  params: {
+    product: JSON.stringify(product)
+  }
+ })
+}
+
 </script>
 
 <style lang="scss" scoped>
