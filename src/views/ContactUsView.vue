@@ -81,11 +81,11 @@
 
 <style lang="scss" scoped>
 .container {
-  background-color: #fffef2;
+  background-color: $color-1;
   .contact_wrapper {
     width: 100%;
     height: auto;
-    background-color: #f6f5e8;
+    background-color: $color-4;
     display: flex;
     justify-content: center;
     padding-top: 50px;
@@ -118,14 +118,14 @@
       }
       a {
         font-size: 16px;
-        border: solid 1px #3333;
+        border: solid 1px $color-3;
         text-decoration: none;
-        color: black;
+        color: $color-3;
         padding: 10px 20px;
         transition: width 1s, height 1s, background-color 1s;
         &:hover {
-          background-color: black;
-          color: #fffef2;
+          background-color: $color-3;
+          color: $color-2
         }
       }
       .video {

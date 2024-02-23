@@ -168,7 +168,7 @@ const swiperListFirst = ref([
 
 <style lang="scss" scoped>
 .about {
-  background-color: #ede0d4;
+  background-color: $color-2;
 
   .container {
     .storyWrapper {

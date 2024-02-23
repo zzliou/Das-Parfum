@@ -350,7 +350,7 @@ function goToProductPage(product) {
 
 <style lang="scss" scoped>
 .content {
-  background-color: #fffef2;
+  background-color: $color-1;
   width: 100%;
 
   .homeVueWapper {
@@ -366,7 +366,7 @@ function goToProductPage(product) {
     .newsWrapper {
       display: flex;
       position: relative;
-      color: #fffef2;
+      color: $color-2;
 
       .news {
         position: absolute;
@@ -414,7 +414,7 @@ function goToProductPage(product) {
           }
         }
         .perfume-button {
-          border: 1px solid #fffef2;
+          border: 1px solid $color-1;
         }
 
       }
@@ -548,7 +548,7 @@ function goToProductPage(product) {
     }
     .perfume-button {
       margin-top: 40px;
-      border: solid 1px #3333;
+      border: solid 1px $color-3;
     }
   }
   .surpriseGiftWapper {
@@ -580,7 +580,7 @@ function goToProductPage(product) {
       }
       .surpriseGift-button {
         margin-top: 40px;
-        border: solid 1px #3333;
+        border: solid 1px $color-3;
       }
     }
 
@@ -650,7 +650,7 @@ function goToProductPage(product) {
       }
       .video-button {
         margin-top: 40px;
-        border: solid 1px #3333;
+        border: solid 1px $color-3;
       }
     }
   }
@@ -726,7 +726,7 @@ function goToProductPage(product) {
       }
       .shop-button {
         margin-top: 40px;
-        border: solid 1px #3333;
+        border: solid 1px $color-3;
       }
     }
 
@@ -784,7 +784,7 @@ function goToProductPage(product) {
       justify-content: center;
 
       .section {
-        background-color: #f5f4e9;
+        background-color: $color-5;
         width: 100%;
         height: auto;
         text-align: center;
@@ -803,7 +803,7 @@ function goToProductPage(product) {
 
         .ecoSubtitle {
           font-size: 18px;
-          color: #7f7f7d;
+          color: $color-8;
           @include mac {
           font-size: 16px;
           }
