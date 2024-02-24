@@ -960,6 +960,13 @@ let cartList = globalObject.cartList;
 function addCart(product) {
   cartList.push(product)
 }
+
+window.scrollTo( 0, 0);
+window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+});
+
 </script>
 
 <style lang="scss" scoped>
@@ -1022,6 +1029,9 @@ function addCart(product) {
             height: 300px;
           }
         }
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .productInfo {
@@ -1033,6 +1043,7 @@ function addCart(product) {
         margin: 0 2px;
         &:hover {
           background-color: $color-5;
+          cursor: pointer;
           .cart {
             border: solid 1px #1c1c1c;
             background-color: #1c1c1c;

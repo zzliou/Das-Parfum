@@ -54,7 +54,6 @@ console.log(cartListToShow,'cartListToShow')
 
   .content {
     padding: 50px 200px;
-    position: relative;
     font-size: 16px;
     .item {
       width: 100%;
@@ -75,6 +74,7 @@ console.log(cartListToShow,'cartListToShow')
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
       .name {
         font-weight: 600;
         padding: 5px 20px;
@@ -119,7 +119,7 @@ console.log(cartListToShow,'cartListToShow')
     }
     .countWrapper {
       position: absolute;
-      top: 300px;
+      bottom: 300px;
       right: 200px;
       .totalnumber {
         display: flex;

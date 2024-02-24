@@ -206,7 +206,7 @@ function handleChangeSize(product, sizeOptionIndex) {
 }
 
 function initPage() { console.log('initPage')
-  window.scrollTo({ top: 0, behavior: "smooth"});
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 initPage()

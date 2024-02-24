@@ -90,7 +90,7 @@
             <div class="subtitle">
               如果您希望展現自己慷慨餽贈的精神、計劃慶祝重要的日子，或是想要挑選禮物但又缺乏靈感，不妨讓我們助您一臂之力。我們的禮物指南介紹了適合送給各類人士的多款產品。
             </div>
-            <AppButton :title="'立即挑選'" :path="'productList'" class="surpriseGift-button"></AppButton>
+            <AppButton :title="'立即挑選'" :path="'combineList'" class="surpriseGift-button"></AppButton>
           </div>
           <div class="giftImage">
             <img
@@ -131,7 +131,7 @@
             @swiper="onSwiperSecond"
           >
             <SwiperSlide v-for="(item, index) in swiperListSecond" :key="index">
-              <div class="SetWrapper">
+              <div class="SetWrapper"  @click="goToProductPage(item)">
                 <img :src="item.src" />
                 <div class="settitle">{{ item.title }}</div>
                 <div class="setsubtitle">{{ item.subtitle }}</div>
@@ -476,6 +476,9 @@ function goToProductPage(product) {
         @include pad {
         width: 250px;
         }
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .productitle {
@@ -488,6 +491,10 @@ function goToProductPage(product) {
         @include pad {
         font-size: 18px;
         padding: 10px 0px;
+        }
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
         }
       }
 
@@ -565,7 +572,7 @@ function goToProductPage(product) {
       width: 450px;
       height: auto;
       text-align: left;
- 
+
       .title {
         font-size: 30px;
         @include pad {
@@ -634,8 +641,6 @@ function goToProductPage(product) {
       height: auto;
       text-align: left;
 
- 
-
       .title {
         font-size: 30px;
         @include pad {
@@ -661,15 +666,24 @@ function goToProductPage(product) {
     margin-top: 200px;
 
     .SetWrapper {
-      width: 500px;
+      width: 600px;
       height: 550px;
       box-sizing: border-box;
       object-fit: contain;
       text-align: center;
+      @include mac {
+        width: 450px;
+        } 
+        @include pad {
+        width: 350px;
+        } 
 
       img {
         width: 600px;
         height: auto;
+        &:hover {
+          cursor: pointer;
+        }
         @include mac {
         width: 450px;
         } 
@@ -680,7 +694,11 @@ function goToProductPage(product) {
       .settitle {
         font-size: 26px;
         padding: 10px 0px;
-
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+          font-weight: 600;
+        }
         @include pad {
         font-size: 22px;
         padding: 10px 0px;
