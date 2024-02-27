@@ -38,7 +38,6 @@
           <img :src="product.sizeList[product.selectedSizeIndex].imageSrc" alt="" />
         </div>
         <div class="productInfo">
-          
           <div class="productitle">{{ product.title }}</div>
           <div class="subtitle">{{ product.subtitle }}</div>
           <div class="sizenprice">
@@ -58,7 +57,6 @@
                 </div>
               </div>
             </div>
-
             <div class="price">NT$ {{ product.sizeList[product.selectedSizeIndex].price }}</div>
           </div>
           <div class="cart" @click="addCart(product)">加入購物車</div>
@@ -74,7 +72,8 @@ import { useRouter } from 'vue-router';
 // let size = ref('容量')
 // let price = ref('價格')
 const router = useRouter()
-let productList = ref([
+let productList = ref(
+  [
   {
     title: '苦橙香檸身體潔膚露',
     subtitle: '柑橘、木質、草本芳香',
@@ -941,6 +940,7 @@ function goToProductPage(product) {
  })
 }
 
+
 function changeType(type) {
   console.log(type,'type')
   if(type === 'shampooList'){
@@ -957,9 +957,26 @@ function changeType(type) {
 let globalObject = getCurrentInstance().appContext.config;
 let cartList = globalObject.cartList;
 
+// function addCart(product) {
+//   let good = product;
+//   good['quantity'] = 1;
+//   cartList.push(good)
+// }
 function addCart(product) {
-  cartList.push(product)
+  // 檢查是否已存在相同 id 的物件
+  const existingProduct = cartList.find(item => item.id === product.id);
+
+  if (existingProduct) {
+    // 如果已存在，將該物件的 quantity 屬性 +1
+    existingProduct.quantity++;
+  } else {
+    // 如果不存在，將該物件添加到 cartList 中
+    let good = product;
+    good['quantity'] = 1;
+    cartList.push(good);
+  }
 }
+
 
 window.scrollTo( 0, 0);
 window.scrollTo({
@@ -1024,9 +1041,13 @@ window.scrollTo({
           width: 400px;
           height: 600px;
           object-fit: contain;
+          @include mac {
+            width: 350px;
+            height: 550px;
+          }
           @include pad {
-            width: 200px;
-            height: 300px;
+            width: 250px;
+            height: 350px;
           }
         }
         &:hover {
@@ -1082,6 +1103,9 @@ window.scrollTo({
             .size-list-wrapper {
               justify-content: center;
               display: flex;
+              input {
+                cursor: pointer;
+              }
             }
           }
           .size {

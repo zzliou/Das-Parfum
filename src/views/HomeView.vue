@@ -38,7 +38,8 @@
           <Swiper
             :scrollbar="{
               hide: false,
-              draggable: true
+              draggable: true,
+              dragSize: 600,
             }"
             :slidesPerView="4"
             :spaceBetween="0"
@@ -118,7 +119,9 @@
           <Swiper
             :scrollbar="{
               hide: false,
-              draggable: true
+              draggable: true,
+              dragsize: 600,
+              mousewheel: true,
             }"
             :slidesPerView="3"
             :spaceBetween="10"

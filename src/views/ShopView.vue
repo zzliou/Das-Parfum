@@ -21,7 +21,9 @@
           </div>
           <div class="location">
             <div class="location">{{ location }}</div>
-            <div class="address">{{ shop.address }}</div>
+            <div class="address">
+                <a :href="shop.googleUrl" target="_blank">{{ shop.address }}</a>
+              </div>
           </div>
         </div>
       </div>
@@ -42,6 +44,7 @@ let shopList = ref([
     hour: '10:00AM-17:00PM',
     number: '02-23222200',
     address: '台北市大安區永康街31巷6號',
+    googleUrl: 'https://maps.app.goo.gl/CJYqdnSoCshtykQF8',
     id: 1
   },
   {
@@ -49,6 +52,7 @@ let shopList = ref([
     hour: '10:00AM-18:00PM',
     number: '02-66375888',
     address: '新北市林口區文化三路一段356號1F',
+    googleUrl: 'https://maps.app.goo.gl/DtuTYJRT9SCe2MH67',
     id: 2
   },
   {
@@ -56,6 +60,7 @@ let shopList = ref([
     hour: '10:00AM-21:00PM',
     number: '03-2738666',
     address: '桃園市中壢區春德路189號',
+    googleUrl: 'https://maps.app.goo.gl/3qtDRzqr8AnVh7ks5',
     id: 3
   },
   {
@@ -63,6 +68,7 @@ let shopList = ref([
     hour: '10:00AM-21:00PM',
     number: '04-22510792',
     address: '台中市西屯區臺灣大道三段301號B2',
+    googleUrl: 'https://maps.app.goo.gl/DzTmbFNm8LXuefh97',
     id: 4
   },
   {
@@ -70,6 +76,7 @@ let shopList = ref([
     hour: '10:00AM-21:00PM',
     number: '04-23295911',
     address: '台中市西區公益路68號B1',
+    googleUrl: 'https://maps.app.goo.gl/uHN7i4z9mav2UPnDA',
     id: 5
   },
   {
@@ -77,6 +84,7 @@ let shopList = ref([
     hour: '10:00AM-21:00PM',
     number: '04-22138281',
     address: '台中市東區進德路600號北館4樓',
+    googleUrl: 'https://maps.app.goo.gl/zwo14MK4ULxiwUEs5',
     id: 6
   },
   {
@@ -84,6 +92,7 @@ let shopList = ref([
     hour: '10:00AM-21:00PM',
     number: '06-3030705',
     address: '台南市中西區西門路一段658號4F',
+    googleUrl: 'https://maps.app.goo.gl/5cHrDnZQ6fGEe6nJA',
     id: 7
   },
   {
@@ -91,6 +100,7 @@ let shopList = ref([
     hour: '10:00AM-21:00PM',
     number: '07-3550705',
     address: '高雄市左營區博愛二路777號B1',
+    googleUrl: 'https://maps.app.goo.gl/GQZPNRqbL7qhZQ8V8',
     id: 8
   },
   {
@@ -98,6 +108,7 @@ let shopList = ref([
     hour: '10:00AM-21:00PM',
     number: '07-9631200',
     address: '高雄市鹽埕區大勇路3號(駁二藝術特區C4倉庫)',
+    googleUrl: 'https://maps.app.goo.gl/16uvzTFgAweKM26N9',
     id: 9
   }
 ])
@@ -107,6 +118,7 @@ let northList = ref([
     hour: '10:00AM-17:00PM',
     number: '02-23222200',
     address: '台北市大安區永康街31巷6號',
+    googleUrl: 'https://maps.app.goo.gl/CJYqdnSoCshtykQF8',
     id: 1
   },
   {
@@ -114,6 +126,7 @@ let northList = ref([
     hour: '10:00AM-18:00PM',
     number: '02-66375888',
     address: '新北市林口區文化三路一段356號1F',
+    googleUrl: 'https://maps.app.goo.gl/DtuTYJRT9SCe2MH67',
     id: 2
   },
   {
@@ -121,6 +134,7 @@ let northList = ref([
     hour: '10:00AM-21:00PM',
     number: '03-2738666',
     address: '桃園市中壢區春德路189號',
+    googleUrl: 'https://maps.app.goo.gl/3qtDRzqr8AnVh7ks5',
     id: 3
   }
 ])
@@ -130,6 +144,7 @@ let westList = ref([
     hour: '10:00AM-21:00PM',
     number: '04-22510792',
     address: '台中市西屯區臺灣大道三段301號B2',
+    googleUrl: 'https://maps.app.goo.gl/DzTmbFNm8LXuefh97',
     id: 1
   },
   {
@@ -137,6 +152,7 @@ let westList = ref([
     hour: '10:00AM-21:00PM',
     number: '04-23295911',
     address: '台中市西區公益路68號B1',
+    googleUrl: 'https://maps.app.goo.gl/uHN7i4z9mav2UPnDA',
     id: 2
   },
   {
@@ -144,6 +160,7 @@ let westList = ref([
     hour: '10:00AM-21:00PM',
     number: '04-22138281',
     address: '台中市東區進德路600號北館4樓',
+    googleUrl: 'https://maps.app.goo.gl/zwo14MK4ULxiwUEs5',
     id: 3
   }
 ])
@@ -153,6 +170,7 @@ let southList = ref([
     hour: '10:00AM-21:00PM',
     number: '06-3030705',
     address: '台南市中西區西門路一段658號4F',
+    googleUrl: 'https://maps.app.goo.gl/5cHrDnZQ6fGEe6nJA',
     id: 1
   },
   {
@@ -160,6 +178,7 @@ let southList = ref([
     hour: '10:00AM-21:00PM',
     number: '07-3550705',
     address: '高雄市左營區博愛二路777號B1',
+    googleUrl: 'https://maps.app.goo.gl/GQZPNRqbL7qhZQ8V8',
     id: 2
   },
   {
@@ -167,6 +186,7 @@ let southList = ref([
     hour: '10:00AM-21:00PM',
     number: '07-9631200',
     address: '高雄市鹽埕區大勇路3號(駁二藝術特區C4倉庫)',
+    googleUrl: 'https://maps.app.goo.gl/16uvzTFgAweKM26N9',
     id: 3
   }
 ])
@@ -279,6 +299,10 @@ window.scrollTo({
         }
         .address {
           margin-left: auto;
+          a {
+            text-decoration: underline;
+            color: $color-9;
+          }
         }
       }
     }

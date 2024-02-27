@@ -7,8 +7,8 @@
           alt=""
         />
       </div>
-      <div class="productInfo" v-for="product in selectedTypeList" :key="product.id">
-        <div class="name">{{ item.title }}</div>
+      <div class="productInfo">
+        <div class="name">{{ product.title }}</div>
         <div class="directions">
           這款性質溫和的低泡沫潔膚凝露含有多種淨化肌膚的植物萃取物，可清潔肌膚，散發充滿活力的柑橘芳香。
         </div>
@@ -29,23 +29,16 @@
                 </div>
               </div>
             </div>
-            <div class="price">NT$ {{ product.sizeList[product.selectedSizeIndex].price }}</div>
+            <div class="price">NT$ {{ product.sizeList[product.selectedSizeIndex].price }} </div>
           </div>
-          <!-- <div class="capacity">
-            容量
-            <input type="radio" id="contactChoice1" name="contact" value="100ml" />
-            <label for="contactChoice1">100ml</label>
-            <input type="radio" id="contactChoice2" name="contact" value="500ml" />
-            <label for="contactChoice2">500ml</label>
-          </div> -->
-        <div class="carshop" @click="addCart">添加至購物車</div>
+        <div class="addCart" @click="addCart(product)">加入購物車</div>
         <div class="divider"></div>
         <div class="introduce">
           <div class="title">膚質感受</div>
           <div class="info">清潔、清爽</div>
           <div class="useDivider"></div>
           <div class="title">香氛</div>
-          <div class="info">{{ item.subtitle }}</div>
+          <div class="info">{{ product.subtitle }}</div>
           <div class="useDivider"></div>
           <div class="title">成份</div>
           <div class="info">苦橙、檸檬皮、葡萄柚皮</div>
@@ -104,7 +97,6 @@
         :spaceBetween="30"
         :loop="true"
         :centeredSlides="true"
-        :pagination="pagination"
         :autoplay="{ delay: 2000, disableOnInteraction: false }"
         :navigation="true"
         :modules="modules"
@@ -130,20 +122,6 @@ import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
 const router = useRoute()
 
-const handleClick = () => {
-  swiperEl.slideNext()
-}
-let swiperEl = null
-function onSwiper(swiper) {
-  swiperEl = swiper
-}
-const pagination = {
-  clickable: true,
-  renderBullet: function (index, className) {
-    console.log(className, 'className')
-    return `<div class="nav-item" > </item>`
-  }
-}
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
 const swiperList = [
   {
@@ -171,45 +149,47 @@ const swiperList = [
     src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
   },
 ]
-let item
+let product = ref({});
 let globalObject = getCurrentInstance().appContext.config;
 let cartList = globalObject.cartList;
 
-function addCart() {
-  cartList.push(item)
-}
+
 function getProductData() {
-  item = JSON.parse(router.params.product)
+  product.value = JSON.parse(router.params.product)
 }
-getProductData()
 
-let productList = ref([
-  {
-    selectedSizeIndex: 0,
-    sizeList: [
-      {
-        capacity: 100,
-        price: 500,
-      },
-      {
-        capacity: 500,
-        price: 1400,
-      }
-    ]
+function handleChangeSize(item, sizeOptionIndex) {
+  item.selectedSizeIndex = sizeOptionIndex
+}
+
+function addCart(product) {
+  console.log(product.id, product.selectedSizeIndex, 'product')
+  console.log(cartList, 'cartList')
+
+
+  // 檢查是否已存在相同 id 的物件
+  const existingProduct = cartList.find(function(item) { return item.id === product.id && item.selectedSizeIndex === product.selectedSizeIndex});
+
+  if (existingProduct) {
+    console.log('已經存在，幫你加一')
+    // 如果已存在，將該物件的 quantity 屬性 +1
+    existingProduct.quantity++;
+  } else {
+    console.log('新商品')
+
+    // 如果不存在，將該物件添加到 cartList 中
+    let good = JSON.parse(JSON.stringify(product))
+    good['quantity'] = 1;
+    cartList.push(good);
   }
-]);
-
-let selectedTypeList = ref(productList.value)
-
-function handleChangeSize(product, sizeOptionIndex) {
-  product.selectedSizeIndex = sizeOptionIndex
 }
 
-function initPage() { console.log('initPage')
+function initPage() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 initPage()
+getProductData()
 
 </script>
 
@@ -302,10 +282,10 @@ initPage()
         }
       }
 
-      .carshop {
+      .addCart {
         width: 100%;
         height: 50px;
-        background-color: $color-3;
+        background-color: $color-9;
         border: none;
         margin: 20px 0px;
         text-align: center;

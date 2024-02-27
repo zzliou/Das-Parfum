@@ -135,6 +135,7 @@ function goToContact() {
         width: 100%;
         margin: 10px 0px 20px 0px;
       }
+
     }
     .eco_wrapper {
       padding-top: 50px;
@@ -148,6 +149,15 @@ function goToContact() {
         margin: 10px 0px 20px 0px;
       }
     }
+      .contact {
+        a {
+        text-decoration: none;
+        color: $color-10;
+        &:hover {
+          cursor: pointer;
+        }
+        }
+      }
   }
 }
 </style>
