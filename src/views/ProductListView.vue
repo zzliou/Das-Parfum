@@ -1,23 +1,5 @@
 <template>
   <div class="container">
-    <div class="icon">
-      <div class="icon">
-        <svg
-          aria-labelledby="aesop-92"
-          class="Icon_base__GKZ58 Icon_light__1TZsq Logo_icon__NDEf8"
-          data-testid="data-testid-Icon"
-          focusable="false"
-          height="40"
-          role="img"
-          tabindex="-1"
-          viewBox="0 0 489.7 154.3"
-          width="120"
-          style="height: 40px; width: 120px"
-        >
-          <title aria-label="Aesop 商標" id="aesop-92">Aesop</title>
-        </svg>
-      </div>
-    </div>
     <div class="navbar">
       <div class="productsCategories">
         <p @click="changeType('all')">全部商品</p>
@@ -1066,8 +1048,8 @@ window.scrollTo({
           background-color: $color-5;
           cursor: pointer;
           .cart {
-            border: solid 1px #1c1c1c;
-            background-color: #1c1c1c;
+            border: solid 1px $color-11;
+            background-color: $color-11;
             width: auto;
             height: 60px;
             margin: 0px 0px;
@@ -1080,7 +1062,7 @@ window.scrollTo({
             position: relative;
             top: 20px;
             &:active{
-              box-shadow: 0 0 10px #333;
+              box-shadow: 0 0 10px $color-11;
             }
           }
         }

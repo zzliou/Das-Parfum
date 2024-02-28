@@ -73,8 +73,8 @@ function goToContact() {
   width: 100%;
   height: auto;
   .container {
-    background-color: #252525;
-    color: #dad9cf;
+    background-color: $color-11;
+    color: $color-10;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -90,7 +90,7 @@ function goToContact() {
         padding: 10px;
       }
       .divider {
-        border: #dad9cf 1px solid;
+        border: $color-10 1px solid;
         width: 100%;
         margin: 10px 0px 20px 0px;
       }
@@ -105,8 +105,8 @@ function goToContact() {
         padding: 10px 0px;
       }
         button {
-          background-color: #252525;   
-          color: #dad9cf;
+          background-color: $color-11;   
+          color: $color-10;
         }
       }
       .check {
@@ -131,7 +131,7 @@ function goToContact() {
         padding: 10px 0px;
       }
       .divider {
-        border: #dad9cf 1px solid;
+        border: $color-10 1px solid;
         width: 100%;
         margin: 10px 0px 20px 0px;
       }
@@ -144,7 +144,7 @@ function goToContact() {
       height: 250px;
       text-align: start;
       .divider {
-        border: #dad9cf 1px solid;
+        border: $color-10 1px solid;
         width: 100%;
         margin: 10px 0px 20px 0px;
       }

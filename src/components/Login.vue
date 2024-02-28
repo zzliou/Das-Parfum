@@ -48,7 +48,7 @@ defineExpose({
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #faf8f5;
+  background-color: $color-4;
   width: 500px;
   height: 800px;
   z-index: 1;
@@ -57,7 +57,7 @@ defineExpose({
       cursor: pointer;
       margin: 20px 0px 0px 450px;
       border-style: none;
-      background-color: #faf8f5;
+      background-color: $color-4;
       font-size: 22px;
     }
   }
@@ -79,10 +79,10 @@ defineExpose({
     }
     input {
       width: 100%;
-      background-color: #faf8f5;
+      background-color: $color-4;
       height: 30px;
       border: none;
-      border-bottom: 1px solid #a09f9b;
+      border-bottom: 1px solid $color-10;
     }
     .loginButton {
       input {
@@ -90,21 +90,21 @@ defineExpose({
         width: 100%;
         height: 50px;
         padding: 10px 0px;
-        background-color: #333333;
-        color: #faf8f5;
+        background-color: $color-11;
+        color: $color-1;
       }
     }
     .register {
       p {
-        color: #c3c3bb;
+        color: $color-3;
       }
       button {
         margin: 50px 0px;
         width: 100%;
         height: 50px;
         padding: 10px 0px;
-        background-color: #faf8f5;
-        color: #333333;
+        background-color: $color-4;
+        color: $color-11;
       }
     }
   }

@@ -24,14 +24,14 @@ import { useRouter } from 'vue-router'
   transition: all .3s;
   &:hover {
     cursor: pointer;
-    border-color: #333;
-    background-color: #333;
-    color: #fffef2;
+    border-color: $color-11;
+    background-color: $color-11;
+    color: $color-1;
   }
   .wrapper {
     display: flex;
     padding: 20px 20px;
-    border: solid 1px #333;
+    border: solid 1px  $color-11;
     .action {
       margin-left: 150px;
     }

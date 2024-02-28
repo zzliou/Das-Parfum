@@ -364,8 +364,6 @@ function goToProductPage(product) {
   .swiper-container-zero {
     width: 100%;
     height: auto;
-    padding-top: 50px;
-
     .newsWrapper {
       display: flex;
       position: relative;
