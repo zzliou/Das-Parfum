@@ -6,6 +6,8 @@ import ProductListView from '../views/ProductListView.vue';
 import ContactUsView from '../views/ContactUsView.vue';
 import InsidepagesView from '../views/InsidepagesView.vue';
 import CartshopView from '../views/CartshopView.vue';
+import OrderPageView from '../views/OrderPageView.vue';
+import FinalpagesView from '../views/FinalpagesView.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -43,6 +45,16 @@ const router = createRouter({
       path: '/cartshopView',
       name: 'cartshopView',
       component: CartshopView
+    },
+    {
+      path: '/OrderPageView',
+      name: 'OrderPageView',
+      component: OrderPageView
+    },
+    {
+      path: '/FinalpagesView',
+      name: 'FinalpagesView',
+      component: FinalpagesView
     }
   ]
 })

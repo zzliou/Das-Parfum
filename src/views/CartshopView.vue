@@ -31,8 +31,13 @@
           <div class="total">總計</div>
           <div class="totalPrice">{{ totalPrice }}</div>
         </div>
+        <div class="buttonWrapper">
+          <div class="shopping">
+          <button><RouterLink to="/productList">繼續購物</RouterLink></button>
+        </div>
         <div class="checkout">
           <button>結帳</button>
+        </div>
         </div>
       </div>
     </div>
@@ -47,6 +52,10 @@ let globalObject = getCurrentInstance().appContext.config;
 let cartList = globalObject.cartList;
 let cartListToShow = ref(cartList);
 let totalPrice = ref(0);
+const router = useRouter()
+function goToContact() {
+  router.push('/productList')
+}
 
 
 function countTotal() {
@@ -83,7 +92,6 @@ function handleMinus(product) {
 
 function handlePlus(product) {
   product.quantity = product.quantity + 1;
-  // totalPrice.value  = cartListToShow
   totalPrice.value = 0;
   for(let product of cartListToShow.value){
     let itemTotalPrice = product.sizeList[product.selectedSizeIndex].price * product.quantity;
@@ -202,11 +210,20 @@ function handleDelete(product) {
           font-size: 22px;
         }
       }
-      .checkout {
-        text-align: end;
-        padding: 20px 0px;
+
+      .buttonWrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        .shopping {
+        text-align: start;
+        padding: 20px 10px;
+        
+        RouterLink {
+          text-decoration: none;
+        }
         button {
-          width: 500px;
+          width: 300px;
           height: 50px;
           background-color: $color-3;
           border: $color-3;
@@ -215,6 +232,23 @@ function handleDelete(product) {
             cursor: pointer;
           }
         }
+      }
+      .checkout {
+        text-align: end;
+        padding: 20px 0px;
+
+        button {
+          width: 300px;
+          height: 50px;
+          background-color: $color-11;
+          border: $color-11;
+          font-size: 16px;
+          color: $color-2;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
       }
     }
   }

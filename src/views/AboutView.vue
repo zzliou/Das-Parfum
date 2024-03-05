@@ -47,14 +47,14 @@
         </div>
         <div class="storyImage">
           <img
-            src="https://www.aesop.com/u1nb1km7t5q7/6fsPa4NCMUwwMkM4zCgI6D/7a3798640d11e6ec5834b43ac2433959/Aesop_About_Page_Primary_Desktop_1440x1500px.jpg"
+            src="@/assets/img/About素材/about1.jpg"
           />
         </div>
       </div>
       <div class="productsIdeaWrapper">
         <div class="ideaImage">
           <img
-            src="https://www.aesop.com/u1nb1km7t5q7/sDTj3HZClEPnUE5eW2u77/038356b11fe81c36961d78a502e333b7/Our-Story-Inset-1-1760x2640.jpg"
+            src="@/assets/img/About素材/about2.png"
           />
         </div>
         <div class="productsIdea">
@@ -74,7 +74,7 @@
         </div>
         <div class="designImage">
           <img
-            src="https://www.aesop.com/u1nb1km7t5q7/4uahoGkAUbKTdgi26UWS8U/d35893987804270676a1ab2a46ad2038/Our-Story-Carousel-1-Desktop-2880x1620.jpg"
+            src="@/assets/img/About素材/about3.jpg"
             alt=""
           />
         </div>
@@ -90,7 +90,7 @@
         </div>
         <div class="shopImage">
           <img
-            src="https://www.aesop.com/u1nb1km7t5q7/54cANjZ90VxXTpr0MAZvYK/7f321031fc296054a256bd0ac8290bb1/Our-Story-Inset-2-1760x2640.jpg"
+            src="@/assets/img/About素材/about4.jpg"
             alt=""
           />
         </div>
@@ -138,6 +138,10 @@ import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
 import 'swiper/scss/scrollbar'
+import shop2 from "@/assets/img/首頁素材/首頁-門市圖/shop2.png";
+import shop3 from "@/assets/img/About素材/shop3.png";
+
+
 let swiperFirst = null
 function handleClikck(swiper) {
   swiper.slideNext()
@@ -155,13 +159,13 @@ const pagination = {
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
 const swiperListFirst = ref([
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/1vsHBR6MRMiDp80UrQiQ50/40eaec1662fcc972d04f4a2984a787ac/Aesop_Mitsukoshi_Tainan_Carousel_1_Desktop_2560x1440px.jpg'
+    src: shop3
   },
   {
     src: 'https://www.aesop.com/u1nb1km7t5q7/1HjbSmWST0aPmE43FxsFaz/cd395c0bdda5a2055cb6ca43e753e11b/Aesop_Lalaport_Taichung_Mid_Desktop_2560x1440px.jpg'
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2tkDDfRb4xG0xALvcKj0Vk/19ed567970d93a5e8ebabc4807990a9e/Aesop_Hsin_Chu_Carousel_1_Desktop_2560x1440px.jpg'
+    src: shop2
   }
 ])
 </script>

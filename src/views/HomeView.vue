@@ -71,7 +71,7 @@
         <div class="perfumeWapper">
           <div class="perfumeImage">
             <img
-              src="https://www.aesop.com/u1nb1km7t5q7/eyd7TwhtFoPcMMtmiYUYV/fcba6f1a9329b7cd9721e9b2c04feb71/Aesop_A_Guide_to_Fragrance_Web_Athenaeum_Thumbnail_Horizontal_Desktop_1920x1080px.jpg"
+              src="@/assets/img/首頁素材/首頁-香氛調.jpg"
               alt=""
             />
           </div>
@@ -95,7 +95,7 @@
           </div>
           <div class="giftImage">
             <img
-              src="https://www.aesop.com/u1nb1km7t5q7/48k8JdNdBnmThuOKurg7b6/8cae4c48f017061e3bda5e80048f8e12/Aesop_Always_On_Homepage_Secondary_Favourites_Mid_Desktop_2560x1440px.jpg"
+              src="@/assets/img/首頁素材/首頁驚喜禮物.png"
               alt=""
             />
           </div>
@@ -103,7 +103,7 @@
         <div class="videoServiceWapper">
           <div class="videoServiceImage">
             <img
-              src="https://www.aesop.com/u1nb1km7t5q7/7DCS7sJtFqK0r4KfGJA3j5/49c30385a5de31b6158b317bfffa0b54/Aesop_Gift_Kits_2022-23_Homepage_Secondary_Assistance_Desktop_2560x1440px.jpg"
+              src="@/assets/img/首頁素材/首頁-居家諮詢.png"
               alt=""
             />
           </div>
@@ -217,6 +217,13 @@ import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
 import 'swiper/scss/scrollbar'
+import shop1 from "@/assets/img/首頁素材/首頁-門市圖/shop1.png";
+import shop2 from "@/assets/img/首頁素材/首頁-門市圖/shop2.png";
+import shop3 from "@/assets/img/首頁素材/首頁-門市圖/shop3.png";
+import BN1 from "@/assets/img/首頁素材/首頁-BN/banner1.jpg";
+import BN2 from "@/assets/img/首頁素材/首頁-BN/banner2.jpg";
+import BN3 from "@/assets/img/首頁素材/首頁-BN/banner3.png";
+
 let swiperZero = null
 let swiperFirst = null
 let swiperSecond = null
@@ -255,20 +262,20 @@ const swiperListZero = ref([
     maintitle: '為您介紹 Aesop 線香系列',
     subtitle:
       '探索三款使人踏上心靈漫遊之旅的香氛──紫記線香、蜻蛉線香、更級線香──以及呈現謙遜美學的青銅線香座。',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/3dsDfVszHMDanrUsE4pGQx/6111b560b1a50415b1843b235e3ec870/Aesop_Incense_2023_Web_Homepage_Primary_Full_Bleed_Desktop_XL_5120x1856px.jpg'
+    src: BN1
   },
   {
     smalltitle: '高效配方',
     maintitle: '肌膚調理凝露',
     subtitle:
       '這款具有蜂蜜般獨特質地、蘊含維他命 B 和 C 的輕度保濕配方，能有效呵護、柔軟、平衡肌膚。',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/3UoIV5V5v1vrhK7ktNGasV/43f1aa217d717e19f6084220884bf15f/Aesop_B_Triple_C_2024_Web_Homepage_Secondary_3_50-50_Desktop_1440x1500px.jpg'
+    src: BN2
   },
   {
     smalltitle: '陶冶心情',
     maintitle: '2024年全新力作',
     subtitle: '香水系列分為以下幾種香調：花香、清新、木質、馥郁──也可能同時擁有兩種香調特色。',
-    src: 'https://images.ctfassets.net/u1nb1km7t5q7/erW1TyHQWoA7WbSfLCKFQ/12c2db462dd2290505da65a7d62791ae/Aesop_Category_Fragrance_Care_Primary_Full_Bleed_Desktop_2880x1044px.jpg'
+    src: BN3
   }
 ])
 
@@ -326,15 +333,16 @@ const swiperListSecond = ref([
     src: 'https://www.aesop.com/u1nb1km7t5q7/4Ei5FykNQjLJ5OGb04i0rv/f335ea791c71086cc5962322a1e98ed3/Aesop_Kits_Gift_Kits_2023-24_Majestic_Melodies_GL_Web_Front_X-Large_3000x1822px.png'
   }
 ])
+
 const swiperListThird = ref([
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/1vsHBR6MRMiDp80UrQiQ50/40eaec1662fcc972d04f4a2984a787ac/Aesop_Mitsukoshi_Tainan_Carousel_1_Desktop_2560x1440px.jpg'
+    src: shop1
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/1HjbSmWST0aPmE43FxsFaz/cd395c0bdda5a2055cb6ca43e753e11b/Aesop_Lalaport_Taichung_Mid_Desktop_2560x1440px.jpg'
+    src: shop2
   },
   {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2tkDDfRb4xG0xALvcKj0Vk/19ed567970d93a5e8ebabc4807990a9e/Aesop_Hsin_Chu_Carousel_1_Desktop_2560x1440px.jpg'
+    src: shop3
   }
 ])
 const router = useRouter()

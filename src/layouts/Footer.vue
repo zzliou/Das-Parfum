@@ -17,7 +17,7 @@
         <div class="mainTitle">訂單與諮詢</div>
         <div class="divider"></div>
         <div class="contact">
-          <RouterLink to="/contact">聯絡我們</RouterLink>
+          <RouterLink to="/contact">聯絡我們↗</RouterLink>
         </div>
         <p>常見問答</p>
         <p>寄送規則</p>
@@ -52,9 +52,9 @@
       <div class="wrapper">
         <div class="mainTitle">社群媒體</div>
         <div class="divider"></div>
-        <p>Instagram ↗</p>
-        <p>Facebook ↗</p>
-        <p>Twitter ↗</p>
+        <p>Instagram</p>
+        <p>Facebook</p>
+        <p>Twitter</p>
       </div>
     </div>
   </div>

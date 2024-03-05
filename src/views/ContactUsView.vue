@@ -126,20 +126,20 @@ window.scrollTo({
       }
       a {
         font-size: 16px;
-        border: solid 1px $color-3;
+        border: solid 1px $color-11;
         text-decoration: none;
-        color: $color-3;
+        color: $color-11;
         padding: 10px 20px;
         transition: width 1s, height 1s, background-color 1s;
         &:hover {
           background-color: $color-3;
-          color: $color-2
+          color: $color-11
         }
       }
       .video {
         width: 500px;
         height: auto;
-        margin: 20px 0px 20px 700px;
+        margin: 20px 0px 20px 500px;
         @include pad {
           margin: 20px 0px 20px 200px;
         }
@@ -148,7 +148,7 @@ window.scrollTo({
       .mail {
         width: 500px;
         height: auto;
-        margin: 20px 0px 20px 700px;
+        margin: 20px 0px 20px 500px;
         @include pad {
           margin: 20px 0px 20px 200px;
         }
@@ -157,7 +157,7 @@ window.scrollTo({
       .phone {
         width: 500px;
         height: auto;
-        margin: 20px 0px 20px 700px;
+        margin: 20px 0px 20px 500px;
         @include pad {
           margin: 20px 0px 20px 200px;
         }

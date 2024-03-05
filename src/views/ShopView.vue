@@ -235,6 +235,8 @@ window.scrollTo({
       &:hover {
         cursor: pointer;
         font-weight: 800;
+        text-decoration: underline;
+        font-size: 18px;
       }
       }
     }
