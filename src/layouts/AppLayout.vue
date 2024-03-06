@@ -12,13 +12,13 @@
     </div>
     <div class="navbarRight">
       <div class="login" @click="showLoginModal">登入會員</div>
-      <RouterLink to="/cartshopView">購物車</RouterLink>
+      <div class="cart" @click="navigateToCartShop" @mouseenter="showPreviewCart" @mouseleave="hidePreviewCart">購物車</div>
     </div>
   </div>
   <div class="content">
     <RouterView />
     <Login ref="loginRef"/>
-    <PreviewCart ref="PreviewCartRef"/>
+    <PreviewCart ref="previewCartRef"/>
   </div>
   <Footer></Footer>
 </template>
@@ -29,15 +29,25 @@ import { RouterLink, RouterView } from 'vue-router'
 import Footer from './Footer.vue';
 import Login from '../components/Login.vue';
 import PreviewCart from '@/components/PreviewCart.vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter()
 const loginRef = ref(null)
+
 function showLoginModal() {
   loginRef.value.show();
 }
 
-const PreviewCartRef = ref(null)
-function showPreModal() {
-  PreviewCartRef.value.show();
+function navigateToCartShop() {
+  router.push("/cartshopView")
+}
+
+const previewCartRef = ref()
+function showPreviewCart() {
+  previewCartRef.value.show();
+}
+function hidePreviewCart() {
+  previewCartRef.value.hide();
 }
 
 </script>
