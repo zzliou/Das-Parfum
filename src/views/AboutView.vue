@@ -47,14 +47,14 @@
         </div>
         <div class="storyImage">
           <img
-            src="@/assets/img/About素材/about1.jpg"
+            src="@/assets/img/About.pic/about1.jpg"
           />
         </div>
       </div>
       <div class="productsIdeaWrapper">
         <div class="ideaImage">
           <img
-            src="@/assets/img/About素材/about2.png"
+            src="@/assets/img/About.pic/about2.png"
           />
         </div>
         <div class="productsIdea">
@@ -74,7 +74,7 @@
         </div>
         <div class="designImage">
           <img
-            src="@/assets/img/About素材/about3.jpg"
+            src="@/assets/img/About.pic/about3.jpg"
             alt=""
           />
         </div>
@@ -90,7 +90,7 @@
         </div>
         <div class="shopImage">
           <img
-            src="@/assets/img/About素材/about4.jpg"
+            src="@/assets/img/About.pic/about4.jpg"
             alt=""
           />
         </div>
@@ -138,8 +138,9 @@ import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
 import 'swiper/scss/scrollbar'
-import shop2 from "@/assets/img/首頁素材/首頁-門市圖/shop2.png";
-import shop3 from "@/assets/img/About素材/shop3.png";
+import shop1 from "@/assets/img/Home.pic/home-store/shop1.png";
+import shop2 from "@/assets/img/Home.pic/home-store/shop2.jpg";
+import shop3 from "@/assets/img/Home.pic/home-store/shop3.jpg";
 
 
 let swiperFirst = null
@@ -288,7 +289,7 @@ const swiperListFirst = ref([
   .shopWrapper {
     margin-top: 200px;
     width: 100%;
-    height: auto;
+    height: 700px;
     display: flex;
     .shop {
       width: 60%;

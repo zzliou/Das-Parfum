@@ -71,7 +71,7 @@
         <div class="perfumeWapper">
           <div class="perfumeImage">
             <img
-              src="@/assets/img/首頁素材/首頁-香氛調.jpg"
+              src="@/assets/img/Home.pic/home-perfume.jpg"
               alt=""
             />
           </div>
@@ -95,7 +95,7 @@
           </div>
           <div class="giftImage">
             <img
-              src="@/assets/img/首頁素材/首頁驚喜禮物.png"
+              src="@/assets/img/Home.pic/home-gift.jpg"
               alt=""
             />
           </div>
@@ -103,7 +103,7 @@
         <div class="videoServiceWapper">
           <div class="videoServiceImage">
             <img
-              src="@/assets/img/首頁素材/首頁-居家諮詢.png"
+              src="@/assets/img/Home.pic/home-videocall.jpg"
               alt=""
             />
           </div>
@@ -217,12 +217,21 @@ import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
 import 'swiper/scss/scrollbar'
-import shop1 from "@/assets/img/首頁素材/首頁-門市圖/shop1.png";
-import shop2 from "@/assets/img/首頁素材/首頁-門市圖/shop2.png";
-import shop3 from "@/assets/img/首頁素材/首頁-門市圖/shop3.png";
-import BN1 from "@/assets/img/首頁素材/首頁-BN/banner1.jpg";
-import BN2 from "@/assets/img/首頁素材/首頁-BN/banner2.jpg";
-import BN3 from "@/assets/img/首頁素材/首頁-BN/banner3.png";
+import shop1 from "@/assets/img/Home.pic/home-store/shop1.png";
+import shop2 from "@/assets/img/Home.pic/home-store/shop2.jpg";
+import shop3 from "@/assets/img/Home.pic/home-store/shop3.jpg";
+import BN1 from "@/assets/img/Home.pic/home-BN/banner1.jpg";
+import BN2 from "@/assets/img/Home.pic/home-BN/banner2.jpg";
+import BN3 from "@/assets/img/Home.pic/home-BN/banner3.png";
+import set001 from "@/assets/img/Home.pic/home-set/set001.png";
+import set002 from "@/assets/img/Home.pic/home-set/set002.png";
+import set003 from "@/assets/img/Home.pic/home-set/set003.png";
+import set004 from "@/assets/img/Home.pic/home-set/set004.png";
+import product01 from "@/assets/img/Product.pic/1.png";
+import product02 from "@/assets/img/Product.pic/2.png";
+import product03 from "@/assets/img/Product.pic/3.png";
+import product04 from "@/assets/img/Product.pic/4.png";
+import product05 from "@/assets/img/Product.pic/5.png";
 
 let swiperZero = null
 let swiperFirst = null
@@ -283,54 +292,49 @@ const swiperListFirst = ref([
   {
     title: '芫荽籽身體潔膚露',
     subtitle: '溫暖木質辛香',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/nWdJmaoekK7lzZDGZs6Ap/b47f80e978322c2faf73a5ebb46ad8aa/Aesop_Skin_B_Triple_C_Facial_Balancing_Gel_60mL_Web_Front_X-Large_3000x1592px.png'
+    src: product01
   },
   {
     title: '橙香面部精華素',
     subtitle: '維他命Ｃ打底精華',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/nWdJmaoekK7lzZDGZs6Ap/b47f80e978322c2faf73a5ebb46ad8aa/Aesop_Skin_B_Triple_C_Facial_Balancing_Gel_60mL_Web_Front_X-Large_3000x1592px.png'
+    src: product02
   },
   {
     title: '日夜滋養組合',
     subtitle: '極致保濕配方',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/nWdJmaoekK7lzZDGZs6Ap/b47f80e978322c2faf73a5ebb46ad8aa/Aesop_Skin_B_Triple_C_Facial_Balancing_Gel_60mL_Web_Front_X-Large_3000x1592px.png'
+    src: product03
   },
   {
     title: '大馬仕玫瑰保養精華',
     subtitle: '植物萃取天然成分',
-    src: 'https://images.ctfassets.net/u1nb1km7t5q7/3QfGNj3NpYM5h3zLpQHWK0/6ac142e435309dc51f2dc2e477b54a95/Aesop_Skin_Lucent_Facial_Concentrate_60mL_Web_Large_684x668px.png'
+    src: product04
   },
   {
     title: '健康滋養面霜',
     subtitle: '超導保濕成分',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/53Q5a81QFoAlk9fqyzPRWi/ff703aa4abdc6d0fa3479da1347a19a7/Aesop_Skin_Damascan_Rose_Facial_Treatment_25mL_Web_Large_684x668px.png'
+    src: product05
   }
 ])
 const swiperListSecond = ref([
   {
-    title: '諧美聲部',
-    subtitle: '護手霜、清潔露、乾洗手',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/6y2ZMOukY9ToPR0CFnGWjU/e48c2d8f08bb4208f2eadf736f6ba123/Aesop_Kits_Gift_Kits_2023-24_Tuneful_Textures_GL_Web_Front_Large_1500x911px.png'
-  },
-  {
-    title: '寓言曲調',
-    subtitle: '護手霜、潔膚露、護唇膏',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/XkDJAABVq29aLgqi0Wpxn/73d05853da1a2a1fdeef4b1433086e51/Aesop_Kits_Gift_Kits_2023-24_Fabulous_Forms_GL_Web_Front_Large_1500x911px.png'
-  },
-  {
-    title: '慷慨節奏',
-    subtitle: '天竺葵身體潔膚露、去角質露、身體乳霜',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/2TDHu0T0jvbsUoQcH8prqN/a3a5d66800a71d743167b4db6a247525/Aesop_Kits_Gift_Kits_2023-24_Rousing_Rythyms_GL_Web_Front_X-Large_3000x1822px.png'
-  },
-  {
-    title: '心旋和聲',
+    title: '春心和聲',
     subtitle: '手部清潔露、廁後點滴、室內噴霧',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/60WGIxgcYmP8YImmL3HnvM/963d1c080c3f2e5460f50a15335fbd9d/Aesop_Kits_Gift_Kits_2023-24_Heartful_Harmonies_GL_Web_Front_X-Large_3000x1822px.png'
+    src: set001
   },
   {
-    title: '詩意旋律',
-    subtitle: '清潔露、護手霜、身體潔膚露、乳霜',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/4Ei5FykNQjLJ5OGb04i0rv/f335ea791c71086cc5962322a1e98ed3/Aesop_Kits_Gift_Kits_2023-24_Majestic_Melodies_GL_Web_Front_X-Large_3000x1822px.png'
+    title: '夏戀節奏',
+    subtitle: '護手霜、潔膚露、護唇膏',
+    src: set002
+  },
+  {
+    title: '秋頌曲調',
+    subtitle: '護手霜、潔膚露、護唇膏',
+    src: set003
+  },
+  {
+    title: '冬禮聲部',
+    subtitle: '護手霜、清潔露、乾洗手',
+    src: set004
   }
 ])
 
@@ -536,6 +540,7 @@ function goToProductPage(product) {
         width: 100%;
         height: 500px;
         object-fit: cover;
+        background-position: 0 -100px;
         @include pad {
           height: 300px;
         }
@@ -688,7 +693,7 @@ function goToProductPage(product) {
         } 
 
       img {
-        width: 600px;
+        width: 350px;
         height: auto;
         &:hover {
           cursor: pointer;
@@ -764,12 +769,15 @@ function goToProductPage(product) {
 
       .shopimage {
         margin-left: auto;
+        width: 100%;
+        height: 500px;
 
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
+
       }
     }
   }
