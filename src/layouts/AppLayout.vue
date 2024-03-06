@@ -18,6 +18,7 @@
   <div class="content">
     <RouterView />
     <Login ref="loginRef"/>
+    <PreviewCart ref="PreviewCartRef"/>
   </div>
   <Footer></Footer>
 </template>
@@ -27,13 +28,17 @@ import { nextTick, ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import Footer from './Footer.vue';
 import Login from '../components/Login.vue';
+import PreviewCart from '@/components/PreviewCart.vue';
 
 const loginRef = ref(null)
 function showLoginModal() {
   loginRef.value.show();
 }
 
-
+const PreviewCartRef = ref(null)
+function showPreModal() {
+  PreviewCartRef.value.show();
+}
 
 </script>
 

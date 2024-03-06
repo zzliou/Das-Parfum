@@ -1,69 +1,56 @@
 <template>
-  <div @mouseover="showPopup" @mouseleave="hidePopup">
-    <!-- 購物車 -->
+  <div class="login-dialogue" v-if="isShow">
+    <div>
+    <div 
+      @mouseenter="showCartPreview"
+      @mouseleave="hideCartPreview"
+      @click="goToCartPage" > 購物車 </div>
+    
+    <!-- 购物车预览 -->
+    <cart-preview v-if="showPreview" />
   </div>
-  <!-- 彈窗 -->
-  <div v-if="isPopupVisible" class="popup">
-    <!-- 彈窗內容 -->
-    <div class="previewCart">
-      <div class="content">
-        <div class="item">
-          <div class="title">商品名稱</div>
-          <div class="title">容量</div>
-          <div class="title">單價</div>
-          <div class="title">數量</div>
-          <div class="title">小計</div>
-        </div>
-        <div class="divider"></div>
-        <div class="product-wrapper">
-          <div class="item_detail" v-for="(product, index) in cartListToShow" :key="index">
-            <div class="name">{{ product.title }}</div>
-            <div class="capacity">{{ product.sizeList[product.selectedSizeIndex].capacity }} ml</div>
-            <div class="unitPrice"> {{ product.sizeList[product.selectedSizeIndex].price }}</div>
-            <div class="quantity">
-              <button @click="handleMinus(product)">-</button>
-              {{ product.quantity }}
-              <button @click="handlePlus(product)">+</button>
-              <div class="delete">
-                <button @click="handleDelete(product)">刪除</button>
-              </div>
-            </div>
-            <div class="subtotal">{{ product.sizeList[product.selectedSizeIndex].price * product.quantity }}</div>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="countWrapper">
-          <div class="totalWrapper">
-            <div class="total">總計</div>
-            <div class="totalPrice">{{ totalPrice }}</div>
-          </div>
-          <div class="checkout">
-            <button>前往結帳</button>
-          </div>
+    <!-- <div class="wrapper">
+      <div class="loginTitle">登入您的帳號</div>
+      <div class="email">電子郵件</div>
+      <input type="email" name="email" placeholder="輸入您的電子郵件" />
+      <div class="password">密碼</div>
+      <input type="password" name="password" placeholder="輸入密碼" />
+      <div class="loginButton">
+        <input type="submit" value="登入" />
+      </div>
+      <div class="register">
+        <h3>還沒有Aesop帳戶?</h3>
+        <p>
+          在建立 Aesop
+          帳戶後，您可以將喜愛的產品收藏至願望清單中，也能查看訂單歷史紀錄，並輕鬆享有快速結帳功能。
+        </p>
+        <div class="register">
+          <button>註冊</button>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script setup>
 import { defineProps, defineExpose, ref } from 'vue'
+import CartPreview from './PreviewCart.vue'; // 导入购物车预览组件
 
-export default {
-  data() {
-    return {
-      isPopupVisible: false
-    };
-  },
-  methods: {
-    showPopup() {
-      this.isPopupVisible = true;
-    },
-    hidePopup() {
-      this.isPopupVisible = false;
-    }
-  }
-};
+defineProps(['title'])
+let isShow = ref(false)
+function show() {
+  isShow.value = true
+}
+function hide() {
+  isShow.value = false
+}
+defineExpose({
+  show: show,
+  hide: hide
+})
+
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -76,7 +63,6 @@ export default {
   width: 500px;
   height: 800px;
   z-index: 1;
-
   .closed {
     button {
       cursor: pointer;
@@ -86,155 +72,52 @@ export default {
       font-size: 22px;
     }
   }
-
-  .content {
-    padding: 50px 200px;
-    font-size: 16px;
-    position: relative;
-
-    .item {
+  .wrapper {
+    font-family: sans-serif;
+    padding: 50px;
+    text-align: start;
+    .loginTitle {
+      font-size: 26px;
+      padding: 50px 0px;
+    }
+    .email {
+      font-size: 16px;
+      padding: 10px 0px;
+    }
+    .password {
+      font-size: 16px;
+      padding: 10px 0px;
+    }
+    input {
       width: 100%;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .title {
-        padding: 5px 20px;
-        width: 300px;
-        text-align: center;
+      background-color: $color-4;
+      height: 30px;
+      border: none;
+      border-bottom: 1px solid $color-10;
+    }
+    .loginButton {
+      input {
+        margin: 50px 0px;
+        width: 100%;
+        height: 50px;
+        padding: 10px 0px;
+        background-color: $color-11;
+        color: $color-1;
       }
     }
-
-    .item_detail {
-      width: 100%;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .name {
-        font-weight: 600;
-        padding: 5px 20px;
-        width: 300px;
-        text-align: center;
+    .register {
+      p {
+        color: $color-3;
       }
-
-      .capacity {
-        padding: 5px 20px;
-        width: 300px;
-        text-align: center;
-      }
-
-      .unitPrice {
-        padding: 5px 20px;
-        width: 300px;
-        text-align: center;
-      }
-
-      .quantity {
-        padding: 5px 20px;
-        width: 300px;
-        display: flex;
-        justify-content: center;
-
-        button {
-          padding: 0px 5px;
-          margin-left: 3px;
-          background-color: $color-1;
-          border: none;
-          cursor: pointer;
-        }
-
-        .delete {
-          font-size: 16px;
-          text-align: start;
-
-          button {
-            background-color: $color-1;
-            border: none;
-            transition: opacity 0.3s ease;
-          }
-        }
-      }
-
-      .subtotal {
-        padding: 5px 20px;
-        width: 300px;
-        text-align: center;
-      }
-    }
-
-
-    .divider {
-      border: solid 1px $color-3;
-    }
-
-    .countWrapper {
-      bottom: 300px;
-      right: 200px;
-      margin-top: 20px;
-
-      .totalWrapper {
-        display: flex;
-        width: 500px;
-        margin-left: auto;
-        align-items: flex-end;
-
-        .total {
-          font-size: 16px;
-          margin-right: auto;
-        }
-
-        .totalPrice {
-          font-size: 22px;
-        }
-      }
-
-      .buttonWrapper {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 30px;
-
-        .shopping {
-          text-align: start;
-          padding: 20px 10px;
-
-          RouterLink {
-            text-decoration: none;
-          }
-
-          button {
-            width: 300px;
-            height: 50px;
-            background-color: $color-3;
-            border: $color-3;
-            font-size: 16px;
-
-            &:hover {
-              cursor: pointer;
-            }
-          }
-        }
-
-        .checkout {
-          text-align: end;
-          padding: 20px 0px;
-
-          button {
-            width: 300px;
-            height: 50px;
-            background-color: $color-11;
-            border: $color-11;
-            font-size: 16px;
-            color: $color-2;
-
-            &:hover {
-              cursor: pointer;
-            }
-          }
-        }
+      button {
+        margin: 50px 0px;
+        width: 100%;
+        height: 50px;
+        padding: 10px 0px;
+        background-color: $color-4;
+        color: $color-11;
       }
     }
   }
-}</style>
+}
+</style>
