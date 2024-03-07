@@ -73,7 +73,6 @@ function hidePreviewCart() {
   height: 80px;
   background-color: $color-1;
   display: flex;
-  // padding: 5px 0px 5px 40px;
   font-family: Suisse, sans-serif;
   font-size: 14px;
   .navbarLeft {
@@ -85,23 +84,39 @@ function hidePreviewCart() {
     a {
       text-decoration: none;
       color: $color-11;
+      &:hover {
+        font-weight: bold;
+      }
     }
 
     @include mac {
       font-size: 16px;
     }
-  }
+    }
   .navbarRight {
     display: flex;
     height: auto;
-    // font-size: 18px;
     align-items: center;
     gap: 30px;
     padding: 5px 20px 5px 0px;
     margin-left: auto;
-    a {
+
+    .login {
       text-decoration: none;
       color: $color-11;
+      &:hover {
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .cart {
+      text-decoration: none;
+      color: $color-11;
+      &:hover {
+        font-weight: bold;
+        cursor: pointer;
+      }
     }
 
     @include mac {

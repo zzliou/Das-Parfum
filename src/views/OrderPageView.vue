@@ -8,21 +8,23 @@
         <div class="divider"></div>
         <div class="listWrapper">
           <div class="item">商品名稱</div>
+          <div class="item">容量</div>
           <div class="item">數量</div>
           <div class="item">單價</div>
           <div class="item">小計</div>
         </div>
         <div class="dividerLiter"></div>
-        <div class="listWrapper">
-          <div class="detail">XXX</div>
-          <div class="detail">XXX</div>
-          <div class="detail">XXX</div>
-          <div class="detail">XXX</div>
+        <div class="listWrapper" v-for="(product, index) in cartListToShow" :key="index">
+          <div class="detail">{{ product.title }}</div>
+          <div class="detail">{{ product.sizeList[product.selectedSizeIndex].capacity }} ml</div>
+          <div class="detail">{{product.quantity}}</div>
+          <div class="detail">{{ product.sizeList[product.selectedSizeIndex].price }}</div>
+          <div class="detail">{{ product.sizeList[product.selectedSizeIndex].price * product.quantity }}</div>
         </div>
         <div class="dividerLiter"></div>
         <div class="totalPrice">
-          <div class="title">總計金額</div>
-          <div class="number">XXX</div>
+          <div class="title">總計金額:NT$</div>
+          <div class="number">{{ totalPrice }}</div>
         </div>
         <div class="divider"></div>
       </div>
@@ -64,8 +66,21 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, getCurrentInstance } from 'vue';
 import { useRouter } from 'vue-router'
+let globalObject = getCurrentInstance().appContext.config;
+let cartList = globalObject.cartList;
+let cartListToShow = ref(cartList);
+let totalPrice = ref(0);
+const router = useRouter()
+
+function countTotal() {
+  for(let product of cartListToShow.value){
+    let itemTotalPrice = product.sizeList[product.selectedSizeIndex].price * product.quantity;
+    totalPrice.value = totalPrice.value + itemTotalPrice  
+  } 
+}
+countTotal()
 
 
 </script>
@@ -98,33 +113,35 @@ import { useRouter } from 'vue-router'
 
       .listWrapper {
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
         padding: 10px 0px;
-
         .item {
-          padding: 10px 10px 0px 0px;
-          width: 200px;
+          display: grid;
+          padding: 10px 10px 10px 0px;
+          width: 300px;
           font-weight: bold;
           font-size: 20px;
         }
 
         .detail {
+          display: flex;
+          justify-content: space-between;
           padding: 10px 10px 0px 0px;
-          width: 200px;
-          font-weight: bold;
+          width: 300px;
+          font-size: 20px;
         }
       }
 
       .totalPrice {
         width: 300px;
         display: flex;
-        align-items: center;
         margin-left: auto;
-        padding-top: 20px;
-        justify-content: space-around;
-        font-size: 20px;
+        padding: 20px 0px;
+        font-size: 25px;
         font-weight: 600;
+        justify-content: center;
+        align-items: center;
       }
     }
 
@@ -190,12 +207,13 @@ import { useRouter } from 'vue-router'
       .divider {
         width: 100%;
         border: $color-11 1.5px solid;
-        margin: 20px 0px;
+        margin: 10px 0px;
       }
 
       .dividerLiter {
         width: 100%;
         border: $color-3 1px solid;
+        // margin: 20px 0px;
       }
     }
   }

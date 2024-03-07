@@ -32,10 +32,10 @@
           <div class="totalPrice">{{ totalPrice }}</div>
         </div>
         <div class="buttonWrapper">
-          <div class="shopping">
-          <button><RouterLink to="/productList">繼續購物</RouterLink></button>
+          <div class="shopping" @click="goShopping">
+          <button >繼續購物</button>
         </div>
-        <div class="checkout">
+        <div class="checkout" @click="goOrderpage">
           <button>結帳</button>
         </div>
         </div>
@@ -46,15 +46,20 @@
 
 <script setup>
 import { ref, getCurrentInstance } from 'vue';
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
 
 let globalObject = getCurrentInstance().appContext.config;
 let cartList = globalObject.cartList;
 let cartListToShow = ref(cartList);
 let totalPrice = ref(0);
 const router = useRouter()
-function goToContact() {
-  router.push('/productList')
+
+function goShopping() {
+  router.push("/productList")
+}
+
+function goOrderpage() {
+  router.push('/OrderPageView')
 }
 
 
@@ -65,20 +70,9 @@ function countTotal() {
   } 
 }
 countTotal()
-// function handleMinus(product) {
-//   if(product.quantity > 1){
-//     product.quantity = product.quantity - 1;
-//     for(let product of cartListToShow.value){
-//     let itemTotalPrice = product.sizeList[0].price * product.quantity;
-//     totalPrice.value = totalPrice.value - itemTotalPrice;
-//     console.log(cartListToShow,'cartListToShow')
-//   }
-//   }
-// }
 
 function handleMinus(product) {
   if (product.quantity > 1) {
-    // 减少产品数量
     product.quantity--;
     totalPrice.value = 0;
     for(let item of cartListToShow.value){
@@ -199,7 +193,7 @@ function handleDelete(product) {
       margin-top: 20px;
       .totalWrapper {
         display: flex;
-        width: 500px;
+        width: 250px;
         margin-left: auto;
         align-items: flex-end;
         .total {
@@ -219,18 +213,22 @@ function handleDelete(product) {
         text-align: start;
         padding: 20px 10px;
         
-        RouterLink {
-          text-decoration: none;
-        }
         button {
+          a {
+            text-decoration: none;
+            color: $color-11;
+            font-weight: bold;
+          }
           width: 300px;
           height: 50px;
           background-color: $color-3;
           border: $color-3;
           font-size: 16px;
+          
           &:hover {
             cursor: pointer;
           }
+
         }
       }
       .checkout {
