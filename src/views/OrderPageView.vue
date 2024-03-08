@@ -52,7 +52,7 @@
             <div class="reset">
               <button type="reset">清除資料</button>
             </div>
-            <div class="submit">
+            <div class="submit" @click="gofinalpage">
               <button class='submitBtn'>確定送出</button>
             </div>
           </div>
@@ -73,6 +73,16 @@ let cartList = globalObject.cartList;
 let cartListToShow = ref(cartList);
 let totalPrice = ref(0);
 const router = useRouter()
+
+function gofinalpage() {
+  router.push("/FinalpagesView")
+}
+
+window.scrollTo(0, 0);
+window.scrollTo({
+  top: 0,
+  behavior: "smooth"
+});
 
 function countTotal() {
   for(let product of cartListToShow.value){

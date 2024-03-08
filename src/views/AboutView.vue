@@ -71,7 +71,7 @@
           :spaceBetween="0"
           :loop="true"
           :centeredSlides="true"
-          :pagination="pagination"
+          :pagination="false"
           :navigation= "true"
           :modules="modules"
           :autoplay="{ delay: 2000, disableOnInteraction: true }"
@@ -126,6 +126,7 @@ const pagination = {
   }
 }
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
+
 const swiperListFirst = ref([
   {
     src: shop1

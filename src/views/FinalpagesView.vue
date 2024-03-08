@@ -13,7 +13,7 @@
          <button><RouterLink to="/">返回首頁</RouterLink></button> 
         </div>
         <div class="finish">
-          <button onclick="closeCurrentWindow()">關閉視窗</button>
+          <button @click="closeCurrentWindow">關閉視窗</button>
         </div>
       </div>
     </div>
@@ -25,13 +25,19 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
+window.scrollTo(0, 0);
+window.scrollTo({
+  top: 0,
+  behavior: "smooth"
+});
+
 function closeCurrentWindow() {
-  window.close();
+window.close();
 }
 
-function goToHomePage() {
-  router.push('/')
-}
+// function goToHomePage() {
+//   router.push('/')
+// }
 
 </script>
 

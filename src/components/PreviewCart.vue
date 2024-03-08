@@ -120,6 +120,9 @@ function gocheckout() {
         border: solid 1px $color-3;
         margin-bottom: 25px;
         padding: 8px 0px;
+        &:hover {
+        cursor: pointer;
+        }
       }
     }
   }

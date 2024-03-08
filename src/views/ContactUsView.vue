@@ -17,7 +17,7 @@
     </div>
     <div class="contactWay_wrapper">
       <div class="video">
-        <div class="title">線上視訊諮詢</div>
+        <div class="title">視訊諮詢</div>
         <div class="subtitle">
           比起以往，許多人必須花更多的時間待在家中，因此我們希望線上諮詢的方式，能為您帶來和店鋪相同的體驗。我們非常期待以這種嶄新的形式與您見面，並歡迎您與我們分享任何回饋。
         </div>
@@ -35,19 +35,18 @@
       </div>
     </div>
     <div class="imgWrapper">
-        <img
-          src="https://www.aesop.com/u1nb1km7t5q7/66KUvlCYfGi1ySgU3fem4d/3de02a5b0f130223a81253e8d7680f4a/Aesop-Live-1-1-Consultations-Banner-AU-Desktop-2880x940px.jpg"
-          alt=""
-        />
-      </div>
+      <img
+        src="https://www.aesop.com/u1nb1km7t5q7/66KUvlCYfGi1ySgU3fem4d/3de02a5b0f130223a81253e8d7680f4a/Aesop-Live-1-1-Consultations-Banner-AU-Desktop-2880x940px.jpg"
+        alt="" />
+    </div>
   </div>
 </template>
 
 <script setup>
-window.scrollTo( 0, 0);
+window.scrollTo(0, 0);
 window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+  top: 0,
+  behavior: "smooth"
 });
 
 </script>
@@ -56,6 +55,7 @@ window.scrollTo({
 <style lang="scss" scoped>
 .container {
   background-color: $color-1;
+
   .contact_wrapper {
     width: 100%;
     height: auto;
@@ -63,93 +63,204 @@ window.scrollTo({
     display: flex;
     justify-content: center;
     padding-top: 50px;
-    
+
     .icon {
-        top: 90px;
-        left: 65px;
-        margin: 50px 0px 50px 50px;
-        overflow: hidden;
-        img {
-          object-fit: contain;
-        }
+      top: 90px;
+      left: 65px;
+      margin: 50px 0px 50px 50px;
+      overflow: hidden;
+
+      img {
+        object-fit: contain;
       }
+    }
+
     .contact {
       width: 50%;
       height: auto;
       text-align: start;
       margin: 50px;
+
       .contactus {
         font-size: 30px;
       }
+
       p {
         font-size: 16px;
       }
     }
   }
+
   .contactWay_wrapper {
-      width: 100%;
-      height: auto;
-      display: flex;
-      .title {
-        font-size: 28px;
-        padding: 20px 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+
+    .video {
+      width: 300px;
+      height: 300px;
+      margin: 20px 20px 20px 20px;
+
+      @include pad {
+        margin: 10px 10px 10px 10px;
       }
-      &::before {
+
+      .title {
+        font-size: 25px;
+        padding-bottom: 20px;
+        position: relative;
+      }
+
+      .title::before {
         content: "";
         display: block;
-        border-left: 1px solid $color-3;
-        margin: 0px 5px 0px 0px;
+        border-left: 5px solid #252525;
+        height: 25px;
+        position: absolute;
+        left: -20px;
+        top: 9px;
       }
+
       .subtitle {
-        font-size: 16px;
-        padding-bottom: 40px;
+        font-size: 18px;
+        padding-bottom: 20px;
       }
+
       a {
         font-size: 16px;
-        border: solid 1px $color-11;
         text-decoration: none;
         color: $color-11;
-        padding: 10px 20px;
+        display: flex;
+        justify-content: center;
+        width: 250px;
+        height: auto;
+        border: solid 1px $color-11;
+        position: relative;
+        top: 50px;
         transition: width 1s, height 1s, background-color 1s;
+        padding: 10px 20px;
+
         &:hover {
-          background-color: $color-3;
-          color: $color-11
-        }
-      }
-      .video {
-        width: 33%;
-        height: auto;
-        margin: 20px 20px 20px 20px;
-        @include pad {
-          margin: 10px 10px 10px 10px;
-        }
-      }
-
-      .mail {
-        width: 33%;
-        height: auto;
-        margin: 20px 20px 20px 20px;
-        @include pad {
-          margin: 10px 10px 10px 10px;
-        }
-      }
-
-      .phone {
-        width: 33%;
-        height: auto;
-        margin: 20px 20px 20px 20px;
-        @include pad {
-          margin: 10px 10px 10px 10px;
+          background-color: $color-11;
+          color: $color-2;
         }
       }
     }
-    .imgWrapper {
-      margin-top: 100px;
-      img {
-        width: 100%;
-        height: 600px;
-        object-fit: cover;
+
+    .mail {
+      width: 300px;
+      height: 300px;
+      margin: 20px 20px 20px 20px;
+
+      @include pad {
+        margin: 10px 10px 10px 10px;
+      }
+
+      .title {
+        font-size: 25px;
+        padding-bottom: 20px;
+        position: relative;
+      }
+
+      .title::before {
+        content: "";
+        display: block;
+        border-left: 5px solid #252525;
+        height: 25px;
+        position: absolute;
+        left: -20px;
+        top: 9px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        padding-bottom: 20px;
+      }
+
+      a {
+        font-size: 16px;
+        text-decoration: none;
+        color: $color-11;
+        display: flex;
+        justify-content: center;
+        width: 250px;
+        height: auto;
+        border: solid 1px $color-11;
+        position: relative;
+        top: 150px;
+        transition: width 1s, height 1s, background-color 1s;
+        padding: 10px 20px;
+
+        &:hover {
+          background-color: $color-11;
+          color: $color-2;
+        }
       }
     }
+
+    .phone {
+      width: 300px;
+      height: 300px;
+      margin: 20px 20px 20px 20px;
+
+      @include pad {
+        margin: 10px 10px 10px 10px;
+      }
+
+      .title {
+        font-size: 25px;
+        padding-bottom: 20px;
+        position: relative;
+        /* 將 .title 設置為相對定位的父元素 */
+      }
+
+      .title::before {
+        content: "";
+        display: block;
+        border-left: 5px solid #252525;
+        height: 25px;
+        position: absolute;
+        left: -20px;
+        top: 9px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        padding-bottom: 20px;
+      }
+
+      a {
+        font-size: 16px;
+        text-decoration: none;
+        color: $color-11;
+        display: flex;
+        justify-content: center;
+        width: 250px;
+        height: auto;
+        border: solid 1px $color-11;
+        position: relative;
+        top: 150px;
+        transition: width 1s, height 1s, background-color 1s;
+        padding: 10px 20px;
+
+        &:hover {
+          background-color: $color-11;
+          color: $color-2;
+        }
+      }
+    }
+  }
+
+  .imgWrapper {
+    margin-top: 100px;
+
+    img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+    }
+  }
 }
 </style>

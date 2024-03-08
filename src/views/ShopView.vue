@@ -7,23 +7,36 @@
         <p @click="changeType('westList')">中部</p>
         <p @click="changeType('southList')">南部</p>
       </div>
-      <div class="shopwapper">
+      <div class="shopWrapper">
         <div class="section" v-for="shop in selectedTypeList" :key="shop.id">
-          <div class="shoptitle">{{ shop.title }}</div>
-          <div class="divider"></div>
-          <div class="openhour">
-            <div class="open">{{ open }}</div>
-            <div class="hour">{{ shop.hour }}</div>
+          <div class="store-pic">
+            <img :src="shop.src" />
           </div>
-          <div class="phonenumber">
-            <div class="phone">{{ phone }}</div>
-            <div class="number">{{ shop.number }}</div>
-          </div>
-          <div class="location">
-            <div class="location">{{ location }}</div>
-            <div class="address">
-                <a :href="shop.googleUrl" target="_blank">{{ shop.address }}</a>
+          <div class="info">
+            <div class="title">
+              <div class="name"> {{ shop.title }}</div>
+              <div class="icon"> <a :href="shop.googleUrl" target="_blank">
+                  <img src="@/assets/img/icon/googlemap.svg" alt="">
+                </a></div>
+            </div>
+            <!-- <div class="shoptitle">{{ shop.title }}</div> -->
+            <div class="divider"></div>
+            <div class="subtitle">
+              <div class="openhour">
+                <div class="open">{{ open }}</div>
+                <div class="hour">{{ shop.hour }}</div>
               </div>
+              <div class="phonenumber">
+                <div class="phone">{{ phone }}</div>
+                <div class="number">{{ shop.number }}</div>
+              </div>
+              <div class="location">
+                <div class="location">{{ location }}</div>
+                <div class="address">
+                  <a :href="shop.googleUrl" target="_blank">{{ shop.address }}</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -34,10 +47,15 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router'
+import shop1 from "@/assets/img/Home.pic/home-store/shop1.png";
+import shop2 from "@/assets/img/Home.pic/home-store/shop2.jpg";
+import shop3 from "@/assets/img/Home.pic/home-store/shop3.jpg";
+import shop4 from "@/assets/img/Home.pic/home-store/shop4.png";
+
 const router = useRouter()
-let open = ref('營業時間')
-let phone = ref('電話')
-let location = ref('地址')
+let open = ref('Open.')
+let phone = ref('Tel.')
+let location = ref('Add.')
 let shopList = ref([
   {
     title: '台北永康旗艦店',
@@ -45,6 +63,7 @@ let shopList = ref([
     number: '02-23222200',
     address: '台北市大安區永康街31巷6號',
     googleUrl: 'https://maps.app.goo.gl/CJYqdnSoCshtykQF8',
+    src: shop1,
     id: 1
   },
   {
@@ -53,6 +72,7 @@ let shopList = ref([
     number: '02-66375888',
     address: '新北市林口區文化三路一段356號1F',
     googleUrl: 'https://maps.app.goo.gl/DtuTYJRT9SCe2MH67',
+    src: shop2,
     id: 2
   },
   {
@@ -61,6 +81,7 @@ let shopList = ref([
     number: '03-2738666',
     address: '桃園市中壢區春德路189號',
     googleUrl: 'https://maps.app.goo.gl/3qtDRzqr8AnVh7ks5',
+    src: shop3,
     id: 3
   },
   {
@@ -69,6 +90,7 @@ let shopList = ref([
     number: '04-22510792',
     address: '台中市西屯區臺灣大道三段301號B2',
     googleUrl: 'https://maps.app.goo.gl/DzTmbFNm8LXuefh97',
+    src: shop4,
     id: 4
   },
   {
@@ -77,14 +99,16 @@ let shopList = ref([
     number: '04-23295911',
     address: '台中市西區公益路68號B1',
     googleUrl: 'https://maps.app.goo.gl/uHN7i4z9mav2UPnDA',
+    src: shop1,
     id: 5
   },
   {
-    title: '台中三井 LaLaPort 店',
+    title: '台中三井LaLa店',
     hour: '10:00AM-21:00PM',
     number: '04-22138281',
     address: '台中市東區進德路600號北館4樓',
     googleUrl: 'https://maps.app.goo.gl/zwo14MK4ULxiwUEs5',
+    src: shop2,
     id: 6
   },
   {
@@ -93,6 +117,7 @@ let shopList = ref([
     number: '06-3030705',
     address: '台南市中西區西門路一段658號4F',
     googleUrl: 'https://maps.app.goo.gl/5cHrDnZQ6fGEe6nJA',
+    src: shop3,
     id: 7
   },
   {
@@ -101,6 +126,7 @@ let shopList = ref([
     number: '07-3550705',
     address: '高雄市左營區博愛二路777號B1',
     googleUrl: 'https://maps.app.goo.gl/GQZPNRqbL7qhZQ8V8',
+    src: shop4,
     id: 8
   },
   {
@@ -109,16 +135,18 @@ let shopList = ref([
     number: '07-9631200',
     address: '高雄市鹽埕區大勇路3號(駁二藝術特區C4倉庫)',
     googleUrl: 'https://maps.app.goo.gl/16uvzTFgAweKM26N9',
+    src: shop1,
     id: 9
   }
 ])
 let northList = ref([
-{
+  {
     title: '台北永康旗艦店',
     hour: '10:00AM-17:00PM',
     number: '02-23222200',
     address: '台北市大安區永康街31巷6號',
     googleUrl: 'https://maps.app.goo.gl/CJYqdnSoCshtykQF8',
+    src: shop1,
     id: 1
   },
   {
@@ -127,6 +155,7 @@ let northList = ref([
     number: '02-66375888',
     address: '新北市林口區文化三路一段356號1F',
     googleUrl: 'https://maps.app.goo.gl/DtuTYJRT9SCe2MH67',
+    src: shop2,
     id: 2
   },
   {
@@ -135,16 +164,18 @@ let northList = ref([
     number: '03-2738666',
     address: '桃園市中壢區春德路189號',
     googleUrl: 'https://maps.app.goo.gl/3qtDRzqr8AnVh7ks5',
+    src: shop3,
     id: 3
   }
 ])
 let westList = ref([
-{
+  {
     title: '台中新光店',
     hour: '10:00AM-21:00PM',
     number: '04-22510792',
     address: '台中市西屯區臺灣大道三段301號B2',
     googleUrl: 'https://maps.app.goo.gl/DzTmbFNm8LXuefh97',
+    src: shop1,
     id: 1
   },
   {
@@ -153,24 +184,27 @@ let westList = ref([
     number: '04-23295911',
     address: '台中市西區公益路68號B1',
     googleUrl: 'https://maps.app.goo.gl/uHN7i4z9mav2UPnDA',
+    src: shop2,
     id: 2
   },
   {
-    title: '台中三井 LaLaPort 店',
+    title: '台中三井LaLa店',
     hour: '10:00AM-21:00PM',
     number: '04-22138281',
     address: '台中市東區進德路600號北館4樓',
     googleUrl: 'https://maps.app.goo.gl/zwo14MK4ULxiwUEs5',
+    src: shop3,
     id: 3
   }
 ])
 let southList = ref([
-{
+  {
     title: '台南新天地店',
     hour: '10:00AM-21:00PM',
     number: '06-3030705',
     address: '台南市中西區西門路一段658號4F',
     googleUrl: 'https://maps.app.goo.gl/5cHrDnZQ6fGEe6nJA',
+    src: shop1,
     id: 1
   },
   {
@@ -179,6 +213,7 @@ let southList = ref([
     number: '07-3550705',
     address: '高雄市左營區博愛二路777號B1',
     googleUrl: 'https://maps.app.goo.gl/GQZPNRqbL7qhZQ8V8',
+    src: shop2,
     id: 2
   },
   {
@@ -187,132 +222,193 @@ let southList = ref([
     number: '07-9631200',
     address: '高雄市鹽埕區大勇路3號(駁二藝術特區C4倉庫)',
     googleUrl: 'https://maps.app.goo.gl/16uvzTFgAweKM26N9',
+    src: shop3,
     id: 3
   }
 ])
 let selectedTypeList = ref(shopList.value)
 
 function changeType(type) {
-  console.log(type,'type')
-  if(type === 'northList'){
+  console.log(type, 'type')
+  if (type === 'northList') {
     selectedTypeList.value = northList.value;
-  }else if(type === 'westList'){
+  } else if (type === 'westList') {
     selectedTypeList.value = westList.value;
-  }else if(type === 'southList'){
+  } else if (type === 'southList') {
     selectedTypeList.value = southList.value;
-  }else {
+  } else {
     selectedTypeList.value = shopList.value;
   }
 }
 function getCartData() {
   let rawShopList = window.localStorage.getItem('shopList');
   let shopList = JSON.parse(rawShopList)
-  console.log(shopList,'shopList')
+  console.log(shopList, 'shopList')
 }
 getCartData()
 
-window.scrollTo( 0, 0);
+window.scrollTo(0, 0);
 window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+  top: 0,
+  behavior: "smooth"
 });
 </script>
 
 <style lang="scss" scoped>
 .content {
   background-color: $color-1;
+
   .navbar {
-    
     width: auto;
     align-items: center;
     justify-content: center;
+
     .city {
       display: flex;
       background-color: $color-7;
+
       p {
         font-size: 16px;
         padding: 0px 20px;
-      &:hover {
-        cursor: pointer;
-        font-weight: 800;
-        text-decoration: underline;
-        font-size: 18px;
-      }
+
+        &:hover {
+          cursor: pointer;
+          font-weight: 800;
+          text-decoration: underline;
+          font-size: 18px;
+        }
       }
     }
-    .shopwapper {
+
+    .shopWrapper {
       color: $color-9;
       display: flex;
       flex-wrap: wrap;
       width: auto;
       margin: 100px 50px 0px 50px;
       justify-content: center;
-      &::after{
-          content: "";
-          // flex-grow: 100;
-          width: 600px;
-          height: 300px;
-          @include mac {
-            width: 300px;
-          }
-        }
-      .section {
+
+      &::after {
+        content: "";
         width: 600px;
         height: 300px;
-        margin: 20px;
 
         @include mac {
           width: 300px;
         }
+      }
+
+      .section {
+        width: 650px;
+        height: 300px;
+        margin: 50px;
+        display: flex;
+        box-sizing: border-box;
+
+        @include mac {
+          width: 300px;
+        }
+
         @include pad {
           width: 300px;
         }
-        .shoptitle {
-          font-size: 20px;
-          margin-bottom: 30px;
-          font-weight: 500;
-        }
-        .openhour {
-          display: flex;
-          font-size: 18px;
-          margin: 10px 5px 10px 0px;
-          align-items: center;
-        }
-        .phonenumber {
-          display: flex;
-          font-size: 16px;
-          margin: 10px 5px 10px 0px;
-          align-items: center;
-        }
-        .location {
-          display: flex;
-          font-size: 18px;
-          margin: 10px 5px 10px 0px;
-          align-items: center;
-          @include mac {
-            font-size: 16px;
+
+        .store-pic {
+          margin-right: 30px;
+
+          img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
           }
         }
-        .hour {
-          margin-left: auto;
-        }
-        .number {
-          margin-left: auto;
-        }
-        .address {
-          margin-left: auto;
-          a {
-            text-decoration: underline;
+        .info {
+          .title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .name {
+              font-size: 20px;
+              font-weight: 500;
+            }
+
+            img {
+              width: 100%;
+              height: 25px;
+              padding-left: 20px;
+            }
+          }
+
+          .divider {
+            border-bottom: $color-9 solid 1.5px;
+            width: 100%;
+            margin-bottom: 115px;
+          }
+
+          .subtitle {
+            position: absolute;
             color: $color-9;
+            
+            .openhour {
+              display: flex;
+              font-size: 20px;
+              margin: 10px 5px 10px 0px;
+              align-items: center;
+              text-align: start;
+            }
+
+            .phonenumber {
+              display: flex;
+              font-size: 20px;
+              margin: 10px 5px 10px 0px;
+              align-items: center;
+              text-align: start;
+            }
+
+            .location {
+              display: flex;
+              font-size: 20px;
+              margin: 10px 5px 10px 0px;
+              align-items: center;
+              text-align: start;
+
+              @include mac {
+                font-size: 16px;
+              }
+              .address{
+                a {
+                text-decoration: none;
+                color: $color-9;
+                }
+              }
+            }
           }
+
+          // .hour {
+          //   margin-left: auto;
+          // }
+
+          // .number {
+          //   margin-left: auto;
+          // }
+
+          // .address {
+          //   // margin-left: auto;
+
+          //   // a {
+          //   //   text-decoration: underline;
+          //   //   color: $color-9;
+          //   // }
+          // }
         }
+
+
       }
     }
   }
-  .divider {
-    border-bottom: $color-9 solid 1.5px;
-    width: 100%;
-    margin-bottom: 30px;
-  }
+
+
 }
 </style>

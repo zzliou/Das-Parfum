@@ -3,7 +3,7 @@
     <div class="productWrapper">
       <div class="productPic">
         <img
-          src="https://www.aesop.com/u1nb1km7t5q7/7qXqWN3EwPQ9EpSd9W646j/8b0519155e0e83ed8c4ed20557bb0a83/Aesop_Hand_Resurrection_Aromatique_Hand_Wash_500mL_Web_Front_Large_900x1115px.png"
+          src="@/assets/img/Product.pic/p014.png"
           alt="" />
       </div>
       <div class="productInfo">
@@ -40,20 +40,20 @@
     </div>
     <div class="serviceWrapper">
       <div class="section">
-        <img src="https://www.aesop.com/u1nb1km7t5q7/7AI4tKMotpiot46NoMsbRV/ea55cce91cb42d7a8b88d53b9288451f/giftbox.svg"
+        <img src="@/assets/img/icon/giftbox.svg"
           alt="" />
         <div class="mainTitle">免費禮品包裝</div>
         <p>為您提供禮品包裝、品牌專屬棉袋以及個人化禮物小卡服務，是我們的榮幸。</p>
       </div>
       <div class="section">
         <img
-          src="https://www.aesop.com/u1nb1km7t5q7/4Wb7WJo1Hhqg95v6CZKEE9/5e8d64187475757f59138ba10479b51a/chat-bubble.svg"
+          src="@/assets/img/icon/talk.svg"
           alt="" />
         <div class="mainTitle">諮詢美容顧問</div>
         <p>我們受過專業訓練的顧問，非常樂意在線上為您提供個人化的產品建議。</p>
       </div>
       <div class="section">
-        <img src="https://www.aesop.com/u1nb1km7t5q7/3ZHAFYCvLBqAKjXfINVH1q/acff0cee6551b41d62d3a75c1e9c2780/droplet.svg"
+        <img src="@/assets/img/icon/droplet.svg"
           alt="" />
         <div class="mainTitle">下單送試用包</div>
         <p>我們很榮幸為所有訂單提供試用包體驗組。</p>
@@ -62,7 +62,7 @@
     <div class="UsageWrapper">
       <div class="productPic">
         <img
-          src="https://www.aesop.com/u1nb1km7t5q7/6PqtseSQ1jdHf2eWn52qQy/d391423ab4b5b4a876f597b53508d344/Aesop_Citrus_Melange_Body_Cleanser_Web_PDP_Secondary_50-50_Desktop_1440x1500px.jpg"
+          src="@/assets/img/pageofpro.pic/001.jpg"
           alt="" />
       </div>
       <div class="way">
@@ -105,14 +105,15 @@
 
 <script setup>
 import { ref, getCurrentInstance } from 'vue';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue' // swiper 所需组件
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue' 
 import { useRoute } from 'vue-router'
 import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
-// import 'swiper/swiper-bundle.css'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
+
+
 const router = useRoute()
 
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
@@ -145,6 +146,7 @@ const swiperList = [
 let product = ref({});
 let globalObject = getCurrentInstance().appContext.config;
 let cartList = globalObject.cartList;
+
 
 
 function getProductData() {
@@ -213,6 +215,8 @@ initPage()
 getProductData()
 
 
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -240,14 +244,10 @@ getProductData()
 
       @include mac {
         width: 400px;
-        // margin-left: 200px;
-        // padding: 50px;
       }
 
       @include pad {
         width: 350px;
-        // margin-left: 100px;
-        // padding: 40px;
       }
     }
 
@@ -348,10 +348,6 @@ getProductData()
         }
       }
 
-      // .divider {
-      //   border: $color-11 solid 1px;
-      //   width: 100%;
-      // }
 
       .introduce {
         padding: 20px 0px;
@@ -458,6 +454,8 @@ getProductData()
     justify-content: center;
 
     .productPic {
+      width: 50%;
+      height: auto;
       img {
         width: 100%;
         height: 100%;
