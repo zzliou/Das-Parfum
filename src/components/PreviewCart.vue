@@ -1,5 +1,5 @@
 <template>
-  <div class="previewWrapper" v-if="isShow">
+  <div class="previewWrapper" v-if="isShow"  @mouseleave="hide">
     <div class="content">
       <div class="productWrapper">
         <div class="item" v-for="(product, index) in cartListToShow" :key="index">
@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineExpose, ref, getCurrentInstance } from 'vue';
+import { defineProps, defineExpose, ref, getCurrentInstance, watch, toRaw } from 'vue';
 import { useRouter } from 'vue-router';
 let globalObject = getCurrentInstance().appContext.config;
 let cartList = globalObject.cartList;

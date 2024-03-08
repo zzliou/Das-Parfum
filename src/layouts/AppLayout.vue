@@ -2,7 +2,7 @@
   <div class="headerTop">
       <p>單筆訂單金額滿$1,500，即享全台灣宅配免運費。</p>
   </div>
-  <div class="header" id="header">
+  <div class="header" id="header" >
     <div class="navbarLeft">
       <RouterLink to="/">首頁</RouterLink>
       <RouterLink to="/about">關於我們</RouterLink>
@@ -10,9 +10,9 @@
       <RouterLink to="/shop">實體店鋪</RouterLink>
       <RouterLink to="/contact">聯絡我們</RouterLink>
     </div>
-    <div class="navbarRight">
+    <div class="navbarRight" @mouseenter="hidePreviewCart">
       <div class="login" @click="showLoginModal">登入會員</div>
-      <div class="cart" @click="navigateToCartShop" @mouseenter="showPreviewCart" @mouseleave="hidePreviewCart">購物車</div>
+      <div class="cart" @click="navigateToCartShop" @mouseenter="showPreviewCart">購物車</div>
     </div>
   </div>
   <div class="content">
