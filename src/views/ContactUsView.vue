@@ -33,13 +33,13 @@
         <div class="subtitle">歡迎撥打諮詢專線，將由專人為您服務。</div>
         <a href="tel:+1234567890">立即撥打</a>
       </div>
-      <div class="imgWrapper">
+    </div>
+    <div class="imgWrapper">
         <img
           src="https://www.aesop.com/u1nb1km7t5q7/66KUvlCYfGi1ySgU3fem4d/3de02a5b0f130223a81253e8d7680f4a/Aesop-Live-1-1-Consultations-Banner-AU-Desktop-2880x940px.jpg"
           alt=""
         />
       </div>
-    </div>
   </div>
 </template>
 
@@ -89,9 +89,16 @@ window.scrollTo({
   .contactWay_wrapper {
       width: 100%;
       height: auto;
+      display: flex;
       .title {
         font-size: 28px;
         padding: 20px 0px;
+      }
+      &::before {
+        content: "";
+        display: block;
+        border-left: 1px solid $color-3;
+        margin: 0px 5px 0px 0px;
       }
       .subtitle {
         font-size: 16px;
@@ -110,29 +117,29 @@ window.scrollTo({
         }
       }
       .video {
-        width: 500px;
+        width: 33%;
         height: auto;
-        margin: 20px 0px 20px 500px;
+        margin: 20px 20px 20px 20px;
         @include pad {
-          margin: 20px 0px 20px 200px;
+          margin: 10px 10px 10px 10px;
         }
       }
 
       .mail {
-        width: 500px;
+        width: 33%;
         height: auto;
-        margin: 20px 0px 20px 500px;
+        margin: 20px 20px 20px 20px;
         @include pad {
-          margin: 20px 0px 20px 200px;
+          margin: 10px 10px 10px 10px;
         }
       }
 
       .phone {
-        width: 500px;
+        width: 33%;
         height: auto;
-        margin: 20px 0px 20px 500px;
+        margin: 20px 20px 20px 20px;
         @include pad {
-          margin: 20px 0px 20px 200px;
+          margin: 10px 10px 10px 10px;
         }
       }
     }
