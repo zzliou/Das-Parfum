@@ -54,16 +54,10 @@ import { useRouter } from 'vue-router';
 import pic001 from "@/assets/img/Product.pic/p001.png";
 import pic002 from "@/assets/img/Product.pic/p002.png";
 import pic003 from "@/assets/img/Product.pic/p003.png";
-import bsize from "@/assets/img/Product.pic/bigsize.jpg";
-import pic004 from "@/assets/img/Product.pic/p004.png";
-import pic005 from "@/assets/img/Product.pic/p005.png";
 import pic006 from "@/assets/img/Product.pic/p006.png";
 import pic007 from "@/assets/img/Product.pic/p007.png";
-import pic008 from "@/assets/img/Product.pic/p008.png";
 import pic009 from "@/assets/img/Product.pic/p009.png";
 import pic010 from "@/assets/img/Product.pic/p010.png";
-import pic011 from "@/assets/img/Product.pic/p011.png";
-import pic012 from "@/assets/img/Product.pic/p012.png";
 import pic013 from "@/assets/img/Product.pic/p013.png";
 import pic014 from "@/assets/img/Product.pic/p014.png";
 import pic015 from "@/assets/img/Product.pic/p015.png";
@@ -778,16 +772,22 @@ window.scrollTo({
       color: $color-8;
       padding: 20px 0px 20px 100px;
 
+      @include mac {
+        padding: 10px 0px 10px 100px;
+      }
+
+      @include pad {
+        padding: 5px 0px 5px 100px;
+      }
+
       p {
         padding: 0px 10px;
         &:hover {
         cursor: pointer;
         text-decoration: underline;
+        }
       }
     }
-      }
-   
-
   }
 
   .productWapper {
@@ -795,21 +795,39 @@ window.scrollTo({
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
     .introduce {
       width: 33%;
       box-sizing: border-box;
       padding: 100px;
+
+      @include mac {
+        padding: 80px;
+      }
       @include pad {
         padding: 50px;
       }
+
       .maintitle {
         font-size: 24px;
-        padding: 20px 0px;
+        padding: 30px 0px;
+        @include mac {
+          font-size: 22px;
+        }
+        @include pad {
+          font-size: 20px;
+        }
       }
 
       .description {
         font-size: 18px;
-        line-height: 2;
+        line-height: 3;
+        @include mac {
+          font-size: 16px;
+        }
+        @include pad {
+          font-size: 16px;
+        }
       }
     }
 
@@ -821,17 +839,18 @@ window.scrollTo({
         background-color: $color-5;
         text-align: center;
         margin: 0 2px;
+
         img {
           width: 400px;
           height: 600px;
           object-fit: contain;
           @include mac {
-            width: 350px;
-            height: 550px;
+            width: 300px;
+            height: 500px;
           }
           @include pad {
             width: 250px;
-            height: 350px;
+            height: 450px;
           }
         }
         &:hover {
@@ -843,6 +862,12 @@ window.scrollTo({
         width: auto;
         text-align: center;
         height: 300px;
+        @include  mac {
+          height: 245px;
+        }
+        @include  pad {
+          height: 245px;
+        }
         color: $color-8;
         transition: all 0.2s linear;
         margin: 0 2px;
@@ -866,8 +891,17 @@ window.scrollTo({
             &:active{
               box-shadow: 0 0 10px $color-11;
             }
+            @include mac {
+              top: 14px;
+              height: 40px;
+            }
+            @include pad {
+              top: 14px;
+              height: 40px;
+            }
           }
         }
+
         .productitle {
           font-size: 20px;
           font-weight: 600;
@@ -879,6 +913,12 @@ window.scrollTo({
           font-size: 14px;
           color: $color-8;
           margin-bottom: 50px;
+          @include mac {
+            margin-bottom: 25px;
+          }
+          @include pad {
+            margin-bottom: 20px;
+          }
         }
 
         .sizenprice {
@@ -898,6 +938,10 @@ window.scrollTo({
         }
       }
     }
+    &::after {
+        content: "";
+        flex-grow: 1;
+      }
   }
 }
 

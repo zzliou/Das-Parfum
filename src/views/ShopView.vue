@@ -283,26 +283,10 @@ window.scrollTo({
     .shopWrapper {
       color: $color-9;
       display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
       width: auto;
       margin: 100px 50px 0px 50px;
-      justify-content: space-around;
-
-
-      &::after {
-        content: "";
-        width: 650px;
-        height: 300px;
-        flex-grow: 1;
-
-        @include mac {
-          width: 480px;
-        }
-
-        @include pad {
-          width: 400px;
-        }
-      }
       
       .section {
         width: 650px;
@@ -396,8 +380,6 @@ window.scrollTo({
             }
           }
 
-         
-
           .subtitle {
             position: absolute;
             color: $color-9;
@@ -452,6 +434,10 @@ window.scrollTo({
             }
           }
         }
+      }
+      &::after {
+        content: "";
+        flex-grow: 1;
       }
     }
   }

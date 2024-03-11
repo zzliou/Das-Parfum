@@ -121,6 +121,13 @@ countTotal()
       width: 80%;
       margin: 0px 80px 80px 80px;
 
+      @include mac {
+        width: 1000px;
+      }
+      @include pad {
+        width: 800px;
+      }
+
       .listWrapper {
         display: flex;
         justify-content: space-between;
@@ -132,6 +139,9 @@ countTotal()
           width: 300px;
           font-weight: bold;
           font-size: 20px;
+          @include mac {
+            width: 200px;
+          }
         }
 
         .detail {
@@ -140,6 +150,9 @@ countTotal()
           padding: 10px 10px 0px 0px;
           width: 300px;
           font-size: 20px;
+          @include mac {
+            width: 200px;
+          }
         }
       }
 
@@ -152,6 +165,9 @@ countTotal()
         font-weight: 600;
         justify-content: center;
         align-items: center;
+        @include mac {
+          font-size: 20px;
+        }
       }
     }
 
@@ -173,6 +189,12 @@ countTotal()
             padding: 30px 0px;
             width: 20%;
             font-weight: 600;
+            @include mac {
+              font-size: 20px;
+            }
+            @include pad {
+              font-size: 16px;
+            }
           }
         }
 
@@ -183,6 +205,12 @@ countTotal()
           font-size: 20px;
           width: 80%;
           border-bottom: 1px solid $color-3;
+          @include mac {
+              font-size: 20px;
+            }
+            @include pad {
+              font-size: 16px;
+            }
         }
       }
 

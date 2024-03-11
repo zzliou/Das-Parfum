@@ -35,6 +35,10 @@ import { useRouter } from 'vue-router'
     .action {
       margin-left: 150px;
     }
+    @include pad {
+      padding: 8px;
+    }
   }
+
 }
 </style>

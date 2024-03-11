@@ -35,9 +35,6 @@ function closeCurrentWindow() {
 window.close();
 }
 
-// function goToHomePage() {
-//   router.push('/')
-// }
 
 </script>
 
@@ -69,6 +66,12 @@ window.close();
         width: 500px;
         text-align: center;
         padding: 50px 0px;
+        @include mac {
+          padding: 25px 0px;
+        }
+        @include pad {
+          padding: 15px 0px;
+        }
       }
 
       .subTitle {
@@ -76,6 +79,12 @@ window.close();
         width: 300px;
         text-align: center;
         padding-bottom: 50px;
+        @include mac {
+          padding-bottom: 25px;
+        }
+        @include pad {
+          padding-bottom: 15px;
+        }
       }
     }
 
@@ -83,12 +92,10 @@ window.close();
       width: 500px;
       display: flex;
       justify-content: center;
-      // margin-top: 30px;
 
       .finish {
         text-align: start;
         padding: 20px 10px;
-
 
         button {
           width: 150px;

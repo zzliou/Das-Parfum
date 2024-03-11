@@ -55,7 +55,7 @@
                 <p>臉部調理系列</p>
                 <h2>針對多重肌膚問題的高效滋養</h2>
                 <p>
-                  專為成熟肌膚及都市居民精心研發的保養配方，在日常保濕之外，為肌膚注入有益的強效維生素及抗氧化成分所帶來的額外益處。
+                  專為成熟肌膚精心研發的保養配方，注入有益的強效維生素和抗氧化成分，讓肌膚更加健康有光澤。
                 </p>
               </div>
             </SwiperSlide>
@@ -76,11 +76,9 @@
             />
           </div>
           <div class="perfumeInformation">
-            <div class="title">熟悉香調，加倍享受</div>
+            <div class="title">一滴精華，雙倍享受</div>
             <div class="subtitle">
-              我們突破傳統框架的三款迷人香水──悟香水、熾香水及馬拉喀什馥郁香水──除了原有的 50 mL
-              版本外，現在正式推出 100mL 大容量版本，僅在 Aesop.com
-              官網上販售，適合長期使用Aesop經典香水系列的忠實愛好者。
+              突破傳統框架的迷人香水，除了提供現有的 50mL 版本外，還新增了 100mL 的大容量版本。這些大容量版本僅在官網上販售，適合長期使用 的忠實愛好者。
             </div>
             <AppButton :title="'立即探索'" :path="'productList'" class="perfume-button"></AppButton>
           </div>
@@ -89,7 +87,7 @@
           <div class="giftInformation">
             <div class="title">驚喜禮物</div>
             <div class="subtitle">
-              如果您希望展現自己慷慨餽贈的精神、計劃慶祝重要的日子，或是想要挑選禮物但又缺乏靈感，不妨讓我們助您一臂之力。我們的禮物指南介紹了適合送給各類人士的多款產品。
+              慶祝特別的時刻，卻不知道該送什麼，禮物指南中有各種適合不同人的產品，輕鬆解決你的煩惱。
             </div>
             <AppButton :title="'立即挑選'" :path="'combineList'" class="surpriseGift-button"></AppButton>
           </div>
@@ -108,9 +106,9 @@
             />
           </div>
           <div class="videoServiceInformation">
-            <div class="title">在舒適家中享有專屬諮詢</div>
+            <div class="title">專屬於您的居家諮詢</div>
             <div class="subtitle">
-              為了幫助您選擇合適的禮物，我們歡迎您與我們經驗豐富的專業顧問一起進行「線上視訊諮詢」。
+              為了協助您挑選最適合的產品，邀請您與專業顧問進行「線上視訊諮詢」。
             </div>
             <AppButton :title="'立即挑選'" :path="'contact'" class="video-button"></AppButton>
           </div>
@@ -146,7 +144,7 @@
           <div class="loctioninfo">
             <div class="shoptitle">尋找店鋪</div>
             <div class="subtitle">
-              每間門店皆有專業美容顧問,並針對您的送禮需求提供量身定制的建議,期待與您相見。
+              位於各城市的精華地段中，交通便利方便抵達！就讓我們的美容顧問，為您提供量身訂製的建議吧，期待與您相見的那天到來！
             </div>
             <AppButton :title="'立即出發'" :path="'shop'" class="shop-button"></AppButton>
           </div>
@@ -178,13 +176,13 @@
             <div class="section">
               <div class="ecoTitle">無動物實驗</div>
               <div class="ecoSubtitle">
-                以專業儀器進行全產品測試，秉持愛護及尊重動物生命，堅持不使用動物實驗。
+                使用專業儀器對所有產品進行全面測試，同時秉持著對動物生命的愛護和尊重，堅持不進行動物實驗
               </div>
             </div>
             <div class="section">
               <div class="ecoTitle">全產品環保包裝</div>
               <div class="ecoSubtitle">
-                選擇FSC認證環保材質，百分之百以可回收或可生物降解的天然材料作為包材使用，減少對地球的塑料污染，提供消費者空瓶回收之回購優惠價。
+                皆使用可回收或可生物降解的天然材料作為包裝，以減少對地球的塑料污染。同時，我們提供消費者空瓶回收的回購優惠價，鼓勵大家參與環保行動。
               </div>
             </div>
             <div class="section">
@@ -225,21 +223,10 @@ import BN2 from "@/assets/img/Home.pic/home-BN/banner2.jpg";
 import BN3 from "@/assets/img/Home.pic/home-BN/banner3.png";
 import pic001 from "@/assets/img/Product.pic/p001.png";
 import pic002 from "@/assets/img/Product.pic/p002.png";
-import pic003 from "@/assets/img/Product.pic/p003.png";
-import bsize from "@/assets/img/Product.pic/bigsize.jpg";
-import pic004 from "@/assets/img/Product.pic/p004.png";
-import pic005 from "@/assets/img/Product.pic/p005.png";
-import pic006 from "@/assets/img/Product.pic/p006.png";
-import pic007 from "@/assets/img/Product.pic/p007.png";
-import pic008 from "@/assets/img/Product.pic/p008.png";
 import pic009 from "@/assets/img/Product.pic/p009.png";
-import pic010 from "@/assets/img/Product.pic/p010.png";
-import pic011 from "@/assets/img/Product.pic/p011.png";
-import pic012 from "@/assets/img/Product.pic/p012.png";
 import pic013 from "@/assets/img/Product.pic/p013.png";
 import pic014 from "@/assets/img/Product.pic/p014.png";
 import pic015 from "@/assets/img/Product.pic/p015.png";
-import pic016 from "@/assets/img/Product.pic/p016.jpg";
 import set001 from "@/assets/img/Home.pic/home-set/set001.png";
 import set002 from "@/assets/img/Home.pic/home-set/set002.png";
 import set003 from "@/assets/img/Home.pic/home-set/set003.png";
@@ -280,16 +267,16 @@ const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFad
 const swiperListZero = ref([
   {
     smalltitle: '家居香氛',
-    maintitle: '為您介紹 Aesop 線香系列',
+    maintitle: '為您介紹 Alles Gute 香氛系列',
     subtitle:
-      '探索三款使人踏上心靈漫遊之旅的香氛──紫記線香、蜻蛉線香、更級線香──以及呈現謙遜美學的青銅線香座。',
+      '探索三款啟程心靈旅程的香氛────森林、朝露以及夜幕，每三十分鐘銷售5,000份。',
     src: BN1
   },
   {
     smalltitle: '高效配方',
-    maintitle: '肌膚調理凝露',
+    maintitle: '肌膚調理凝霜',
     subtitle:
-      '這款具有蜂蜜般獨特質地、蘊含維他命 B 和 C 的輕度保濕配方，能有效呵護、柔軟、平衡肌膚。',
+      '這款蘊含牛奶般獨特質地、富含維他命 B 和 C 的輕度保濕配方，能有效呵護、柔軟、平衡肌膚。',
     src: BN2
   },
   {
@@ -417,8 +404,8 @@ let swiperListFirst = ref([
 
 let swiperListSecond = ref([
   {
-    title: '春心和聲',
-    subtitle: '手部清潔露、廁後點滴、室內噴霧',
+    title: '春意盎然',
+    subtitle: '清潔露、廁後點滴、室內噴霧',
     selectedSizeIndex: 0,
     sizeList: [
       {
@@ -435,8 +422,8 @@ let swiperListSecond = ref([
     id: 1
   },
   {
-    title: '夏戀慷慨節奏',
-    subtitle: '天竺葵身體潔膚露、去角質露、身體乳霜',
+    title: '夏日戀曲',
+    subtitle: '潔膚露、去角質露、身體乳霜',
     selectedSizeIndex: 0,
     sizeList: [
       {
@@ -453,7 +440,7 @@ let swiperListSecond = ref([
     id: 2
   },
   {
-    title: '秋頌寓言曲調',
+    title: '秋頌曲調',
     subtitle: '護手霜、潔膚露、護唇膏',
     selectedSizeIndex: 0,
     sizeList: [
@@ -471,7 +458,7 @@ let swiperListSecond = ref([
     id: 3
   },
   {
-    title: '冬禮手作諧美聲部',
+    title: '冬季禮遇',
     subtitle: '護手霜、清潔露、乾洗手',
     selectedSizeIndex: 0,
     sizeList: [
@@ -490,29 +477,6 @@ let swiperListSecond = ref([
   },
 ])
 
-// const swiperListSecond = ref([
-//   {
-//     title: '春心和聲',
-//     subtitle: '手部清潔露、廁後點滴、室內噴霧',
-//     src: set001
-//   },
-//   {
-//     title: '夏戀節奏',
-//     subtitle: '護手霜、潔膚露、護唇膏',
-//     src: set002
-//   },
-//   {
-//     title: '秋頌曲調',
-//     subtitle: '護手霜、潔膚露、護唇膏',
-//     src: set003
-//   },
-//   {
-//     title: '冬禮聲部',
-//     subtitle: '護手霜、清潔露、乾洗手',
-//     src: set004
-//   }
-// ])
-
 const swiperListThird = ref([
   {
     src: shop1
@@ -524,6 +488,7 @@ const swiperListThird = ref([
     src: shop3
   }
 ])
+
 const router = useRouter()
 // let selectedTypeList = ref(index.value)
 
@@ -561,13 +526,20 @@ function goToProductPage(product) {
         top: 200px;
         left: 200px;
 
+        @include mac {
+          top: 100px;
+          left: 100px;
+        }
+
         @include pad {
           top: 100px;
           left: 100px;
-          width: 50%;
+          width: 60%;
         }
+
         .smalltitle {
           font-size: 18px;
+
           @include mac {
           font-size: 16px;
           }
@@ -579,6 +551,7 @@ function goToProductPage(product) {
         .maintitle {
           font-size: 28px;
           padding: 20px 0px;
+
           @include mac {
             font-size: 22px;
             padding: 10px 0px;
@@ -592,6 +565,8 @@ function goToProductPage(product) {
         .subtitle {
           font-size: 24px;
           padding-bottom: 30px;
+          line-height: 2em;
+
           @include mac {
             font-size: 20px;
             padding-bottom: 20px;
@@ -611,6 +586,14 @@ function goToProductPage(product) {
         width: 100%;
         height: 600px;
         object-fit: cover;
+
+        @include mac {
+          height: 450px;
+        }
+        
+        @include pad {
+          height: 400px;
+        }
       }
     }
   }
@@ -619,20 +602,17 @@ function goToProductPage(product) {
     width: 100%;
     height: auto;
     margin-top: 200px;
+
     @include mac {
     margin-top: 100px;
+    }
+    @include pad {
+    margin-top: 50px;
     }
 
     .famousArticle {
       padding-left: 100px;
       margin: 100px 0px;
-
-      @include mac {
-      margin: 0px;
-      }
-      @include pad {
-      margin: 0px;
-      }
 
       p {
         font-size: 16px;
@@ -653,17 +633,21 @@ function goToProductPage(product) {
       text-align: center;
       box-sizing: border-box;
       height: 400px;
+      width: 100%;
+      padding-bottom: 120px;
+
+      @include mac {
+        height: 400px;
+      }
+
+      @include pad {
+        height: 350px;
+      }
 
       img {
-        width: 400px;
-        height: 200px;
+        width: 100%;
+        height: 100%;
         object-fit: contain;
-        @include mac {
-        width: 300px;
-        }
-        @include pad {
-        width: 250px;
-        }
         &:hover {
           cursor: pointer;
         }
@@ -687,6 +671,7 @@ function goToProductPage(product) {
       }
 
       .subtitle {
+        color: $color-9;
         font-size: 16px;
       }
     }
@@ -699,16 +684,17 @@ function goToProductPage(product) {
     display: flex;
     align-items: flex-start;
 
-    @include pad {
+    @include mac {
       margin-top: 100px;
+    }
+
+    @include pad {
+      margin-top: 50px;
     }
 
     .perfumeImage {
       flex-grow: 1;
       padding-right: 150px;
-      @include pad {
-        padding-right: 80px;
-      }
       
       img {
         margin-right: auto;
@@ -716,6 +702,10 @@ function goToProductPage(product) {
         height: 500px;
         object-fit: cover;
         background-position: 0 -100px;
+
+        @include mac {
+          height: 350px;
+        }
         @include pad {
           height: 300px;
         }
@@ -729,9 +719,19 @@ function goToProductPage(product) {
       height: auto;
       text-align: left;
 
+      @include mac {
+        width: 350px;
+      }
+      @include pad {
+        width: 300px;
+        padding-right: 100px;
+      }
 
       .title {
         font-size: 30px;
+        @include mac {
+          font-size: 28px;
+        }
         @include pad {
          font-size: 25px;
         }
@@ -740,6 +740,7 @@ function goToProductPage(product) {
         font-size: 16px;
         line-height: 1.7;
         padding-top: 20px;
+        color: $color-9;
       }
     }
     .perfume-button {
@@ -752,8 +753,12 @@ function goToProductPage(product) {
     height: auto;
     margin-top: 200px;
     display: flex;
-    @include pad {
+
+    @include mac {
       margin-top: 100px;
+    }
+    @include pad {
+      margin-top: 50px;
     }
 
     .giftInformation {
@@ -761,9 +766,19 @@ function goToProductPage(product) {
       width: 450px;
       height: auto;
       text-align: left;
+      
+      @include mac {
+        width: 350px;
+      }
+      @include pad {
+        width: 300px;
+      }
 
       .title {
         font-size: 30px;
+        @include mac {
+          font-size: 28px;
+        }
         @include pad {
           font-size: 25px;
         }
@@ -773,7 +788,9 @@ function goToProductPage(product) {
         font-size: 16px;
         line-height: 1.7;
         padding: 20px 0px;
+        color: $color-9;
       }
+
       .surpriseGift-button {
         margin-top: 40px;
         border: solid 1px $color-3;
@@ -791,6 +808,10 @@ function goToProductPage(product) {
         width: 100%;
         height: 500px;
         object-fit: cover;
+        
+        @include mac {
+          height: 350px;
+        }
         @include pad {
           height: 300px;
         }
@@ -803,23 +824,29 @@ function goToProductPage(product) {
     margin-top: 200px;
     display: flex;
     align-items: flex-start;
-    @include pad {
+
+    @include mac {
       margin-top: 100px;
+    }
+
+    @include pad {
+      margin-top: 50px;
     }
 
     .videoServiceImage {
       flex-grow: 1;
       padding-right: 150px;
-      @include pad {
-        padding-right: 80px;
-      }
+
       img {
         margin-right: auto;
         width: 100%;
         height: 500px;
         object-fit: cover;
+        @include mac {
+          height: 350px;
+        }
         @include pad {
-        height: 300px;
+          height: 300px;
         }
       }
     }
@@ -829,11 +856,20 @@ function goToProductPage(product) {
       width: 450px;
       height: auto;
       text-align: left;
+      @include mac {
+        width: 350px;
+      }
+      @include pad {
+        width: 300px;
+      }
 
       .title {
         font-size: 30px;
+        @include mac {
+          font-size: 28px;
+        }
         @include pad {
-          font-size: 25px;
+         font-size: 25px;
         }
       }
 
@@ -841,6 +877,7 @@ function goToProductPage(product) {
         font-size: 16px;
         line-height: 1.7;
         padding: 20px 0px;
+        color: $color-9;
       }
       .video-button {
         margin-top: 40px;
@@ -854,18 +891,24 @@ function goToProductPage(product) {
     height: auto;
     margin-top: 200px;
 
+    @include mac {
+      margin-top: 100px;
+    }
+    @include pad {
+      margin-top: 50px;
+    }
+
     .SetWrapper {
-      width: 600px;
-      height: 550px;
+      width: 100%;
+      height: auto;
       box-sizing: border-box;
       object-fit: contain;
       text-align: center;
-      @include mac {
-        width: 450px;
-        } 
-        @include pad {
-        width: 350px;
-        } 
+      padding-bottom: 80px;
+
+      @include pad {
+        padding-bottom: 50px;
+      }
 
       img {
         width: 350px;
@@ -874,29 +917,37 @@ function goToProductPage(product) {
           cursor: pointer;
         }
         @include mac {
-        width: 450px;
+          width: 300px;
         } 
         @include pad {
-        width: 350px;
+          width: 280px;
         } 
       }
       .settitle {
         font-size: 26px;
         padding: 10px 0px;
+
+        @include mac {
+          font-size: 22px;
+        } 
+        @include pad {
+          font-size: 20px;
+        } 
+
         &:hover {
           cursor: pointer;
           text-decoration: underline;
           font-weight: 600;
         }
-        @include pad {
-        font-size: 22px;
-        padding: 10px 0px;
-        } 
       }
       .setsubtitle {
         font-size: 20px;
+        color: $color-9;
+        @include mac {
+          font-size: 16px;
+        } 
         @include pad {
-        font-size: 16px;
+          font-size: 16px;
         } 
       }
     }
@@ -907,29 +958,47 @@ function goToProductPage(product) {
     height: auto;
     margin-top: 200px;
     display: flex;
+
+    @include mac {
+      margin-top: 100px;
+    }
     @include pad {
-      margin-top: 200px;
-      } 
+      margin-top: 50px;
+    } 
 
     .loctioninfo {
       width: 50%;
       height: auto;
       padding-left: 80px;
       padding-right: 20px;
+
+      @include mac {
+        width: 400px;
+        padding-left: 40px;
+        padding-right: 10px;
+      } 
+
       @include pad {
-      padding-left: 40px;
+        width: 350px;
+        padding-left: 40px;
+        padding-right: 10px;
       } 
 
       .shoptitle {
         font-size: 30px;
-      @include pad {
-        font-size: 25px;
-      } 
+        @include mac {
+          font-size: 28px;
+        }
+        @include pad {
+         font-size: 25px;
+        }
       }
 
       .subtitle {
         font-size: 16px;
         padding: 10px 0px;
+        color: $color-9;
+        line-height: 1.7;
       }
       .shop-button {
         margin-top: 40px;
@@ -941,11 +1010,26 @@ function goToProductPage(product) {
       width: 50%;
       height: auto;
       margin-left: auto;
+      
+      @include mac {
+        width: 800px;
+      } 
+
+      @include mac {
+        width: 600px;
+      } 
 
       .shopimage {
         margin-left: auto;
         width: 100%;
         height: 500px;
+
+        @include mac {
+          height: 350px;
+        }
+        @include pad {
+          height: 350px;
+        }
 
         img {
           width: 100%;
@@ -961,9 +1045,20 @@ function goToProductPage(product) {
     margin-top: 100px;
     padding: 100px;
     text-align: center;
+    
+    @include mac {
+        margin-top: 0px;
+        font-size: 22px;
+    }
+    @include pad {
+        margin-top: 0px;
+        font-size: 20px;
+    }
 
     h2 {
       font-size: 28px;
+      color: $color-9;
+
       @include mac {
         font-size: 22px;
       }
@@ -1000,9 +1095,18 @@ function goToProductPage(product) {
         text-align: center;
         padding: 100px 50px;
 
+        @include mac {
+          padding: 50px 50px;
+        }
+        @include pad {
+          padding: 50px 50px;
+        }
+
         .ecoTitle {
           font-size: 26px;
           padding: 20px 0px;
+          font-weight: bold;
+
           @include mac {
           font-size: 22px;
           }
@@ -1014,6 +1118,8 @@ function goToProductPage(product) {
         .ecoSubtitle {
           font-size: 18px;
           color: $color-8;
+          line-height: 1.7;
+          color: $color-9;
           @include mac {
           font-size: 16px;
           }
