@@ -6,15 +6,10 @@
          <img src="@/assets/img/icon/LOGO.png" />
         </div>
         <div class="storyArea">
-          <div class="title">我們的故事</div>
+          <div class="title">故事的起點</div>
           <div class="description">
-            我們為你帶來肌膚、秀髮及身體護理的精製配方，務求達至顯著功效之餘，同時讓身體感官享受舒緩鎮靜。
+            「Alles Gute!」源自德語，是德國人經常使用的日常招呼語，有祝福別人一切順利、圓滿的意思。因此，我們以這句招呼語作為品牌名稱，就是希望能夠提供您如同摯友般的祝福，得到身心療癒，讓保養的旅程中盡情享受當下幸福的時刻。
           </div>
-        </div>
-        <div class="storyImage">
-          <img
-            src="@/assets/img/About.pic/about1.jpg"
-          />
         </div>
       </div>
       <div class="productsIdeaWrapper">
@@ -26,16 +21,15 @@
         <div class="productsIdea">
           <div class="title">擁有鑽研產品細節的熱忱</div>
           <div class="description">
-            我們秉持堅定的信念，開發一系列專業肌膚、秀髮及身體護理產品。致力於在科學驗證功效的基礎上，選用最優質的植物萃取和抗氧化成分。所有配方有效之餘亦絕對安全。每間店舖的專業顧問都會十分樂意為你介紹Aesop的產品，為你挑選最合適的選擇。
+            致力開發一系列專業的護膚、頭髮和身體護理產品，秉持科學驗證，加入了頂級的植物萃取和抗氧化成分，所有配方都通過嚴格檢驗，只為提供安全、安心的產品。
           </div>
         </div>
       </div>
       <div class="designWrapper">
         <div class="design">
-          <div class="title">我們堅信，精心構思的設計會讓生活更美好。</div>
+          <div class="title">好設計才是好生活</div>
           <div class="description">
-            堅持自行產品研發，構思更多新產品、研發新配方，為產品構建雛型，憑藉新技術及發展成熟的各項科研方案，創造出各款功效超卓的護理產品。
-            並根據顧客的實際需要研發新產品，經過長時間的深入研製才會推出最高品質及有效的配方。
+            堅持自行研發產品，不斷構思新點子、開發新配方，以最新技術和成熟的科研方案，並根據客戶的實際需求進行研發，投入時間深入研究，以確保推出的配方具有最高品質和最有效果。
           </div>
         </div>
         <div class="designImage">
@@ -47,10 +41,9 @@
       </div>
       <div class="shopWrapper">
         <div class="shop">
-          <div class="title">精心挑選的門市位置</div>
+          <div class="title">交通便利的門市位置</div>
           <div class="description">
-            構思新店的過程中，我們希望能夠融入店鋪所在的街道，為當地作出有益的貢獻，而不是破壞周圍和諧的氛圍。2004年，我們在墨爾本臨海郊區聖吉爾達(St
-            Kilda)地下的一個小角落裡，迎接了第一批實體店顧客。那時的店面是由一條通往地下停車場的狹窄坡道改建而成，這片空間為我們日後的店鋪設計樹立了標杆。在開設新店時，首先考慮的一定是在設計中利用當地已有的元素；我們的設計力求謹慎，並尊重過去、現在和未來。
+            無論是開車、搭乘大眾運輸還是步行前來，我們的店鋪都是您的理想選擇。靠近多個公共交通站點，步行數分鐘即可抵達，方便快捷。此外，我們也提供寬敞的停車場，讓您可以輕鬆停車後盡情享受購物樂趣，期待與您相見！
           </div>
           <AppButton :title="'查看所有店舖'" :path="'shop'" class="shop-button"></AppButton>
         </div>
@@ -154,41 +147,64 @@ const swiperListFirst = ref([
       height: auto;
       display: flex;
       .icon {
-        top: 90px;
-        left: 65px;
-        margin: 50px 0px 50px 50px;
+        position: relative;
+        top: -20px;
+        left: 140px;
         overflow: hidden;
+
+        @include mac {
+          top: -40px;
+          left: 96px;
+        }
+
         img {
+          width: 80%;
+          height: 80%;
           object-fit: contain;
         }
       }
       .storyArea {
         margin: 50px;
-        width: 400px;
+        width: 600px;
+
+        @include mac {
+          width: 650px;
+        }
+        @include pad {
+          width: 650px;
+        }
 
         .title {
           font-size: 30px;
           padding: 20px 0px;
+
+          @include mac {
+            font-size: 26px;
+          }
+          @include pad {
+            font-size: 24px;
+          }
         }
 
         .description {
           font-size: 16px;
+          line-height: 3em;
         }
       }
 
-      .storyImage {
-        margin-left: auto;
-        flex-grow: 1;
-        img {
-          width: 100%;
-          height: 600px;
-          object-fit: cover;
-          object-position: center;
-          @include mac {
-            height: 300px;
-          }
-        }
-      }
+      // .storyImage {
+      //   margin-left: auto;
+      //   flex-grow: 1;
+      //   img {
+      //     width: 100%;
+      //     height: 600px;
+      //     object-fit: cover;
+      //     object-position: center;
+      //     @include mac {
+      //       height: 300px;
+      //     }
+      //   }
+      // }
     }
 
     .productsIdeaWrapper {
@@ -197,6 +213,14 @@ const swiperListFirst = ref([
       height: auto;
       display: flex;
 
+      @include mac {
+        margin-top: 100px;
+      }
+
+      @include pad {
+        margin-top: 50px;
+      }
+
       .ideaImage {
         margin-left: 50px;
 
@@ -204,8 +228,13 @@ const swiperListFirst = ref([
           width: auto;
           height: 800px;
           margin-right: auto;
+          
           @include mac {
             height: 600px;
+          }
+
+          @include pad {
+            height: 400px;
           }
         }
       }
@@ -213,17 +242,30 @@ const swiperListFirst = ref([
       .productsIdea {
         width: 50%;
         margin-left: 200px;
+
         @include mac {
+          margin-left: 100px;
+        }
+        @include pad {
           margin-left: 100px;
         }
 
         .title {
           font-size: 30px;
           padding-bottom: 20px;
+          @include mac {
+            font-size: 26px;
+            padding-bottom: 10px;
+          }
+          @include pad {
+            font-size: 24px;
+            padding-bottom: 10px;
+          }
         }
 
         .description {
           font-size: 16px;
+          line-height: 3em;
         }
       }
     }
@@ -235,6 +277,13 @@ const swiperListFirst = ref([
     height: auto;
     margin-top: 200px;
 
+    @include mac {
+      margin-top: 100px;
+    }
+    @include pad {
+      margin-top: 50px;
+    }
+
     .design {
       width: 50%;
       height: auto;
@@ -244,9 +293,22 @@ const swiperListFirst = ref([
       margin: 0px 50px;
       }
 
+      @include pad {
+      margin: 0px 50px;
+      }
+
+
       .title {
         font-size: 30px;
         padding-bottom: 20px;
+        @include mac {
+            font-size: 26px;
+            padding-bottom: 10px;
+          }
+          @include pad {
+            font-size: 24px;
+            padding-bottom: 10px;
+          }
       }
 
       .description {
@@ -262,21 +324,50 @@ const swiperListFirst = ref([
         width: 100%;
         height: 500px;
         object-fit: cover;
+
+        @include mac {
+          height: 500px;
+        }
+        @include pad {
+          height: 400px;
+        }
       }
     }
   }
   .shopWrapper {
     margin-top: 200px;
     width: 100%;
-    height: 700px;
+    height: auto;
     display: flex;
+    @include mac {
+      margin-top: 100px;
+    }
+    @include pad {
+      margin-top: 50px;
+    }
     .shop {
       width: 60%;
       height: auto;
       margin: 50px 150px;
+      @include mac {
+      margin: 0px 50px;
+      }
+
+      @include pad {
+      margin: 0px 50px;
+      }
+
       .title {
         font-size: 30px;
-        padding: 20px 0px;
+        padding-bottom: 20px;
+        @include mac {
+            font-size: 26px;
+            padding-bottom: 10px;
+          }
+          @include pad {
+            font-size: 24px;
+            padding-bottom: 10px;
+          }
       }
       .description {
         font-size: 16px;
@@ -286,6 +377,7 @@ const swiperListFirst = ref([
         margin-top: 50px;
       }
     }
+
     .shopImage {
       margin-right: 50px;
       img {
@@ -293,32 +385,69 @@ const swiperListFirst = ref([
         height: 800px;
         margin-left: auto;
         object-fit: cover;
+        @include mac {
+          height: 600px;
+        }
+        @include pad {
+          height: 400px;
+        }
+        
       }
     }
   }
   .swiper-photo {
     width: 100%;
     height: auto;
-    padding: 0px 50px 200px 34px;
-    box-sizing: border-box;
-    @include mac {
-    padding: 0px 50px 100px 50px;
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
     
+    .shopWrapper {
+      width: 100%;
+      height: 800px;
+      padding: 0px 50px 50px 50px;
+
+      @include mac {
+        height: 600px;
+        padding: 0px 150px 50px 150px;
+      }
+
+      @include mac {
+        height: 400px;
+        padding: 0px 150px 50px 150px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
   .wisdom {
     width: 100%;
     height: auto;
     text-align: center; 
     padding-bottom: 200px;
+    margin-top: 200px;
+
+    @include mac {
+      padding-bottom: 100px;
+      margin-top: 100px;
+    }
+
+    @include pad {
+      padding-bottom: 50px;
+      margin-top: 50px;
+    }
+
     .title {
       font-size: 30px;
       padding: 20px 0px;
+      @include mac {
+        font-size: 26px;
+      }
+
+      @include pad {
+        font-size: 24px;
+      }
     }
     .subtitle {
       font-size: 16px;

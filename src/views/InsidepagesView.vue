@@ -2,9 +2,7 @@
   <div class="container">
     <div class="productWrapper">
       <div class="productPic">
-        <img
-          src="@/assets/img/Product.pic/p014.png"
-          alt="" />
+        <img src="@/assets/img/Product.pic/p014.png" alt="" />
       </div>
       <div class="productInfo">
         <div class="name">{{ product.title }}</div>
@@ -40,34 +38,28 @@
     </div>
     <div class="serviceWrapper">
       <div class="section">
-        <img src="@/assets/img/icon/giftbox.svg"
-          alt="" />
+        <img src="@/assets/img/icon/giftbox.svg" alt="" />
         <div class="mainTitle">免費禮品包裝</div>
         <p>為您提供禮品包裝、品牌專屬棉袋以及個人化禮物小卡服務，是我們的榮幸。</p>
       </div>
       <div class="section">
-        <img
-          src="@/assets/img/icon/talk.svg"
-          alt="" />
+        <img src="@/assets/img/icon/talk.svg" alt="" />
         <div class="mainTitle">諮詢美容顧問</div>
         <p>我們受過專業訓練的顧問，非常樂意在線上為您提供個人化的產品建議。</p>
       </div>
       <div class="section">
-        <img src="@/assets/img/icon/droplet.svg"
-          alt="" />
+        <img src="@/assets/img/icon/droplet.svg" alt="" />
         <div class="mainTitle">下單送試用包</div>
         <p>我們很榮幸為所有訂單提供試用包體驗組。</p>
       </div>
     </div>
     <div class="UsageWrapper">
       <div class="productPic">
-        <img
-          src="@/assets/img/pageofpro.pic/001.jpg"
-          alt="" />
+        <img src="@/assets/img/pageofpro.pic/001.jpg" alt="" />
       </div>
       <div class="way">
         <div class="howToUse">使用方式</div>
-        <P>倒在手中或海綿上。按摩全身濕潤的肌膚，然後徹底洗淨。</P>
+        <p>倒在手中或海綿上。按摩全身濕潤的肌膚，然後徹底洗淨。</p>
         <div class="useDivider"></div>
         <div class="title">用量</div>
         <div class="info">倒在手掌上約一個十元硬幣大小</div>
@@ -78,24 +70,22 @@
     </div>
     <div class="swiper-bottom">
       <Swiper :scrollbar="{
-        hide: false,
-        draggable: true,
-        dragSize: 600,
-      }" :slidesPerView="4" :spaceBetween="0" :loop="false" :centeredSlides="false" :pagination="pagination"
-        :navigation="true" :modules="modules" @swiper="onSwiperFirst">
+          hide: false,
+          draggable: true,
+          dragSize: 500,
+        }" :slidesPerView="4" :spaceBetween="0" :loop="false" :centeredSlides="false" :pagination="pagination"
+        :navigation="navigation" 
+        :modules="modules" @swiper="onSwiperFirst">
         <SwiperSlide>
-          <div class="famousArticle">
-            <h2>推薦搭配使用</h2>
-            <!-- <p>
-              每3位使用者就有1位選擇這些商品，使用滿意度高達98%，並且有效改善肌膚紋路。
-            </p> -->
+          <div class="recommendArticle">
+            <p>推薦搭配使用</p>
           </div>
         </SwiperSlide>
-        <SwiperSlide v-for="(item, index) in swiperListFirst" :key="index">
-          <div class="famousProductsWrapper" @click="goToProductPage(item)">
-            <img :src="item.src" />
-            <div class="productitle">{{ item.title }}</div>
-            <div class="subtitle">{{ item.subtitle }}</div>
+        <SwiperSlide v-for="product in swiperListFirst" :key="product">
+          <div class="recommendProductsWrapper" @click="goToProductPage(product)">
+            <img :src="product.sizeList[0].imageSrc" />
+            <div class="productitle">{{ product.title }}</div>
+            <div class="subtitle">{{ product.subtitle }}</div>
           </div>
         </SwiperSlide>
       </Swiper>
@@ -105,53 +95,48 @@
 
 <script setup>
 import { ref, getCurrentInstance } from 'vue';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue' 
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue'
 import { useRoute } from 'vue-router'
 import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
+import pic001 from "@/assets/img/Product.pic/p001.png";
+import pic002 from "@/assets/img/Product.pic/p002.png";
+import pic009 from "@/assets/img/Product.pic/p009.png";
+import pic013 from "@/assets/img/Product.pic/p013.png";
+import pic014 from "@/assets/img/Product.pic/p014.png";
+import pic015 from "@/assets/img/Product.pic/p015.png";
 
+let swiperFirst = null
+function onSwiperFirst(swiper) {
+  swiperFirst = swiper
+}
 
 const router = useRoute()
 
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
-const swiperList = [
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/5t0dzEPWqxftQwus7pXBKW/9e6ea2fd7f92bffce6bed00ae6b7c176/Aesop_Body_Citrus_Melange_Body_Cleanser_Refill_500mL_Web_Front_Large_900x1115px.png'
-  },
-  {
-    src: 'https://www.aesop.com/u1nb1km7t5q7/6F4yhB0VHb1QuCYGfJ6XVf/806de4084613817a14e46774b7c3b6c1/Aesop_Body_Rejuvenate_Intensive_Body_Balm_100mL_Web_Front_Large_900x1037px.png'
-  },
-]
+
 let product = ref({});
 let globalObject = getCurrentInstance().appContext.config;
 let cartList = globalObject.cartList;
 
 
-
 function getProductData() {
   product.value = JSON.parse(router.params.product)
 }
+
+function goToProductPage(product) {
+  router.push({
+    name: 'insidepagesView',
+    params: {
+      product: JSON.stringify(product)
+    }
+  })
+}
+
+
 
 function handleChangeSize(item, sizeOptionIndex) {
   item.selectedSizeIndex = sizeOptionIndex
@@ -183,31 +168,118 @@ function initPage() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-const swiperListFirst = ref([
+let swiperListFirst = ref([
   {
-    title: '芫荽籽身體潔膚露',
+    title: '甜橙香檸身體凝乳',
+    subtitle: '柑橘、木質、草本芳香',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic014
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic015
+      }
+    ],
+    id: 1
+  },
+  {
+
+    title: '芫荽籽身體凝乳',
     subtitle: '溫暖木質辛香',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/nWdJmaoekK7lzZDGZs6Ap/b47f80e978322c2faf73a5ebb46ad8aa/Aesop_Skin_B_Triple_C_Facial_Balancing_Gel_60mL_Web_Front_X-Large_3000x1592px.png'
+    size: '容量',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic014
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic015
+      }
+    ],
+    price: 'NT$600起',
+    id: 2
   },
   {
-    title: '橙香面部精華素',
-    subtitle: '維他命Ｃ打底精華',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/nWdJmaoekK7lzZDGZs6Ap/b47f80e978322c2faf73a5ebb46ad8aa/Aesop_Skin_B_Triple_C_Facial_Balancing_Gel_60mL_Web_Front_X-Large_3000x1592px.png'
+    title: '玫瑰身體凝乳',
+    subtitle: '玫瑰花、豆蔻、黑胡椒',
+    size: '容量',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic014
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic015
+      }
+    ],
+    id: 3
   },
   {
-    title: '日夜滋養組合',
-    subtitle: '極致保濕配方',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/nWdJmaoekK7lzZDGZs6Ap/b47f80e978322c2faf73a5ebb46ad8aa/Aesop_Skin_B_Triple_C_Facial_Balancing_Gel_60mL_Web_Front_X-Large_3000x1592px.png'
+    title: '橙香萬用油',
+    subtitle: '柑橘、清爽幽香',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic009
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic015
+      }
+    ],
+    id: 4
   },
   {
-    title: '大馬仕玫瑰保養精華',
-    subtitle: '植物萃取天然成分',
-    src: 'https://images.ctfassets.net/u1nb1km7t5q7/3QfGNj3NpYM5h3zLpQHWK0/6ac142e435309dc51f2dc2e477b54a95/Aesop_Skin_Lucent_Facial_Concentrate_60mL_Web_Large_684x668px.png'
+    title: '晨沐薰衣草面霜',
+    subtitle: '薰衣草、朝露、草本芳香',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic001
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic013
+      }
+    ],
+    id: 5
   },
   {
-    title: '健康滋養面霜',
-    subtitle: '超導保濕成分',
-    src: 'https://www.aesop.com/u1nb1km7t5q7/53Q5a81QFoAlk9fqyzPRWi/ff703aa4abdc6d0fa3479da1347a19a7/Aesop_Skin_Damascan_Rose_Facial_Treatment_25mL_Web_Large_684x668px.png'
+    title: '香草森林面霜',
+    subtitle: '香草、木質、草本芳香',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic002
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic013
+      }
+    ],
+    id: 6
   }
 ])
 
@@ -226,9 +298,9 @@ getProductData()
   height: auto;
 
   .productWrapper {
-    display: flex;
     width: 100%;
     height: auto;
+    display: flex;
     justify-content: center;
     align-items: center;
 
@@ -243,7 +315,8 @@ getProductData()
       }
 
       @include mac {
-        width: 400px;
+        width: 350px;
+        padding: 0px;
       }
 
       @include pad {
@@ -253,10 +326,10 @@ getProductData()
 
     .productInfo {
       width: 500px;
-      padding: 50px;
+      padding: 0px 50px;
 
       @include mac {
-        width: 400px;
+        width: 450px;
       }
 
       @include pad {
@@ -271,7 +344,7 @@ getProductData()
         @include mac {
           font-size: 24px;
           font-weight: 600;
-          padding: 20px 0px;
+          padding: 10px 0px;
         }
 
         @include pad {
@@ -289,6 +362,7 @@ getProductData()
 
         @include mac {
           font-size: 16px;
+          padding: 0px;
         }
 
         @include pad {
@@ -456,6 +530,7 @@ getProductData()
     .productPic {
       width: 50%;
       height: auto;
+
       img {
         width: 100%;
         height: 100%;
@@ -472,11 +547,11 @@ getProductData()
       background-color: $color-4;
 
       @include mac {
-        padding: 100px 50px;
+        padding: 75px 50px;
       }
 
       @include pad {
-        padding: 80px 30px;
+        padding: 40px 30px;
       }
 
       .howToUse {
@@ -569,21 +644,22 @@ getProductData()
     margin-top: 200px;
 
     @include mac {
-      margin-top: 100px;
+      margin-top: 50px;
     }
 
-    .famousArticle {
-      padding-left: 65px;
+    .recommendArticle {
+      padding-left: 10px;
       margin: 100px 0px;
       text-align: center;
 
-      // @include mac {
-      //   margin: 0px;
-      // }
+      @include mac {
+        padding-left: 0px;
+        margin: 50px 0px;
+      }
 
-      // @include pad {
-      //   margin: 0px;
-      // }
+      @include pad {
+        margin: 0px;
+      }
     }
 
     h2 {
@@ -599,14 +675,14 @@ getProductData()
     }
   }
 
-  .famousProductsWrapper {
+  .recommendProductsWrapper {
     text-align: center;
     box-sizing: border-box;
     height: 400px;
 
     img {
-      width: 400px;
-      height: 200px;
+      width: 500px;
+      height: 300px;
       object-fit: contain;
 
       @include mac {
@@ -645,6 +721,6 @@ getProductData()
     .subtitle {
       font-size: 16px;
     }
-  }
+  } 
 }
 </style>

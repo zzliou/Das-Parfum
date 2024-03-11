@@ -46,7 +46,7 @@
             :loop="false"
             :centeredSlides="false"
             :pagination="pagination"
-            :navigation="true"
+            :navigation="{hiddenClass: 'swiper-button-hidden' }"
             :modules="modules"
             @swiper="onSwiperFirst"
           >
@@ -59,11 +59,11 @@
                 </p>
               </div>
             </SwiperSlide>
-            <SwiperSlide v-for="(item, index) in swiperListFirst" :key="index">
-              <div class="famousProductsWrapper" @click="goToProductPage(item)">
-                <img :src="item.src" />
-                <div class="productitle">{{ item.title }}</div>
-                <div class="subtitle">{{ item.subtitle }}</div>
+            <SwiperSlide v-for="product in swiperListFirst" :key="product">
+              <div class="famousProductsWrapper" @click="goToProductPage(product)">
+                <img :src="product.sizeList[0].imageSrc" />
+                <div class="productitle">{{ product.title }}</div>
+                <div class="subtitle">{{ product.subtitle }}</div>
               </div>
             </SwiperSlide>
           </Swiper>
@@ -133,11 +133,11 @@
             :modules="modules"
             @swiper="onSwiperSecond"
           >
-            <SwiperSlide v-for="(item, index) in swiperListSecond" :key="index">
-              <div class="SetWrapper"  @click="goToProductPage(item)">
-                <img :src="item.src" />
-                <div class="settitle">{{ item.title }}</div>
-                <div class="setsubtitle">{{ item.subtitle }}</div>
+            <SwiperSlide v-for="product in swiperListSecond" :key="product">
+              <div class="SetWrapper"  @click="goToProductPage(product)">
+                <img :src="product.sizeList[0].imageSrc" />
+                <div class="settitle">{{ product.title }}</div>
+                <div class="setsubtitle">{{ product.subtitle }}</div>
               </div>
             </SwiperSlide>
           </Swiper>
@@ -223,15 +223,27 @@ import shop3 from "@/assets/img/Home.pic/home-store/shop3.jpg";
 import BN1 from "@/assets/img/Home.pic/home-BN/banner1.jpg";
 import BN2 from "@/assets/img/Home.pic/home-BN/banner2.jpg";
 import BN3 from "@/assets/img/Home.pic/home-BN/banner3.png";
+import pic001 from "@/assets/img/Product.pic/p001.png";
+import pic002 from "@/assets/img/Product.pic/p002.png";
+import pic003 from "@/assets/img/Product.pic/p003.png";
+import bsize from "@/assets/img/Product.pic/bigsize.jpg";
+import pic004 from "@/assets/img/Product.pic/p004.png";
+import pic005 from "@/assets/img/Product.pic/p005.png";
+import pic006 from "@/assets/img/Product.pic/p006.png";
+import pic007 from "@/assets/img/Product.pic/p007.png";
+import pic008 from "@/assets/img/Product.pic/p008.png";
+import pic009 from "@/assets/img/Product.pic/p009.png";
+import pic010 from "@/assets/img/Product.pic/p010.png";
+import pic011 from "@/assets/img/Product.pic/p011.png";
+import pic012 from "@/assets/img/Product.pic/p012.png";
+import pic013 from "@/assets/img/Product.pic/p013.png";
+import pic014 from "@/assets/img/Product.pic/p014.png";
+import pic015 from "@/assets/img/Product.pic/p015.png";
+import pic016 from "@/assets/img/Product.pic/p016.jpg";
 import set001 from "@/assets/img/Home.pic/home-set/set001.png";
 import set002 from "@/assets/img/Home.pic/home-set/set002.png";
 import set003 from "@/assets/img/Home.pic/home-set/set003.png";
 import set004 from "@/assets/img/Home.pic/home-set/set004.png";
-import product01 from "@/assets/img/Product.pic/1.png";
-import product02 from "@/assets/img/Product.pic/2.png";
-import product03 from "@/assets/img/Product.pic/3.png";
-import product04 from "@/assets/img/Product.pic/4.png";
-import product05 from "@/assets/img/Product.pic/5.png";
 
 let swiperZero = null
 let swiperFirst = null
@@ -288,55 +300,218 @@ const swiperListZero = ref([
   }
 ])
 
-const swiperListFirst = ref([
+let swiperListFirst = ref([
   {
-    title: '芫荽籽身體潔膚露',
+    title: '甜橙香檸身體凝乳',
+    subtitle: '柑橘、木質、草本芳香',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic014
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic015
+      }
+    ],
+    id: 1
+  },
+  {
+   
+    title: '芫荽籽身體凝乳',
     subtitle: '溫暖木質辛香',
-    src: product01
+    size: '容量',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic014
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic015
+      }
+    ],
+    price: 'NT$600起',
+    id: 2
   },
   {
-    title: '橙香面部精華素',
-    subtitle: '維他命Ｃ打底精華',
-    src: product02
+    title: '玫瑰身體凝乳',
+    subtitle: '玫瑰花、豆蔻、黑胡椒',
+    size: '容量',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic014
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic015
+      }
+    ],
+    id: 3
   },
   {
-    title: '日夜滋養組合',
-    subtitle: '極致保濕配方',
-    src: product03
+    title: '橙香萬用油',
+    subtitle: '柑橘、清爽幽香',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic009
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic015
+      }
+    ],
+    id: 4
   },
   {
-    title: '大馬仕玫瑰保養精華',
-    subtitle: '植物萃取天然成分',
-    src: product04
+    title: '晨沐薰衣草面霜',
+    subtitle: '薰衣草、朝露、草本芳香',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic001
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic013
+      }
+    ],
+    id: 5
   },
   {
-    title: '健康滋養面霜',
-    subtitle: '超導保濕成分',
-    src: product05
+    title: '香草森林面霜',
+    subtitle: '香草、木質、草本芳香',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: pic002
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: pic013
+      }
+    ],
+    id: 6
   }
 ])
-const swiperListSecond = ref([
+
+let swiperListSecond = ref([
   {
     title: '春心和聲',
     subtitle: '手部清潔露、廁後點滴、室內噴霧',
-    src: set001
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: set001
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: set001
+      }
+    ],
+    id: 1
   },
   {
-    title: '夏戀節奏',
+    title: '夏戀慷慨節奏',
+    subtitle: '天竺葵身體潔膚露、去角質露、身體乳霜',
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: set002
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: set002
+      }
+    ],
+    id: 2
+  },
+  {
+    title: '秋頌寓言曲調',
     subtitle: '護手霜、潔膚露、護唇膏',
-    src: set002
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: set003
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: set003
+      }
+    ],
+    id: 3
   },
   {
-    title: '秋頌曲調',
-    subtitle: '護手霜、潔膚露、護唇膏',
-    src: set003
-  },
-  {
-    title: '冬禮聲部',
+    title: '冬禮手作諧美聲部',
     subtitle: '護手霜、清潔露、乾洗手',
-    src: set004
-  }
+    selectedSizeIndex: 0,
+    sizeList: [
+      {
+        capacity: 100,
+        price: 500,
+        imageSrc: set004
+      },
+      {
+        capacity: 500,
+        price: 1400,
+        imageSrc: set004
+      }
+    ],
+    id: 4
+  },
 ])
+
+// const swiperListSecond = ref([
+//   {
+//     title: '春心和聲',
+//     subtitle: '手部清潔露、廁後點滴、室內噴霧',
+//     src: set001
+//   },
+//   {
+//     title: '夏戀節奏',
+//     subtitle: '護手霜、潔膚露、護唇膏',
+//     src: set002
+//   },
+//   {
+//     title: '秋頌曲調',
+//     subtitle: '護手霜、潔膚露、護唇膏',
+//     src: set003
+//   },
+//   {
+//     title: '冬禮聲部',
+//     subtitle: '護手霜、清潔露、乾洗手',
+//     src: set004
+//   }
+// ])
 
 const swiperListThird = ref([
   {

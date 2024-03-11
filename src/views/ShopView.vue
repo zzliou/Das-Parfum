@@ -286,18 +286,24 @@ window.scrollTo({
       flex-wrap: wrap;
       width: auto;
       margin: 100px 50px 0px 50px;
-      justify-content: center;
+      justify-content: space-around;
+
 
       &::after {
         content: "";
-        width: 600px;
+        width: 650px;
         height: 300px;
+        flex-grow: 1;
 
         @include mac {
-          width: 300px;
+          width: 480px;
+        }
+
+        @include pad {
+          width: 400px;
         }
       }
-
+      
       .section {
         width: 650px;
         height: 300px;
@@ -306,11 +312,15 @@ window.scrollTo({
         box-sizing: border-box;
 
         @include mac {
-          width: 300px;
+          width: 480px;
+          height: 300px;
+          margin: 20px;
         }
 
         @include pad {
-          width: 300px;
+          width: 400px;
+          height: 200px;
+          margin: 20px;
         }
 
         .store-pic {
@@ -322,6 +332,19 @@ window.scrollTo({
             object-fit: cover;
             border-radius: 10px;
           }
+
+          @include mac {
+            img {
+              width: 200px;
+              height: 200px;
+            }
+          }
+          @include pad {
+            img {
+              width: 150px;
+              height: 150px;
+            }
+          }
         }
         .info {
           .title {
@@ -332,12 +355,31 @@ window.scrollTo({
             .name {
               font-size: 20px;
               font-weight: 500;
+              
+              @include mac {
+                font-size: 16px;
+              }
+              @include pad {
+                font-size: 14px;
+              }
             }
 
             img {
               width: 100%;
               height: 25px;
               padding-left: 20px;
+
+              @include mac {
+                img {
+                  height: 20px;
+                }
+              }
+
+              @include pad {
+                img {
+                  height: 20px;
+                }
+              }
             }
           }
 
@@ -345,7 +387,16 @@ window.scrollTo({
             border-bottom: $color-9 solid 1.5px;
             width: 100%;
             margin-bottom: 115px;
+
+            @include mac {
+              margin-bottom: 55px;
+            }
+            @include pad {
+              margin-bottom: 0px;
+            }
           }
+
+         
 
           .subtitle {
             position: absolute;
@@ -357,6 +408,12 @@ window.scrollTo({
               margin: 10px 5px 10px 0px;
               align-items: center;
               text-align: start;
+              @include mac {
+                font-size: 16px;
+              }
+              @include pad {
+                font-size: 16px;
+              }
             }
 
             .phonenumber {
@@ -365,46 +422,36 @@ window.scrollTo({
               margin: 10px 5px 10px 0px;
               align-items: center;
               text-align: start;
+              @include mac {
+                font-size: 16px;
+              }
+              @include pad {
+                font-size: 16px;
+              }
             }
 
             .location {
               display: flex;
               font-size: 20px;
-              margin: 10px 5px 10px 0px;
               align-items: center;
               text-align: start;
 
-              @include mac {
-                font-size: 16px;
-              }
               .address{
                 a {
                 text-decoration: none;
                 color: $color-9;
                 }
               }
+
+              @include mac {
+                font-size: 16px;
+              }
+              @include pad {
+                font-size: 16px;
+              }
             }
           }
-
-          // .hour {
-          //   margin-left: auto;
-          // }
-
-          // .number {
-          //   margin-left: auto;
-          // }
-
-          // .address {
-          //   // margin-left: auto;
-
-          //   // a {
-          //   //   text-decoration: underline;
-          //   //   color: $color-9;
-          //   // }
-          // }
         }
-
-
       }
     }
   }

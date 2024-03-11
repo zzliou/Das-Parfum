@@ -7,11 +7,10 @@
       <div class="contact">
         <div class="contactus">聯絡我們</div>
         <p>
-          我們很高興與您分享，您將可以在舒適的家中，與顧問預約視訊諮詢服務。根據您的獨特需求，我們將為您量身打造這項服務──其中可能包含送禮的建議、您的肌膚保養推薦，或者關於個人或家居香氛配方的選擇──我們的顧問將進行產品示範，與您分享使用方法及技巧，並提供您專屬的個人化建議。
+          你可以在家裡舒服地預約視訊諮詢服務。我們會根據你的需求量身打造服務，可能包括送禮建議、肌膚保養推薦，或是挑選個人或家居香氛。我們的顧問會示範產品，和你分享使用方法，還有提供專屬的個人建議
         </p>
         <p>
-          預約視訊諮詢不須收費，每場視訊諮詢為 30
-          分鐘，讓我們有足夠時間深入討論您有興趣的主題。我們提供中文服務，您可以透過電腦、平板、手機等裝置進行線上視訊諮詢服務。請確保您有穩定的網路連接。
+          預約視訊諮詢完全免費！每次約定都有30分鐘的時間，讓我們能夠好好討論您想討論的肌膚問題，歡迎利用電腦、平板或手機上開展線上視訊諮詢。記得要確保你的網路連接穩定喔！
         </p>
       </div>
     </div>
@@ -19,13 +18,13 @@
       <div class="video">
         <div class="title">視訊諮詢</div>
         <div class="subtitle">
-          比起以往，許多人必須花更多的時間待在家中，因此我們希望線上諮詢的方式，能為您帶來和店鋪相同的體驗。我們非常期待以這種嶄新的形式與您見面，並歡迎您與我們分享任何回饋。
+          我們想透過網路諮詢，給你帶來跟實體店一樣的感受，期待以全新的方式與您見面！
         </div>
         <a href="https://www.example.com">立即開始</a>
       </div>
       <div class="mail">
         <div class="title">寄信給我們</div>
-        <div class="subtitle">在採購或保養上有任何問題，都可以透過郵件跟我們聊聊唷．</div>
+        <div class="subtitle">在選購或保養上有任何問題，都可以透過郵件跟我們聊聊唷．</div>
         <a href="mailto:info@example.com">立即傳送</a>
       </div>
       <div class="phone">
@@ -64,6 +63,7 @@ window.scrollTo({
     justify-content: center;
     padding-top: 50px;
 
+
     .icon {
       top: 90px;
       left: 65px;
@@ -74,6 +74,7 @@ window.scrollTo({
         object-fit: contain;
       }
     }
+
 
     .contact {
       width: 50%;
@@ -98,10 +99,16 @@ window.scrollTo({
     justify-content: space-evenly;
     margin-top: 100px;
 
+
     .video {
       width: 300px;
       height: 300px;
-      margin: 20px 20px 20px 20px;
+      margin: 20px 30px 20px 30px;
+      box-sizing: border-box;
+
+      @include mac {
+        margin: 10px 20px 10px 20px;
+      }
 
       @include pad {
         margin: 10px 10px 10px 10px;
@@ -109,8 +116,16 @@ window.scrollTo({
 
       .title {
         font-size: 25px;
-        padding-bottom: 20px;
-        position: relative;
+        padding: 0px 0px 20px 20px;
+        position: relative; 
+
+        @include mac {
+          font-size: 20px;
+        }
+
+        @include pad {
+          font-size: 20px;
+        }
       }
 
       .title::before {
@@ -119,13 +134,21 @@ window.scrollTo({
         border-left: 5px solid #252525;
         height: 25px;
         position: absolute;
-        left: -20px;
-        top: 9px;
+        left: 8px;
+        top: 4px;
       }
 
       .subtitle {
         font-size: 18px;
-        padding-bottom: 20px;
+        padding: 0px 20px;
+
+        @include mac {
+          font-size: 16px;
+        }
+
+        @include pad {
+          font-size: 16px;
+        }
       }
 
       a {
@@ -138,7 +161,7 @@ window.scrollTo({
         height: auto;
         border: solid 1px $color-11;
         position: relative;
-        top: 50px;
+        top: 120px;
         transition: width 1s, height 1s, background-color 1s;
         padding: 10px 20px;
 
@@ -146,13 +169,21 @@ window.scrollTo({
           background-color: $color-11;
           color: $color-2;
         }
+
+        @include mac {
+        top: 53px;
+        }
       }
     }
 
     .mail {
       width: 300px;
       height: 300px;
-      margin: 20px 20px 20px 20px;
+      margin: 20px 30px 20px 30px;
+
+      @include mac {
+        margin: 10px 20px 10px 20px;
+      }
 
       @include pad {
         margin: 10px 10px 10px 10px;
@@ -160,8 +191,16 @@ window.scrollTo({
 
       .title {
         font-size: 25px;
-        padding-bottom: 20px;
+        padding: 0px 0px 20px 20px;
         position: relative;
+
+        @include mac {
+          font-size: 20px;
+        }
+
+        @include pad {
+          font-size: 20px;
+        }
       }
 
       .title::before {
@@ -170,13 +209,21 @@ window.scrollTo({
         border-left: 5px solid #252525;
         height: 25px;
         position: absolute;
-        left: -20px;
-        top: 9px;
+        left: 8px;
+        top: 4px;
       }
 
       .subtitle {
         font-size: 18px;
-        padding-bottom: 20px;
+        padding: 0px 20px;
+
+        @include mac {
+          font-size: 16px;
+        }
+
+        @include pad {
+          font-size: 16px;
+        }
       }
 
       a {
@@ -196,6 +243,14 @@ window.scrollTo({
         &:hover {
           background-color: $color-11;
           color: $color-2;
+        }
+
+        @include mac {
+          top: 75px;
+        }
+
+        @include pad {
+          top: 50px;
         }
       }
     }
@@ -205,15 +260,25 @@ window.scrollTo({
       height: 300px;
       margin: 20px 20px 20px 20px;
 
+      @include mac {
+        margin: 10px 20px 10px 20px;
+      }
+
       @include pad {
         margin: 10px 10px 10px 10px;
       }
 
       .title {
         font-size: 25px;
-        padding-bottom: 20px;
+        padding: 0px 0px 20px 20px;
         position: relative;
-        /* 將 .title 設置為相對定位的父元素 */
+        @include mac {
+          font-size: 20px;
+        }
+
+        @include pad {
+          font-size: 20px;
+        }
       }
 
       .title::before {
@@ -222,13 +287,21 @@ window.scrollTo({
         border-left: 5px solid #252525;
         height: 25px;
         position: absolute;
-        left: -20px;
-        top: 9px;
+        left: 8px;
+        top: 4px;
       }
 
       .subtitle {
         font-size: 18px;
-        padding-bottom: 20px;
+        padding: 0px 20px;
+
+        @include mac {
+          font-size: 16px;
+        }
+
+        @include pad {
+          font-size: 16px;
+        }
       }
 
       a {
@@ -248,6 +321,14 @@ window.scrollTo({
         &:hover {
           background-color: $color-11;
           color: $color-2;
+        }
+
+        @include mac {
+          top: 73px;
+        }
+
+        @include pad {
+          top: 29px;
         }
       }
     }
@@ -261,6 +342,21 @@ window.scrollTo({
       height: 600px;
       object-fit: cover;
     }
+    
+    @include mac {
+      margin-top: 0px;
+      img {
+        height: 400px;
+      }
+    }
+
+    @include pad {
+      margin-top: 0px;
+      img {
+        height: 400px;
+      }
+    }
+
   }
 }
 </style>
