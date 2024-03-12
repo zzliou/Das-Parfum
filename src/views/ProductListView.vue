@@ -10,9 +10,9 @@
     </div>
     <div class="productWapper">
       <div class="introduce">
-        <div class="maintitle">一年四季提供肌膚潔淨及柔滑的感受</div>
+        <div class="maintitle">重新體驗肌膚潔淨及柔滑的感受</div>
         <div class="description">
-          身體潔膚露、保濕產品和調理精油皆蘊含具滋潤作用的草本植物成分，讓肌膚在任何季節皆能保持潔淨柔滑。
+          所有產品皆含有滋潤功效的草本植物成分，讓肌膚在任何季節都能保持潔淨柔滑。
         </div>
       </div>
       <div class="section" v-for="product in selectedTypeList" :key="product.id">
@@ -796,6 +796,10 @@ window.scrollTo({
     flex-wrap: wrap;
     justify-content: center;
 
+    @include phone {
+      display: inline-block;
+    }
+
     .introduce {
       width: 33%;
       box-sizing: border-box;
@@ -808,6 +812,12 @@ window.scrollTo({
         padding: 50px;
       }
 
+      @include phone {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+      }
+
       .maintitle {
         font-size: 24px;
         padding: 30px 0px;
@@ -816,6 +826,9 @@ window.scrollTo({
         }
         @include pad {
           font-size: 20px;
+        }
+        @include phone {
+          font-size: 16px;
         }
       }
 
@@ -828,12 +841,19 @@ window.scrollTo({
         @include pad {
           font-size: 16px;
         }
+        @include phone {
+          display: none;
+        }
       }
     }
 
     .section {
       width: 33%;
       box-sizing: border-box;
+
+      @include phone {
+        width: 100%;
+      }
 
       .productPic {
         background-color: $color-5;
@@ -852,6 +872,10 @@ window.scrollTo({
             width: 250px;
             height: 450px;
           }
+          @include phone {
+            width: 250px;
+            height: 250px;
+          }
         }
         &:hover {
           cursor: pointer;
@@ -868,9 +892,15 @@ window.scrollTo({
         @include  pad {
           height: 245px;
         }
+        @include  phone {
+          height: 180px;
+        }
         color: $color-8;
         transition: all 0.2s linear;
         margin: 0 2px;
+        .cart {
+          opacity: 0;
+        }
         &:hover {
           background-color: $color-5;
           cursor: pointer;
@@ -907,6 +937,11 @@ window.scrollTo({
           font-weight: 600;
           padding-top: 30px;
           padding-bottom: 20px;
+          
+          @include  phone {
+            font-size: 16px;
+            padding: 10px 0px;
+          }
         }
 
         .subtitle {
@@ -919,14 +954,24 @@ window.scrollTo({
           @include pad {
             margin-bottom: 20px;
           }
+          @include  phone {
+            margin-bottom: 10px;
+            font-size: 12px;
+          }
         }
 
         .sizenprice {
           .size-wrapper {
             margin-bottom: 20px;
+            @include  phone {
+              margin-bottom: 10px;
+            }
             .size-list-wrapper {
               justify-content: center;
               display: flex;
+              .size-option {
+                font-size: 14px;
+              }
               input {
                 cursor: pointer;
               }
@@ -934,6 +979,12 @@ window.scrollTo({
           }
           .size {
             margin-right: 20px;
+          }
+          .price {
+            font-size: 20px;
+            @include phone {
+              font-size: 14px;
+            }
           }
         }
       }

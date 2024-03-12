@@ -55,12 +55,14 @@
             <div class="submit" @click="gofinalpage">
               <button class='submitBtn'>確定送出</button>
             </div>
+            
           </div>
+          <div class="divider"></div>
         </label>
       </form>
-      <div class="bottom">
-        <div class="divider"></div>
-      </div>
+      <!-- <div class="bottom">
+        
+      </div> -->
     </div>
   </div>
 </template>
@@ -99,6 +101,7 @@ countTotal()
 .container {
   background-color: $color-1;
   width: 100%;
+  height: auto;
   font-family: Suisse Regular, sans-serif;
   padding: 50px 0px;
 
@@ -114,6 +117,9 @@ countTotal()
         font-size: 22px;
         font-weight: 600;
         text-align: start;
+        @include phone {
+          font-size: 16px;
+        }
       }
     }
 
@@ -126,6 +132,10 @@ countTotal()
       }
       @include pad {
         width: 800px;
+      }
+      @include phone {
+        width: 347px;
+        margin: 0px;
       }
 
       .listWrapper {
@@ -142,7 +152,15 @@ countTotal()
           @include mac {
             width: 200px;
           }
+          @include phone {
+            font-size: 14px;
+            width: 150px;
+            padding: 0px;
+          }
         }
+        @include phone {
+            padding: 5px 0px;
+          }
 
         .detail {
           display: flex;
@@ -167,6 +185,11 @@ countTotal()
         align-items: center;
         @include mac {
           font-size: 20px;
+        }
+        @include phone {
+          font-size: 16px;
+          padding: 5px 0px;
+          justify-content: end;
         }
       }
     }
@@ -195,6 +218,11 @@ countTotal()
             @include pad {
               font-size: 16px;
             }
+            @include phone {
+              width: 30%;
+              font-size: 14px;
+              padding: 20px 0px;
+            }
           }
         }
 
@@ -211,6 +239,10 @@ countTotal()
             @include pad {
               font-size: 16px;
             }
+            @include phone {
+              font-size: 14px;
+              width: 70%;
+            }
         }
       }
 
@@ -218,6 +250,10 @@ countTotal()
           display: flex;
           justify-content: center;
           margin: 50px 0px;
+
+          @include phone {
+            margin: 20px 0px;
+          }
 
           .reset {
             padding-right: 10px;
@@ -234,6 +270,12 @@ countTotal()
             &:hover {
               cursor: pointer;
             }
+
+            @include phone {
+              width: 100px;
+              height: 30px;
+              font-size: 14px;
+            }
           }
         }
     }
@@ -246,6 +288,10 @@ countTotal()
         width: 100%;
         border: $color-11 1.5px solid;
         margin: 10px 0px;
+
+        @include phone {
+          margin: 5px 0px;
+        }
       }
 
       .dividerLiter {
