@@ -63,15 +63,30 @@ window.scrollTo({
     justify-content: center;
     padding-top: 50px;
 
+    @include phone {
+      padding-top: 0px;
+    }
+
 
     .icon {
-      top: 90px;
-      left: 65px;
-      margin: 50px 0px 50px 50px;
+      position: relative;
+      top: 7px;
+      left: 8px;
       overflow: hidden;
 
       img {
         object-fit: contain;
+        height: 100px;
+        width: 100%;
+      }
+
+      @include pad {
+        top: 26px;
+        left: -12px;
+      }
+      @include phone {
+        top: 25px;
+        left: 24px;
       }
     }
 
@@ -84,10 +99,18 @@ window.scrollTo({
 
       .contactus {
         font-size: 30px;
+
+        @include phone {
+          font-size: 26px;
+          font-weight: bold;
+        }
       }
 
       p {
         font-size: 16px;
+        @include phone {
+          display: none;
+        }
       }
     }
   }
@@ -98,6 +121,12 @@ window.scrollTo({
     display: flex;
     justify-content: space-evenly;
     margin-top: 100px;
+    text-align: start;
+
+    @include phone {
+      display: inline-block;
+      margin: 60px 0px;
+    }
 
 
     .video {
@@ -111,8 +140,13 @@ window.scrollTo({
       }
 
       @include pad {
-        margin: 10px 10px 10px 10px;
+        margin: 10px;
       }
+      @include phone {
+        margin: 20px auto;
+        width: 350px;
+        height: 200px;
+      } 
 
       .title {
         font-size: 25px;
@@ -126,6 +160,10 @@ window.scrollTo({
         @include pad {
           font-size: 20px;
         }
+        @include phone {
+          font-size: 16px;
+          font-weight: bold;
+        }
       }
 
       .title::before {
@@ -136,6 +174,9 @@ window.scrollTo({
         position: absolute;
         left: 8px;
         top: 4px;
+        @include phone {
+          height: 18px;
+        }
       }
 
       .subtitle {
@@ -148,6 +189,9 @@ window.scrollTo({
 
         @include pad {
           font-size: 16px;
+        }
+        @include phone {
+          font-size: 14px;
         }
       }
 
@@ -171,7 +215,15 @@ window.scrollTo({
         }
 
         @include mac {
-        top: 53px;
+          top: 53px;
+        }
+        @include pad {
+          top: 27px;
+        }
+        @include phone {
+          width: auto;
+          font-size: 14px;
+          padding: 10px;
         }
       }
     }
@@ -186,8 +238,14 @@ window.scrollTo({
       }
 
       @include pad {
-        margin: 10px 10px 10px 10px;
+        margin: 10px;
       }
+
+      @include phone {
+        margin: 20px auto;
+        width: 350px;
+        height: 200px;
+      } 
 
       .title {
         font-size: 25px;
@@ -201,6 +259,10 @@ window.scrollTo({
         @include pad {
           font-size: 20px;
         }
+        @include phone {
+          font-size: 16px;
+          font-weight: bold;
+        }
       }
 
       .title::before {
@@ -211,6 +273,9 @@ window.scrollTo({
         position: absolute;
         left: 8px;
         top: 4px;
+        @include phone {
+          height: 18px;
+        }
       }
 
       .subtitle {
@@ -223,6 +288,9 @@ window.scrollTo({
 
         @include pad {
           font-size: 16px;
+        }
+        @include phone {
+          font-size: 14px;
         }
       }
 
@@ -252,6 +320,11 @@ window.scrollTo({
         @include pad {
           top: 50px;
         }
+        @include phone {
+          width: auto;
+          font-size: 14px;
+          padding: 10px;
+        }
       }
     }
 
@@ -265,8 +338,14 @@ window.scrollTo({
       }
 
       @include pad {
-        margin: 10px 10px 10px 10px;
+        margin: 10px;
       }
+
+      @include phone {
+        margin: 20px auto;
+        width: 350px;
+        height: 200px;
+      } 
 
       .title {
         font-size: 25px;
@@ -279,6 +358,10 @@ window.scrollTo({
         @include pad {
           font-size: 20px;
         }
+        @include phone {
+          font-size: 16px;
+          font-weight: bold;
+        }
       }
 
       .title::before {
@@ -289,6 +372,9 @@ window.scrollTo({
         position: absolute;
         left: 8px;
         top: 4px;
+        @include phone {
+          height: 18px;
+        }
       }
 
       .subtitle {
@@ -301,6 +387,9 @@ window.scrollTo({
 
         @include pad {
           font-size: 16px;
+        }
+        @include phone {
+          font-size: 14px;
         }
       }
 
@@ -328,7 +417,12 @@ window.scrollTo({
         }
 
         @include pad {
-          top: 29px;
+          top: 48px;
+        }
+        @include phone {
+          width: auto;
+          font-size: 14px;
+          padding: 10px;
         }
       }
     }
@@ -354,6 +448,12 @@ window.scrollTo({
       margin-top: 0px;
       img {
         height: 400px;
+      }
+    }
+    @include phone {
+      margin-top: 0px;
+      img {
+        height: 210px;
       }
     }
 
