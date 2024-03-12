@@ -304,6 +304,10 @@ getProductData()
     justify-content: center;
     align-items: center;
 
+    @include phone {
+      display: inline-block;
+    }
+
     .productPic {
       width: 500px;
       padding: 50px;
@@ -322,6 +326,11 @@ getProductData()
       @include pad {
         width: 350px;
       }
+      @include phone {
+        width: 350px;
+        padding: 0px;
+        margin: 0px auto;
+      }
     }
 
     .productInfo {
@@ -334,6 +343,11 @@ getProductData()
 
       @include pad {
         width: 350px;
+      }
+      @include phone {
+        width: 350px;
+        margin: 0px auto;
+        padding: 0px;
       }
 
       .name {
@@ -349,6 +363,11 @@ getProductData()
 
         @include pad {
           font-size: 22px;
+          font-weight: 600;
+          padding: 20px 0px;
+        }
+        @include phone {
+          font-size: 20px;
           font-weight: 600;
           padding: 20px 0px;
         }
@@ -368,6 +387,9 @@ getProductData()
         @include pad {
           font-size: 16px;
         }
+        @include phone {
+          font-size: 14px;
+        }
       }
 
       .sizenprice {
@@ -382,6 +404,10 @@ getProductData()
 
         @include pad {
           font-size: 16px;
+        }
+
+        @include phone {
+          font-size: 14px;
         }
 
         .size-list-wrapper {
@@ -419,6 +445,9 @@ getProductData()
         @include pad {
           padding: 0px;
           margin: 5px 0px;
+        }
+        @include phone {
+          font-size: 14px;
         }
       }
 
@@ -470,10 +499,18 @@ getProductData()
     text-align: center;
     padding: 20px 0px;
 
+    @include phone {
+      padding: 0px 0px 20px 0px;
+    }
+
     .section {
       margin: 10px 10px;
       width: 33.33%;
       height: auto;
+
+      @include phone {
+        width: 100px;
+      }
 
       img {
         width: 30px;
@@ -488,6 +525,10 @@ getProductData()
           width: 20px;
           padding: 5px;
         }
+        @include phone {
+          width: 30px;
+          padding: 5px;
+        }
       }
 
       .mainTitle {
@@ -500,6 +541,9 @@ getProductData()
 
         @include pad {
           font-size: 18px;
+        }
+        @include phone {
+          font-size: 14px;
         }
       }
 
@@ -516,6 +560,9 @@ getProductData()
           font-size: 16px;
           padding: 15px 25px;
         }
+        @include phone {
+          display: none;
+        }
       }
     }
   }
@@ -527,9 +574,18 @@ getProductData()
     flex-wrap: nowrap;
     justify-content: center;
 
+    @include phone {
+      display: inline-block;
+    }
+
     .productPic {
       width: 50%;
       height: auto;
+
+      @include phone {
+        width: 100%;
+        height: 300px;
+      }
 
       img {
         width: 100%;
@@ -537,6 +593,10 @@ getProductData()
         object-fit: cover;
         object-position: center;
         margin-right: auto;
+        
+        @include phone {
+          object-position: bottom;
+        }
       }
     }
 
@@ -554,6 +614,11 @@ getProductData()
         padding: 40px 30px;
       }
 
+      @include phone {
+        width: 100%;
+        padding: 40px 0px;
+      }
+
       .howToUse {
         font-size: 22px;
 
@@ -563,6 +628,11 @@ getProductData()
 
         @include pad {
           font-size: 16px;
+        }
+        
+        @include phone {
+          font-size: 16px;
+          padding: 10px;
         }
       }
 
@@ -577,6 +647,11 @@ getProductData()
         @include pad {
           font-size: 20px;
           padding: 0px;
+        }
+        
+        @include phone {
+          font-size: 18px;
+          padding: 10px;
         }
       }
 
@@ -597,6 +672,10 @@ getProductData()
         @include pad {
           font-size: 18px;
         }
+        @include phone {
+          font-size: 18px;
+          padding: 10px;
+        }
       }
 
       .info {
@@ -612,6 +691,10 @@ getProductData()
         @include pad {
           font-size: 18px;
           padding: 5px 0px;
+        }
+        @include phone {
+          font-size: 16px;
+          padding: 10px;
         }
       }
 
@@ -636,6 +719,10 @@ getProductData()
       font-size: 22px;
       padding: 15px 25px;
     }
+    @include phone {
+      font-size: 18px;
+      padding: 10px;
+    }
   }
 
   .swiper-bottom {
@@ -647,10 +734,16 @@ getProductData()
       margin-top: 50px;
     }
 
+    @include phone {
+      display: none;
+    }
+
     .recommendArticle {
       padding-left: 10px;
       margin: 100px 0px;
       text-align: center;
+      font-weight: bold;
+      font-size: 34px;
 
       @include mac {
         padding-left: 0px;

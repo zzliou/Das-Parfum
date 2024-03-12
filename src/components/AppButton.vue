@@ -38,6 +38,9 @@ import { useRouter } from 'vue-router'
     @include pad {
       padding: 8px;
     }
+    @include phone {
+      padding: 10px;
+    }
   }
 
 }
