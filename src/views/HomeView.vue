@@ -579,7 +579,6 @@ function goToProductPage(product) {
         .perfume-button {
           border: 1px solid $color-1;
         }
-
       }
 
       img {

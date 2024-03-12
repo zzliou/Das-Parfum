@@ -58,7 +58,7 @@ let phone = ref('Tel.')
 let location = ref('Add.')
 let shopList = ref([
   {
-    title: '台北永康旗艦店',
+    title: '永康旗艦店',
     hour: '10:00AM-17:00PM',
     number: '02-23222200',
     address: '台北市大安區永康街31巷6號',
@@ -103,7 +103,7 @@ let shopList = ref([
     id: 5
   },
   {
-    title: '台中三井LaLa店',
+    title: '三井LaLa店',
     hour: '10:00AM-21:00PM',
     number: '04-22138281',
     address: '台中市東區進德路600號北館4樓',
@@ -287,6 +287,10 @@ window.scrollTo({
       flex-wrap: wrap;
       width: auto;
       margin: 100px 50px 0px 50px;
+
+      @include phone {
+        margin: 50px 50px 0px 50px;
+      }
       
       .section {
         width: 650px;
@@ -307,6 +311,12 @@ window.scrollTo({
           margin: 20px;
         }
 
+        @include phone {
+          width: 200px;
+          height: 100px;
+          margin: 10px;
+        }
+
         .store-pic {
           margin-right: 30px;
 
@@ -315,26 +325,30 @@ window.scrollTo({
             height: 300px;
             object-fit: cover;
             border-radius: 10px;
-          }
-
-          @include mac {
-            img {
+            @include mac {
               width: 200px;
               height: 200px;
             }
-          }
-          @include pad {
-            img {
+            @include pad {
               width: 150px;
               height: 150px;
+            }
+            @include phone {
+              width: 80px;
+              height: 80px;
             }
           }
         }
         .info {
+          height: auto;
           .title {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+
+            @include phone {
+              margin-bottom: 10px;
+            }
 
             .name {
               font-size: 20px;
@@ -346,6 +360,10 @@ window.scrollTo({
               @include pad {
                 font-size: 14px;
               }
+              @include phone {
+                width: 150px;
+                font-size: 12px;
+              }
             }
 
             img {
@@ -354,17 +372,16 @@ window.scrollTo({
               padding-left: 20px;
 
               @include mac {
-                img {
                   height: 20px;
-                }
               }
 
               @include pad {
-                img {
                   height: 20px;
-                }
               }
-            }
+              @include pad {
+                  height: 20px;
+              }
+             }
           }
 
           .divider {
@@ -376,6 +393,9 @@ window.scrollTo({
               margin-bottom: 55px;
             }
             @include pad {
+              margin-bottom: 0px;
+            }
+            @include phone {
               margin-bottom: 0px;
             }
           }
@@ -396,6 +416,10 @@ window.scrollTo({
               @include pad {
                 font-size: 16px;
               }
+              @include phone {
+                font-size: 12px;
+                margin: 5px 5px 5px 0px;
+              }
             }
 
             .phonenumber {
@@ -409,6 +433,10 @@ window.scrollTo({
               }
               @include pad {
                 font-size: 16px;
+              }
+              @include phone {
+                font-size: 12px;
+                margin: 5px 5px 5px 0px;
               }
             }
 
@@ -431,6 +459,9 @@ window.scrollTo({
               @include pad {
                 font-size: 16px;
               }
+              @include phone {
+                display: none;
+              }
             }
           }
         }
@@ -441,7 +472,5 @@ window.scrollTo({
       }
     }
   }
-
-
 }
 </style>

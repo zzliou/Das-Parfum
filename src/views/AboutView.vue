@@ -157,6 +157,11 @@ const swiperListFirst = ref([
           left: 96px;
         }
 
+        @include mac {
+          top: -40px;
+          left: 96px;
+        }
+
         img {
           width: 80%;
           height: 80%;
