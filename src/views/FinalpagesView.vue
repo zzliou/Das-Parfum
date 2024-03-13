@@ -52,11 +52,15 @@ window.close();
     .textWrapper {
       display: grid;
       place-items: center;
-
+      
       .icon {
         img {
           width: 100px;
-          height: 100px
+          height: 100px;
+          @include phone {
+            width: 50px;
+            height: 50px;
+          }
         }
       }
 
@@ -72,6 +76,10 @@ window.close();
         @include pad {
           padding: 15px 0px;
         }
+        @include phone {
+          width: 300px;
+          padding: 15px 0px;
+        }
       }
 
       .subTitle {
@@ -85,6 +93,9 @@ window.close();
         @include pad {
           padding-bottom: 15px;
         }
+        @include phone {
+          padding-bottom: 15px;
+        }
       }
     }
 
@@ -92,6 +103,10 @@ window.close();
       width: 500px;
       display: flex;
       justify-content: center;
+
+      @include phone {
+        width: 300px;
+      }
 
       .finish {
         text-align: start;
@@ -104,6 +119,10 @@ window.close();
           border: $color-11;
           font-size: 16px;
           color: $color-2;
+          @include phone {
+            width: 80px;
+            font-size: 14px;
+          }
 
           &:hover {
             cursor: pointer;
@@ -126,6 +145,10 @@ window.close();
           background-color: $color-11;
           border: $color-11;
           font-size: 16px;
+          @include phone {
+            width: 80px;
+            font-size: 14px;
+          }
 
           &:hover {
             cursor: pointer;

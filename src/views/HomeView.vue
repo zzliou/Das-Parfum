@@ -29,7 +29,7 @@
           }" 
           :slidesPerView="4" 
           :spaceBetween="0" 
-          :breakpoints="responsiveBreakpoints"
+          :breakpoints="breakpointSet"
           :loop="false" 
           :centeredSlides="false" 
           :pagination="pagination"
@@ -86,7 +86,7 @@
             <div class="subtitle">
               為了協助您挑選最適合的產品，邀請您與專業顧問進行「線上視訊諮詢」。
             </div>
-            <AppButton :title="'立即挑選'" :path="'contact'" class="video-button"></AppButton>
+            <AppButton :title="'立即諮詢'" :path="'contact'" class="video-button"></AppButton>
           </div>
         </div>
         <div class="swiper-container-second">
@@ -95,7 +95,12 @@
             draggable: true,
             dragsize: 600,
             mousewheel: true,
-          }" :slidesPerView="3" :spaceBetween="10" :loop="true" :centeredSlides="false" :pagination="pagination"
+          }" 
+          :slidesPerView="3" 
+          :spaceBetween="10" 
+          :breakpoints="breakpointSet"
+          :loop="true" 
+          :centeredSlides="false" :pagination="pagination"
             :autoplay="{ delay: 3000, disableOnInteraction: false }" :navigation="true" :modules="modules"
             @swiper="onSwiperSecond">
             <SwiperSlide v-for="product in swiperListSecond" :key="product">
@@ -225,6 +230,21 @@ const pagination = {
 }
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
 
+const breakpointSet =  ref({       
+      430: {       
+         slidesPerView: 1,
+         spaceBetween: 10  
+      },          
+      1024: {       
+         slidesPerView: 3,       
+         spaceBetween: 10     
+      },   
+  
+      1440: {       
+         slidesPerView: 3,       
+         spaceBetween: 10     
+      } 
+   } )
 
 const swiperListZero = ref([
   {
@@ -559,9 +579,21 @@ function goToProductPage(product) {
           }
         }
 
-        .perfume-button {
-          border: 1px solid $color-1;
-          font-size: 12px;
+        @include phone {
+          :deep(.app-button.perfume-button) {
+            margin-top: 10px;
+            font-size: 12px;
+            width: 180px;
+            height: auto;
+            .wrapper {
+              align-items: center;
+              padding: 5px 5px;
+              border: solid 1px  $color-2;
+            .action {
+              margin-left: 90px;
+            }
+            }
+          }  
         }
       }
 
@@ -598,27 +630,26 @@ function goToProductPage(product) {
       margin-top: 50px;
     }
     @include phone {
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .famousArticle {
       padding-left: 100px;
       margin: 100px 0px;
       @include phone {
-        display: none;
+        padding-left: 90px;
+        margin: 100px 0px;
+        width: 250px;
       }
 
       p {
         font-size: 16px;
-
         @include pad {
           font-size: 14px;
         }
       }
-
       h2 {
         font-size: 22px;
-
         @include pad {
           font-size: 20px;
         }
@@ -639,6 +670,12 @@ function goToProductPage(product) {
       @include pad {
         height: 350px;
       }
+
+      @include phone {
+        height: 400px;
+        // padding-bottom: 60px;
+      }
+
 
       img {
         width: 100%;
@@ -770,15 +807,23 @@ function goToProductPage(product) {
       }
     }
 
-    .perfume-button {
-      margin-top: 40px;
-      border: solid 1px $color-3;
-      @include phone {
-        width: 77px;
-        height: 26px;
-        font-size: 16px;
+    :deep(.app-button.perfume-button) {
+        margin-top: 40px;
+        border: solid 1px $color-3;
+        @include phone {
+          margin-top: 50px;
+          font-size: 12px;
+          width: auto;
+          height: auto;
+          .wrapper {
+            align-items: center;
+            padding: 5px 5px;
+            .action {
+            margin-left: 100px;
+            }
+          }
+        }
       }
-    }
   }
 
   .surpriseGiftWapper {
@@ -843,10 +888,22 @@ function goToProductPage(product) {
           display: none;
         }
       }
-
-      .surpriseGift-button {
+      :deep(.app-button.surpriseGift-button) {
         margin-top: 40px;
         border: solid 1px $color-3;
+        @include phone {
+          margin-top: 50px;
+          font-size: 12px;
+          width: auto;
+          height: auto;
+          .wrapper {
+            align-items: center;
+            padding: 5px 5px;
+            .action {
+              margin-left: 100px;
+            }
+          }
+        }
       }
     }
 
@@ -875,7 +932,9 @@ function goToProductPage(product) {
           height: 300px;
         }
         @include phone {
+          width: 234px;
           height: 200px;
+          object-fit: cover;
         }
       }
     }
@@ -969,9 +1028,22 @@ function goToProductPage(product) {
         }
       }
 
-      .video-button {
+      :deep(.app-button.video-button) {
         margin-top: 40px;
         border: solid 1px $color-3;
+        @include phone {
+          margin-top: 50px;
+          font-size: 12px;
+          width: auto;
+          height: auto;
+          .wrapper {
+            align-items: center;
+            padding: 5px 5px;
+            .action {
+            margin-left: 100px;
+            }
+          }
+        }
       }
     }
   }
@@ -1121,14 +1193,21 @@ function goToProductPage(product) {
         }
       }
 
-      .shop-button {
+      :deep(.app-button.shop-button) {
         margin-top: 40px;
         border: solid 1px $color-3;
         @include phone {
-          margin-top: 10px;
-          position: relative;
-          top: -6px;
-          bottom: 50px;
+          margin: 20px 0px;
+          font-size: 12px;
+          width: auto;
+          height: auto;
+          .wrapper {
+            align-items: center;
+            padding: 5px 5px;
+            .action {
+              margin-left: 170px;
+            }
+          }
         }
       }
     }
@@ -1184,8 +1263,7 @@ function goToProductPage(product) {
       font-size: 20px;
     }
     @include phone {
-      margin-top: 0px;
-      padding: 30px;
+      display: none;
     }
 
     h2 {
@@ -1246,7 +1324,7 @@ function goToProductPage(product) {
         }
 
         @include phone {
-          padding: 50px 0px;
+          padding: 20px 0px;
         }
 
         .ecoTitle {
@@ -1283,7 +1361,7 @@ function goToProductPage(product) {
           @include phone {
             font-size: 14px;
             line-height: 1.5em;
-            padding: 0px 20px;
+            padding: 0px 40px;
           }
         }
       }

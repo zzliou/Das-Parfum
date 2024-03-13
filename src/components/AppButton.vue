@@ -22,6 +22,7 @@ import { useRouter } from 'vue-router'
 .app-button {
   width: fit-content;
   transition: all .3s;
+  height: auto;
   &:hover {
     cursor: pointer;
     border-color: $color-11;
@@ -34,12 +35,6 @@ import { useRouter } from 'vue-router'
     border: solid 1px  $color-11;
     .action {
       margin-left: 150px;
-    }
-    @include pad {
-      padding: 8px;
-    }
-    @include phone {
-      padding: 10px;
     }
   }
 

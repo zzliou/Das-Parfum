@@ -52,6 +52,12 @@ defineExpose({
   width: 500px;
   height: 800px;
   z-index: 1;
+
+  @include phone {
+    width: 350px;
+    height: 500px;
+    transform: translateX(-76%);
+  }
   .closed {
     button {
       cursor: pointer;
@@ -59,15 +65,25 @@ defineExpose({
       border-style: none;
       background-color: $color-4;
       font-size: 22px;
+      @include phone {
+        margin: 20px 0px 0px 300px;
+      }
     }
   }
   .wrapper {
     font-family: sans-serif;
     padding: 50px;
     text-align: start;
+    @include phone {
+      padding: 20px;
+    }
     .loginTitle {
       font-size: 26px;
       padding: 50px 0px;
+      @include phone {
+        font-size: 20px;
+        padding: 20px 0px;
+      }
     }
     .email {
       font-size: 16px;
@@ -105,6 +121,9 @@ defineExpose({
         padding: 10px 0px;
         background-color: $color-4;
         color: $color-11;
+        @include phone {
+          margin: 20px 0px;
+        }
       }
     }
   }
