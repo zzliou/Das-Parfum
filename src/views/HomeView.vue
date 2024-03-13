@@ -5,29 +5,16 @@
     <div class="container">
       <div class="homeVueWapper">
         <div class="swiper-container-zero">
-          <Swiper
-            :slidesPerView="1"
-            :spaceBetween="30"
-            :loop="true"
-            :centeredSlides="true"
-            :pagination="pagination"
-            :navigation="false"
-            :autoplay="{ delay: 2000, disableOnInteraction: true }"
-            :modules="modules"
-            :effect="fade"
-            @swiper="onSwiperZero"
-          >
+          <Swiper :slidesPerView="1" :spaceBetween="30" :loop="true" :centeredSlides="true" :pagination="pagination"
+            :navigation="false" :autoplay="{ delay: 2000, disableOnInteraction: true }" :modules="modules"
+            :effect="fade" @swiper="onSwiperZero">
             <SwiperSlide v-for="(item, index) in swiperListZero" :key="index">
               <div class="newsWrapper">
                 <div class="news">
                   <div class="smalltitle">{{ item.smalltitle }}</div>
                   <div class="maintitle">{{ item.maintitle }}</div>
                   <div class="subtitle">{{ item.subtitle }}</div>
-                  <AppButton
-                    :title="'立即探索'"
-                    :path="'productList'"
-                    class="perfume-button"
-                  ></AppButton>
+                  <AppButton :title="'立即探索'" :path="'productList'" class="perfume-button"></AppButton>
                 </div>
                 <img :src="item.src" />
               </div>
@@ -35,21 +22,19 @@
           </Swiper>
         </div>
         <div class="swiper-container-first">
-          <Swiper
-            :scrollbar="{
-              hide: false,
-              draggable: true,
-              dragSize: 600,
-            }"
-            :slidesPerView="4"
-            :spaceBetween="0"
-            :loop="false"
-            :centeredSlides="false"
-            :pagination="pagination"
-            :navigation="{hiddenClass: 'swiper-button-hidden' }"
-            :modules="modules"
-            @swiper="onSwiperFirst"
-          >
+          <Swiper :scrollbar="{
+            hide: false,
+            draggable: true,
+            dragSize: 600,
+          }" 
+          :slidesPerView="4" 
+          :spaceBetween="0" 
+          :breakpoints="responsiveBreakpoints"
+          :loop="false" 
+          :centeredSlides="false" 
+          :pagination="pagination"
+          :navigation="{ hiddenClass: 'swiper-button-hidden' }" 
+          :modules="modules" @swiper="onSwiperFirst">
             <SwiperSlide>
               <div class="famousArticle">
                 <p>臉部調理系列</p>
@@ -70,10 +55,7 @@
         </div>
         <div class="perfumeWapper">
           <div class="perfumeImage">
-            <img
-              src="@/assets/img/Home.pic/home-perfume.jpg"
-              alt=""
-            />
+            <img src="@/assets/img/Home.pic/home-perfume.jpg" alt="" />
           </div>
           <div class="perfumeInformation">
             <div class="title">一滴精華，雙倍享受</div>
@@ -92,18 +74,12 @@
             <AppButton :title="'立即挑選'" :path="'combineList'" class="surpriseGift-button"></AppButton>
           </div>
           <div class="giftImage">
-            <img
-              src="@/assets/img/Home.pic/home-gift.jpg"
-              alt=""
-            />
+            <img src="@/assets/img/Home.pic/home-gift.jpg" alt="" />
           </div>
         </div>
         <div class="videoServiceWapper">
           <div class="videoServiceImage">
-            <img
-              src="@/assets/img/Home.pic/home-videocall.jpg"
-              alt=""
-            />
+            <img src="@/assets/img/Home.pic/home-videocall.jpg" alt="" />
           </div>
           <div class="videoServiceInformation">
             <div class="title">專屬於您的居家諮詢</div>
@@ -114,25 +90,16 @@
           </div>
         </div>
         <div class="swiper-container-second">
-          <Swiper
-            :scrollbar="{
-              hide: false,
-              draggable: true,
-              dragsize: 600,
-              mousewheel: true,
-            }"
-            :slidesPerView="3"
-            :spaceBetween="10"
-            :loop="true"
-            :centeredSlides="false"
-            :pagination="pagination"
-            :autoplay="{ delay: 3000, disableOnInteraction: false }"
-            :navigation="true"
-            :modules="modules"
-            @swiper="onSwiperSecond"
-          >
+          <Swiper :scrollbar="{
+            hide: false,
+            draggable: true,
+            dragsize: 600,
+            mousewheel: true,
+          }" :slidesPerView="3" :spaceBetween="10" :loop="true" :centeredSlides="false" :pagination="pagination"
+            :autoplay="{ delay: 3000, disableOnInteraction: false }" :navigation="true" :modules="modules"
+            @swiper="onSwiperSecond">
             <SwiperSlide v-for="product in swiperListSecond" :key="product">
-              <div class="SetWrapper"  @click="goToProductPage(product)">
+              <div class="SetWrapper" @click="goToProductPage(product)">
                 <img :src="product.sizeList[0].imageSrc" />
                 <div class="settitle">{{ product.title }}</div>
                 <div class="setsubtitle">{{ product.subtitle }}</div>
@@ -149,16 +116,9 @@
             <AppButton :title="'立即出發'" :path="'shop'" class="shop-button"></AppButton>
           </div>
           <div class="swiper-container-third">
-            <Swiper
-              :slidesPerView="1"
-              :loop="true"
-              :centeredSlides="true"
-              :pagination="pagination"
-              :autoplay="{ delay: 4000, disableOnInteraction: true }"
-              :navigation="false"
-              :modules="modules"
-              @swiper="onSwiperThird"
-            >
+            <Swiper :slidesPerView="1" :loop="true" :centeredSlides="true" :pagination="pagination"
+              :autoplay="{ delay: 4000, disableOnInteraction: true }" :navigation="false" :modules="modules"
+              @swiper="onSwiperThird">
               <SwiperSlide v-for="(item, index) in swiperListThird" :key="index">
                 <div class="shopimage">
                   <img :src="item.src" />
@@ -209,7 +169,6 @@ import { useRouter } from 'vue-router';
 import { ref } from 'vue'
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue' // swiper 所需组件
 import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
-// import 'swiper/swiper-bundle.css'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
@@ -255,6 +214,8 @@ function onSwiperThird(swiper) {
   swiperThird = swiper
 }
 
+
+
 const pagination = {
   clickable: true,
   renderBullet: function (index, className) {
@@ -263,6 +224,7 @@ const pagination = {
   }
 }
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
+
 
 const swiperListZero = ref([
   {
@@ -516,6 +478,7 @@ function goToProductPage(product) {
   .swiper-container-zero {
     width: 100%;
     height: auto;
+
     .newsWrapper {
       display: flex;
       position: relative;
@@ -537,14 +500,24 @@ function goToProductPage(product) {
           width: 60%;
         }
 
+        @include phone {
+          top: 280px;
+          left: 10px;
+          width: 80%;
+        }
+
         .smalltitle {
           font-size: 18px;
 
           @include mac {
-          font-size: 16px;
+            font-size: 16px;
           }
+
           @include pad {
-          font-size: 16px;
+            font-size: 16px;
+          }
+          @include phone {
+            font-size: 12px;
           }
         }
 
@@ -556,9 +529,14 @@ function goToProductPage(product) {
             font-size: 22px;
             padding: 10px 0px;
           }
+
           @include pad {
             font-size: 20px;
             padding: 10px 0px;
+          }
+          @include phone {
+            font-size: 18px;
+            padding: 8px 0px;
           }
         }
 
@@ -571,13 +549,19 @@ function goToProductPage(product) {
             font-size: 20px;
             padding-bottom: 20px;
           }
-          @include mac {
+
+          @include pad {
             font-size: 18px;
             padding-bottom: 20px;
           }
+          @include phone {
+            display: none;
+          }
         }
+
         .perfume-button {
           border: 1px solid $color-1;
+          font-size: 12px;
         }
       }
 
@@ -589,9 +573,13 @@ function goToProductPage(product) {
         @include mac {
           height: 450px;
         }
-        
+
         @include pad {
           height: 400px;
+        }
+        @include phone {
+          height: 400px;
+          object-position: right;
         }
       }
     }
@@ -603,27 +591,36 @@ function goToProductPage(product) {
     margin-top: 200px;
 
     @include mac {
-    margin-top: 100px;
+      margin-top: 100px;
     }
+
     @include pad {
-    margin-top: 50px;
+      margin-top: 50px;
+    }
+    @include phone {
+      margin-top: 30px;
     }
 
     .famousArticle {
       padding-left: 100px;
       margin: 100px 0px;
+      @include phone {
+        display: none;
+      }
 
       p {
         font-size: 16px;
+
         @include pad {
-        font-size: 14px;  
+          font-size: 14px;
         }
       }
 
       h2 {
         font-size: 22px;
+
         @include pad {
-        font-size: 20px;  
+          font-size: 20px;
         }
       }
     }
@@ -647,6 +644,7 @@ function goToProductPage(product) {
         width: 100%;
         height: 100%;
         object-fit: contain;
+
         &:hover {
           cursor: pointer;
         }
@@ -655,14 +653,17 @@ function goToProductPage(product) {
       .productitle {
         font-size: 22px;
         padding: 10px 0px;
+
         @include mac {
-        font-size: 20px;
-        padding: 10px 0px;
+          font-size: 20px;
+          padding: 10px 0px;
         }
+
         @include pad {
-        font-size: 18px;
-        padding: 10px 0px;
+          font-size: 18px;
+          padding: 10px 0px;
         }
+
         &:hover {
           cursor: pointer;
           text-decoration: underline;
@@ -690,11 +691,18 @@ function goToProductPage(product) {
     @include pad {
       margin-top: 50px;
     }
+    @include phone {
+      margin-top: 30px;
+    }
 
     .perfumeImage {
       flex-grow: 1;
       padding-right: 150px;
-      
+
+      @include phone {
+        padding-right: 0px;
+      }
+
       img {
         margin-right: auto;
         width: 100%;
@@ -705,11 +713,15 @@ function goToProductPage(product) {
         @include mac {
           height: 350px;
         }
+
         @include pad {
           height: 300px;
         }
+        @include phone {
+          height: 200px;
+        }
       }
-      
+
     }
 
     .perfumeInformation {
@@ -721,65 +733,104 @@ function goToProductPage(product) {
       @include mac {
         width: 350px;
       }
+
       @include pad {
         width: 300px;
         padding-right: 100px;
       }
+      @include phone {
+        width: 200px;
+        padding: 20px;
+        height: auto;
+      }
 
       .title {
         font-size: 30px;
+
         @include mac {
           font-size: 28px;
         }
+
         @include pad {
-         font-size: 25px;
+          font-size: 25px;
+        }
+        @include phone {
+          font-size: 20px;
         }
       }
+
       .subtitle {
         font-size: 16px;
         line-height: 1.7;
         padding-top: 20px;
         color: $color-9;
+        @include phone {
+          display: none;
+        }
       }
     }
+
     .perfume-button {
       margin-top: 40px;
       border: solid 1px $color-3;
+      @include phone {
+        width: 77px;
+        height: 26px;
+        font-size: 16px;
+      }
     }
   }
+
   .surpriseGiftWapper {
     width: 100%;
     height: auto;
     margin-top: 200px;
     display: flex;
+    align-items: flex-start;
 
     @include mac {
       margin-top: 100px;
     }
+
     @include pad {
       margin-top: 50px;
     }
+    @include phone {
+      margin-top: 0px;
+    }
+
 
     .giftInformation {
       padding-left: 150px;
       width: 450px;
       height: auto;
-      text-align: left;
-      
+      // text-align: left;
+
       @include mac {
         width: 350px;
       }
+
       @include pad {
         width: 300px;
+      }
+      @include phone {
+        width: 200px;
+        padding: 20px;
+        height: auto;
       }
 
       .title {
         font-size: 30px;
+
         @include mac {
           font-size: 28px;
         }
+
         @include pad {
           font-size: 25px;
+        }
+        @include phone {
+          font-size: 20px;
         }
       }
 
@@ -788,6 +839,9 @@ function goToProductPage(product) {
         line-height: 1.7;
         padding: 20px 0px;
         color: $color-9;
+        @include phone {
+          display: none;
+        }
       }
 
       .surpriseGift-button {
@@ -799,24 +853,34 @@ function goToProductPage(product) {
     .giftImage {
       flex-grow: 1;
       padding-left: 150px;
+
       @include pad {
         padding-left: 80px;
       }
+      @include phone {
+        padding-left: 0px;
+      }
+
       img {
         margin-left: auto;
         width: 100%;
         height: 500px;
         object-fit: cover;
-        
+
         @include mac {
           height: 350px;
         }
+
         @include pad {
           height: 300px;
+        }
+        @include phone {
+          height: 200px;
         }
       }
     }
   }
+
   .videoServiceWapper {
     width: 100%;
     height: auto;
@@ -831,21 +895,32 @@ function goToProductPage(product) {
     @include pad {
       margin-top: 50px;
     }
+    @include phone {
+      margin-top: 0px;
+    }
 
     .videoServiceImage {
       flex-grow: 1;
       padding-right: 150px;
+      @include phone {
+        padding-right: 0px;
+      }
 
       img {
         margin-right: auto;
         width: 100%;
         height: 500px;
         object-fit: cover;
+
         @include mac {
           height: 350px;
         }
+
         @include pad {
           height: 300px;
+        }
+        @include phone {
+          height: 200px;
         }
       }
     }
@@ -855,20 +930,32 @@ function goToProductPage(product) {
       width: 450px;
       height: auto;
       text-align: left;
+
       @include mac {
         width: 350px;
       }
+
       @include pad {
         width: 300px;
+      }
+      @include phone {
+        width: 200px;
+        padding: 20px;
+        height: auto;
       }
 
       .title {
         font-size: 30px;
+
         @include mac {
           font-size: 28px;
         }
+
         @include pad {
-         font-size: 25px;
+          font-size: 25px;
+        }
+        @include phone {
+          font-size: 20px;
         }
       }
 
@@ -877,7 +964,11 @@ function goToProductPage(product) {
         line-height: 1.7;
         padding: 20px 0px;
         color: $color-9;
+        @include phone {
+          display: none;
+        }
       }
+
       .video-button {
         margin-top: 40px;
         border: solid 1px $color-3;
@@ -893,6 +984,7 @@ function goToProductPage(product) {
     @include mac {
       margin-top: 100px;
     }
+
     @include pad {
       margin-top: 50px;
     }
@@ -912,26 +1004,31 @@ function goToProductPage(product) {
       img {
         width: 350px;
         height: auto;
+
         &:hover {
           cursor: pointer;
         }
+
         @include mac {
           width: 300px;
-        } 
+        }
+
         @include pad {
           width: 280px;
-        } 
+        }
       }
+
       .settitle {
         font-size: 26px;
         padding: 10px 0px;
 
         @include mac {
           font-size: 22px;
-        } 
+        }
+
         @include pad {
           font-size: 20px;
-        } 
+        }
 
         &:hover {
           cursor: pointer;
@@ -939,15 +1036,18 @@ function goToProductPage(product) {
           font-weight: 600;
         }
       }
+
       .setsubtitle {
         font-size: 20px;
         color: $color-9;
+
         @include mac {
           font-size: 16px;
-        } 
+        }
+
         @include pad {
           font-size: 16px;
-        } 
+        }
       }
     }
   }
@@ -961,9 +1061,14 @@ function goToProductPage(product) {
     @include mac {
       margin-top: 100px;
     }
+
     @include pad {
       margin-top: 50px;
-    } 
+    }
+    @include phone {
+      margin-top: 30px;
+      display: inline-block;
+    }
 
     .loctioninfo {
       width: 50%;
@@ -975,21 +1080,34 @@ function goToProductPage(product) {
         width: 400px;
         padding-left: 40px;
         padding-right: 10px;
-      } 
+      }
 
       @include pad {
         width: 350px;
         padding-left: 40px;
         padding-right: 10px;
-      } 
+      }
+
+      @include phone {
+        text-align: center;
+        width: 250px;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin: 0px auto;
+      }
 
       .shoptitle {
         font-size: 30px;
+
         @include mac {
           font-size: 28px;
         }
+
         @include pad {
-         font-size: 25px;
+          font-size: 25px;
+        }
+        @include phone {
+          font-size: 20px;
         }
       }
 
@@ -998,10 +1116,20 @@ function goToProductPage(product) {
         padding: 10px 0px;
         color: $color-9;
         line-height: 1.7;
+        @include phone {
+          font-size: 12px;
+        }
       }
+
       .shop-button {
         margin-top: 40px;
         border: solid 1px $color-3;
+        @include phone {
+          margin-top: 10px;
+          position: relative;
+          top: -6px;
+          bottom: 50px;
+        }
       }
     }
 
@@ -1009,14 +1137,14 @@ function goToProductPage(product) {
       width: 50%;
       height: auto;
       margin-left: auto;
-      
+    
       @include mac {
         width: 800px;
-      } 
+      }
 
       @include mac {
         width: 600px;
-      } 
+      }
 
       .shopimage {
         margin-left: auto;
@@ -1026,6 +1154,7 @@ function goToProductPage(product) {
         @include mac {
           height: 350px;
         }
+
         @include pad {
           height: 350px;
         }
@@ -1044,14 +1173,19 @@ function goToProductPage(product) {
     margin-top: 100px;
     padding: 100px;
     text-align: center;
-    
+
     @include mac {
-        margin-top: 0px;
-        font-size: 22px;
+      margin-top: 0px;
+      font-size: 22px;
     }
+
     @include pad {
-        margin-top: 0px;
-        font-size: 20px;
+      margin-top: 0px;
+      font-size: 20px;
+    }
+    @include phone {
+      margin-top: 0px;
+      padding: 30px;
     }
 
     h2 {
@@ -1061,16 +1195,22 @@ function goToProductPage(product) {
       @include mac {
         font-size: 22px;
       }
+
       @include pad {
         font-size: 20px;
+      }
+      @include phone {
+        font-size: 16px;
       }
     }
 
     p {
       font-size: 22px;
+
       @include mac {
         font-size: 16px;
       }
+
       @include pad {
         font-size: 16px;
       }
@@ -1086,6 +1226,9 @@ function goToProductPage(product) {
       height: auto;
       align-content: center;
       justify-content: center;
+      @include phone {
+        display: inline-block;
+      }
 
       .section {
         background-color: $color-5;
@@ -1097,8 +1240,13 @@ function goToProductPage(product) {
         @include mac {
           padding: 50px 50px;
         }
+
         @include pad {
           padding: 50px 50px;
+        }
+
+        @include phone {
+          padding: 50px 0px;
         }
 
         .ecoTitle {
@@ -1107,10 +1255,14 @@ function goToProductPage(product) {
           font-weight: bold;
 
           @include mac {
-          font-size: 22px;
+            font-size: 22px;
           }
+
           @include pad {
-          font-size: 20px;
+            font-size: 20px;
+          }
+          @include phone {
+            font-size: 16px;
           }
         }
 
@@ -1119,12 +1271,19 @@ function goToProductPage(product) {
           color: $color-8;
           line-height: 1.7;
           color: $color-9;
+
           @include mac {
-          font-size: 16px;
+            font-size: 16px;
           }
+
           @include pad {
-          font-size: 16px;
-          line-height: 1.7em;
+            font-size: 16px;
+            line-height: 1.7em;
+          }
+          @include phone {
+            font-size: 14px;
+            line-height: 1.5em;
+            padding: 0px 20px;
           }
         }
       }
@@ -1142,5 +1301,4 @@ function goToProductPage(product) {
     }
   }
 }
-
 </style>

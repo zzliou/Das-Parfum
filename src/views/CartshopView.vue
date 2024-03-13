@@ -9,21 +9,21 @@
         <div class="title">小計</div>
       </div>
       <div class="divider"></div>
-      <div class="product-wrapper">      
-          <div class="item_detail" v-for="(product, index) in cartListToShow" :key="index">
-            <div class="name">{{ product.title }}</div>
-            <div class="capacity">{{ product.sizeList[product.selectedSizeIndex].capacity }} ml</div>
-            <div class="unitPrice"> {{ product.sizeList[product.selectedSizeIndex].price }}</div>
-            <div class="quantity">
-              <button @click="handleMinus(product)">-</button>
-              {{product.quantity}}
-              <button @click="handlePlus(product)">+</button>
-              <div class="delete">
+      <div class="product-wrapper">
+        <div class="item_detail" v-for="(product, index) in cartListToShow" :key="index">
+          <div class="name">{{ product.title }}</div>
+          <div class="capacity">{{ product.sizeList[product.selectedSizeIndex].capacity }} ml</div>
+          <div class="unitPrice"> {{ product.sizeList[product.selectedSizeIndex].price }}</div>
+          <div class="quantity">
+            <button @click="handleMinus(product)">-</button>
+            {{ product.quantity }}
+            <button @click="handlePlus(product)">+</button>
+            <div class="delete">
               <button @click="handleDelete(product)">刪除</button>
-              </div>
             </div>
-            <div class="subtotal">{{ product.sizeList[product.selectedSizeIndex].price * product.quantity }}</div>
           </div>
+          <div class="subtotal">{{ product.sizeList[product.selectedSizeIndex].price * product.quantity }}</div>
+        </div>
       </div>
       <div class="divider"></div>
       <div class="countWrapper">
@@ -33,11 +33,11 @@
         </div>
         <div class="buttonWrapper">
           <div class="shopping" @click="goShopping">
-          <button >繼續購物</button>
-        </div>
-        <div class="checkout" @click="goOrderpage">
-          <button>結帳</button>
-        </div>
+            <button>繼續購物</button>
+          </div>
+          <div class="checkout" @click="goOrderpage">
+            <button>結帳</button>
+          </div>
         </div>
       </div>
     </div>
@@ -64,10 +64,10 @@ function goOrderpage() {
 
 
 function countTotal() {
-  for(let product of cartListToShow.value){
+  for (let product of cartListToShow.value) {
     let itemTotalPrice = product.sizeList[product.selectedSizeIndex].price * product.quantity;
-    totalPrice.value = totalPrice.value + itemTotalPrice  
-  } 
+    totalPrice.value = totalPrice.value + itemTotalPrice
+  }
 }
 countTotal()
 
@@ -75,10 +75,10 @@ function handleMinus(product) {
   if (product.quantity > 1) {
     product.quantity--;
     totalPrice.value = 0;
-    for(let item of cartListToShow.value){
+    for (let item of cartListToShow.value) {
       let itemTotalPrice = item.sizeList[product.selectedSizeIndex].price * item.quantity;
-      console.log(item.sizeList[product.selectedSizeIndex].price, item.quantity,itemTotalPrice, 'item.quantity')
-      totalPrice.value = totalPrice.value + itemTotalPrice  
+      console.log(item.sizeList[product.selectedSizeIndex].price, item.quantity, itemTotalPrice, 'item.quantity')
+      totalPrice.value = totalPrice.value + itemTotalPrice
     }
   }
 }
@@ -87,9 +87,9 @@ function handleMinus(product) {
 function handlePlus(product) {
   product.quantity = product.quantity + 1;
   totalPrice.value = 0;
-  for(let product of cartListToShow.value){
+  for (let product of cartListToShow.value) {
     let itemTotalPrice = product.sizeList[product.selectedSizeIndex].price * product.quantity;
-    totalPrice.value = totalPrice.value + itemTotalPrice  
+    totalPrice.value = totalPrice.value + itemTotalPrice
   }
 }
 console.log(cartList, 'cartList')
@@ -97,11 +97,11 @@ function handleDelete(product) {
   cartListToShow.value = cartListToShow.value.filter(item => item.title !== product.title);
   console.log(cartListToShow.value);
   totalPrice.value = 0;
-  for(let item of cartListToShow.value){
-      let itemTotalPrice = item.sizeList[product.selectedSizeIndex].price * item.quantity;
-      console.log(item.sizeList[product.selectedSizeIndex].price, item.quantity,itemTotalPrice, 'item.quantity')
-      totalPrice.value = totalPrice.value + itemTotalPrice 
-    }
+  for (let item of cartListToShow.value) {
+    let itemTotalPrice = item.sizeList[product.selectedSizeIndex].price * item.quantity;
+    console.log(item.sizeList[product.selectedSizeIndex].price, item.quantity, itemTotalPrice, 'item.quantity')
+    totalPrice.value = totalPrice.value + itemTotalPrice
+  }
 }
 
 </script>
@@ -117,16 +117,32 @@ function handleDelete(product) {
     padding: 50px 200px;
     font-size: 16px;
     position: relative;
+
+    @include phone {
+      padding: 50px;
+    }
+
     .item {
       width: 100%;
       height: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @include phone {
+        height: auto;
+      }
+
+
       .title {
         padding: 5px 20px;
         width: 300px;
         text-align: center;
+
+        @include phone {
+          padding: 5px 0px;
+          font-size: 14px;
+        }
       }
     }
 
@@ -136,29 +152,57 @@ function handleDelete(product) {
       display: flex;
       align-items: center;
       justify-content: center;
-      
+
+      @include phone {
+        height: auto;
+      }
+
       .name {
         font-weight: 600;
         padding: 5px 20px;
         width: 300px;
         text-align: center;
+
+        @include phone {
+          padding: 5px 0px;
+          font-size: 14px;
+        }
       }
+
       .capacity {
         padding: 5px 20px;
         width: 300px;
         text-align: center;
+
+        @include phone {
+          padding: 5px 0px;
+          font-size: 14px;
+        }
       }
 
       .unitPrice {
         padding: 5px 20px;
         width: 300px;
         text-align: center;
+
+        @include phone {
+          padding: 5px 0px;
+          font-size: 14px;
+        }
       }
+
       .quantity {
         padding: 5px 20px;
         width: 300px;
         display: flex;
         justify-content: center;
+
+        @include phone {
+          padding: 5px 0px;
+          font-size: 14px;
+          align-items: center;
+        }
+
         button {
           padding: 0px 5px;
           margin-left: 3px;
@@ -166,20 +210,32 @@ function handleDelete(product) {
           border: none;
           cursor: pointer;
         }
+
         .delete {
-        font-size: 16px;
-        text-align: start;
-        button {
-          background-color: $color-1;
-          border: none;
-          transition: opacity 0.3s ease;
+          font-size: 16px;
+          text-align: start;
+
+          @include phone {
+            font-size: 12px;
+          }
+
+          button {
+            background-color: $color-1;
+            border: none;
+            transition: opacity 0.3s ease;
+          }
         }
       }
-      }
+
       .subtotal {
         padding: 5px 20px;
         width: 300px;
         text-align: center;
+
+        @include phone {
+          padding: 5px 0px;
+          font-size: 14px;
+        }
       }
     }
 
@@ -187,21 +243,35 @@ function handleDelete(product) {
     .divider {
       border: solid 1px $color-3;
     }
+
     .countWrapper {
-      bottom: 300px;
-      right: 200px;
       margin-top: 20px;
+
       .totalWrapper {
         display: flex;
         width: 250px;
         margin-left: auto;
         align-items: flex-end;
+
+        @include phone {
+          width: 110px;
+        }
+
         .total {
           font-size: 16px;
           margin-right: auto;
+
+          @include phone {
+            font-size: 14px;
+          }
         }
+
         .totalPrice {
           font-size: 22px;
+
+          @include phone {
+            font-size: 20px;
+          }
         }
       }
 
@@ -209,44 +279,62 @@ function handleDelete(product) {
         display: flex;
         justify-content: space-between;
         margin-top: 30px;
+
+        @include phone {
+          justify-content: center;
+        }
+
         .shopping {
-        text-align: start;
-        padding: 20px 10px;
-        
-        button {
-          a {
-            text-decoration: none;
-            color: $color-11;
-            font-weight: bold;
-          }
-          width: 300px;
-          height: 50px;
-          background-color: $color-3;
-          border: $color-3;
-          font-size: 16px;
-          
-          &:hover {
-            cursor: pointer;
-          }
+          text-align: start;
+          padding: 20px 10px;
 
-        }
-      }
-      .checkout {
-        text-align: end;
-        padding: 20px 0px;
+          button {
+            a {
+              text-decoration: none;
+              color: $color-11;
+              font-weight: bold;
+            }
 
-        button {
-          width: 300px;
-          height: 50px;
-          background-color: $color-11;
-          border: $color-11;
-          font-size: 16px;
-          color: $color-2;
-          &:hover {
-            cursor: pointer;
+            width: 300px;
+            height: 50px;
+            background-color: $color-3;
+            border: $color-3;
+            font-size: 16px;
+
+            @include phone {
+              width: 100px;
+              height: 30px;
+              font-size: 14px;
+            }
+
+            &:hover {
+              cursor: pointer;
+            }
           }
         }
-      }
+
+        .checkout {
+          text-align: end;
+          padding: 20px 0px;
+
+          button {
+            width: 300px;
+            height: 50px;
+            background-color: $color-11;
+            border: $color-11;
+            font-size: 16px;
+            color: $color-2;
+            @include phone {
+              width: 100px;
+              height: 30px;
+              font-size: 14px;
+            }
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
       }
     }
   }

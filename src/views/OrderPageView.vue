@@ -117,6 +117,9 @@ countTotal()
         font-size: 22px;
         font-weight: 600;
         text-align: start;
+        @include pad {
+          font-size: 20px;
+        }
         @include phone {
           font-size: 16px;
         }
@@ -132,6 +135,7 @@ countTotal()
       }
       @include pad {
         width: 800px;
+        margin: 0px;
       }
       @include phone {
         width: 347px;
@@ -152,15 +156,16 @@ countTotal()
           @include mac {
             width: 200px;
           }
+          @include pad {
+            font-size: 16px;
+          }
           @include phone {
             font-size: 14px;
             width: 150px;
             padding: 0px;
           }
         }
-        @include phone {
-            padding: 5px 0px;
-          }
+
 
         .detail {
           display: flex;
@@ -170,6 +175,12 @@ countTotal()
           font-size: 20px;
           @include mac {
             width: 200px;
+          }
+          @include pad {
+            font-size: 16px;
+          }
+          @include phone {
+            font-size: 14px;
           }
         }
       }
@@ -250,6 +261,11 @@ countTotal()
           display: flex;
           justify-content: center;
           margin: 50px 0px;
+          
+          
+          @include pad {
+            margin: 20px 0px;
+          }
 
           @include phone {
             margin: 20px 0px;
