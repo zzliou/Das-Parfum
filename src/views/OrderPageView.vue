@@ -131,7 +131,8 @@ countTotal()
       margin: 0px 80px 80px 80px;
 
       @include mac {
-        width: 1000px;
+        width: 80%;
+        margin: 0px 0px 80px 0px;
       }
       @include pad {
         width: 800px;

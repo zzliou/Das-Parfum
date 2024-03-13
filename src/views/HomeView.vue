@@ -634,8 +634,19 @@ function goToProductPage(product) {
     }
 
     .famousArticle {
-      padding-left: 100px;
-      margin: 100px 0px;
+      padding-left: 150px;
+      margin: 200px 0px;
+      width: 400px;
+
+      @include mac {
+        margin: 100px 0px;
+        width: 250px;
+      }
+
+      @include pad {
+        padding-left: 100px;
+      }
+
       @include phone {
         padding-left: 90px;
         margin: 100px 0px;
@@ -643,13 +654,13 @@ function goToProductPage(product) {
       }
 
       p {
-        font-size: 16px;
+        font-size: 18px;
         @include pad {
           font-size: 14px;
         }
       }
       h2 {
-        font-size: 22px;
+        font-size: 24px;
         @include pad {
           font-size: 20px;
         }
@@ -659,9 +670,9 @@ function goToProductPage(product) {
     .famousProductsWrapper {
       text-align: center;
       box-sizing: border-box;
-      height: 400px;
-      width: 100%;
-      padding-bottom: 120px;
+      height: 100%;
+      width: 400px;
+      padding-bottom: 100px;
 
       @include mac {
         height: 400px;
@@ -673,7 +684,6 @@ function goToProductPage(product) {
 
       @include phone {
         height: 400px;
-        // padding-bottom: 60px;
       }
 
 
@@ -1031,6 +1041,9 @@ function goToProductPage(product) {
       :deep(.app-button.video-button) {
         margin-top: 40px;
         border: solid 1px $color-3;
+        @include pad {
+          margin-top: 80px;
+        }
         @include phone {
           margin-top: 50px;
           font-size: 12px;
@@ -1135,10 +1148,10 @@ function goToProductPage(product) {
     }
 
     @include pad {
-      margin-top: 50px;
+      margin-top: 100px;
     }
     @include phone {
-      margin-top: 30px;
+      margin-top: 100px;
       display: inline-block;
     }
 
@@ -1151,7 +1164,7 @@ function goToProductPage(product) {
       @include mac {
         width: 400px;
         padding-left: 40px;
-        padding-right: 10px;
+        padding-right: 40px;
       }
 
       @include pad {
@@ -1221,8 +1234,14 @@ function goToProductPage(product) {
         width: 800px;
       }
 
-      @include mac {
+      @include pad {
         width: 600px;
+      }
+      @include phone {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100px;
       }
 
       .shopimage {
@@ -1236,6 +1255,10 @@ function goToProductPage(product) {
 
         @include pad {
           height: 350px;
+        }
+
+        @include phone {
+          height: 300px;
         }
 
         img {

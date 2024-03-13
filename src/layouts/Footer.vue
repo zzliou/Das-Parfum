@@ -81,6 +81,12 @@ function goToContact() {
     font-family: sans-serif;
     font-size: 16px;
     padding: 50px 40px;
+
+    @include phone {
+      font-size: 12px;
+      padding: 20px;
+      // display: inline-block;
+    }
     .subscribe_wrapper {
       padding: 25px;
       width: 20%;
@@ -88,6 +94,10 @@ function goToContact() {
       text-align: start;
       @include pad {
         padding: 10px;
+      }
+      @include phone {
+        width: auto;
+        height: 220px;
       }
       .divider {
         border: $color-10 1px solid;
@@ -127,6 +137,10 @@ function goToContact() {
       @include pad {
         padding: 10px;
       }
+      @include phone {
+        height: 150px;
+        // width: 25%;
+      }
       .mainTitle {
         padding: 10px 0px;
       }
@@ -147,6 +161,11 @@ function goToContact() {
         border: $color-10 1px solid;
         width: 100%;
         margin: 10px 0px 20px 0px;
+      }
+      @include phone {
+        width: 20%;
+        padding-top: 70px;
+        margin-right: 19px;
       }
     }
       .contact {

@@ -287,6 +287,7 @@ window.scrollTo({
       flex-wrap: wrap;
       width: auto;
       margin: 100px 50px 0px 50px;
+      padding-bottom: 100px;
 
       @include phone {
         margin: 50px 50px 0px 50px;
@@ -466,6 +467,7 @@ window.scrollTo({
           }
         }
       }
+      
       &::after {
         content: "";
         flex-grow: 1;

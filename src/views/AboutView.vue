@@ -27,7 +27,7 @@
       </div>
       <div class="designWrapper">
         <div class="design">
-          <div class="title">好設計才有好生活</div>
+          <div class="title">好設計造就好生活</div>
           <div class="description">
             堅持自行研發產品，不斷構思新點子、開發新配方，以最新技術和成熟的科研方案，並根據客戶的實際需求進行研發，投入時間深入研究，以確保推出的配方具有最高品質和最有效果。
           </div>
@@ -147,53 +147,58 @@ const swiperListFirst = ref([
       width: 100%;
       height: auto;
       display: flex;
+      background-color: $color-4;
       
       .icon {
         position: absolute;
-        top: -20px;
-        left: 140px;
+        top: 180px;
+        left: 400px;
         overflow: hidden;
 
         @include mac {
-          top: 30px;
-          left: 96px;
+          top: 200px;
+          left: 300px;
         }
 
         @include pad {
-          top: 46px;
-          left: 44px;
+          top: 43px;
+          left: 87px;
         }
 
         @include phone {
           top: 50px;
-          left: 14px;
+          left: 126px;
         }
 
         img {
-          width: 80%;
-          height: 80%;
+          width: 100%; 
+          height: 100%;
           object-fit: contain;
           @include pad {
             width: 60%;
           }
           @include phone {
-            width: 40%;
+            width: 60%;
           }
         }
       }
       .storyArea {
-        margin: 50px;
-        width: 600px;
-        margin-left: auto;
+        margin: 50px 50px 0px 650px;
+        width: 700px;
+        padding: 150px;
+        
 
         @include mac {
           width: 650px;
         }
         @include pad {
           width: 650px;
+          margin: 0px;
+          padding: 150px 100px;
         }
         @include phone {
-          margin: 120px 20px;
+          margin: 0px;
+          padding: 150px 100px 100px 100px;
         }
 
         .title {
@@ -212,28 +217,14 @@ const swiperListFirst = ref([
         }
 
         .description {
-          font-size: 16px;
-          line-height: 3em;
+          font-size: 20px;
+          line-height: 2em;
           @include phone {
-            font-size: 14px;
+            font-size: 16px;
             line-height: 2em;
           }
         }
       }
-
-      // .storyImage {
-      //   margin-left: auto;
-      //   flex-grow: 1;
-      //   img {
-      //     width: 100%;
-      //     height: 600px;
-      //     object-fit: cover;
-      //     object-position: center;
-      //     @include mac {
-      //       height: 300px;
-      //     }
-      //   }
-      // }
     }
 
     .productsIdeaWrapper {
@@ -319,8 +310,8 @@ const swiperListFirst = ref([
         }
 
         .description {
-          font-size: 16px;
-          line-height: 3em;
+          font-size: 20px;
+          line-height: 2em;
           @include phone {
             display: none;
           }
@@ -352,7 +343,7 @@ const swiperListFirst = ref([
     .design {
       width: 50%;
       height: auto;
-      margin: 50px 150px;
+      margin: 50px 100px;
       
       @include mac {
       margin: 0px 50px;
@@ -364,7 +355,7 @@ const swiperListFirst = ref([
       @include phone {
           z-index: 1;
           position: absolute;
-          top: 234px;
+          top: 323px;
           left: 158px;
           font-weight: bold;
           color: $color-2;
@@ -388,8 +379,8 @@ const swiperListFirst = ref([
       }
 
       .description {
-        font-size: 16px;
-        line-height: 3em;
+        font-size: 20px;
+        line-height: 2em;
         @include phone {
           display: none;
         }
@@ -399,6 +390,7 @@ const swiperListFirst = ref([
     .designImage {
       margin-left: auto;
       flex-grow: 1;
+
       img {
         width: 100%;
         height: 500px;
@@ -439,7 +431,8 @@ const swiperListFirst = ref([
     .shop {
       width: 60%;
       height: auto;
-      margin: 50px 150px;
+      margin: 50px 100px;
+
       @include mac {
         margin: 0px 50px;
       }
@@ -471,23 +464,40 @@ const swiperListFirst = ref([
         }
       }
       .description {
-        font-size: 16px;
-        line-height: 3em;
+        font-size: 20px;
+        line-height: 2em;
         @include phone {
             display: none;
           }
       }
-      .shop-button {
+      :deep(.app-button.shop-button) {
+        position: absolute;
         display: flex;
         margin-top: 50px;
-        @include phone {
-          margin-top: 0px;
-          color: $color-9;
-          font-size: 18px;
-          background-color: $color-4;
-          width: 298px;
-        }
-      }
+        top: 225px;
+            @include mac {
+              top: 150px;
+            }
+            @include phone {
+              margin-top: 0px;
+              color: $color-11;
+              font-size: 22px;
+              background-color: $color-4;
+              width: 220px;
+              height: 75px;
+              opacity: 0.8;
+              top: 134px;
+              right: -85px;
+              .wrapper {
+                align-items: center;
+                padding: 5px 5px;
+                border: solid 1px  $color-4;
+                .action {
+                  margin-left: 90px;
+                }
+              }
+            }
+        }  
     }
 
     .shopImage {
@@ -574,7 +584,6 @@ const swiperListFirst = ref([
       }
       @include phone {
         font-size: 18px;
-        // padding: 50px;
       }
     }
     .subtitle {
