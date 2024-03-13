@@ -579,22 +579,22 @@ function goToProductPage(product) {
           }
         }
 
-        @include phone {
-          :deep(.app-button.perfume-button) {
-            margin-top: 10px;
-            font-size: 12px;
-            width: 180px;
-            height: auto;
-            .wrapper {
-              align-items: center;
-              padding: 5px 5px;
-              border: solid 1px  $color-2;
-            .action {
-              margin-left: 90px;
+        :deep(.app-button.perfume-button) {
+          border: solid 1px  $color-2;
+            @include phone {
+              margin-top: 10px;
+              font-size: 12px;
+              width: 180px;
+              height: auto;
+              .wrapper {
+                align-items: center;
+                padding: 5px 5px;
+                .action {
+                  margin-left: 90px;
+                }
+              }
             }
-            }
-          }  
-        }
+        }  
       }
 
       img {
