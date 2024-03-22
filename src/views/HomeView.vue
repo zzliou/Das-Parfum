@@ -223,8 +223,7 @@ function onSwiperThird(swiper) {
 
 const pagination = {
   clickable: true,
-  renderBullet: function (index, className) {
-    console.log(className, 'className')
+  renderBullet: function () {
     return `<div class="nav-item" > </item>`
   }
 }
