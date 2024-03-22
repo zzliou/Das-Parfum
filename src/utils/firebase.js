@@ -2,7 +2,6 @@ import { initializeApp } from "firebase/app";
 
 import { getAuth } from "firebase/auth";
 import { getFunctions } from "firebase/functions";
-import { getFirestore } from "firebase/firestore";
 import { getDatabase } from "firebase/database";
 import { getStorage } from "firebase/storage";
 
@@ -21,4 +20,4 @@ export const storage = getStorage();
 export const db = getDatabase();
 export const auth = getAuth(firebaseApp);
 export const functions = getFunctions(firebaseApp, "asia-northeast1");
-//export const functions = getFunctions(firebaseApp);
+
