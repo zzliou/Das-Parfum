@@ -35,9 +35,12 @@ import Login from '../components/Login.vue';
 import PreviewCart from '@/components/PreviewCart.vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth'
+import { useProductStore } from '@/stores/product'
+
 const router = useRouter()
 const loginRef = ref(null)
 
+// login modal control
 function showLoginModal() {
   loginRef.value.show();
 }
@@ -46,6 +49,7 @@ function navigateToCartShop() {
   router.push("/cartshopView")
 }
 
+// cart control
 const previewCartRef = ref()
 function showPreviewCart() {
   previewCartRef.value.show();
@@ -53,17 +57,12 @@ function showPreviewCart() {
 function hidePreviewCart() {
   previewCartRef.value.hide();
 }
-const showLoginStatus = ref(false);
 
+// login status logic
+const showLoginStatus = ref(false);
 const authStore = useAuthStore()
 const isLoggedIn = computed(() => authStore.userDb !== null)
 const user = computed(() => authStore.userDb)
-function init() {
-  setTimeout(() => {
-    showLoginStatus.value = true;
-  }, 1500);
-  checkAuth();
-}
 function checkAuth() {
   authStore.checkAuthState();
 }
@@ -71,6 +70,21 @@ function handleLogout() {
   authStore.logout();
 }
 
+// get product list?
+const productStore = useProductStore();
+function getProduct() {
+  productStore.getProductList();
+}
+
+// page init
+function init() {
+  setTimeout(() => {
+    showLoginStatus.value = true;
+  }, 1500);
+  checkAuth();
+  getProduct();
+
+}
 init();
 </script>
 
