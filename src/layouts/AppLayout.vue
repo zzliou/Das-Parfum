@@ -3,8 +3,6 @@
       <p>單筆訂單金額滿$1,500，即享全台灣宅配免運費。</p>
   </div>
   <div class="header" id="header" >
-    <label class="navbar-label" for="toggleNavbar">O</label>
-    <input type="checkbox" id="toggleNavbar">
     <div class="navbarLeft">
       <RouterLink to="/">首頁</RouterLink>
       <RouterLink to="/about">關於我們</RouterLink>
