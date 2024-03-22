@@ -52,6 +52,7 @@
 import { ref, getCurrentInstance } from 'vue';
 import { useProductStore } from '@/stores/product'
 import { useRouter } from 'vue-router';
+import { useCartStore } from '@/stores/cart'
 
 const router = useRouter()
 const productStore = useProductStore();
@@ -75,31 +76,12 @@ function changeType(type) {
   }
 }
 
-let globalObject = getCurrentInstance().appContext.config;
-let cartList = globalObject.cartList;
+const cartStore = useCartStore();
 
-// function addCart(product) {
-//   let good = product;
-//   good['quantity'] = 1;
-//   cartList.push(good)
-// }
 function addCart(product) {
-  // 檢查是否已存在相同 id 的物件
-  const existingProduct = cartList.find(item => item.id === product.id);
-
-  if (existingProduct) {
-    // 如果已存在，將該物件的 quantity 屬性 +1
-    existingProduct.quantity++;
-  } else {
-    // 如果不存在，將該物件添加到 cartList 中
-    let good = product;
-    good['quantity'] = 1;
-    cartList.push(good);
-  }
+  cartStore.addProduct(product)
 }
 
-
-window.scrollTo( 0, 0);
 window.scrollTo({
     top: 0,
     behavior: "smooth"

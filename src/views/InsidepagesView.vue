@@ -96,6 +96,7 @@
 import { ref, getCurrentInstance } from 'vue';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue'
 import { useProductStore } from '@/stores/product'
+import { useCartStore } from '@/stores/cart'
 import { useRoute } from 'vue-router'
 import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
 import 'swiper/scss'
@@ -136,16 +137,9 @@ function handleChangeSize(sizeOptionIndex) {
   currentProduct.value.selectedSizeIndex = sizeOptionIndex
 }
 
+const cartStore = useCartStore();
 function addCart(product) {
-  const existingProduct = cartList.find(function (item) { return item.id === product.id && item.selectedSizeIndex === product.selectedSizeIndex });
-
-  if (existingProduct) {
-    existingProduct.quantity++;
-  } else {
-    let good = JSON.parse(JSON.stringify(product))
-    good['quantity'] = 1;
-    cartList.push(good);
-  }
+  cartStore.addProduct(product)
 }
 
 function initPage() {

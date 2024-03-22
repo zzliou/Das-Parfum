@@ -1,11 +1,7 @@
 import { defineStore } from 'pinia'
-import {
-  GoogleAuthProvider,
-} from 'firebase/auth'
 import { db, storage } from '@/utils/firebase'
 import { ref as dbRef, set, onValue } from 'firebase/database'
 import { getDownloadURL, ref as storageRef } from "firebase/storage";
-const googleProvider = new GoogleAuthProvider()
 
 export const useProductStore = defineStore('product', {
   state: () => ({

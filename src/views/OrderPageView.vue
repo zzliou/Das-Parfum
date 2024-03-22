@@ -14,7 +14,7 @@
           <div class="item">小計</div>
         </div>
         <div class="dividerLiter"></div>
-        <div class="listWrapper" v-for="(product, index) in cartListToShow" :key="index">
+        <div class="listWrapper" v-for="(product, index) in shopcartList" :key="index">
           <div class="detail">{{ product.title }}</div>
           <div class="detail">{{ product.sizeList[product.selectedSizeIndex].capacity }} ml</div>
           <div class="detail">{{product.quantity}}</div>
@@ -70,9 +70,12 @@
 <script setup>
 import { ref, getCurrentInstance } from 'vue';
 import { useRouter } from 'vue-router'
-let globalObject = getCurrentInstance().appContext.config;
-let cartList = globalObject.cartList;
-let cartListToShow = ref(cartList);
+import { useCartStore } from '@/stores/cart'
+
+const cartStore = useCartStore();
+const shopcartList = cartStore.cartList
+
+
 let totalPrice = ref(0);
 const router = useRouter()
 
@@ -87,7 +90,7 @@ window.scrollTo({
 });
 
 function countTotal() {
-  for(let product of cartListToShow.value){
+  for(let product of shopcartList){
     let itemTotalPrice = product.sizeList[product.selectedSizeIndex].price * product.quantity;
     totalPrice.value = totalPrice.value + itemTotalPrice  
   } 

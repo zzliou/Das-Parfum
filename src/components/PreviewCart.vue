@@ -2,7 +2,7 @@
   <div class="previewWrapper" v-if="isShow" @mouseleave="hide">
     <div class="content">
       <div class="productWrapper">
-        <div class="item" v-for="(product, index) in cartListToShow" :key="index">
+        <div class="item" v-for="(product, index) in shopcartList" :key="index">
           <div class="name">{{ product.title }}</div>
           <div class="detailWrapper">
             <div class="capacity">
@@ -28,15 +28,14 @@
 </template>
 
 <script setup>
-import { defineProps, defineExpose, ref, getCurrentInstance, watch, toRaw } from 'vue';
+import { defineProps, defineExpose, ref } from 'vue';
 import { useRouter } from 'vue-router';
-let globalObject = getCurrentInstance().appContext.config;
-let cartList = globalObject.cartList;
-let cartListToShow = ref(cartList);
+import { useCartStore } from '@/stores/cart'
 
+const cartStore = useCartStore();
+const shopcartList = cartStore.cartList
 const router = useRouter()
 
-defineProps(['title'])
 let isShow = ref(false)
 function show() {
   isShow.value = true

@@ -10,7 +10,7 @@
       </div>
       <div class="divider"></div>
       <div class="product-wrapper">
-        <div class="item_detail" v-for="(product, index) in cartListToShow" :key="index">
+        <div class="item_detail" v-for="(product, index) in shopcartList" :key="index">
           <div class="name">{{ product.title }}</div>
           <div class="capacity">{{ product.sizeList[product.selectedSizeIndex].capacity }} ml</div>
           <div class="unitPrice"> {{ product.sizeList[product.selectedSizeIndex].price }}</div>
@@ -47,10 +47,11 @@
 <script setup>
 import { ref, getCurrentInstance } from 'vue';
 import { useRouter } from 'vue-router';
+import { useCartStore } from '@/stores/cart'
 
-let globalObject = getCurrentInstance().appContext.config;
-let cartList = globalObject.cartList;
-let cartListToShow = ref(cartList);
+const cartStore = useCartStore();
+const shopcartList = cartStore.cartList
+
 let totalPrice = ref(0);
 const router = useRouter()
 
@@ -64,7 +65,8 @@ function goOrderpage() {
 
 
 function countTotal() {
-  for (let product of cartListToShow.value) {
+  console.log(shopcartList,shopcartList,'ss');
+  for (let product of shopcartList) {
     let itemTotalPrice = product.sizeList[product.selectedSizeIndex].price * product.quantity;
     totalPrice.value = totalPrice.value + itemTotalPrice
   }
@@ -75,11 +77,7 @@ function handleMinus(product) {
   if (product.quantity > 1) {
     product.quantity--;
     totalPrice.value = 0;
-    for (let item of cartListToShow.value) {
-      let itemTotalPrice = item.sizeList[product.selectedSizeIndex].price * item.quantity;
-      console.log(item.sizeList[product.selectedSizeIndex].price, item.quantity, itemTotalPrice, 'item.quantity')
-      totalPrice.value = totalPrice.value + itemTotalPrice
-    }
+    countTotal()
   }
 }
 
@@ -87,21 +85,13 @@ function handleMinus(product) {
 function handlePlus(product) {
   product.quantity = product.quantity + 1;
   totalPrice.value = 0;
-  for (let product of cartListToShow.value) {
-    let itemTotalPrice = product.sizeList[product.selectedSizeIndex].price * product.quantity;
-    totalPrice.value = totalPrice.value + itemTotalPrice
-  }
+  countTotal()
 }
-console.log(cartList, 'cartList')
 function handleDelete(product) {
-  cartListToShow.value = cartListToShow.value.filter(item => item.title !== product.title);
-  console.log(cartListToShow.value);
+  shopcartList = shopcartList.filter(item => item.title !== product.title);
+  console.log(shopcartList);
   totalPrice.value = 0;
-  for (let item of cartListToShow.value) {
-    let itemTotalPrice = item.sizeList[product.selectedSizeIndex].price * item.quantity;
-    console.log(item.sizeList[product.selectedSizeIndex].price, item.quantity, itemTotalPrice, 'item.quantity')
-    totalPrice.value = totalPrice.value + itemTotalPrice
-  }
+  countTotal()
 }
 
 </script>
