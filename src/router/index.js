@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ShopView from '../views/ShopView.vue';
 import AboutView from '../views/AboutView.vue';
@@ -9,7 +9,7 @@ import CartshopView from '../views/CartshopView.vue';
 import OrderPageView from '../views/OrderPageView.vue';
 import FinalpagesView from '../views/FinalpagesView.vue';
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',
