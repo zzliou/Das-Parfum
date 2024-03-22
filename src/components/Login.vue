@@ -6,21 +6,21 @@
     <div class="wrapper">
       <div class="loginTitle">登入您的帳號</div>
       <div class="email">電子郵件</div>
-      <input type="email" name="email" placeholder="輸入您的電子郵件" />
+      <input type="email" v-model="email" name="email" placeholder="輸入您的電子郵件" />
       <div class="password">密碼</div>
-      <input type="password" name="password" placeholder="輸入密碼" />
+      <input type="password" v-model="password" name="password" placeholder="輸入密碼" />
       <div class="loginButton">
-        <input type="submit" value="登入" />
+        <button @click="loginWithEmail">登入</button>
+      </div>
+      <div class="loginButton">
+        <button @click="loginWithGoogle">google登入</button>
       </div>
       <div class="register">
         <h3>還沒有Aesop帳戶?</h3>
-        <p>
+        <!-- <p>
           在建立 Aesop
           帳戶後，您可以將喜愛的產品收藏至願望清單中，也能查看訂單歷史紀錄，並輕鬆享有快速結帳功能。
-        </p>
-        <div class="register">
-          <button>註冊</button>
-        </div>
+        </p> -->
       </div>
     </div>
   </div>
@@ -28,6 +28,11 @@
 
 <script setup>
 import { defineProps, defineExpose, ref } from 'vue'
+import { useAuthStore } from '@/stores/auth'
+
+const email = ref('')
+const password = ref('')
+const name = ref('')
 defineProps(['title'])
 let isShow = ref(false)
 function show() {
@@ -36,6 +41,29 @@ function show() {
 function hide() {
   isShow.value = false
 }
+const authStore = useAuthStore()
+
+async function loginWithEmail() {
+  try {
+    await authStore.signUpWithEmail(email.value, password.value, name.value)
+    isShow.value = false;
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
+async function loginWithGoogle() {
+  const isLoginSuccess = await authStore.signInWithGoogle();
+  console.log('isLoginSuccess',isLoginSuccess);
+  
+  if(isLoginSuccess) {
+    isShow.value = false;
+  }else {
+    alert('登入失敗')
+  }
+}
+
 defineExpose({
   show: show,
   hide: hide
@@ -101,8 +129,9 @@ defineExpose({
       border-bottom: 1px solid $color-10;
     }
     .loginButton {
-      input {
-        margin: 50px 0px;
+      button {
+        // margin: 50px 0px;
+        margin-bottom: 20px;
         width: 100%;
         height: 50px;
         padding: 10px 0px;
