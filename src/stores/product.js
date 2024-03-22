@@ -10,6 +10,7 @@ const googleProvider = new GoogleAuthProvider()
 export const useProductStore = defineStore('product', {
   state: () => ({
     productList: null,
+    currentProduct: null,
   }),
   actions: {
     getProductList() {
@@ -32,12 +33,13 @@ export const useProductStore = defineStore('product', {
       try {
         const pathReference = storageRef(storage, sizeConfig.imagePath);
         const src = await getDownloadURL(pathReference)
-        console.log(src,'啦啦啦')
         sizeConfig.imageSrc = src
       } catch (error) {
         sizeConfig.imageSrc = null
       }
-
+    },
+    setCurrentProduct(product) {
+      this.currentProduct = product
     }
   }
 

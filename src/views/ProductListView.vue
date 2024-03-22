@@ -3,9 +3,9 @@
     <div class="navbar">
       <div class="productsCategories">
         <p @click="changeType('all')">全部商品</p>
-        <p @click="changeType('shampooList')">髮品</p>
-        <p @click="changeType('bodyList')">身體乳</p>
-        <p @click="changeType('combineList')">送禮組合</p>
+        <p @click="changeType('shampoo')">髮品</p>
+        <p @click="changeType('body')">身體乳</p>
+        <p @click="changeType('combine')">送禮組合</p>
       </div>
     </div>
     <div class="productWapper">
@@ -55,32 +55,23 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter()
 const productStore = useProductStore();
-const productLists = productStore.productList;
-const renderProductList = ref(productLists);
+const productList = productStore.productList;
+const renderProductList = ref(productList);
 
 function handleChangeSize(product, sizeOptionIndex) {
   product.selectedSizeIndex = sizeOptionIndex
 }
 
 function goToProductPage(product) {
-  router.push({ name: 'insidepagesView' ,
-  params: {
-    product: JSON.stringify(product)
-  }
- })
+  productStore.setCurrentProduct(product)
+  router.push({ name: 'insidepagesView' })
 }
 
-
 function changeType(type) {
-  console.log(type,'type')
-  if(type === 'shampooList'){
-    selectedTypeList.value = shampooList.value;
-  }else if(type === 'bodyList'){
-    selectedTypeList.value = bodyList.value;
-  }else if(type === 'combineList'){
-    selectedTypeList.value = combineList.value;
+  if(type === 'all') {
+    renderProductList.value = productList
   }else {
-    selectedTypeList.value = productList.value;
+    renderProductList.value = productList.filter(product => product.tag === type)
   }
 }
 

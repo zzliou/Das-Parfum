@@ -12,7 +12,15 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
+      path: '/:pathMatch(.*)',
+      redirect: { name: 'home' }
+    },
+    {
       path: '/',
+      redirect: { name: 'home'}
+    },
+    {
+      path: '/home',
       name: 'home',
       component: HomeView
     },
@@ -37,7 +45,7 @@ const router = createRouter({
       component: ContactUsView
     },
     {
-      path: '/insidepagesView/:product',
+      path: '/insidepagesView',
       name: 'insidepagesView',
       component: InsidepagesView
     },

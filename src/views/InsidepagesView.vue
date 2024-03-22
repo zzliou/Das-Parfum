@@ -5,30 +5,30 @@
         <img src="@/assets/img/Product.pic/p014.png" alt="" />
       </div>
       <div class="productInfo">
-        <div class="name">{{ product.title }}</div>
+        <div class="name">{{ currentProduct.title }}</div>
         <div class="directions">
           這款性質溫和的低泡沫潔膚凝露含有多種淨化肌膚的植物萃取物，可清潔肌膚，散發充滿活力的柑橘芳香。
         </div>
         <div class="sizenprice">
           <div class="size-wrapper">
             <div class="size-list-wrapper">
-              <div class="size-option" v-for="(sizeOption, sizeOptionIndex) in product.sizeList" :key="sizeOptionIndex">
-                <input type="radio" :id="sizeOption.id" :checked="product.selectedSizeIndex === sizeOptionIndex"
-                  @change="handleChangeSize(product, sizeOptionIndex)" />
+              <div class="size-option" v-for="(sizeOption, sizeOptionIndex) in currentProduct.sizeList" :key="sizeOptionIndex">
+                <input type="radio" :id="sizeOption.id" :checked="currentProduct.selectedSizeIndex === sizeOptionIndex"
+                  @change="handleChangeSize(sizeOptionIndex)" />
                 <label :for="sizeOption.id">{{ sizeOption.capacity }} ml</label>
               </div>
             </div>
           </div>
-          <div class="price">NT$ {{ product.sizeList[product.selectedSizeIndex].price }} </div>
+          <div class="price">NT$ {{ currentProduct.sizeList[currentProduct.selectedSizeIndex].price }} </div>
         </div>
-        <div class="addCart" @click="addCart(product)">加入購物車</div>
+        <div class="addCart" @click="addCart(currentProduct)">加入購物車</div>
         <div class="divider"></div>
         <div class="introduce">
           <div class="title">膚質感受</div>
           <div class="info">清潔、清爽</div>
           <div class="useDivider"></div>
           <div class="title">香氛</div>
-          <div class="info">{{ product.subtitle }}</div>
+          <div class="info">{{ currentProduct.subtitle }}</div>
           <div class="useDivider"></div>
           <div class="title">成份</div>
           <div class="info">苦橙、檸檬皮、葡萄柚皮</div>
@@ -73,8 +73,7 @@
           hide: false,
           draggable: true,
           dragSize: 500,
-        }" :slidesPerView="4" :spaceBetween="0" :loop="false" :centeredSlides="false" :pagination="pagination"
-        :navigation="navigation" 
+        }" :slidesPerView="4" :spaceBetween="0" :loop="false" :centeredSlides="false"
         :modules="modules" @swiper="onSwiperFirst">
         <SwiperSlide>
           <div class="recommendArticle">
@@ -96,6 +95,7 @@
 <script setup>
 import { ref, getCurrentInstance } from 'vue';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue'
+import { useProductStore } from '@/stores/product'
 import { useRoute } from 'vue-router'
 import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
 import 'swiper/scss'
@@ -114,18 +114,11 @@ function onSwiperFirst(swiper) {
   swiperFirst = swiper
 }
 
+const productStore = useProductStore();
+const currentProduct = ref(productStore.currentProduct)
 const router = useRoute()
 
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
-
-let product = ref({});
-let globalObject = getCurrentInstance().appContext.config;
-let cartList = globalObject.cartList;
-
-
-function getProductData() {
-  product.value = JSON.parse(router.params.product)
-}
 
 function goToProductPage(product) {
   router.push({
@@ -138,26 +131,17 @@ function goToProductPage(product) {
 
 
 
-function handleChangeSize(item, sizeOptionIndex) {
-  item.selectedSizeIndex = sizeOptionIndex
+function handleChangeSize(sizeOptionIndex) {
+  console.log(currentProduct, sizeOptionIndex)
+  currentProduct.value.selectedSizeIndex = sizeOptionIndex
 }
 
 function addCart(product) {
-  console.log(product.id, product.selectedSizeIndex, 'product')
-  console.log(cartList, 'cartList')
-
-
-  // 檢查是否已存在相同 id 的物件
   const existingProduct = cartList.find(function (item) { return item.id === product.id && item.selectedSizeIndex === product.selectedSizeIndex });
 
   if (existingProduct) {
-    console.log('已經存在，幫你加一')
-    // 如果已存在，將該物件的 quantity 屬性 +1
     existingProduct.quantity++;
   } else {
-    console.log('新商品')
-
-    // 如果不存在，將該物件添加到 cartList 中
     let good = JSON.parse(JSON.stringify(product))
     good['quantity'] = 1;
     cartList.push(good);
@@ -284,7 +268,6 @@ let swiperListFirst = ref([
 ])
 
 initPage()
-getProductData()
 
 
 
