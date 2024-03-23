@@ -34,9 +34,7 @@
       </div>
     </div>
     <div class="imgWrapper">
-      <img
-        src="https://www.aesop.com/u1nb1km7t5q7/66KUvlCYfGi1ySgU3fem4d/3de02a5b0f130223a81253e8d7680f4a/Aesop-Live-1-1-Consultations-Banner-AU-Desktop-2880x940px.jpg"
-        alt="" />
+      <img src="@/assets/img/contactus_pic.jpg" alt="" />
     </div>
   </div>
 </template>
