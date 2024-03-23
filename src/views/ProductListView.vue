@@ -43,11 +43,6 @@ function changeType(type) {
 function goToTop() {
   window.scrollTo({'behavior': 'smooth', 'top': 0})
 }
-onMounted(() => {
-  setTimeout(() => {
-    goToTop();
-  }, 500);
-})
 
 
 </script>

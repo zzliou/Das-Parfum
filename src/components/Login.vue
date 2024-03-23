@@ -1,7 +1,7 @@
 <template>
   <div class="login-dialogue" v-if="isShow">
     <div class="closed">
-      <button @click="hide">Ｘ</button>
+      <button @click="uiStore.hideLoginPopup">Ｘ</button>
     </div>
     <div class="wrapper">
       <div class="loginTitle">登入您的帳號</div>
@@ -15,32 +15,24 @@
       <div class="loginButton">
         <button @click="loginWithGoogle">google登入</button>
       </div>
-      <div class="register">
-        <h3>還沒有Aesop帳戶?</h3>
-        <!-- <p>
-          在建立 Aesop
-          帳戶後，您可以將喜愛的產品收藏至願望清單中，也能查看訂單歷史紀錄，並輕鬆享有快速結帳功能。
-        </p> -->
-      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineExpose, ref } from 'vue'
+import { defineExpose, ref } from 'vue'
 import { useAuthStore } from '@/stores/auth'
+import { useUiStore } from '@/stores/ui'
+import { storeToRefs } from 'pinia'
 
+const uiStore = useUiStore();
+const uiRefStore = storeToRefs(uiStore);
+const isShow = uiRefStore.loginPopup;
 const email = ref('')
 const password = ref('')
 const name = ref('')
-defineProps(['title'])
-let isShow = ref(false)
-function show() {
-  isShow.value = true
-}
-function hide() {
-  isShow.value = false
-}
+
+
 const authStore = useAuthStore()
 
 async function loginWithEmail() {
@@ -64,10 +56,6 @@ async function loginWithGoogle() {
   }
 }
 
-defineExpose({
-  show: show,
-  hide: hide
-})
 </script>
 
 <style lang="scss" scoped>

@@ -19,6 +19,11 @@ export const useAuthStore = defineStore('auth', {
     user: null,
     userDb: null
   }),
+  getters: {
+    isLogin() {
+      return this.user !== null;
+    },
+  },
   actions: {
     async signInWithGoogle() {
       try {

@@ -37,6 +37,10 @@ export const useCartStore = defineStore('cart', {
       await update(userRef, {
         order: this.cartList
       });
+      this.clearCart();
+    },
+    clearCart() { 
+      this.cartList = [];
     }
   }
 

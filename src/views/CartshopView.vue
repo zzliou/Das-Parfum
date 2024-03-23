@@ -35,8 +35,9 @@
           <div class="shopping" @click="goShopping">
             <button>繼續購物</button>
           </div>
-          <div class="checkout" @click="goOrderpage">
-            <button>結帳</button>
+          <div class="checkout">
+            <button v-if="authStore.isLogin" @click="goOrderpage">結帳</button>
+            <button v-else @click="showLogin">請先登入會員</button>
           </div>
         </div>
       </div>
@@ -49,9 +50,14 @@ import { ref } from 'vue';
 import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router';
 import { useCartStore } from '@/stores/cart'
+import { useAuthStore } from '@/stores/auth'
+import { useUiStore } from '@/stores/ui'
 
-const cartStore = storeToRefs(useCartStore());
-const shopcartList = cartStore.cartList
+const authStore = useAuthStore()
+const uiStore = useUiStore();
+const cartStore = useCartStore()
+const cartRefStore = storeToRefs(cartStore);
+const shopcartList = cartRefStore.cartList
 
 let totalPrice = ref(0);
 const router = useRouter()
@@ -59,7 +65,9 @@ const router = useRouter()
 function goShopping() {
   router.push("/productList")
 }
-
+function showLogin() {
+  uiStore.showLoginPopup();
+}
 function goOrderpage() {
   router.push('/OrderPageView')
 }

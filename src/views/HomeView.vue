@@ -6,7 +6,7 @@
       <div class="homeVueWapper">
         <div class="swiper-container-zero">
           <Swiper :slidesPerView="1" :spaceBetween="30" :loop="true" :centeredSlides="true"
-            :navigation="false" :autoplay="{ delay: 2000, disableOnInteraction: true }" :modules="modules"
+            :navigation="false" :autoplay="{ delay: 3500, disableOnInteraction: true }" :modules="modules"
             :effect="fade" @swiper="onSwiperZero">
             <SwiperSlide v-for="(item, index) in swiperListZero" :key="index">
               <div class="newsWrapper">

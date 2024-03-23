@@ -37,13 +37,15 @@ import PreviewCart from '@/components/PreviewCart.vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from '@/stores/auth'
 import { useProductStore } from '@/stores/product'
+import { useUiStore } from '@/stores/ui'
 
 const router = useRouter()
 const loginRef = ref(null)
+const uiStore = useUiStore();
 
 // login modal control
 function showLoginModal() {
-  loginRef.value.show();
+  uiStore.showLoginPopup();
 }
 
 function navigateToCartShop() {
