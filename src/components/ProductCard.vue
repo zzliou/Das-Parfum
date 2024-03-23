@@ -25,46 +25,28 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
-import { getCurrentInstance } from 'vue';
 import { defineProps } from 'vue';
+import { useProductStore } from '@/stores/product'
+import { useCartStore } from '@/stores/cart'
 
 const props = defineProps(['inputProduct']);
-console.log(props.inputProduct,'inputProduct')
 const product =  props.inputProduct;
 const router = useRouter()
-
-// const productStore = useProductStore();
-// const productLists = productStore.productList;
-// const renderProductList = ref(productLists);
 
 function handleChangeSize(product, sizeOptionIndex) {
   product.selectedSizeIndex = sizeOptionIndex
 }
+const productStore = useProductStore();
 
 function goToProductPage(product) {
-  router.push({
-    name: 'insidepagesView',
-    params: {
-      product: JSON.stringify(product)
-    }
-  })
+  productStore.setCurrentProduct(product)
+  router.push({ name: 'insidepagesView' })
 }
 
-
-let globalObject = getCurrentInstance().appContext.config;
-let cartList = globalObject.cartList;
-
+const cartStore = useCartStore();
 
 function addCart(product) {
-  const existingProduct = cartList.find(item => item.id === product.id);
-
-  if (existingProduct) {
-    existingProduct.quantity++;
-  } else {
-    let good = product;
-    good['quantity'] = 1;
-    cartList.push(good);
-  }
+  cartStore.addProduct(product)
 }
 
 
@@ -72,6 +54,8 @@ function addCart(product) {
 
 <style lang="scss" scoped>
 .product-card {
+  width: 33%;
+    box-sizing: border-box;
 
   .productPic {
     background-color: $color-5;
