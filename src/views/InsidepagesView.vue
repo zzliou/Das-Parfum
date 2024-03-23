@@ -93,7 +93,7 @@
 </template>
 
 <script setup>
-import { ref, getCurrentInstance } from 'vue';
+import { ref } from 'vue';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue'
 import { useProductStore } from '@/stores/product'
 import { useCartStore } from '@/stores/cart'

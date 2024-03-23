@@ -25,15 +25,6 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
-window.scrollTo(0, 0);
-window.scrollTo({
-  top: 0,
-  behavior: "smooth"
-});
-
-function closeCurrentWindow() {
-window.close();
-}
 
 
 </script>

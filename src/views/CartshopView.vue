@@ -45,11 +45,12 @@
 </template>
 
 <script setup>
-import { ref, getCurrentInstance } from 'vue';
+import { ref } from 'vue';
+import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router';
 import { useCartStore } from '@/stores/cart'
 
-const cartStore = useCartStore();
+const cartStore = storeToRefs(useCartStore());
 const shopcartList = cartStore.cartList
 
 let totalPrice = ref(0);
@@ -65,8 +66,8 @@ function goOrderpage() {
 
 
 function countTotal() {
-  console.log(shopcartList,shopcartList,'ss');
-  for (let product of shopcartList) {
+  totalPrice.value = 0;
+  for (let product of shopcartList.value) {
     let itemTotalPrice = product.sizeList[product.selectedSizeIndex].price * product.quantity;
     totalPrice.value = totalPrice.value + itemTotalPrice
   }
@@ -88,9 +89,7 @@ function handlePlus(product) {
   countTotal()
 }
 function handleDelete(product) {
-  shopcartList = shopcartList.filter(item => item.title !== product.title);
-  console.log(shopcartList);
-  totalPrice.value = 0;
+  cartStore.deleteProduct(product)
   countTotal()
 }
 

@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-import { ref, getCurrentInstance } from 'vue';
+import { ref } from 'vue';
 import { useProductStore } from '@/stores/product'
 import { useRouter } from 'vue-router';
 import { useCartStore } from '@/stores/cart'

@@ -29,10 +29,11 @@
 
 <script setup>
 import { defineProps, defineExpose, ref } from 'vue';
+import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router';
 import { useCartStore } from '@/stores/cart'
 
-const cartStore = useCartStore();
+const cartStore = storeToRefs(useCartStore());
 const shopcartList = cartStore.cartList
 const router = useRouter()
 

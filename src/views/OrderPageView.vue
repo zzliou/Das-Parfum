@@ -52,8 +52,8 @@
             <div class="reset">
               <button type="reset">清除資料</button>
             </div>
-            <div class="submit" @click="gofinalpage">
-              <button class='submitBtn'>確定送出</button>
+            <div class="submit" >
+              <button class='submitBtn' @click="submitOrder">確定送出</button>
             </div>
             
           </div>
@@ -68,18 +68,22 @@
 </template>
 
 <script setup>
-import { ref, getCurrentInstance } from 'vue';
+import { ref } from 'vue';
+import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router'
 import { useCartStore } from '@/stores/cart'
 
 const cartStore = useCartStore();
-const shopcartList = cartStore.cartList
+const cartRefStore = storeToRefs(cartStore);
+const shopcartList = cartRefStore.cartList
 
 
 let totalPrice = ref(0);
 const router = useRouter()
 
-function gofinalpage() {
+
+async function submitOrder() {
+  await cartStore.submit();
   router.push("/FinalpagesView")
 }
 
@@ -90,7 +94,7 @@ window.scrollTo({
 });
 
 function countTotal() {
-  for(let product of shopcartList){
+  for(let product of shopcartList.value){
     let itemTotalPrice = product.sizeList[product.selectedSizeIndex].price * product.quantity;
     totalPrice.value = totalPrice.value + itemTotalPrice  
   } 

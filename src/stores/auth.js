@@ -8,7 +8,10 @@ import {
   signOut
 } from 'firebase/auth'
 import { auth, db } from '@/utils/firebase'
-import { ref as dbRef, set, onValue } from 'firebase/database'
+import { ref as dbRef, set, onValue, child, push, update } from 'firebase/database'
+import { useCartStore } from '@/stores/cart'
+import { useOrderStore } from '@/stores/order'
+
 const googleProvider = new GoogleAuthProvider()
 
 export const useAuthStore = defineStore('auth', {
@@ -52,7 +55,10 @@ export const useAuthStore = defineStore('auth', {
       .then(data => data.user).then(async (user) => {
         this.user = user;
         await this.createUserData(user.email.split('@')[0])
-        await this.getUserData();
+        const cartStore = useCartStore();
+        const shopcartList = cartStore.cartList
+        console.log(shopcartList,'應該有')
+        // await this.setCartData();
       })
       .catch(error => {
         console.log('註冊失敗，直接登入',email, password)
@@ -87,6 +93,16 @@ export const useAuthStore = defineStore('auth', {
         }, reject)
       })
     },
+    async setCartData() {
+      const cartStore = useCartStore();
+      const shopcartList = cartStore.cartList
+      console.log(shopcartList,'shopcartList')
+      const userRef = dbRef(db, 'users/' + this.user.uid)
+      await update(userRef, {
+        cart: shopcartList
+      });
+
+    },
     logout() {
       signOut(auth).then(res => {
         console.log(res,'res')
@@ -95,8 +111,10 @@ export const useAuthStore = defineStore('auth', {
       })
     },
     clearUserData() {
+      const orderStore = useOrderStore();
       this.user = null;
       this.userDb = null;
+      orderStore.clearOrder();
     }
   }
 })
