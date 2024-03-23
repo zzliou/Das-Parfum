@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useProductStore } from '@/stores/product'
 import { useRouter } from 'vue-router';
 import ProductCard from '@/components/ProductCard.vue'
@@ -40,10 +40,15 @@ function changeType(type) {
 }
 
 
-window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-});
+function goToTop() {
+  window.scrollTo({'behavior': 'smooth', 'top': 0})
+}
+onMounted(() => {
+  setTimeout(() => {
+    goToTop();
+  }, 500);
+})
+
 
 </script>
 

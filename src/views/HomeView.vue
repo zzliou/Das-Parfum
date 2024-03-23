@@ -161,7 +161,7 @@
       </div>
     </div>
     <div class="goTop">
-      <a href="#header" target="_self">
+      <a  @click="goToTop">
         <img src="https://cdn-icons-png.flaticon.com/512/11848/11848591.png" />
       </a>
     </div>
@@ -219,7 +219,9 @@ function onSwiperThird(swiper) {
   swiperThird = swiper
 }
 
-
+function goToTop() {
+  window.scrollTo({'behavior': 'smooth', 'top': 0})
+}
 
 const pagination = {
   clickable: true,
@@ -482,10 +484,16 @@ function goToProductPage(product) {
  })
 }
 
+function initPage() {
+  goToTop(); 
+}
+initPage();
+
 </script>
 
 <style lang="scss" scoped>
 .content {
+  scroll-behavior: smooth;
   background-color: $color-1;
   width: 100%;
 
