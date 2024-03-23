@@ -15,35 +15,7 @@
           所有產品皆含有滋潤功效的草本植物成分，讓肌膚在任何季節都能保持潔淨柔滑。
         </div>
       </div>
-      <div class="section" v-for="product in renderProductList" :key="product.id">
-        <div class="productPic" @click="goToProductPage(product)">
-          <img :src="product.sizeList[product.selectedSizeIndex].imageSrc" alt="" />
-        </div>
-        <div class="productInfo">
-          <div class="productitle">{{ product.title }}</div>
-          <div class="subtitle">{{ product.subtitle }}</div>
-          <div class="sizenprice">
-            <div class="size-wrapper">
-              <div class="size-list-wrapper">
-                <div
-                  class="size-option"
-                  v-for="(sizeOption, sizeOptionIndex) in product.sizeList"
-                  :key="sizeOptionIndex">
-                  <input
-                    type="radio"
-                    :id="sizeOption.id"
-                    :checked="product.selectedSizeIndex === sizeOptionIndex"
-                    @change="handleChangeSize(product, sizeOptionIndex)"
-                  />
-                  <label :for="sizeOption.id">{{ sizeOption.capacity }} ml</label>
-                </div>
-              </div>
-            </div>
-            <div class="price">NT$ {{ product.sizeList[product.selectedSizeIndex].price }}</div>
-          </div>
-          <div class="cart" @click="addCart(product)">加入購物車</div>
-        </div>
-      </div>
+      <ProductCard :inputProduct="product" v-for="product in renderProductList" :key="product.id"></ProductCard>
     </div>
   </div>
 </template>
@@ -53,6 +25,7 @@ import { ref } from 'vue';
 import { useProductStore } from '@/stores/product'
 import { useRouter } from 'vue-router';
 import { useCartStore } from '@/stores/cart'
+import ProductCard from '@/components/ProductCard.vue'
 
 const router = useRouter()
 const productStore = useProductStore();

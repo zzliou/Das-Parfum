@@ -24,9 +24,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { getCurrentInstance } from 'vue';
+import { defineProps } from 'vue';
+
+const props = defineProps(['inputProduct']);
+console.log(props.inputProduct,'inputProduct')
+const product =  props.inputProduct;
 const router = useRouter()
 
 // const productStore = useProductStore();
