@@ -8,6 +8,9 @@ import InsidepagesView from '../views/InsidepagesView.vue';
 import CartshopView from '../views/CartshopView.vue';
 import OrderPageView from '../views/OrderPageView.vue';
 import FinalpagesView from '../views/FinalpagesView.vue';
+import MemberView from '../views/MemberView.vue';
+
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
@@ -63,6 +66,11 @@ const router = createRouter({
       path: '/FinalpagesView',
       name: 'FinalpagesView',
       component: FinalpagesView
+    },
+    {
+      path: '/member',
+      name: 'member',
+      component: MemberView
     }
   ]
 })

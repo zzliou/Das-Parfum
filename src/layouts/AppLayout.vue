@@ -13,8 +13,9 @@
     <div class="navbarRight" @mouseenter="hidePreviewCart">
       <div class="login-wrapper" v-show="showLoginStatus">
         <div v-if="!isLoggedIn" class="login" @click="showLoginModal">登入會員</div>
-        <div v-if="isLoggedIn" class="login" @click="handleLogout">登出</div>
         <div v-if="isLoggedIn" class="welcome">{{ user.name }}</div>
+        <div v-if="isLoggedIn" class="login" @click="goMemberPage">會員頁面</div>
+        <div v-if="isLoggedIn" class="login" @click="handleLogout">登出</div>
       </div>
       <div class="cart" @click="navigateToCartShop" @mouseenter="showPreviewCart">購物車</div>
     </div>
@@ -47,6 +48,9 @@ function showLoginModal() {
 
 function navigateToCartShop() {
   router.push("/cartshopView")
+}
+function goMemberPage() {
+  router.push('/member')
 }
 
 // cart control
@@ -136,7 +140,10 @@ init();
     gap: 30px;
     padding: 5px 20px 5px 0px;
     margin-left: auto;
-
+    .login-wrapper {
+      display: flex;
+      gap: 0px 20px;
+    }
     .login {
       text-decoration: none;
       color: $color-11;
