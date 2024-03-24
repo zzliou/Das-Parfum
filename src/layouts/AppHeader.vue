@@ -9,6 +9,7 @@
         <div v-if="isLoggedIn" class="login" @click="handleLogout">登出</div>
       </div>
       <div class="cart" @click="navigateToCartShop" @mouseenter="uiStore.showCartPreview">購物車</div>
+      <icon icon="bars" />
     </div>
   </div>
 </template>
@@ -20,6 +21,7 @@ import { useRouter } from 'vue-router'
 import AppNavbar from './AppNavbar.vue';
 import { useUiStore } from '@/stores/ui'
 import { useAuthStore } from '@/stores/auth'
+
 
   const showLoginStatus = ref(false);
   const uiStore = useUiStore();
