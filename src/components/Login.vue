@@ -22,8 +22,9 @@
 <script setup>
 import { defineExpose, ref } from 'vue'
 import { useAuthStore } from '@/stores/auth'
-import { useUiStore } from '@/stores/ui'
 import { storeToRefs } from 'pinia'
+
+import { useUiStore } from '@/stores/ui'
 
 const uiStore = useUiStore();
 const uiRefStore = storeToRefs(uiStore);

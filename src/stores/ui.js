@@ -6,6 +6,7 @@ import { useAuthStore } from '@/stores/auth'
 export const useUiStore = defineStore('ui', {
   state: () => ({
     loginPopup: false,
+    cartPreview: false,
   }),
   actions: {
     showLoginPopup() {
@@ -13,7 +14,13 @@ export const useUiStore = defineStore('ui', {
     },
     hideLoginPopup() {
       this.loginPopup = false;
-    }
+    },
+    showCartPreview() {
+      this.cartPreview = true;
+    },
+    hideCartPreview() {
+      this.cartPreview = false;
+    },
   }
 
 })

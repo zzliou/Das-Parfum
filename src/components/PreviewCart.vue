@@ -32,18 +32,24 @@ import { defineProps, defineExpose, ref } from 'vue';
 import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router';
 import { useCartStore } from '@/stores/cart'
+import { useUiStore } from '@/stores/ui'
 
+const uiStore = useUiStore();
+const uiRefStore = storeToRefs(uiStore);
 const cartStore = storeToRefs(useCartStore());
 const shopcartList = cartStore.cartList
 const router = useRouter()
 
-let isShow = ref(false)
+const isShow = uiRefStore.cartPreview
+
 function show() {
-  isShow.value = true
+  uiStore.showCartPreview()
 }
+
 function hide() {
-  isShow.value = false
+  uiStore.hideCartPreview()
 }
+
 defineExpose({
   show: show,
   hide: hide
