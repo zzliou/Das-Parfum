@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineExpose, ref } from 'vue';
+import { defineExpose } from 'vue';
 import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router';
 import { useCartStore } from '@/stores/cart'

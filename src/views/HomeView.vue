@@ -55,7 +55,7 @@
         </div>
         <div class="perfumeWapper">
           <div class="perfumeImage">
-            <img src="@/assets/img/Home.pic/home-perfume.jpg" alt="" />
+            <img src="@/assets/img/Home_picture/home-perfume.jpg" alt="" />
           </div>
           <div class="perfumeInformation">
             <div class="title">一滴精華，雙倍享受</div>
@@ -74,12 +74,12 @@
             <AppButton :title="'立即挑選'" :path="'combineList'" class="surpriseGift-button"></AppButton>
           </div>
           <div class="giftImage">
-            <img src="@/assets/img/Home.pic/home-gift.jpg" alt="" />
+            <img src="@/assets/img/Home_picture/home-gift.jpg" alt="" />
           </div>
         </div>
         <div class="videoServiceWapper">
           <div class="videoServiceImage">
-            <img src="@/assets/img/Home.pic/home-videocall.jpg" alt="" />
+            <img src="@/assets/img/Home_picture/home-videocall.jpg" alt="" />
           </div>
           <div class="videoServiceInformation">
             <div class="title">專屬於您的居家諮詢</div>
@@ -179,33 +179,29 @@ import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
 import 'swiper/scss/scrollbar'
-import shop1 from "@/assets/img/Home.pic/home-store/shop1.png";
-import shop2 from "@/assets/img/Home.pic/home-store/shop2.jpg";
-import shop3 from "@/assets/img/Home.pic/home-store/shop3.jpg";
-import BN1 from "@/assets/img/Home.pic/home-BN/banner1.jpg";
-import BN2 from "@/assets/img/Home.pic/home-BN/banner2.jpg";
-import BN3 from "@/assets/img/Home.pic/home-BN/banner3.png";
-import pic001 from "@/assets/img/Product.pic/p001.png";
-import pic002 from "@/assets/img/Product.pic/p002.png";
-import pic009 from "@/assets/img/Product.pic/p009.png";
-import pic013 from "@/assets/img/Product.pic/p013.png";
-import pic014 from "@/assets/img/Product.pic/p014.png";
-import pic015 from "@/assets/img/Product.pic/p015.png";
-import set001 from "@/assets/img/Home.pic/home-set/set001.png";
-import set002 from "@/assets/img/Home.pic/home-set/set002.png";
-import set003 from "@/assets/img/Home.pic/home-set/set003.png";
-import set004 from "@/assets/img/Home.pic/home-set/set004.png";
+import shop1 from "@/assets/img/Home_picture/home-store/shop1.png";
+import shop2 from "@/assets/img/Home_picture/home-store/shop2.jpg";
+import shop3 from "@/assets/img/Home_picture/home-store/shop3.jpg";
+import BN1 from "@/assets/img/Home_picture/home-BN/banner1.jpg";
+import BN2 from "@/assets/img/Home_picture/home-BN/banner2.jpg";
+import BN3 from "@/assets/img/Home_picture/home-BN/banner3.png";
+import pic001 from "@/assets/img/Product_picture/p001.png";
+import pic002 from "@/assets/img/Product_picture/p002.png";
+import pic009 from "@/assets/img/Product_picture/p009.png";
+import pic013 from "@/assets/img/Product_picture/p013.png";
+import pic014 from "@/assets/img/Product_picture/p014.png";
+import pic015 from "@/assets/img/Product_picture/p015.png";
+import set001 from "@/assets/img/Home_picture/home-set/set001.png";
+import set002 from "@/assets/img/Home_picture/home-set/set002.png";
+import set003 from "@/assets/img/Home_picture/home-set/set003.png";
+import set004 from "@/assets/img/Home_picture/home-set/set004.png";
 
 let swiperZero = null
 let swiperFirst = null
 let swiperSecond = null
 let swiperThird = null
-function test() {
-  console.log('123')
-}
-function handleClick(swiper) {
-  swiper.slideNext()
-}
+
+
 function onSwiperZero(swiper) {
   swiperZero = swiper
 }

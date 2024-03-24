@@ -60,9 +60,6 @@
           <div class="divider"></div>
         </label>
       </form>
-      <!-- <div class="bottom">
-        
-      </div> -->
     </div>
   </div>
 </template>

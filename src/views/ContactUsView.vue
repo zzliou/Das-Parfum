@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="imgWrapper">
-      <img src="@/assets/img/contactus_pic.jpg" alt="" />
+      <img src="@/assets/img/contactus_picture.jpg" alt="" />
     </div>
   </div>
 </template>

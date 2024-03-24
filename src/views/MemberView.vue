@@ -23,10 +23,10 @@
             <div class="detail">{{ product.sizeList[product.selectedSizeIndex].price * product.quantity }}</div>
           </div>
           <div class="dividerLiter"></div>
-          <!-- <div class="totalPrice">
+          <div class="totalPrice">
             <div class="title">總計金額:NT$</div>
             <div class="number">{{ totalPrice }}</div>
-          </div> -->
+          </div>
           <div class="divider"></div>
         </div>
       </div>
@@ -35,12 +35,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router'
+
 import { useOrderStore } from '@/stores/order'
 import { storeToRefs } from 'pinia'
 
-const router = useRouter()
 const orderStore = useOrderStore();
 const orderRefStore = storeToRefs(orderStore)
 orderStore.getOrder();

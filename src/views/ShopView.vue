@@ -47,10 +47,10 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router'
-import shop1 from "@/assets/img/Home.pic/home-store/shop1.png";
-import shop2 from "@/assets/img/Home.pic/home-store/shop2.jpg";
-import shop3 from "@/assets/img/Home.pic/home-store/shop3.jpg";
-import shop4 from "@/assets/img/Home.pic/home-store/shop4.png";
+import shop1 from "@/assets/img/Home_picture/home-store/shop1.png";
+import shop2 from "@/assets/img/Home_picture/home-store/shop2.jpg";
+import shop3 from "@/assets/img/Home_picture/home-store/shop3.jpg";
+import shop4 from "@/assets/img/Home_picture/home-store/shop4.png";
 
 const router = useRouter()
 let open = ref('Open.')

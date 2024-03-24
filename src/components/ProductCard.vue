@@ -1,24 +1,24 @@
 <template>
   <div class="product-card">
-    <div class="productPic" @click="goToProductPage(product)">
-      <img :src="product.sizeList[product.selectedSizeIndex].imageSrc" alt="" />
+    <div class="productPic" @click="goToProductPage(props.inputProduct)">
+      <img :src="props.inputProduct.sizeList[props.inputProduct.selectedSizeIndex].imageSrc" alt="" />
     </div>
     <div class="productInfo">
-      <div class="productitle">{{ product.title }}</div>
-      <div class="subtitle">{{ product.subtitle }}</div>
+      <div class="productitle">{{ props.inputProduct.title }}</div>
+      <div class="subtitle">{{ props.inputProduct.subtitle }}</div>
       <div class="sizenprice">
         <div class="size-wrapper">
           <div class="size-list-wrapper">
-            <div class="size-option" v-for="(sizeOption, sizeOptionIndex) in product.sizeList" :key="sizeOptionIndex">
-              <input type="radio" :id="sizeOption.id" :checked="product.selectedSizeIndex === sizeOptionIndex"
-                @change="handleChangeSize(product, sizeOptionIndex)" />
+            <div class="size-option" v-for="(sizeOption, sizeOptionIndex) in props.inputProduct.sizeList" :key="sizeOptionIndex">
+              <input type="radio" :id="sizeOption.id" :checked="props.inputProduct.selectedSizeIndex === sizeOptionIndex"
+                @change="handleChangeSize(props.inputProduct, sizeOptionIndex)" />
               <label :for="sizeOption.id">{{ sizeOption.capacity }} ml</label>
             </div>
           </div>
         </div>
-        <div class="price">NT$ {{ product.sizeList[product.selectedSizeIndex].price }}</div>
+        <div class="price">NT$ {{ props.inputProduct.sizeList[props.inputProduct.selectedSizeIndex].price }}</div>
       </div>
-      <div class="cart" @click="addCart(product)">加入購物車</div>
+      <div class="cart" @click="addCart(props.inputProduct)">加入購物車</div>
     </div>
   </div>
 </template>

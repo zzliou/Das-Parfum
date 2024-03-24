@@ -2,7 +2,7 @@
   <div class="container">
     <div class="productWrapper">
       <div class="productPic">
-        <img src="@/assets/img/Product.pic/p014.png" alt="" />
+        <img src="@/assets/img/Product_picture/p014.png" alt="" />
       </div>
       <div class="productInfo">
         <div class="name">{{ currentProduct.title }}</div>
@@ -55,7 +55,7 @@
     </div>
     <div class="UsageWrapper">
       <div class="productPic">
-        <img src="@/assets/img/pageofpro.pic/001.jpg" alt="" />
+        <img src="@/assets/img/pageofpro_picture/001.jpg" alt="" />
       </div>
       <div class="way">
         <div class="howToUse">使用方式</div>
@@ -94,7 +94,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
 import { useProductStore } from '@/stores/product'
 import { useCartStore } from '@/stores/cart'
 import { useRoute } from 'vue-router'
@@ -103,12 +103,12 @@ import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
-import pic001 from "@/assets/img/Product.pic/p001.png";
-import pic002 from "@/assets/img/Product.pic/p002.png";
-import pic009 from "@/assets/img/Product.pic/p009.png";
-import pic013 from "@/assets/img/Product.pic/p013.png";
-import pic014 from "@/assets/img/Product.pic/p014.png";
-import pic015 from "@/assets/img/Product.pic/p015.png";
+import pic001 from "@/assets/img/Product_picture/p001.png";
+import pic002 from "@/assets/img/Product_picture/p002.png";
+import pic009 from "@/assets/img/Product_picture/p009.png";
+import pic013 from "@/assets/img/Product_picture/p013.png";
+import pic014 from "@/assets/img/Product_picture/p014.png";
+import pic015 from "@/assets/img/Product_picture/p015.png";
 
 let swiperFirst = null
 function onSwiperFirst(swiper) {

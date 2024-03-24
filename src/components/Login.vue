@@ -20,10 +20,9 @@
 </template>
 
 <script setup>
-import { defineExpose, ref } from 'vue'
+import { ref } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 import { storeToRefs } from 'pinia'
-
 import { useUiStore } from '@/stores/ui'
 
 const uiStore = useUiStore();

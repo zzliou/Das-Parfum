@@ -15,7 +15,7 @@
       <div class="productsIdeaWrapper">
         <div class="ideaImage">
           <img
-            src="@/assets/img/About.pic/about2.png"
+            src="@/assets/img/About_picture/about2.png"
           />
         </div>
         <div class="productsIdea">
@@ -34,7 +34,7 @@
         </div>
         <div class="designImage">
           <img
-            src="@/assets/img/About.pic/about3.jpg"
+            src="@/assets/img/About_picture/about3.jpg"
             alt=""
           />
         </div>
@@ -49,7 +49,7 @@
         </div>
         <div class="shopImage">
           <img
-            src="@/assets/img/About.pic/about4.jpg"
+            src="@/assets/img/About_picture/about4.jpg"
             alt=""
           />
         </div>
@@ -97,27 +97,19 @@ import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 import 'swiper/scss/effect-fade'
 import 'swiper/scss/scrollbar'
-import shop1 from "@/assets/img/Home.pic/home-store/shop1.png";
-import shop2 from "@/assets/img/Home.pic/home-store/shop2.jpg";
-import shop3 from "@/assets/img/Home.pic/home-store/shop3.jpg";
-import shop4 from "@/assets/img/Home.pic/home-store/shop4.png";
+import shop1 from "@/assets/img/Home_picture/home-store/shop1.png";
+import shop2 from "@/assets/img/Home_picture/home-store/shop2.jpg";
+import shop3 from "@/assets/img/Home_picture/home-store/shop3.jpg";
+import shop4 from "@/assets/img/Home_picture/home-store/shop4.png";
 
 
 
 let swiperFirst = null
-function handleClikck(swiper) {
-  swiper.slideNext()
-}
+
 function onSwiperFirst(swiper) {
   swiperFirst = swiper
 }
-const pagination = {
-  clickable: true,
-  renderBullet: function (index, className) {
-    console.log(className, 'className')
-    return `<div class="nav-item" > </item>`
-  }
-}
+
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
 
 const swiperListFirst = ref([
