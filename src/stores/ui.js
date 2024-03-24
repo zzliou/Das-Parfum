@@ -1,12 +1,10 @@
 import { defineStore } from 'pinia'
-import { db, storage } from '@/utils/firebase'
-import { ref as dbRef, update, onValue } from 'firebase/database'
-import { useAuthStore } from '@/stores/auth'
 
 export const useUiStore = defineStore('ui', {
   state: () => ({
     loginPopup: false,
     cartPreview: false,
+    menuFadeIn: false,
   }),
   actions: {
     showLoginPopup() {
@@ -20,6 +18,9 @@ export const useUiStore = defineStore('ui', {
     },
     hideCartPreview() {
       this.cartPreview = false;
+    },
+    toggleMenuFadeIn() {
+      this.menuFadeIn = !this.menuFadeIn;
     },
   }
 
