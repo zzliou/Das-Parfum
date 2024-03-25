@@ -9,9 +9,6 @@
     <RouterLink to="/productList">商品列表</RouterLink>
     <RouterLink to="/shop">實體店鋪</RouterLink>
     <RouterLink to="/contact">聯絡我們</RouterLink>
-    <div class="close">
-      <icon class="icon" icon="xmark" @click="uiStore.toggleMenuFadeIn()"/>
-    </div>
   </div>
 
 </template>
@@ -43,8 +40,8 @@ function toggleMenuFadeIn() {
     z-index: 2;
     width: 100%;
     transform: translate(101%);
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 130px;
     transition: transform .5s;
     .close {
       display: block !important;

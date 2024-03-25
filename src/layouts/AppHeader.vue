@@ -11,7 +11,9 @@
       <div class="cart" @click="navigateToCartShop" @mouseenter="uiStore.showCartPreview">
         <icon icon="cart-shopping" />
       </div>
-      <icon class="menu-control" icon="bars" @click="uiStore.toggleMenuFadeIn()"/>
+      <icon class="menu-control" v-show="!uiStore.menuFadeIn" icon="bars" @click="uiStore.toggleMenuFadeIn()"/>
+      <icon class="icon" v-show="uiStore.menuFadeIn" icon="xmark" @click="uiStore.toggleMenuFadeIn()"/>
+
     </div>
   </div>
 </template>
