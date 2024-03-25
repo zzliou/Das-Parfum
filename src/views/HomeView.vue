@@ -160,11 +160,7 @@
         </div>
       </div>
     </div>
-    <div class="goTop">
-      <a  @click="goToTop">
-        <img src="https://cdn-icons-png.flaticon.com/512/11848/11848591.png" />
-      </a>
-    </div>
+    <icon class="goTop" icon="arrow-up" @click="goToTop"/>
   </div>
 </template>
 
@@ -1400,8 +1396,7 @@ initPage();
     bottom: 60px;
 
     img {
-      width: 50px;
-      height: 50px;
+      height: 40px;
     }
   }
 }
