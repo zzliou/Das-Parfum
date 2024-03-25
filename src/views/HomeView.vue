@@ -168,8 +168,8 @@
 import AppButton from '@/components/AppButton.vue'
 import { useRouter } from 'vue-router';
 import { ref } from 'vue'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue' // swiper 所需组件
-import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue' // swiper 所需组件
+import { Navigation, Pagination, Scrollbar, Virtual, Autoplay, EffectFade } from 'swiper/modules'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
@@ -465,7 +465,6 @@ const swiperListThird = ref([
 ])
 
 const router = useRouter()
-// let selectedTypeList = ref(index.value)
 
 function goToProductPage(product) {
   console.log(product,'product')
@@ -674,10 +673,12 @@ initPage();
       padding-bottom: 100px;
 
       @include mac {
+        width: 400px;
         height: 400px;
       }
 
       @include pad {
+        width: 400px;
         height: 350px;
       }
 
