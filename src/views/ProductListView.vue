@@ -56,6 +56,10 @@ function goToTop() {
     align-items: center;
     background-color: $color-7;
 
+    @include phone {
+      justify-content: center;
+    }
+
     .productsCategories {
       display: flex;
       color: $color-8;
@@ -67,6 +71,10 @@ function goToTop() {
 
       @include pad {
         padding: 5px 0px 5px 100px;
+      }
+
+      @include phone {
+        padding: 5px 0px 5px 0px;
       }
 
       p {
@@ -85,9 +93,9 @@ function goToTop() {
     flex-wrap: wrap;
     justify-content: center;
 
-    @include phone {
-      display: inline-block;
-    }
+    // @include phone {
+    //   display: inline-block;
+    // }
 
     .introduce {
       width: 33%;

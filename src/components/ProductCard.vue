@@ -55,7 +55,11 @@ function addCart(product) {
 <style lang="scss" scoped>
 .product-card {
   width: 33%;
-    box-sizing: border-box;
+  box-sizing: border-box;
+
+  @include phone {
+    width: 450px;
+  }
 
   .productPic {
     background-color: $color-5;
@@ -215,5 +219,8 @@ function addCart(product) {
       }
     }
   }
+  // @include phone {
+  //   width: 100%;
+  // }
 }
 </style>

@@ -22,6 +22,7 @@ import { useRouter } from 'vue-router'
 .app-button {
   width: fit-content;
   transition: all .3s;
+  width: 200px;
   height: auto;
   &:hover {
     cursor: pointer;
@@ -34,7 +35,7 @@ import { useRouter } from 'vue-router'
     padding: 20px 20px;
     border: solid 1px  $color-11;
     .action {
-      margin-left: 150px;
+      margin-left: auto;
     }
   }
 

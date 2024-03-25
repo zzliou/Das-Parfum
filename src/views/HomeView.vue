@@ -223,7 +223,11 @@ const pagination = {
 }
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
 
-const breakpointSet =  ref({       
+const breakpointSet =  ref({  
+      0: {       
+         slidesPerView: 1,
+         spaceBetween: 10  
+      },     
       430: {       
          slidesPerView: 1,
          spaceBetween: 10  
@@ -673,19 +677,16 @@ initPage();
       padding-bottom: 100px;
 
       @include mac {
-        width: 400px;
         height: 400px;
       }
 
       @include pad {
-        width: 400px;
         height: 350px;
       }
 
       @include phone {
         height: 400px;
       }
-
 
       img {
         width: 100%;
@@ -739,6 +740,7 @@ initPage();
       margin-top: 50px;
     }
     @include phone {
+      display: inline-block;
       margin-top: 30px;
     }
 
@@ -764,6 +766,7 @@ initPage();
         @include pad {
           height: 300px;
         }
+
         @include phone {
           height: 200px;
         }
@@ -777,6 +780,7 @@ initPage();
       height: auto;
       text-align: left;
 
+
       @include mac {
         width: 350px;
       }
@@ -786,9 +790,12 @@ initPage();
         padding-right: 100px;
       }
       @include phone {
-        width: 200px;
         padding: 20px;
         height: auto;
+        justify-content: space-evenly;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .title {
@@ -821,7 +828,7 @@ initPage();
         margin-top: 40px;
         border: solid 1px $color-3;
         @include phone {
-          margin-top: 50px;
+          margin-top: 0px;
           font-size: 12px;
           width: auto;
           height: auto;
@@ -829,7 +836,7 @@ initPage();
             align-items: center;
             padding: 5px 5px;
             .action {
-            margin-left: 100px;
+            margin-left: auto;
             }
           }
         }
@@ -851,7 +858,8 @@ initPage();
       margin-top: 50px;
     }
     @include phone {
-      margin-top: 0px;
+      display: inline-block;
+      margin-top: 10px;
     }
 
 
@@ -859,7 +867,6 @@ initPage();
       padding-left: 150px;
       width: 450px;
       height: auto;
-      // text-align: left;
 
       @include mac {
         width: 350px;
@@ -869,9 +876,13 @@ initPage();
         width: 300px;
       }
       @include phone {
-        width: 200px;
+        display: flex;
         padding: 20px;
         height: auto;
+        justify-content: space-evenly;
+        flex-direction: row-reverse;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .title {
@@ -901,8 +912,9 @@ initPage();
       :deep(.app-button.surpriseGift-button) {
         margin-top: 40px;
         border: solid 1px $color-3;
+        width: 200px;
         @include phone {
-          margin-top: 50px;
+          margin-top: 0px;
           font-size: 12px;
           width: auto;
           height: auto;
@@ -910,7 +922,7 @@ initPage();
             align-items: center;
             padding: 5px 5px;
             .action {
-              margin-left: 100px;
+              margin-left: auto;
             }
           }
         }
@@ -942,7 +954,6 @@ initPage();
           height: 300px;
         }
         @include phone {
-          width: 234px;
           height: 200px;
           object-fit: cover;
         }
@@ -965,6 +976,7 @@ initPage();
       margin-top: 50px;
     }
     @include phone {
+      display: inline-block;
       margin-top: 0px;
     }
 
@@ -1008,9 +1020,12 @@ initPage();
         width: 300px;
       }
       @include phone {
-        width: 200px;
         padding: 20px;
         height: auto;
+        justify-content: space-evenly;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .title {
@@ -1045,7 +1060,7 @@ initPage();
           margin-top: 80px;
         }
         @include phone {
-          margin-top: 50px;
+          margin-top: 0px;
           font-size: 12px;
           width: auto;
           height: auto;
@@ -1053,7 +1068,7 @@ initPage();
             align-items: center;
             padding: 5px 5px;
             .action {
-            margin-left: 100px;
+            margin-left: auto;
             }
           }
         }
@@ -1072,6 +1087,10 @@ initPage();
 
     @include pad {
       margin-top: 50px;
+    }
+
+    @include phone {
+      margin-top: 0px;
     }
 
     .SetWrapper {
@@ -1218,7 +1237,7 @@ initPage();
             align-items: center;
             padding: 5px 5px;
             .action {
-              margin-left: 170px;
+              margin-left: auto;
             }
           }
         }
