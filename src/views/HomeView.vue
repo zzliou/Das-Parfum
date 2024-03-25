@@ -5,9 +5,9 @@
     <div class="container">
       <div class="homeVueWapper">
         <div class="swiper-container-zero">
-          <Swiper :slidesPerView="1" :spaceBetween="30" :loop="true" :centeredSlides="true"
-            :navigation="false" :autoplay="{ delay: 3500, disableOnInteraction: true }" :modules="modules"
-            :effect="fade" @swiper="onSwiperZero">
+          <Swiper :slidesPerView="1" :spaceBetween="30" :loop="true" :centeredSlides="true" :navigation="false"
+            :autoplay="{ delay: 3500, disableOnInteraction: true }" :modules="modules" :effect="fade"
+            @swiper="onSwiperZero">
             <SwiperSlide v-for="(item, index) in swiperListZero" :key="index">
               <div class="newsWrapper">
                 <div class="news">
@@ -26,15 +26,9 @@
             hide: false,
             draggable: true,
             dragSize: 600,
-          }" 
-          :slidesPerView="4" 
-          :spaceBetween="0" 
-          :breakpoints="breakpointSet"
-          :loop="false" 
-          :centeredSlides="false" 
-          :pagination="pagination"
-          :navigation="{ hiddenClass: 'swiper-button-hidden' }" 
-          :modules="modules" @swiper="onSwiperFirst">
+          }" :slidesPerView="4" :spaceBetween="0" :breakpoints="breakpointSet" :loop="false" :centeredSlides="false"
+            :pagination="pagination" :navigation="{ hiddenClass: 'swiper-button-hidden' }" :modules="modules"
+            @swiper="onSwiperFirst">
             <SwiperSlide>
               <div class="famousArticle">
                 <p>臉部調理系列</p>
@@ -95,14 +89,9 @@
             draggable: true,
             dragsize: 600,
             mousewheel: true,
-          }" 
-          :slidesPerView="3" 
-          :spaceBetween="10" 
-          :breakpoints="breakpointSet"
-          :loop="true" 
-          :centeredSlides="false" :pagination="pagination"
-            :autoplay="{ delay: 3000, disableOnInteraction: false }" :navigation="true" :modules="modules"
-            @swiper="onSwiperSecond">
+          }" :slidesPerView="3" :spaceBetween="10" :breakpoints="breakpointSet" :loop="true" :centeredSlides="false"
+            :pagination="pagination" :autoplay="{ delay: 3000, disableOnInteraction: false }" :navigation="true"
+            :modules="modules" @swiper="onSwiperSecond">
             <SwiperSlide v-for="product in swiperListSecond" :key="product">
               <div class="SetWrapper" @click="goToProductPage(product)">
                 <img :src="product.sizeList[0].imageSrc" />
@@ -160,7 +149,7 @@
         </div>
       </div>
     </div>
-    <icon class="goTop" icon="arrow-up" @click="goToTop"/>
+    <icon class="goTop" icon="arrow-up" @click="goToTop" />
   </div>
 </template>
 
@@ -538,6 +527,7 @@ initPage();
           @include pad {
             font-size: 16px;
           }
+
           @include phone {
             font-size: 12px;
           }
@@ -556,6 +546,7 @@ initPage();
             font-size: 20px;
             padding: 10px 0px;
           }
+
           @include phone {
             font-size: 18px;
             padding: 8px 0px;
@@ -576,27 +567,32 @@ initPage();
             font-size: 18px;
             padding-bottom: 20px;
           }
+
           @include phone {
             display: none;
           }
         }
 
         :deep(.app-button.perfume-button) {
-          border: solid 1px  $color-2;
-            @include phone {
-              margin-top: 10px;
-              font-size: 12px;
-              width: 180px;
-              height: auto;
-              .wrapper {
-                align-items: center;
-                padding: 5px 5px;
-                .action {
-                  margin-left: 90px;
-                }
+          border: solid 1px $color-2;
+
+          @include phone {
+            margin-top: 10px;
+            font-size: 12px;
+            width: 180px;
+            height: auto;
+            border: none;
+
+            .wrapper {
+              align-items: center;
+              padding: 5px 5px;
+
+              .action {
+                margin-left: 90px;
               }
             }
-        }  
+          }
+        }
       }
 
       img {
@@ -611,6 +607,7 @@ initPage();
         @include pad {
           height: 400px;
         }
+
         @include phone {
           height: 400px;
           object-position: right;
@@ -631,6 +628,7 @@ initPage();
     @include pad {
       margin-top: 50px;
     }
+
     @include phone {
       margin-top: 20px;
     }
@@ -657,12 +655,15 @@ initPage();
 
       p {
         font-size: 18px;
+
         @include pad {
           font-size: 14px;
         }
       }
+
       h2 {
         font-size: 24px;
+
         @include pad {
           font-size: 20px;
         }
@@ -739,6 +740,7 @@ initPage();
     @include pad {
       margin-top: 50px;
     }
+
     @include phone {
       display: inline-block;
       margin-top: 30px;
@@ -789,6 +791,7 @@ initPage();
         width: 300px;
         padding-right: 100px;
       }
+
       @include phone {
         padding: 20px;
         height: auto;
@@ -808,6 +811,7 @@ initPage();
         @include pad {
           font-size: 25px;
         }
+
         @include phone {
           font-size: 20px;
         }
@@ -818,6 +822,7 @@ initPage();
         line-height: 1.7;
         padding-top: 20px;
         color: $color-9;
+
         @include phone {
           display: none;
         }
@@ -825,22 +830,26 @@ initPage();
     }
 
     :deep(.app-button.perfume-button) {
-        margin-top: 40px;
-        border: solid 1px $color-3;
-        @include phone {
-          margin-top: 0px;
-          font-size: 12px;
-          width: auto;
-          height: auto;
-          .wrapper {
-            align-items: center;
-            padding: 5px 5px;
-            .action {
+      margin-top: 40px;
+      border: solid 1px $color-3;
+
+      @include phone {
+        margin-top: 0px;
+        font-size: 12px;
+        width: auto;
+        height: auto;
+      
+
+        .wrapper {
+          align-items: center;
+          padding: 5px 5px;
+
+          .action {
             margin-left: auto;
-            }
           }
         }
       }
+    }
   }
 
   .surpriseGiftWapper {
@@ -857,6 +866,7 @@ initPage();
     @include pad {
       margin-top: 50px;
     }
+
     @include phone {
       display: inline-block;
       margin-top: 10px;
@@ -875,6 +885,7 @@ initPage();
       @include pad {
         width: 300px;
       }
+
       @include phone {
         display: flex;
         padding: 20px;
@@ -895,6 +906,7 @@ initPage();
         @include pad {
           font-size: 25px;
         }
+
         @include phone {
           font-size: 20px;
         }
@@ -905,22 +917,27 @@ initPage();
         line-height: 1.7;
         padding: 20px 0px;
         color: $color-9;
+
         @include phone {
           display: none;
         }
       }
+
       :deep(.app-button.surpriseGift-button) {
         margin-top: 40px;
         border: solid 1px $color-3;
         width: 200px;
+
         @include phone {
           margin-top: 0px;
           font-size: 12px;
           width: auto;
           height: auto;
+
           .wrapper {
             align-items: center;
             padding: 5px 5px;
+
             .action {
               margin-left: auto;
             }
@@ -936,6 +953,7 @@ initPage();
       @include pad {
         padding-left: 80px;
       }
+
       @include phone {
         padding-left: 0px;
       }
@@ -953,6 +971,7 @@ initPage();
         @include pad {
           height: 300px;
         }
+
         @include phone {
           height: 200px;
           object-fit: cover;
@@ -975,6 +994,7 @@ initPage();
     @include pad {
       margin-top: 50px;
     }
+
     @include phone {
       display: inline-block;
       margin-top: 0px;
@@ -983,6 +1003,7 @@ initPage();
     .videoServiceImage {
       flex-grow: 1;
       padding-right: 150px;
+
       @include phone {
         padding-right: 0px;
       }
@@ -1000,6 +1021,7 @@ initPage();
         @include pad {
           height: 300px;
         }
+
         @include phone {
           height: 200px;
         }
@@ -1019,6 +1041,7 @@ initPage();
       @include pad {
         width: 300px;
       }
+
       @include phone {
         padding: 20px;
         height: auto;
@@ -1038,6 +1061,7 @@ initPage();
         @include pad {
           font-size: 25px;
         }
+
         @include phone {
           font-size: 20px;
         }
@@ -1048,6 +1072,7 @@ initPage();
         line-height: 1.7;
         padding: 20px 0px;
         color: $color-9;
+
         @include phone {
           display: none;
         }
@@ -1056,19 +1081,23 @@ initPage();
       :deep(.app-button.video-button) {
         margin-top: 40px;
         border: solid 1px $color-3;
+
         @include pad {
           margin-top: 80px;
         }
+
         @include phone {
           margin-top: 0px;
           font-size: 12px;
           width: auto;
           height: auto;
+
           .wrapper {
             align-items: center;
             padding: 5px 5px;
+
             .action {
-            margin-left: auto;
+              margin-left: auto;
             }
           }
         }
@@ -1169,6 +1198,7 @@ initPage();
     @include pad {
       margin-top: 100px;
     }
+
     @include phone {
       margin-top: 100px;
       display: inline-block;
@@ -1210,6 +1240,7 @@ initPage();
         @include pad {
           font-size: 25px;
         }
+
         @include phone {
           font-size: 20px;
         }
@@ -1220,6 +1251,7 @@ initPage();
         padding: 10px 0px;
         color: $color-9;
         line-height: 1.7;
+
         @include phone {
           font-size: 12px;
         }
@@ -1228,14 +1260,17 @@ initPage();
       :deep(.app-button.shop-button) {
         margin-top: 40px;
         border: solid 1px $color-3;
+
         @include phone {
           margin: 20px 0px;
           font-size: 12px;
           width: auto;
           height: auto;
+
           .wrapper {
             align-items: center;
             padding: 5px 5px;
+
             .action {
               margin-left: auto;
             }
@@ -1248,7 +1283,7 @@ initPage();
       width: 50%;
       height: auto;
       margin-left: auto;
-    
+
       @include mac {
         width: 800px;
       }
@@ -1256,6 +1291,7 @@ initPage();
       @include pad {
         width: 600px;
       }
+
       @include phone {
         width: 400px;
         margin-left: auto;
@@ -1304,6 +1340,7 @@ initPage();
       margin-top: 0px;
       font-size: 20px;
     }
+
     @include phone {
       display: none;
     }
@@ -1319,6 +1356,7 @@ initPage();
       @include pad {
         font-size: 20px;
       }
+
       @include phone {
         font-size: 16px;
       }
@@ -1346,6 +1384,7 @@ initPage();
       height: auto;
       align-content: center;
       justify-content: center;
+
       @include phone {
         display: inline-block;
       }
@@ -1381,6 +1420,7 @@ initPage();
           @include pad {
             font-size: 20px;
           }
+
           @include phone {
             font-size: 16px;
           }
@@ -1400,6 +1440,7 @@ initPage();
             font-size: 16px;
             line-height: 1.7em;
           }
+
           @include phone {
             font-size: 14px;
             line-height: 1.5em;

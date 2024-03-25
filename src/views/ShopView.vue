@@ -46,13 +46,13 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useRouter } from 'vue-router'
+
 import shop1 from "@/assets/img/Home_picture/home-store/shop1.png";
 import shop2 from "@/assets/img/Home_picture/home-store/shop2.jpg";
 import shop3 from "@/assets/img/Home_picture/home-store/shop3.jpg";
 import shop4 from "@/assets/img/Home_picture/home-store/shop4.png";
 
-const router = useRouter()
+
 let open = ref('Open.')
 let phone = ref('Tel.')
 let location = ref('Add.')
@@ -299,10 +299,11 @@ window.scrollTo({
         margin: 50px;
         display: flex;
         box-sizing: border-box;
+        margin: 20px auto 20px auto;
 
         @include mac {
-          width: 480px;
-          height: 300px;
+          width: 400px;
+          height: 200px;
           margin: 20px;
         }
 

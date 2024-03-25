@@ -43,7 +43,7 @@ function changeType(type) {
 function goToTop() {
   window.scrollTo({'behavior': 'smooth', 'top': 0})
 }
-
+goToTop();
 
 </script>
 
@@ -149,5 +149,4 @@ function goToTop() {
     }
   }
 }
-
 </style>

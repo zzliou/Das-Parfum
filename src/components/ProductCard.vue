@@ -116,6 +116,10 @@ function addCart(product) {
 
     .cart {
       opacity: 0;
+      
+      @include phone {
+        opacity: 1;
+      }
     }
 
     &:hover {

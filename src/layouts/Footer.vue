@@ -138,8 +138,7 @@ function goToContact() {
         padding: 10px;
       }
       @include phone {
-        height: 150px;
-        // width: 25%;
+       display: none;
       }
       .mainTitle {
         padding: 10px 0px;
@@ -163,9 +162,7 @@ function goToContact() {
         margin: 10px 0px 20px 0px;
       }
       @include phone {
-        width: 20%;
-        padding-top: 70px;
-        margin-right: 19px;
+       display: none;
       }
     }
       .contact {

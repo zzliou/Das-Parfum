@@ -34,10 +34,12 @@ import { useRouter } from 'vue-router'
     display: flex;
     padding: 20px 20px;
     border: solid 1px  $color-11;
+    @include phone {
+      border: solid 0.5px  $color-4;
+    }
     .action {
       margin-left: auto;
     }
   }
-
 }
 </style>
