@@ -34,6 +34,7 @@ function toggleMenuFadeIn() {
   padding: 5px 20px;
   background-color: $color-1;
   @include pad {
+    padding: 0;
     padding-top: 40px;
     flex-direction: column;
     height: 100vh;
