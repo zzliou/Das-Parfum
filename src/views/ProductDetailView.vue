@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div v-if="renderProductList && renderProductList.length > 0" class="container">
     <div class="productWrapper">
       <div class="productPic">
         <img src="@/assets/img/Product_picture/p014.png" alt="" />
@@ -90,10 +90,13 @@
       </Swiper>
     </div>
   </div>
+  <div v-else class="loading-wrapper">
+    <icon class="loading-icon" icon="circle-notch" />
+  </div>
 </template>
 
 <script setup>
-import { ref, onBeforeMount } from 'vue';
+import { ref, onBeforeMount, computed } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { useProductStore } from '@/stores/product'
 import { useCartStore } from '@/stores/cart'
@@ -111,9 +114,14 @@ import pic013 from "@/assets/img/Product_picture/p013.png";
 import pic014 from "@/assets/img/Product_picture/p014.png";
 import pic015 from "@/assets/img/Product_picture/p015.png";
 
+const route = useRoute();
+const productId = route.params.id;
 const productStore = useProductStore();
 const productRefStore = storeToRefs(productStore)
-const currentProduct = productRefStore.currentProduct
+const renderProductList = productRefStore.productList
+
+const currentProduct = computed(() => renderProductList.value.find((item) => String(item.id) === String(productId)))
+
 const navigator = useRouter()
 
 let swiperFirst = null
@@ -124,10 +132,8 @@ function onSwiperFirst(swiper) {
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
 
 function goToProductPage(product) {
-  productStore.setCurrentProduct(product)
-  navigator.push({
-    name: 'productDetailView',
-  })
+  router.push({ name: 'productDetailView', params: { id: product.id } })
+
 }
 
 function handleChangeSize(sizeOptionIndex) {
@@ -266,6 +272,9 @@ initPage()
 </script>
 
 <style lang="scss" scoped>
+.loading-wrapper {
+  background-color: $color-1;
+}
 .container {
   background-color: $color-1;
   width: 100%;

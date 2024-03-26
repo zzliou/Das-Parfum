@@ -1,7 +1,9 @@
 <template>
   <div class="header" :class="{ 'fixed': uiStore.menuFadeIn }">
     <div class="logo">
-      <img src="@/assets/img/icon/LOGO.png" />
+      <RouterLink to="/">
+        <img src="@/assets/img/icon/LOGO.png" />
+      </RouterLink>
     </div>
     <AppNavbar ref="navbarRef"></AppNavbar>
     <div class="toolbox" @mouseenter="hidePreviewCart">

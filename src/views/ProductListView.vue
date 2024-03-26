@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="navbar">
+    <div v-show="renderProductList && renderProductList.length > 0" class="navbar">
       <div class="productsCategories">
         <p @click="changeType('all')">全部商品</p>
         <p @click="changeType('shampoo')">髮品</p>
@@ -8,7 +8,7 @@
         <p @click="changeType('combine')">送禮組合</p>
       </div>
     </div>
-    <div class="productWapper">
+    <div v-show="renderProductList && renderProductList.length > 0" class="productWapper">
       <div class="introduce">
         <div class="maintitle">重新體驗肌膚潔淨及柔滑的感受</div>
         <div class="description">
@@ -17,19 +17,20 @@
       </div>
       <ProductCard :inputProduct="product" v-for="product in renderProductList" :key="product.id"></ProductCard>
     </div>
+    <div v-show="!renderProductList || renderProductList.length <= 0" class="loading-wrapper">
+      <icon class="loading-icon" icon="circle-notch" />
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue';
 import { useProductStore } from '@/stores/product'
-import { useRouter } from 'vue-router';
 import ProductCard from '@/components/ProductCard.vue'
+import { storeToRefs } from 'pinia'
 
-const router = useRouter()
 const productStore = useProductStore();
-const productList = productStore.productList;
-const renderProductList = ref(productList);
+const productRefStore = storeToRefs(productStore)
+const renderProductList = productRefStore.productList
 
 function changeType(type) {
   if(type === 'all') {
@@ -51,6 +52,18 @@ goToTop();
 
 .container {
   background-color: $color-1;
+  .loading-wrapper {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loading-icon{
+      height: 50px;
+      animation: rotate 2s linear infinite; 
+    }
+  }
+
   .navbar {
     display: flex;
     align-items: center;

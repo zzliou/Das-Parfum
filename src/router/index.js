@@ -48,7 +48,7 @@ const router = createRouter({
       component: ContactUsView
     },
     {
-      path: '/productDetailView',
+      path: '/productDetailView/:id',
       name: 'productDetailView',
       component: ProductDetailView
     },
@@ -74,6 +74,5 @@ const router = createRouter({
     }
   ]
 })
-
 
 export default router

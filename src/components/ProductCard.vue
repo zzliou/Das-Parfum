@@ -40,7 +40,7 @@ const productStore = useProductStore();
 
 function goToProductPage(product) {
   productStore.setCurrentProduct(product)
-  router.push({ name: 'productDetailView' })
+  router.push({ name: 'productDetailView', params: { id: product.id } })
 }
 
 const cartStore = useCartStore();

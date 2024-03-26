@@ -2,11 +2,9 @@ import { defineStore } from 'pinia'
 import { db, storage } from '@/utils/firebase'
 import { ref as dbRef, set, onValue } from 'firebase/database'
 import { getDownloadURL, ref as storageRef } from "firebase/storage";
-
 export const useProductStore = defineStore('product', {
   state: () => ({
     productList: null,
-    currentProduct: null,
   }),
   actions: {
     getProductList() {
@@ -20,7 +18,9 @@ export const useProductStore = defineStore('product', {
               this.getProductImage(sizeConfig)
             })
           })
-          this.productList = data;
+          setTimeout(() => {
+            this.productList = data;
+          }, 1000);
         })
       })
 

@@ -4,3 +4,23 @@
 body {
   overflow-x: hidden;
 }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-wrapper {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loading-icon{
+    height: 50px;
+    animation: rotate 2s linear infinite; 
+  }
+}
