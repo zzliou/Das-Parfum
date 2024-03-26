@@ -30,11 +30,11 @@ export const useCartStore = defineStore('cart', {
         this.cartList = []
       }
     },
-    async submit(){
+    submit(){
       const authStore = useAuthStore()
 
       const userRef = dbRef(db, 'users/' + authStore.user.uid)
-      await update(userRef, {
+      update(userRef, {
         order: this.cartList
       });
       this.clearCart();

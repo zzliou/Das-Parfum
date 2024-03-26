@@ -35,25 +35,12 @@ const name = ref('')
 
 const authStore = useAuthStore()
 
-async function loginWithEmail() {
-  try {
-    await authStore.signUpWithEmail(email.value, password.value, name.value)
-    isShow.value = false;
-  } catch (error) {
-    console.log(error)
-  }
-
+function loginWithEmail() {
+  authStore.signUpWithEmail(email.value, password.value, name.value)
 }
 
-async function loginWithGoogle() {
-  const isLoginSuccess = await authStore.signInWithGoogle();
-  console.log('isLoginSuccess',isLoginSuccess);
-  
-  if(isLoginSuccess) {
-    isShow.value = false;
-  }else {
-    alert('登入失敗')
-  }
+function loginWithGoogle() {
+  authStore.signInWithGoogle()
 }
 
 </script>

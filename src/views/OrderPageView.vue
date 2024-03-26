@@ -79,8 +79,8 @@ let totalPrice = ref(0);
 const router = useRouter()
 
 
-async function submitOrder() {
-  await cartStore.submit();
+function submitOrder() {
+  cartStore.submit();
   router.push("/FinalpagesView")
 }
 

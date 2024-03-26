@@ -25,14 +25,15 @@ export const useProductStore = defineStore('product', {
       })
 
     },
-    async getProductImage(sizeConfig) {
-      try {
-        const pathReference = storageRef(storage, sizeConfig.imagePath);
-        const src = await getDownloadURL(pathReference)
+    getProductImage(sizeConfig) {
+      const pathReference = storageRef(storage, sizeConfig.imagePath);
+      getDownloadURL(pathReference).then(res => {
+        const src = res
         sizeConfig.imageSrc = src
-      } catch (error) {
+      }).catch(err => {
         sizeConfig.imageSrc = null
-      }
+        console.log(err)
+      })
     },
     setCurrentProduct(product) {
       this.currentProduct = product
