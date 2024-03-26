@@ -1,5 +1,8 @@
 <template>
-  <div class="header">
+  <div class="header" :class="{ 'fixed': uiStore.menuFadeIn }">
+    <div class="logo">
+      <img src="@/assets/img/icon/LOGO.png" />
+    </div>
     <AppNavbar ref="navbarRef"></AppNavbar>
     <div class="toolbox" @mouseenter="hidePreviewCart">
       <div class="login-wrapper" v-show="showLoginStatus">
@@ -12,7 +15,7 @@
         <icon icon="cart-shopping" />
       </div>
       <icon class="menu-control" v-show="!uiStore.menuFadeIn" icon="bars" @click="uiStore.toggleMenuFadeIn()"/>
-      <icon class="icon" v-show="uiStore.menuFadeIn" icon="xmark" @click="uiStore.toggleMenuFadeIn()"/>
+      <icon class="menu-close" v-show="uiStore.menuFadeIn" icon="xmark" @click="uiStore.toggleMenuFadeIn()"/>
 
     </div>
   </div>
@@ -72,6 +75,26 @@ import { useAuthStore } from '@/stores/auth'
   display: flex;
   font-family: Suisse, sans-serif;
   font-size: 14px;
+  transition: all 1s;
+  &.fixed {
+    @include pad {
+      position: fixed;
+      top: 0px;
+      z-index: 3;
+    }
+  }
+  .logo {
+    display: none;
+    img {
+      width: 100%;
+    }
+    @include pad {
+      padding: 10px;
+      width: 60px;
+      display: flex;
+      align-items: center;
+    }
+  }
   .toolbox {
     display: flex;
     height: auto;
@@ -79,12 +102,13 @@ import { useAuthStore } from '@/stores/auth'
     gap: 30px;
     padding: 5px 20px 5px 0px;
     margin-left: auto;
-    .menu-control {
+    .menu-control, .menu-close {
       display: none;
       @include pad {
         display: block;
       }
     }
+
     .login-wrapper {
       display: flex;
       gap: 0px 20px;

@@ -34,21 +34,24 @@ function toggleMenuFadeIn() {
   padding: 5px 20px;
   background-color: $color-1;
   @include pad {
+    border-top: solid 1px $color-10;
     padding: 0;
+    opacity: 0;
     padding-top: 40px;
+    padding-bottom: 40px;
     flex-direction: column;
-    height: 100vh;
     z-index: 2;
     width: 100%;
     transform: translate(101%);
     position: fixed;
-    top: 130px;
-    transition: transform .5s;
+    top: 77px;
+    transition: all .8s;
     .close {
       display: block !important;
     }
     &.fade-in {
       transform: translate(0);
+      opacity: 1;
     }
     
   }

@@ -21,12 +21,6 @@ import { useRouter } from 'vue-router';
 import { useProductStore } from '@/stores/product'
 import { useUiStore } from '@/stores/ui'
 
-const uiStore = useUiStore()
-const menuFadeIn = computed(() => uiStore.menuFadeIn)
-watch(menuFadeIn, (newValue, oldValue) => {
-  document.body.style['overflow-y'] = newValue ? 'hidden' : 'scroll';
-})
-
 import AppHeader from './AppHeader.vue';
 
 const loginRef = ref(null)
