@@ -12,8 +12,8 @@
         <div class="back">
          <button><RouterLink to="/">返回首頁</RouterLink></button> 
         </div>
-        <div class="finish">
-          <button @click="closeCurrentWindow">關閉視窗</button>
+        <div class="check">
+          <button><RouterLink to="/member">查看本次訂單</RouterLink></button>
         </div>
       </div>
     </div>
@@ -99,9 +99,14 @@ const router = useRouter()
         width: 300px;
       }
 
-      .finish {
+      .check {
         text-align: start;
         padding: 20px 10px;
+
+        a {
+          text-decoration: none;
+          color: $color-2;
+        }
 
         button {
           width: 150px;
@@ -111,7 +116,7 @@ const router = useRouter()
           font-size: 16px;
           color: $color-2;
           @include phone {
-            width: 80px;
+            width: 120px;
             font-size: 14px;
           }
 
@@ -136,8 +141,9 @@ const router = useRouter()
           background-color: $color-11;
           border: $color-11;
           font-size: 16px;
+
           @include phone {
-            width: 80px;
+            width: 120px;
             font-size: 14px;
           }
 

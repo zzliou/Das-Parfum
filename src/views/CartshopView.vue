@@ -324,7 +324,7 @@ function handleDelete(product) {
             @include phone {
               width: 100px;
               height: 30px;
-              font-size: 14px;
+              font-size: 12px;
             }
 
             &:hover {

@@ -72,7 +72,7 @@ async function loginWithGoogle() {
   @include phone {
     width: 350px;
     height: 500px;
-    transform: translateX(-76%);
+    transform: translateX(-50%);
   }
   .closed {
     button {
