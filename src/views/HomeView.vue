@@ -460,8 +460,7 @@ const swiperListThird = ref([
 const router = useRouter()
 
 function goToProductPage(product) {
-  console.log(product,'product')
-  router.push({ name: 'insidepagesView' ,
+  router.push({ name: 'productDetailView' ,
   params: {
     product: JSON.stringify(product)
   }

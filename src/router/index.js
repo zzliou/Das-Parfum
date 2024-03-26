@@ -4,7 +4,7 @@ import ShopView from '../views/ShopView.vue';
 import AboutView from '../views/AboutView.vue';
 import ProductListView from '../views/ProductListView.vue';
 import ContactUsView from '../views/ContactUsView.vue';
-import InsidepagesView from '../views/InsidepagesView.vue';
+import ProductDetailView from '../views/ProductDetailView.vue';
 import CartshopView from '../views/CartshopView.vue';
 import OrderPageView from '../views/OrderPageView.vue';
 import FinalpagesView from '../views/FinalpagesView.vue';
@@ -48,9 +48,9 @@ const router = createRouter({
       component: ContactUsView
     },
     {
-      path: '/insidepagesView',
-      name: 'insidepagesView',
-      component: InsidepagesView
+      path: '/productDetailView',
+      name: 'productDetailView',
+      component: ProductDetailView
     },
     {
       path: '/cartshopView',
@@ -74,5 +74,6 @@ const router = createRouter({
     }
   ]
 })
+
 
 export default router

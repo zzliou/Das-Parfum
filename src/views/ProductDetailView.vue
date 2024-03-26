@@ -93,11 +93,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onBeforeMount } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { useProductStore } from '@/stores/product'
 import { useCartStore } from '@/stores/cart'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
+import { storeToRefs } from 'pinia'
 import { Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade } from 'swiper/modules'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
@@ -110,30 +111,26 @@ import pic013 from "@/assets/img/Product_picture/p013.png";
 import pic014 from "@/assets/img/Product_picture/p014.png";
 import pic015 from "@/assets/img/Product_picture/p015.png";
 
+const productStore = useProductStore();
+const productRefStore = storeToRefs(productStore)
+const currentProduct = productRefStore.currentProduct
+const navigator = useRouter()
+
 let swiperFirst = null
 function onSwiperFirst(swiper) {
   swiperFirst = swiper
 }
 
-const productStore = useProductStore();
-const currentProduct = ref(productStore.currentProduct)
-const router = useRoute()
-
 const modules = [Navigation, Pagination, Scrollbar, Autoplay, Virtual, EffectFade]
 
 function goToProductPage(product) {
-  router.push({
-    name: 'insidepagesView',
-    params: {
-      product: JSON.stringify(product)
-    }
+  productStore.setCurrentProduct(product)
+  navigator.push({
+    name: 'productDetailView',
   })
 }
 
-
-
 function handleChangeSize(sizeOptionIndex) {
-  console.log(currentProduct, sizeOptionIndex)
   currentProduct.value.selectedSizeIndex = sizeOptionIndex
 }
 
