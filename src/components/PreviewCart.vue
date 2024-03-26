@@ -75,6 +75,7 @@ function gocheckout() {
 
   @include phone {
     width: 250px;
+    display: none;
   }
 
   .content {
