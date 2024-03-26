@@ -11,6 +11,7 @@ import { auth, db } from '@/utils/firebase'
 import { ref as dbRef, set, onValue, child, push, update } from 'firebase/database'
 import { useCartStore } from '@/stores/cart'
 import { useOrderStore } from '@/stores/order'
+import { useUiStore } from './ui'
 
 const googleProvider = new GoogleAuthProvider()
 
@@ -25,21 +26,26 @@ export const useAuthStore = defineStore('auth', {
     },
   },
   actions: {
-    async signInWithGoogle() {
+    signInWithGoogle() {
       try {
-        const response = await signInWithPopup(auth, googleProvider)
-        this.user = response.user
-        await this.createGoogleUserData();
-        await this.getUserData();
-        return true;
+        signInWithPopup(auth, googleProvider).then(res => {
+          const response = res
+          this.user = response.user
+          this.createGoogleUserData().then(() => {
+            this.getUserData();
+            const uiStore = useUiStore();
+            uiStore.hideLoginPopup();
+            return true;
+          })
+        })
       } catch (error) {
         console.error(error)
         return false;
       }
     },
-    async createGoogleUserData() {
+     createGoogleUserData() {
       const userRef = dbRef(db, 'users/' + this.user.uid)
-      await set(userRef, {
+      return set(userRef, {
         name: this.user.displayName,
       });
     },
@@ -50,47 +56,51 @@ export const useAuthStore = defineStore('auth', {
           console.log(user,'useruser')
           this.user = user
           this.getUserData(user)
+          const uiStore = useUiStore();
+          uiStore.hideLoginPopup();
         })
         .catch((error) => {
           console.log('登入帳密錯誤', error)
         })
     },
-    async signUpWithEmail(email, password) {
+    signUpWithEmail(email, password) {
       createUserWithEmailAndPassword(auth, email, password)
-      .then(data => data.user).then(async (user) => {
+      .then(data => data.user).then((user) => {
         this.user = user;
-        await this.createUserData(user.email.split('@')[0])
-        const cartStore = useCartStore();
-        const shopcartList = cartStore.cartList
-        console.log(shopcartList,'應該有')
-        // await this.setCartData();
+        this.createUserData(user.email.split('@')[0])
+        const uiStore = useUiStore();
+        uiStore.hideLoginPopup();
       })
       .catch(error => {
         console.log('註冊失敗，直接登入',email, password)
         this.signInWithEmail(email, password)
       })
     },
-    async createUserData(displayName) {
+    createUserData(displayName) {
       const userRef = dbRef(db, 'users/' + this.user.uid)
-      await set(userRef, {
+      return set(userRef, {
         name: displayName,
       });
     },
-    async getUserData() {
-      const userRef = dbRef(db, 'users/' + this.user.uid)
-      await onValue(userRef, (snapshot) => {
-        const userData = snapshot.val()
-        this.userDb = userData;
+    getUserData() {
+      return new Promise((resolve) => {
+        const userRef = dbRef(db, 'users/' + this.user.uid)
+        onValue(userRef, (snapshot) => {
+          const userData = snapshot.val()
+          this.userDb = userData;
+          resolve();
+        })
       })
     },
-    async checkAuthState() {console.log('checkAuthState')
+    checkAuthState() {
       return new Promise((resolve, reject) => {
-        onAuthStateChanged(auth, async (user) => {
+        onAuthStateChanged(auth,(user) => {
           console.log(user,'user')
           if (user) {
             this.user = user
-            await this.getUserData();
-            resolve(user)
+            this.getUserData().then(() => {
+              resolve(user)
+            })
           } else {
             this.user = null
             resolve(null)
@@ -98,15 +108,14 @@ export const useAuthStore = defineStore('auth', {
         }, reject)
       })
     },
-    async setCartData() {
+    setCartData() {
       const cartStore = useCartStore();
       const shopcartList = cartStore.cartList
       console.log(shopcartList,'shopcartList')
       const userRef = dbRef(db, 'users/' + this.user.uid)
-      await update(userRef, {
+      update(userRef, {
         cart: shopcartList
       });
-
     },
     logout() {
       signOut(auth).then(res => {

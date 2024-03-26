@@ -12,13 +12,20 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import Footer from './Footer.vue';
 import Login from '../components/Login.vue';
 import PreviewCart from '@/components/PreviewCart.vue';
 import { useRouter } from 'vue-router';
 import { useProductStore } from '@/stores/product'
+import { useUiStore } from '@/stores/ui'
+
+const uiStore = useUiStore()
+const menuFadeIn = computed(() => uiStore.menuFadeIn)
+watch(menuFadeIn, (newValue, oldValue) => {
+  document.body.style['overflow-y'] = newValue ? 'hidden' : 'scroll';
+})
 
 import AppHeader from './AppHeader.vue';
 

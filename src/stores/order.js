@@ -8,11 +8,11 @@ export const useOrderStore = defineStore('order', {
     order: []
   }),
   actions: {
-    async getOrder() {
+    getOrder() {
       const authStore = useAuthStore()
 
       const userRef = dbRef(db, 'users/' + authStore.user.uid)
-      await onValue(userRef, (snapshot) => {
+      onValue(userRef, (snapshot) => {
         const userData = snapshot.val()
         this.userDb = userData;
         this.order = this.userDb.order
