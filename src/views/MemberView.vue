@@ -23,11 +23,6 @@
             <div class="detail">{{ product.sizeList[product.selectedSizeIndex].price * product.quantity }}</div>
           </div>
           <div class="dividerLiter"></div>
-          <!-- <div class="totalPrice">
-            <div class="title">總計金額:NT$</div>
-            <div class="number">{{ totalPrice }}</div>
-          </div> -->
-          <div class="divider"></div>
         </div>
       </div>
     </div>
@@ -75,22 +70,25 @@ countTotal()
 .member {
   width: 100%;
   height: auto;
+  padding: 50px 0px;
+  background-color: $color-1;
+
   .order {
-    background-color: $color-1;
-    padding: 50px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    place-items: center;
 
     .order-detail {
       width: 80%;
+      height: auto;
 
       .mainTitle {
         width: 80%;
-        margin: 0px 80px 10px 80px;
+        height: auto;
 
         h2 {
           font-size: 22px;
           font-weight: 600;
+          text-align: start;
 
           @include pad {
             font-size: 20px;
@@ -98,7 +96,6 @@ countTotal()
 
           @include phone {
             font-size: 16px;
-            margin: 0px;
           }
         }
       }
@@ -144,7 +141,7 @@ countTotal()
             }
 
             @include phone {
-              font-size: 12px;
+              font-size: 14px;
               width: 150px;
               padding: 0px;
             }
@@ -171,39 +168,23 @@ countTotal()
             }
           }
         }
-
-        .totalPrice {
-          width: 300px;
-          display: flex;
-          margin-left: auto;
-          padding: 20px 0px;
-          font-size: 25px;
-          font-weight: 600;
-          justify-content: center;
-          align-items: center;
-
-          @include mac {
-            font-size: 20px;
-          }
-
-          @include phone {
-            font-size: 16px;
-            padding: 5px 0px;
-            justify-content: end;
-          }
-        }
-
-        .dividerLiter {
-          border: 1px solid $color-3;
-        }
-
-        .divider {
-          border: 1px solid $color-3;
-        }
       }
     }
 
-  }
+    .divider {
+      width: 100%;
+      border: $color-11 1.5px solid;
+      margin: 10px 0px;
 
+      @include phone {
+        margin: 5px 0px;
+      }
+    }
+
+    .dividerLiter {
+      width: 100%;
+      border: $color-3 1px solid;
+    }
+  }
 }
 </style>
