@@ -6,7 +6,7 @@
     <div class="wrapper">
       <div class="loginTitle">登入您的帳號</div>
       <div class="email">電子郵件</div>
-      <input type="email" v-model="email" name="email" placeholder="輸入您的電子郵件" />
+      <input type="email" v-model="email" name="email" placeholder="輸入您的電子郵件，務必含有＠" />
       <div class="password">密碼</div>
       <input type="password" v-model="password" name="password" placeholder="輸入密碼" />
       <div class="loginButton">
