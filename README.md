@@ -1,4 +1,4 @@
-這是我的作品集： [香氛電商網站](https://zzliou.github.io/Das-Parfum/#/home)
+這是我的作品集： [香氛品牌電商網站](https://zzliou.github.io/Das-Parfum/#/home)
 
 串接了會員登入、購物車、查看訂單明細功能
 
