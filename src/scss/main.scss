@@ -24,3 +24,16 @@ body {
     animation: rotate 2s linear infinite; 
   }
 }
+
+.swiper {
+  :deep(.swiper-button-prev) {
+    &::after {
+      color: #252525;
+    }
+  }
+  :deep(.swiper-button-next) {
+    &::after {
+      color: #252525;
+    }
+  }
+}
