@@ -30,14 +30,10 @@ import { storeToRefs } from 'pinia'
 
 const productStore = useProductStore();
 const productRefStore = storeToRefs(productStore)
-const renderProductList = productRefStore.productList
+let renderProductList = productRefStore.filterList
 
 function changeType(type) {
-  if(type === 'all') {
-    renderProductList.value = productList
-  }else {
-    renderProductList.value = productList.filter(product => product.tag === type)
-  }
+  productStore.setFilterList(type)
 }
 
 
