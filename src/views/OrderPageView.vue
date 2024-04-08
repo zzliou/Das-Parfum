@@ -84,12 +84,6 @@ function submitOrder() {
   router.push("/FinalpagesView")
 }
 
-window.scrollTo(0, 0);
-window.scrollTo({
-  top: 0,
-  behavior: "smooth"
-});
-
 function countTotal() {
   for(let product of shopcartList.value){
     let itemTotalPrice = product.sizeList[product.selectedSizeIndex].price * product.quantity;
@@ -97,6 +91,12 @@ function countTotal() {
   } 
 }
 countTotal()
+
+function initPage() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+initPage()
 
 
 </script>

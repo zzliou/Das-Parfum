@@ -40,11 +40,11 @@
 </template>
 
 <script setup>
-window.scrollTo(0, 0);
-window.scrollTo({
-  top: 0,
-  behavior: "smooth"
-});
+function initPage() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+initPage()
 
 </script>
 

@@ -25,7 +25,11 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
+function initPage() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
+initPage()
 
 </script>
 

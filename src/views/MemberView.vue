@@ -63,6 +63,11 @@ function countTotal() {
 }
 countTotal()
 
+function initPage() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+initPage()
 
 </script>
 
