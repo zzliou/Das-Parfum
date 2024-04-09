@@ -1,8 +1,15 @@
-#官網預覽畫面 
+# 官網預覽畫面 
+---
 ![image]([https://github.com/zzliou/Das-Parfum/blob/157f52dc148514a4b755f56f547bb0d1d353d2cd/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg])
 
+---
 
-這是我的作品集： [香氛品牌電商網站](https://zzliou.github.io/Das-Parfum/#/home)
+# 專案介紹 
+
+以 Vue3 框架為基礎開發，並利用 Firebase 資料庫和 Pinia 等工具串接後台 API 數據，實作了會員登入、登出、查看會員訂單、加入購物車等功能，同時，具備響應式設計（RWD）。
+歡迎點擊連結查看我的作品： [香氛品牌電商網站](https://zzliou.github.io/Das-Parfum/#/home)
+--- 
+
 
 串接了會員登入、購物車、查看訂單明細功能
 
