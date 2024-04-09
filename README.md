@@ -25,9 +25,10 @@
 * 利用 npm 管理套件，進行專案所需的套件控管
 * 整合 gh-pages 服務，可完成調整指令，讓專案能一鍵部署
 
-## 專案下載與安裝 Project setup
 ---
-# perfume
+
+# 專案下載與安裝 Project setup
+
 
 This template should help get you started developing with Vue 3 in Vite.
 
