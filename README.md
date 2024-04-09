@@ -9,7 +9,7 @@
 ## 專案介紹 
 
 以 Vue3 框架為基礎開發，並利用 Firebase 資料庫和 Pinia 等工具串接後台 API 數據，實作了會員登入、登出、查看會員訂單、加入購物車等功能，同時，具備響應式設計（RWD）。
-歡迎點擊連結查看我的作品： [香氛品牌電商網站](https://zzliou.github.io/Das-Parfum/#/home)
+歡迎點擊連結查看我的作品	:point_left: [香氛品牌電商網站](https://zzliou.github.io/Das-Parfum/#/home)
 
 ## 開發技術介紹
 
