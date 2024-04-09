@@ -3,18 +3,11 @@
 ### 首頁 
 ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/zzliou/Das-Parfum/blob/157f52dc148514a4b755f56f547bb0d1d353d2cd/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg)
 
-### 商品頁 
-
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/zzliou/Das-Parfum/blob/b1ccb60a11489a545369b970054d66efbcb780aa/FireShot%20Capture%20421%20-%20Alles%20Gute%EF%BD%9C%E5%BE%B7%E5%9C%8B%E9%A6%99%E6%B0%9B%E5%93%81%E7%89%8C%20-%20localhost.png)
-
 ### 購物車頁面
-
 ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/zzliou/Das-Parfum/blob/b1ccb60a11489a545369b970054d66efbcb780aa/FireShot%20Capture%20423%20-%20Alles%20Gute%EF%BD%9C%E5%BE%B7%E5%9C%8B%E9%A6%99%E6%B0%9B%E5%93%81%E7%89%8C%20-%20zzliou.github.io.png)
 
 ### 手機版
-
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/zzliou/Das-Parfum/blob/b1ccb60a11489a545369b970054d66efbcb780aa/S__20865034_0.jpg)
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/zzliou/Das-Parfum/blob/b1ccb60a11489a545369b970054d66efbcb780aa/S__20865036_0.jpg)
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/zzliou/Das-Parfum/blob/b1ccb60a11489a545369b970054d66efbcb780aa/S__20865034_0.jpg)![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/zzliou/Das-Parfum/blob/b1ccb60a11489a545369b970054d66efbcb780aa/S__20865036_0.jpg)
 
 
 ## 專案介紹 
