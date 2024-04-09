@@ -1,6 +1,8 @@
 ## 官網預覽畫面 
 
-![image］([https://github.com/zzliou/Das-Parfum/blob/157f52dc148514a4b755f56f547bb0d1d353d2cd/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg])
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/zzliou/Das-Parfum/blob/157f52dc148514a4b755f56f547bb0d1d353d2cd/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg)
+
+![image］([])
 
 
 ## 專案介紹 
