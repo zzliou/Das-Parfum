@@ -1,5 +1,5 @@
 #官網預覽畫面 
-![image]([picture or gif url](https://github.com/zzliou/Das-Parfum/blob/157f52dc148514a4b755f56f547bb0d1d353d2cd/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg))
+![image]([https://github.com/zzliou/Das-Parfum/blob/157f52dc148514a4b755f56f547bb0d1d353d2cd/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg])
 
 
 這是我的作品集： [香氛品牌電商網站](https://zzliou.github.io/Das-Parfum/#/home)
