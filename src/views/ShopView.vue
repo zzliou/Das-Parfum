@@ -282,13 +282,20 @@ window.scrollTo({
 
     .shopWrapper {
       color: $color-9;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      width: auto;
       margin: 100px 50px 0px 50px;
       padding-bottom: 100px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+      grid-gap: 20px;
 
+      
+      @include mac {
+        margin: 50px 50px 0px 50px;
+      }
+
+      @include pad {
+        margin: 50px 50px 0px 50px;
+      }
       @include phone {
         margin: 50px 50px 0px 50px;
       }

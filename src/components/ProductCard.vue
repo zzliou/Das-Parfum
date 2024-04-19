@@ -116,6 +116,10 @@ function addCart(product) {
 
     .cart {
       opacity: 0;
+      width: auto;
+      height: 60px;
+      position: relative;
+      top: 20px;
       
       @include phone {
         opacity: 1;
