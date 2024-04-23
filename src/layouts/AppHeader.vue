@@ -11,6 +11,7 @@
         <div v-if="!isLoggedIn" class="login" @click="showLoginModal">登入會員</div>
         <div v-if="isLoggedIn" class="welcome">{{ user.name }}</div>
         <div v-if="isLoggedIn" class="login" @click="goMemberPage">會員頁面</div>
+        <div v-if="isLoggedIn" class="login" @click="gowishPage">願望清單</div>
         <div v-if="isLoggedIn" class="login" @click="handleLogout">登出</div>
       </div>
       <div class="cart" @click="navigateToCartShop" @mouseenter="uiStore.showCartPreview">
@@ -58,6 +59,9 @@ import { useAuthStore } from '@/stores/auth'
     router.push('/member')
   }
 
+  function gowishPage() {
+    router.push('/wish')
+  }
 
   function init() {
     authStore.checkAuthState()

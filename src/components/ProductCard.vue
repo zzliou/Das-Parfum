@@ -1,6 +1,8 @@
 <template>
   <div class="product-card">
+    <icon class="addwish" @click="addWish(props.inputProduct)" icon="heart"/>
     <div class="productPic" @click="goToProductPage(props.inputProduct)">
+      
       <img :src="props.inputProduct.sizeList[props.inputProduct.selectedSizeIndex].imageSrc" alt="" />
     </div>
     <div class="productInfo">
@@ -9,8 +11,10 @@
       <div class="sizenprice">
         <div class="size-wrapper">
           <div class="size-list-wrapper">
-            <div class="size-option" v-for="(sizeOption, sizeOptionIndex) in props.inputProduct.sizeList" :key="sizeOptionIndex">
-              <input type="radio" :id="sizeOption.id" :checked="props.inputProduct.selectedSizeIndex === sizeOptionIndex"
+            <div class="size-option" v-for="(sizeOption, sizeOptionIndex) in props.inputProduct.sizeList"
+              :key="sizeOptionIndex">
+              <input type="radio" :id="sizeOption.id"
+                :checked="props.inputProduct.selectedSizeIndex === sizeOptionIndex"
                 @change="handleChangeSize(props.inputProduct, sizeOptionIndex)" />
               <label :for="sizeOption.id">{{ sizeOption.capacity }} ml</label>
             </div>
@@ -28,9 +32,10 @@ import { useRouter } from 'vue-router';
 import { defineProps } from 'vue';
 import { useProductStore } from '@/stores/product'
 import { useCartStore } from '@/stores/cart'
+import { useWishStore } from '@/stores/wish'
 
 const props = defineProps(['inputProduct']);
-const product =  props.inputProduct;
+const product = props.inputProduct;
 const router = useRouter()
 
 function handleChangeSize(product, sizeOptionIndex) {
@@ -49,6 +54,11 @@ function addCart(product) {
   cartStore.addProduct(product)
 }
 
+const wishStore = useWishStore()
+
+function addWish(product) {
+  wishStore.addProduct(product)
+}
 
 </script>
 
@@ -56,6 +66,7 @@ function addCart(product) {
 .product-card {
   width: 33%;
   box-sizing: border-box;
+  position: relative;
 
   @include phone {
     width: 450px;
@@ -92,6 +103,21 @@ function addCart(product) {
     }
   }
 
+  .addwish {
+      display: inline;
+      font-size: 24px;
+      background-color: $color-5;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      &:hover {
+      cursor: pointer;
+      font-size: 30px;
+      }
+      &:active {
+        color: $color-2;
+      }
+  }
 
   .productInfo {
     width: auto;
@@ -120,7 +146,7 @@ function addCart(product) {
       height: 60px;
       position: relative;
       top: 20px;
-      
+
       @include phone {
         opacity: 1;
       }
@@ -227,6 +253,7 @@ function addCart(product) {
       }
     }
   }
+
   // @include phone {
   //   width: 100%;
   // }

@@ -33,12 +33,16 @@ import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router';
 import { useCartStore } from '@/stores/cart'
 import { useUiStore } from '@/stores/ui'
+import { useWishStore } from '@/stores/wish'
 
 const uiStore = useUiStore();
 const uiRefStore = storeToRefs(uiStore);
 const cartStore = storeToRefs(useCartStore());
 const shopcartList = cartStore.cartList
 const router = useRouter()
+const wishStore = useWishStore()
+const wishRefStore = storeToRefs(wishStore);
+const wishList = wishRefStore.wishList
 
 const isShow = uiRefStore.cartPreview
 

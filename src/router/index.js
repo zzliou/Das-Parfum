@@ -9,6 +9,7 @@ import CartshopView from '../views/CartshopView.vue';
 import OrderPageView from '../views/OrderPageView.vue';
 import FinalpagesView from '../views/FinalpagesView.vue';
 import MemberView from '../views/MemberView.vue';
+import wishView from '../views/wishView.vue';
 
 
 const router = createRouter({
@@ -71,6 +72,11 @@ const router = createRouter({
       path: '/member',
       name: 'member',
       component: MemberView
+    },
+    {
+      path: '/wish',
+      name: 'wish',
+      component: wishView
     }
   ]
 })
