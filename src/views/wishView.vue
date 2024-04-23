@@ -8,7 +8,7 @@
           <div class="icon-wrapper">
             <icon class="icon" @click="handleDelete(product); showAlertdelete()" icon="trash-can"></icon>
             <icon class="icon" @click="goToProductPage(product)" icon="magnifying-glass-plus"></icon>
-            <icon class="icon" @click="showAlert(); addCart();" icon="cart-shopping"></icon>
+            <icon class="icon" @click="showAlert(); addCart(product) ;" icon="cart-shopping"></icon>
           </div>
           <div class="productPic"><img :src="product.sizeList[product.selectedSizeIndex].imageSrc" alt=""/></div>
           <div class="name">{{ product.title }}</div>
@@ -105,7 +105,6 @@ function handleDelete(product) {
   wishStore.deleteProduct(product)
   countTotal()
 }
-
 
 
 const productStore = useProductStore();
