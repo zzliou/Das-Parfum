@@ -1,36 +1,37 @@
 <template>
   <div class="wishWrapper">
     <div class="content">
-      <div class="title">您的願望清單共有 {{ productCount }} 個商品</div>
+      <div v-show="wishList && wishList.length > 0" class="title">您的願望清單共有 {{ productCount }} 個商品</div>
       <div class="divider"></div>
-      <div class="product-wrapper">
+      <div v-show="wishList && wishList.length > 0" class="product-wrapper">
         <div class="item_detail" v-for="(product, index) in wishList" :key="index">
           <div class="icon-wrapper">
             <icon class="icon" @click="handleDelete(product); showAlertdelete()" icon="trash-can"></icon>
             <icon class="icon" @click="goToProductPage(product)" icon="magnifying-glass-plus"></icon>
-            <icon class="icon" @click="showAlert(); addCart(product) ;" icon="cart-shopping"></icon>
+            <icon class="icon" @click="showAlert(); addCart(product);" icon="cart-shopping"></icon>
           </div>
-          <div class="productPic"><img :src="product.sizeList[product.selectedSizeIndex].imageSrc" alt=""/></div>
+          <div class="productPic"><img :src="product.sizeList[product.selectedSizeIndex].imageSrc" alt="" /></div>
           <div class="name">{{ product.title }}</div>
           <div class="capacity">容量 {{ product.sizeList[product.selectedSizeIndex].capacity }} ml</div>
           <div class="unitPrice"> 售價 NT$ {{ product.sizeList[product.selectedSizeIndex].price }}</div>
         </div>
       </div>
+      <div v-show="!wishList || wishList.length <= 0" class="remind-text">尚未收藏商品</div>
       <div class="divider"></div>
       <div class="countWrapper">
-        <div class="totalWrapper">
-          <!-- <div class="total">總計 {{ product.length }}</div> -->
-          <!-- <div class="totalPrice">{{ totalPrice }}</div> -->
-        </div>
+        <!-- <div class="totalWrapper">
+          <div class="total">總計 {{ product.length }}</div>
+           <div class="totalPrice">{{ totalPrice }}</div>
+        </div> -->
         <div class="buttonWrapper">
           <div class="shopping" @click="goShopping">
             <button>繼續購物</button>
           </div>
           <div class="checkout">
             <button v-if="authStore.isLogin" @click="goOrderpage">立即結帳</button>
-            <button v-else @click="showLogin">請先登入會員</button>
+            <button v-else @click="showLogin">立即結帳 (請先登入會員)</button>
           </div>
-        </div>
+        </div> 
       </div>
     </div>
   </div>
@@ -53,6 +54,7 @@ const cartStore = useCartStore()
 const wishStore = useWishStore()
 const wishRefStore = storeToRefs(wishStore);
 const wishList = wishRefStore.wishList
+// let renderProductList = wishRefStore.filterList
 
 
 let totalPrice = ref(0);
@@ -69,7 +71,7 @@ function goOrderpage() {
 }
 
 function showAlertdelete() {
-  alert('從願望清單移除該商品囉')
+  alert('刪除商品')
 }
 function showAlert() {
   alert('已加入購物車')
@@ -80,16 +82,21 @@ function addCart(product) {
 }
 
 
-let productCount = ref(0);
+let productCount = ref(0); 
 
 function goProductCount() {
-
-  productCount.value = wishList.value.length;
+  let totalCount = 0;
+  for (let product of wishList.value) {
+    totalCount += product.quantity;
+  }
+  productCount.value = Math.max(0, totalCount);
 }
-
 goProductCount();
 
-
+function handleDelete(product) {
+  wishStore.deleteProduct(product)
+  goProductCount();
+}
 
 function countTotal() {
   totalPrice.value = 0;
@@ -101,10 +108,7 @@ function countTotal() {
 countTotal()
 
 
-function handleDelete(product) {
-  wishStore.deleteProduct(product)
-  countTotal()
-}
+
 
 
 const productStore = useProductStore();
@@ -134,6 +138,11 @@ function goToProductPage(product) {
       font-weight: 600;
       font-size: 20px;
       margin: 20px 0px;
+
+      @include phone {
+        display: flex;
+        justify-content: center;
+      }
     }
 
     .product-wrapper {
@@ -141,7 +150,7 @@ function goToProductPage(product) {
       height: auto;
       display: flex;
       flex-wrap: wrap;
-     
+
 
       .icon-wrapper {
         display: flex;
@@ -156,6 +165,7 @@ function goToProductPage(product) {
           cursor: pointer;
           color: $color-9;
         }
+
         .icon {
           padding: 8px;
         }
@@ -218,9 +228,11 @@ function goToProductPage(product) {
 
         .buttonWrapper {
           display: flex;
+
           .addCart {
             padding: 5px;
           }
+
           .goProductPage {
             padding: 5px;
           }
@@ -336,6 +348,17 @@ function goToProductPage(product) {
           }
         }
       }
+    }
+    .remind-text {
+      color: $color-6;
+      font-weight: 600;
+      font-size: 24px;
+      width: 100%;
+      height: 500px;
+      word-spacing: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

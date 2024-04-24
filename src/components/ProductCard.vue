@@ -1,6 +1,6 @@
 <template>
   <div class="product-card">
-    <icon class="addwish" @click="addWish(props.inputProduct)" icon="heart"/>
+    <icon class="addwish" @click="addWish(props.inputProduct); showAlert();" icon="heart"/>
     <div class="productPic" @click="goToProductPage(props.inputProduct)">
       
       <img :src="props.inputProduct.sizeList[props.inputProduct.selectedSizeIndex].imageSrc" alt="" />
@@ -58,6 +58,10 @@ const wishStore = useWishStore()
 
 function addWish(product) {
   wishStore.addProduct(product)
+}
+
+function showAlert() {
+ alert('已加入願望清單')
 }
 
 </script>
